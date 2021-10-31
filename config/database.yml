@@ -13,7 +13,7 @@ development: &development
 # The staging, preproduction and production dbs are only needed
 # for running rake assets:precompile locally before deploying
 # 
-#
+# 
 staging:
   <<: *development
 
@@ -26,3 +26,5 @@ production:
 test:
   <<: *default
   database: consul_test
+
+  #
