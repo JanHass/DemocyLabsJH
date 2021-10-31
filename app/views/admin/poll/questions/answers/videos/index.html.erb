@@ -1,0 +1,37 @@
+<%= back_link_to admin_question_path(@answer.question_id) %>
+
+<div class="clear"></div>
+
+<h2 class="inline-block">
+  <%= t("admin.answers.videos.index.title") %>
+</h2>
+
+<%= link_to t("admin.answers.videos.index.add_video"),
+            new_admin_answer_video_path,
+            class: "button success float-right" %>
+
+<div>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.answers.videos.index.video_title") %></th>
+        <th><%= t("admin.answers.videos.index.video_url") %></th>
+        <th><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @answer.videos.each do |video| %>
+        <tr id="<%= dom_id(video) %>" class="poll_question_answer_video">
+          <td><%= video.title %></td>
+          <td><%= link_to video.url, video.url %></td>
+          <td>
+            <%= render Admin::TableActionsComponent.new(video) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

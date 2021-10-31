@@ -1,0 +1,606 @@
+Started GET "/" for 127.0.0.1 at 2021-10-28 20:59:14 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/janh/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  [1m[36mWidget::Card Load (0.8ms)[0m  [1m[34mSELECT  "widget_cards"."id", "widget_cards"."link_url", "widget_cards"."header", "widget_cards"."created_at", "widget_cards"."updated_at", "widget_cards"."cardable_id", "widget_cards"."columns", "widget_cards"."cardable_type" FROM "widget_cards" WHERE "widget_cards"."header" = $1 ORDER BY "widget_cards"."id" ASC LIMIT $2[0m  [["header", true], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:11
+  [1m[36mWidget::Feed Load (0.6ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "proposals"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.9ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.proposals"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[36mWidget::Feed Load (0.5ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "debates"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.4ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.debates"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[36mWidget::Feed Load (0.3ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "processes"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.processes"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "feature.remote_translations"]]
+  ↳ app/models/setting.rb:34
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered shared/_canonical.html.erb (0.4ms)
+  [1m[36mBanner Load (2.2ms)[0m  [1m[34mSELECT "banners"."id", "banners"."target_url", "banners"."post_started_at", "banners"."post_ended_at", "banners"."hidden_at", "banners"."created_at", "banners"."updated_at", "banners"."background_color", "banners"."font_color" FROM "banners" INNER JOIN "banner_sections" ON "banner_sections"."banner_id" = "banners"."id" INNER JOIN "web_sections" ON "web_sections"."id" = "banner_sections"."web_section_id" INNER JOIN "banner_sections" "sections_banners" ON "sections_banners"."banner_id" = "banners"."id" WHERE "banners"."hidden_at" IS NULL AND (web_sections.name ilike 'homepage') AND (post_started_at <= '2021-10-28' and post_ended_at >= '2021-10-28')[0m
+  ↳ app/components/shared/banner_component.rb:12
+  [1m[36mSetting Load (0.6ms)[0m  [1m[34mSELECT "settings".* FROM "settings" ORDER BY "settings"."id" ASC[0m
+  ↳ app/helpers/settings_helper.rb:16
+  Rendered shared/_social_media_meta_tags.html.erb (11.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "uploads.images.min_height"]]
+  ↳ app/models/setting.rb:34
+  [1m[36mImage Load (1.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 1], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:4
+  [1m[36mWidget::Card::Translation Load (0.8ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 1]]
+  ↳ app/views/shared/_header.html.erb:5
+  Rendered shared/_header.html.erb (330.3ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mI18nContent Load (0.7ms)[0m  [1m[34mSELECT "i18n_contents"."id", "i18n_contents"."key" FROM "i18n_contents"[0m
+  ↳ app/models/i18n_content.rb:116
+  [1m[36mI18nContent::Translation Load (0.5ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mProposal Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "proposals" WHERE "proposals"."hidden_at" IS NULL AND "proposals"."published_at" IS NOT NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  [1m[36mProposal Load (1.5ms)[0m  [1m[34mSELECT  "proposals"."id", "proposals"."author_id", "proposals"."hidden_at", "proposals"."flags_count", "proposals"."ignored_flag_at", "proposals"."cached_votes_up", "proposals"."comments_count", "proposals"."confirmed_hide_at", "proposals"."hot_score", "proposals"."confidence_score", "proposals"."created_at", "proposals"."updated_at", "proposals"."responsible_name", "proposals"."video_url", "proposals"."tsv", "proposals"."geozone_id", "proposals"."retired_at", "proposals"."retired_reason", "proposals"."community_id", "proposals"."published_at", "proposals"."selected" FROM "proposals" WHERE "proposals"."hidden_at" IS NULL AND "proposals"."published_at" IS NOT NULL ORDER BY "proposals"."hot_score" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:8
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 71], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (2.4ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 71]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (1.2ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (1.3ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 53], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (0.6ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 53]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.9ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 30], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (0.6ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 30]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.7ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mDebate Exists (3.7ms)[0m  [1m[34mSELECT  1 AS one FROM "debates" WHERE "debates"."hidden_at" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  [1m[36mDebate Load (1.3ms)[0m  [1m[34mSELECT  "debates"."id", "debates"."author_id", "debates"."created_at", "debates"."updated_at", "debates"."visit_id", "debates"."hidden_at", "debates"."flags_count", "debates"."ignored_flag_at", "debates"."cached_votes_total", "debates"."cached_votes_up", "debates"."cached_votes_down", "debates"."comments_count", "debates"."confirmed_hide_at", "debates"."cached_anonymous_votes_total", "debates"."cached_votes_score", "debates"."hot_score", "debates"."confidence_score", "debates"."geozone_id", "debates"."tsv", "debates"."featured_at" FROM "debates" WHERE "debates"."hidden_at" IS NULL ORDER BY "debates"."hot_score" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:8
+  [1m[36mDebate::Translation Load (1.6ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 55]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.7ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.8ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mDebate::Translation Load (0.6ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 40]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.9ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mDebate::Translation Load (0.6ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 20]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.6ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  Rendered welcome/_feeds.html.erb (11356.9ms)
+  [1m[36mWidget::Card Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "widget_cards" WHERE "widget_cards"."header" = $1 AND "widget_cards"."cardable_id" IS NULL LIMIT $2[0m  [["header", false], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:20
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "homepage.widgets.feeds.processes"]]
+  ↳ app/models/setting.rb:34
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mWidget::Card Load (0.6ms)[0m  [1m[34mSELECT "widget_cards"."id", "widget_cards"."link_url", "widget_cards"."header", "widget_cards"."created_at", "widget_cards"."updated_at", "widget_cards"."cardable_id", "widget_cards"."columns", "widget_cards"."cardable_type" FROM "widget_cards" WHERE "widget_cards"."header" = $1 AND "widget_cards"."cardable_id" IS NULL ORDER BY "widget_cards"."created_at" ASC[0m  [["header", false]]
+  ↳ app/views/shared/_cards.html.erb:3
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 2], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.5ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 2]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (8.7ms)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 3], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.5ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 3]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (7.1ms)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 4], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.7ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 4]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (7.4ms)
+  Rendered shared/_cards.html.erb (78.6ms)
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "homepage.widgets.feeds.processes"]]
+  ↳ app/models/setting.rb:34
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mLegislation::Process Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "legislation_processes" WHERE "legislation_processes"."hidden_at" IS NULL AND (start_date <= '2021-10-28' and end_date >= '2021-10-28') AND "legislation_processes"."published" = $1 LIMIT $2[0m  [["published", true], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  [1m[36mLegislation::Process Load (0.9ms)[0m  [1m[34mSELECT  "legislation_processes"."id", "legislation_processes"."start_date", "legislation_processes"."end_date", "legislation_processes"."debate_start_date", "legislation_processes"."debate_end_date", "legislation_processes"."draft_publication_date", "legislation_processes"."allegations_start_date", "legislation_processes"."allegations_end_date", "legislation_processes"."result_publication_date", "legislation_processes"."hidden_at", "legislation_processes"."created_at", "legislation_processes"."updated_at", "legislation_processes"."debate_phase_enabled", "legislation_processes"."allegations_phase_enabled", "legislation_processes"."draft_publication_enabled", "legislation_processes"."result_publication_enabled", "legislation_processes"."published", "legislation_processes"."proposals_phase_start_date", "legislation_processes"."proposals_phase_end_date", "legislation_processes"."proposals_phase_enabled", "legislation_processes"."proposals_description", "legislation_processes"."draft_start_date", "legislation_processes"."draft_end_date", "legislation_processes"."draft_phase_enabled", "legislation_processes"."homepage_enabled", "legislation_processes"."background_color", "legislation_processes"."font_color", "legislation_processes"."tsv" FROM "legislation_processes" WHERE "legislation_processes"."hidden_at" IS NULL AND (start_date <= '2021-10-28' and end_date >= '2021-10-28') AND "legislation_processes"."published" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["published", true], ["LIMIT", 3]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:8
+Started GET "/" for 127.0.0.1 at 2021-10-28 21:00:14 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mWidget::Card Load (0.9ms)[0m  [1m[34mSELECT  "widget_cards"."id", "widget_cards"."link_url", "widget_cards"."header", "widget_cards"."created_at", "widget_cards"."updated_at", "widget_cards"."cardable_id", "widget_cards"."columns", "widget_cards"."cardable_type" FROM "widget_cards" WHERE "widget_cards"."header" = $1 ORDER BY "widget_cards"."id" ASC LIMIT $2[0m  [["header", true], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:11
+  [1m[36mWidget::Feed Load (0.6ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "proposals"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.7ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.proposals"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[36mWidget::Feed Load (0.6ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "debates"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.4ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.debates"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[36mWidget::Feed Load (0.4ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "processes"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.4ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.processes"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "feature.remote_translations"]]
+  ↳ app/models/setting.rb:34
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered shared/_canonical.html.erb (0.4ms)
+  [1m[36mBanner Load (2.7ms)[0m  [1m[34mSELECT "banners"."id", "banners"."target_url", "banners"."post_started_at", "banners"."post_ended_at", "banners"."hidden_at", "banners"."created_at", "banners"."updated_at", "banners"."background_color", "banners"."font_color" FROM "banners" INNER JOIN "banner_sections" ON "banner_sections"."banner_id" = "banners"."id" INNER JOIN "web_sections" ON "web_sections"."id" = "banner_sections"."web_section_id" INNER JOIN "banner_sections" "sections_banners" ON "sections_banners"."banner_id" = "banners"."id" WHERE "banners"."hidden_at" IS NULL AND (web_sections.name ilike 'homepage') AND (post_started_at <= '2021-10-28' and post_ended_at >= '2021-10-28')[0m
+  ↳ app/components/shared/banner_component.rb:12
+  [1m[36mSetting Load (0.5ms)[0m  [1m[34mSELECT "settings".* FROM "settings" ORDER BY "settings"."id" ASC[0m
+  ↳ app/helpers/settings_helper.rb:16
+  Rendered shared/_social_media_meta_tags.html.erb (11.7ms)
+  [1m[36mImage Load (0.8ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 1], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:4
+  [1m[36mWidget::Card::Translation Load (0.7ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 1]]
+  ↳ app/views/shared/_header.html.erb:5
+  Rendered shared/_header.html.erb (8.6ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mI18nContent Load (0.7ms)[0m  [1m[34mSELECT "i18n_contents"."id", "i18n_contents"."key" FROM "i18n_contents"[0m
+  ↳ app/models/i18n_content.rb:116
+  [1m[36mI18nContent::Translation Load (0.5ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mProposal Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "proposals" WHERE "proposals"."hidden_at" IS NULL AND "proposals"."published_at" IS NOT NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  [1m[36mProposal Load (0.6ms)[0m  [1m[34mSELECT  "proposals"."id", "proposals"."author_id", "proposals"."hidden_at", "proposals"."flags_count", "proposals"."ignored_flag_at", "proposals"."cached_votes_up", "proposals"."comments_count", "proposals"."confirmed_hide_at", "proposals"."hot_score", "proposals"."confidence_score", "proposals"."created_at", "proposals"."updated_at", "proposals"."responsible_name", "proposals"."video_url", "proposals"."tsv", "proposals"."geozone_id", "proposals"."retired_at", "proposals"."retired_reason", "proposals"."community_id", "proposals"."published_at", "proposals"."selected" FROM "proposals" WHERE "proposals"."hidden_at" IS NULL AND "proposals"."published_at" IS NOT NULL ORDER BY "proposals"."hot_score" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:8
+  [1m[36mImage Load (11.8ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 71], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (1.4ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 71]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (1.0ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (1.5ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 53], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (0.6ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 53]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.9ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.6ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 30], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (0.7ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 30]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.6ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mDebate Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "debates" WHERE "debates"."hidden_at" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  [1m[36mDebate Load (0.9ms)[0m  [1m[34mSELECT  "debates"."id", "debates"."author_id", "debates"."created_at", "debates"."updated_at", "debates"."visit_id", "debates"."hidden_at", "debates"."flags_count", "debates"."ignored_flag_at", "debates"."cached_votes_total", "debates"."cached_votes_up", "debates"."cached_votes_down", "debates"."comments_count", "debates"."confirmed_hide_at", "debates"."cached_anonymous_votes_total", "debates"."cached_votes_score", "debates"."hot_score", "debates"."confidence_score", "debates"."geozone_id", "debates"."tsv", "debates"."featured_at" FROM "debates" WHERE "debates"."hidden_at" IS NULL ORDER BY "debates"."hot_score" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:8
+  [1m[36mDebate::Translation Load (0.9ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 55]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.6ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mDebate::Translation Load (0.6ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 40]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.7ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.8ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mDebate::Translation Load (0.6ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 20]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.8ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  Rendered welcome/_feeds.html.erb (171.5ms)
+  [1m[36mWidget::Card Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "widget_cards" WHERE "widget_cards"."header" = $1 AND "widget_cards"."cardable_id" IS NULL LIMIT $2[0m  [["header", false], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:20
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "homepage.widgets.feeds.processes"]]
+  ↳ app/models/setting.rb:34
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mWidget::Card Load (0.5ms)[0m  [1m[34mSELECT "widget_cards"."id", "widget_cards"."link_url", "widget_cards"."header", "widget_cards"."created_at", "widget_cards"."updated_at", "widget_cards"."cardable_id", "widget_cards"."columns", "widget_cards"."cardable_type" FROM "widget_cards" WHERE "widget_cards"."header" = $1 AND "widget_cards"."cardable_id" IS NULL ORDER BY "widget_cards"."created_at" ASC[0m  [["header", false]]
+  ↳ app/views/shared/_cards.html.erb:3
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 2], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.9ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 2]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (10.3ms)
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 3], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.5ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 3]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (8.0ms)
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 4], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.8ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 4]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (9.4ms)
+  Rendered shared/_cards.html.erb (80.4ms)
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "homepage.widgets.feeds.processes"]]
+  ↳ app/models/setting.rb:34
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mLegislation::Process Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "legislation_processes" WHERE "legislation_processes"."hidden_at" IS NULL AND (start_date <= '2021-10-28' and end_date >= '2021-10-28') AND "legislation_processes"."published" = $1 LIMIT $2[0m  [["published", true], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  [1m[36mLegislation::Process Load (1.5ms)[0m  [1m[34mSELECT  "legislation_processes"."id", "legislation_processes"."start_date", "legislation_processes"."end_date", "legislation_processes"."debate_start_date", "legislation_processes"."debate_end_date", "legislation_processes"."draft_publication_date", "legislation_processes"."allegations_start_date", "legislation_processes"."allegations_end_date", "legislation_processes"."result_publication_date", "legislation_processes"."hidden_at", "legislation_processes"."created_at", "legislation_processes"."updated_at", "legislation_processes"."debate_phase_enabled", "legislation_processes"."allegations_phase_enabled", "legislation_processes"."draft_publication_enabled", "legislation_processes"."result_publication_enabled", "legislation_processes"."published", "legislation_processes"."proposals_phase_start_date", "legislation_processes"."proposals_phase_end_date", "legislation_processes"."proposals_phase_enabled", "legislation_processes"."proposals_description", "legislation_processes"."draft_start_date", "legislation_processes"."draft_end_date", "legislation_processes"."draft_phase_enabled", "legislation_processes"."homepage_enabled", "legislation_processes"."background_color", "legislation_processes"."font_color", "legislation_processes"."tsv" FROM "legislation_processes" WHERE "legislation_processes"."hidden_at" IS NULL AND (start_date <= '2021-10-28' and end_date >= '2021-10-28') AND "legislation_processes"."published" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["published", true], ["LIMIT", 3]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:8
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mLegislation::Process::Translation Load (1.3ms)[0m  [1m[34mSELECT "legislation_process_translations".* FROM "legislation_process_translations" WHERE "legislation_process_translations"."hidden_at" IS NULL AND "legislation_process_translations"."legislation_process_id" = $1[0m  [["legislation_process_id", 9]]
+  ↳ app/components/widget/feeds/process_component.html.erb:7
+  [1m[36mSDG::Goal Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 9], ["relatable_type", "Legislation::Process"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mLegislation::Process::Translation Load (17.6ms)[0m  [1m[34mSELECT "legislation_process_translations".* FROM "legislation_process_translations" WHERE "legislation_process_translations"."hidden_at" IS NULL AND "legislation_process_translations"."legislation_process_id" = $1[0m  [["legislation_process_id", 9]]
+  ↳ app/components/widget/feeds/process_component.html.erb:7
+  [1m[36mSDG::Goal Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 9], ["relatable_type", "Legislation::Process"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mCACHE Setting Load (0.1ms)[0m  [1m[34mSELECT "settings".* FROM "settings" ORDER BY "settings"."id" ASC[0m
+  [1m[36mCACHE Setting Load (0.1ms)[0m  [1m[34mSELECT "settings".* FROM "settings" ORDER BY "settings"."id" ASC[0m
+  ↳ app/helpers/settings_helper.rb:16
+  ↳ app/helpers/settings_helper.rb:16
+  [1m[36mSDG::Goal Load (0.9ms)[0m  [1m[34mSELECT "sdg_goals".* FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 ORDER BY "sdg_goals"."code" ASC[0m  [["relatable_id", 9], ["relatable_type", "Legislation::Process"], ["related_sdg_type", "SDG::Goal"]]
+  [1m[36mSDG::Goal Load (0.9ms)[0m  [1m[34mSELECT "sdg_goals".* FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 ORDER BY "sdg_goals"."code" ASC[0m  [["relatable_id", 9], ["relatable_type", "Legislation::Process"], ["related_sdg_type", "SDG::Goal"]]
+  ↳ app/components/sdg/goals/plain_tag_list_component.rb:11
+  ↳ app/components/sdg/goals/plain_tag_list_component.rb:11
+  [1m[36mCACHE SDG::Goal Load (0.1ms)[0m  [1m[34mSELECT "sdg_goals".* FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 ORDER BY "sdg_goals"."code" ASC[0m  [["relatable_id", 9], ["relatable_type", "Legislation::Process"], ["related_sdg_type", "SDG::Goal"]]
+  [1m[36mCACHE SDG::Goal Load (0.1ms)[0m  [1m[34mSELECT "sdg_goals".* FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 ORDER BY "sdg_goals"."code" ASC[0m  [["relatable_id", 9], ["relatable_type", "Legislation::Process"], ["related_sdg_type", "SDG::Goal"]]
+  ↳ app/components/sdg/goals/plain_tag_list_component.rb:11
+  ↳ app/components/sdg/goals/plain_tag_list_component.rb:11
+  Rendered welcome/_processes.html.erb (25839.1ms)
+  Rendered welcome/index.html.erb within layouts/application (26238.2ms)
+Completed 500 Internal Server Error in 26341ms (ActiveRecord: 81.9ms)
+
+
+  
+  [1m[36mCACHE Setting Load (0.2ms)[0m  [1m[34mSELECT "settings".* FROM "settings" ORDER BY "settings"."id" ASC[0m
+LoadError (Unable to autoload constant SDG::Targets::PlainTagListComponent, expected /mnt/h/rails/democylabs/consul/app/components/sdg/targets/plain_tag_list_component.rb to define it):
+  ↳ app/helpers/settings_helper.rb:16
+  
+app/components/sdg/tag_list_component.rb:28:in `targets_list'
+app/components/sdg/tag_list_component.html.erb:3:in `call'
+app/components/widget/feeds/process_component.html.erb:11:in `block in call'
+app/components/widget/feeds/process_component.html.erb:2:in `call'
+app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+app/components/widget/feeds/feed_component.html.erb:8:in `call'
+app/views/welcome/_processes.html.erb:4:in `block in _app_views_welcome__processes_html_erb___3624483541354347579_265600'
+app/views/welcome/_processes.html.erb:2:in `each'
+app/views/welcome/_processes.html.erb:2:in `_app_views_welcome__processes_html_erb___3624483541354347579_265600'
+app/views/welcome/index.html.erb:30:in `_app_views_welcome_index_html_erb___1619489535976913044_264400'
+config/initializers/wicked_pdf.rb:10:in `render'
+  [1m[36mSDG::Target Load (0.7ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 9], ["relatable_type", "Legislation::Process"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.5ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 9], ["relatable_type", "Legislation::Process"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  Rendered welcome/_processes.html.erb (73874.7ms)
+  Rendered welcome/index.html.erb within layouts/application (86082.8ms)
+  Rendered layouts/_common_head.html.erb (2665.4ms)
+  Rendered layouts/_tracking_data.html.erb (0.6ms)
+  Rendered layouts/_meta_tags.html.erb (0.4ms)
+  [1m[36mSiteCustomization::Image Load (1.2ms)[0m  [1m[34mSELECT  "site_customization_images".* FROM "site_customization_images" WHERE "site_customization_images"."name" = $1 LIMIT $2[0m  [["name", "apple-touch-icon-200"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/image.rb:29
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  Rendered shared/_locale_switcher.html.erb (99.2ms)
+  [1m[36mSiteCustomization::ContentBlock Load (0.9ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "top_links"], ["locale", "en"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered shared/_top_links.html.erb (31.6ms)
+  [1m[36mSiteCustomization::Image Load (0.5ms)[0m  [1m[34mSELECT  "site_customization_images".* FROM "site_customization_images" WHERE "site_customization_images"."name" = $1 LIMIT $2[0m  [["name", "logo_header"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/image.rb:29
+  Rendered shared/_admin_login_items.html.erb (0.9ms)
+  Rendered layouts/_notification_item.html.erb (21.8ms)
+  Rendered devise/menu/_login_items.html.erb (1.8ms)
+  [1m[36mSiteCustomization::ContentBlock Load (0.9ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "subnavigation_left"], ["locale", "en"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  [1m[36mSiteCustomization::ContentBlock Load (0.5ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "subnavigation_right"], ["locale", "en"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered shared/_subnavigation.html.erb (246.1ms)
+  [1m[36mCACHE SiteCustomization::ContentBlock Load (0.1ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "top_links"], ["locale", "en"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered shared/_top_links.html.erb (2.2ms)
+  [1m[36mCACHE SiteCustomization::ContentBlock Load (0.1ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "subnavigation_left"], ["locale", "en"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  [1m[36mCACHE SiteCustomization::ContentBlock Load (0.1ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "subnavigation_right"], ["locale", "en"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered shared/_subnavigation.html.erb (3.9ms)
+  Rendered layouts/_header.html.erb (739.7ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+  [1m[36mCACHE Setting Load (0.1ms)[0m  [1m[34mSELECT "settings".* FROM "settings" ORDER BY "settings"."id" ASC[0m
+  ↳ app/helpers/settings_helper.rb:16
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "en"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mSiteCustomization::ContentBlock Load (0.5ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "footer"], ["locale", "en"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered layouts/_footer.html.erb (48.4ms)
+Completed 200 OK in 90290ms (Views: 89770.4ms | ActiveRecord: 175.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-10-31 09:20:42 +0100
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/janh/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (47.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hidden_at" IS NULL AND "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /home/janh/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mFollow Load (16.9ms)[0m  [1m[34mSELECT "follows".* FROM "follows" WHERE "follows"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/models/user.rb:408
+  [1m[35m (14.3ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "votes_for_proposal_success"]]
+  ↳ app/models/setting.rb:34
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "months_to_archive_proposals"]]
+  ↳ app/models/setting.rb:34
+  [1m[36mActsAsVotable::Vote Load (25.7ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."votable_type" = $1 AND "votes"."voter_id" = $2 AND "votes"."voter_type" = $3[0m  [["votable_type", "Proposal"], ["voter_id", 10], ["voter_type", "User"]]
+  ↳ app/models/proposal.rb:86
+  [1m[36mProposal Load (71.8ms)[0m  [1m[34mSELECT "proposals"."id", "proposals"."author_id", "proposals"."hidden_at", "proposals"."flags_count", "proposals"."ignored_flag_at", "proposals"."cached_votes_up", "proposals"."comments_count", "proposals"."confirmed_hide_at", "proposals"."hot_score", "proposals"."confidence_score", "proposals"."created_at", "proposals"."updated_at", "proposals"."responsible_name", "proposals"."video_url", "proposals"."tsv", "proposals"."geozone_id", "proposals"."retired_at", "proposals"."retired_reason", "proposals"."community_id", "proposals"."published_at", "proposals"."selected" FROM "proposals" WHERE "proposals"."hidden_at" IS NULL AND "proposals"."id" IN ($1, $2, $3, $4)[0m  [["id", 24], ["id", 36], ["id", 71], ["id", 3]]
+  ↳ app/models/proposal.rb:86
+  [1m[36mWidget::Card Load (14.1ms)[0m  [1m[34mSELECT  "widget_cards"."id", "widget_cards"."link_url", "widget_cards"."header", "widget_cards"."created_at", "widget_cards"."updated_at", "widget_cards"."cardable_id", "widget_cards"."columns", "widget_cards"."cardable_type" FROM "widget_cards" WHERE "widget_cards"."header" = $1 ORDER BY "widget_cards"."id" ASC LIMIT $2[0m  [["header", true], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:11
+  [1m[36mWidget::Feed Load (10.1ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "proposals"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.4ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.proposals"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[36mWidget::Feed Load (0.4ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "debates"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.5ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.debates"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[36mWidget::Feed Load (0.4ms)[0m  [1m[34mSELECT  "widget_feeds".* FROM "widget_feeds" WHERE "widget_feeds"."kind" = $1 LIMIT $2[0m  [["kind", "processes"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:14
+  [1m[36mSetting Load (0.6ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC LIMIT $2[0m  [["key", "homepage.widgets.feeds.processes"], ["LIMIT", 1]]
+  ↳ app/models/widget/feed.rb:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "feature.remote_translations"]]
+  ↳ app/models/setting.rb:34
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered shared/_canonical.html.erb (0.4ms)
+  [1m[36mBanner Load (52.4ms)[0m  [1m[34mSELECT "banners"."id", "banners"."target_url", "banners"."post_started_at", "banners"."post_ended_at", "banners"."hidden_at", "banners"."created_at", "banners"."updated_at", "banners"."background_color", "banners"."font_color" FROM "banners" INNER JOIN "banner_sections" ON "banner_sections"."banner_id" = "banners"."id" INNER JOIN "web_sections" ON "web_sections"."id" = "banner_sections"."web_section_id" INNER JOIN "banner_sections" "sections_banners" ON "sections_banners"."banner_id" = "banners"."id" WHERE "banners"."hidden_at" IS NULL AND (web_sections.name ilike 'homepage') AND (post_started_at <= '2021-10-31' and post_ended_at >= '2021-10-31')[0m
+  ↳ app/components/shared/banner_component.rb:12
+  [1m[36mSetting Load (0.6ms)[0m  [1m[34mSELECT "settings".* FROM "settings" ORDER BY "settings"."id" ASC[0m
+  ↳ app/helpers/settings_helper.rb:16
+  Rendered shared/_social_media_meta_tags.html.erb (29.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "uploads.images.min_height"]]
+  ↳ app/models/setting.rb:34
+  [1m[36mImage Load (33.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 1], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:4
+  [1m[36mWidget::Card::Translation Load (33.5ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 1]]
+  ↳ app/views/shared/_header.html.erb:5
+  Rendered shared/_header.html.erb (315.7ms)
+  [1m[35m (52.8ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mI18nContent Load (10.2ms)[0m  [1m[34mSELECT "i18n_contents"."id", "i18n_contents"."key" FROM "i18n_contents"[0m
+  ↳ app/models/i18n_content.rb:116
+  [1m[36mI18nContent::Translation Load (0.4ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mProposal Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "proposals" WHERE "proposals"."hidden_at" IS NULL AND "proposals"."published_at" IS NOT NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  [1m[36mProposal Load (0.6ms)[0m  [1m[34mSELECT  "proposals"."id", "proposals"."author_id", "proposals"."hidden_at", "proposals"."flags_count", "proposals"."ignored_flag_at", "proposals"."cached_votes_up", "proposals"."comments_count", "proposals"."confirmed_hide_at", "proposals"."hot_score", "proposals"."confidence_score", "proposals"."created_at", "proposals"."updated_at", "proposals"."responsible_name", "proposals"."video_url", "proposals"."tsv", "proposals"."geozone_id", "proposals"."retired_at", "proposals"."retired_reason", "proposals"."community_id", "proposals"."published_at", "proposals"."selected" FROM "proposals" WHERE "proposals"."hidden_at" IS NULL AND "proposals"."published_at" IS NOT NULL ORDER BY "proposals"."hot_score" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:8
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 71], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (25.3ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 71]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (37.6ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (20.5ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (24.6ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 71], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 53], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (0.5ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 53]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.6ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.9ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 53], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 30], ["imageable_type", "Proposal"], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:3
+  [1m[36mProposal::Translation Load (0.5ms)[0m  [1m[34mSELECT "proposal_translations".* FROM "proposal_translations" WHERE "proposal_translations"."hidden_at" IS NULL AND "proposal_translations"."proposal_id" = $1[0m  [["proposal_id", 30]]
+  ↳ app/components/widget/feeds/proposal_component.html.erb:4
+  [1m[36mSDG::Goal Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.6ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.6ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 30], ["relatable_type", "Proposal"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mDebate Exists (64.5ms)[0m  [1m[34mSELECT  1 AS one FROM "debates" WHERE "debates"."hidden_at" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  [1m[36mDebate Load (1.3ms)[0m  [1m[34mSELECT  "debates"."id", "debates"."author_id", "debates"."created_at", "debates"."updated_at", "debates"."visit_id", "debates"."hidden_at", "debates"."flags_count", "debates"."ignored_flag_at", "debates"."cached_votes_total", "debates"."cached_votes_up", "debates"."cached_votes_down", "debates"."comments_count", "debates"."confirmed_hide_at", "debates"."cached_anonymous_votes_total", "debates"."cached_votes_score", "debates"."hot_score", "debates"."confidence_score", "debates"."geozone_id", "debates"."tsv", "debates"."featured_at" FROM "debates" WHERE "debates"."hidden_at" IS NULL ORDER BY "debates"."hot_score" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:8
+  [1m[36mDebate::Translation Load (24.4ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 55]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.7ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 55], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mDebate::Translation Load (0.6ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 40]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.7ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.8ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 40], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mDebate::Translation Load (0.6ms)[0m  [1m[34mSELECT "debate_translations".* FROM "debate_translations" WHERE "debate_translations"."hidden_at" IS NULL AND "debate_translations"."debate_id" = $1[0m  [["debate_id", 20]]
+  ↳ app/components/widget/feeds/debate_component.html.erb:2
+  [1m[36mSDG::Goal Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "sdg_goals" INNER JOIN "sdg_relations" ON "sdg_goals"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3 LIMIT $4[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Goal"], ["LIMIT", 1]]
+  ↳ app/components/sdg/tag_list_component.rb:11
+  [1m[36mSDG::Target Load (0.7ms)[0m  [1m[34mSELECT "sdg_targets".* FROM "sdg_targets" INNER JOIN "sdg_relations" ON "sdg_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::Target"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  [1m[36mSDG::LocalTarget Load (0.7ms)[0m  [1m[34mSELECT "sdg_local_targets"."id", "sdg_local_targets"."target_id", "sdg_local_targets"."code", "sdg_local_targets"."created_at", "sdg_local_targets"."updated_at", "sdg_local_targets"."goal_id" FROM "sdg_local_targets" INNER JOIN "sdg_relations" ON "sdg_local_targets"."id" = "sdg_relations"."related_sdg_id" WHERE "sdg_relations"."relatable_id" = $1 AND "sdg_relations"."relatable_type" = $2 AND "sdg_relations"."related_sdg_type" = $3[0m  [["relatable_id", 20], ["relatable_type", "Debate"], ["related_sdg_type", "SDG::LocalTarget"]]
+  ↳ app/models/concerns/sdg/relatable.rb:56
+  Rendered welcome/_feeds.html.erb (11893.1ms)
+  [1m[36mWidget::Card Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "widget_cards" WHERE "widget_cards"."header" = $1 AND "widget_cards"."cardable_id" IS NULL LIMIT $2[0m  [["header", false], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:20
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "homepage.widgets.feeds.processes"]]
+  ↳ app/models/setting.rb:34
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mWidget::Card Load (0.5ms)[0m  [1m[34mSELECT "widget_cards"."id", "widget_cards"."link_url", "widget_cards"."header", "widget_cards"."created_at", "widget_cards"."updated_at", "widget_cards"."cardable_id", "widget_cards"."columns", "widget_cards"."cardable_type" FROM "widget_cards" WHERE "widget_cards"."header" = $1 AND "widget_cards"."cardable_id" IS NULL ORDER BY "widget_cards"."created_at" ASC[0m  [["header", false]]
+  ↳ app/views/shared/_cards.html.erb:3
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 2], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.5ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 2]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (12.4ms)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 3], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.5ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 3]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (11.6ms)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."imageable_id" = $1 AND "images"."imageable_type" = $2 LIMIT $3[0m  [["imageable_id", 4], ["imageable_type", "Widget::Card"], ["LIMIT", 1]]
+  ↳ app/views/shared/_card.html.erb:6
+  [1m[36mWidget::Card::Translation Load (0.6ms)[0m  [1m[34mSELECT "widget_card_translations".* FROM "widget_card_translations" WHERE "widget_card_translations"."widget_card_id" = $1[0m  [["widget_card_id", 4]]
+  ↳ app/views/shared/_card.html.erb:10
+  Rendered shared/_card.html.erb (11.3ms)
+  Rendered shared/_cards.html.erb (112.7ms)
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "homepage.widgets.feeds.processes"]]
+  ↳ app/models/setting.rb:34
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mLegislation::Process Exists (62.6ms)[0m  [1m[34mSELECT  1 AS one FROM "legislation_processes" WHERE "legislation_processes"."hidden_at" IS NULL AND (start_date <= '2021-10-31' and end_date >= '2021-10-31') AND "legislation_processes"."published" = $1 LIMIT $2[0m  [["published", true], ["LIMIT", 1]]
+  ↳ app/components/widget/feeds/feed_component.html.erb:6
+  Rendered welcome/_processes.html.erb (72.3ms)
+  Rendered welcome/index.html.erb within layouts/application (12904.4ms)
+  Rendered layouts/_common_head.html.erb (28890.1ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "settings"."value" FROM "settings" WHERE "settings"."key" = $1 ORDER BY "settings"."id" ASC[0m  [["key", "feature.user.skip_verification"]]
+  ↳ app/models/setting.rb:34
+  Rendered layouts/_tracking_data.html.erb (2.8ms)
+  Rendered layouts/_meta_tags.html.erb (0.4ms)
+  [1m[36mSiteCustomization::Image Load (15.6ms)[0m  [1m[34mSELECT  "site_customization_images".* FROM "site_customization_images" WHERE "site_customization_images"."name" = $1 LIMIT $2[0m  [["name", "apple-touch-icon-200"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/image.rb:29
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  Rendered shared/_locale_switcher.html.erb (51.9ms)
+  [1m[36mSiteCustomization::ContentBlock Load (9.6ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "top_links"], ["locale", "de"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered shared/_top_links.html.erb (38.8ms)
+  [1m[36mSiteCustomization::Image Load (0.5ms)[0m  [1m[34mSELECT  "site_customization_images".* FROM "site_customization_images" WHERE "site_customization_images"."name" = $1 LIMIT $2[0m  [["name", "logo_header"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/image.rb:29
+  [1m[36mAdministrator Load (14.6ms)[0m  [1m[34mSELECT  "administrators".* FROM "administrators" WHERE "administrators"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:183
+  [1m[36mModerator Load (14.7ms)[0m  [1m[34mSELECT  "moderators".* FROM "moderators" WHERE "moderators"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:187
+  [1m[36mValuator Load (33.9ms)[0m  [1m[34mSELECT  "valuators".* FROM "valuators" WHERE "valuators"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:191
+  [1m[36mManager Load (15.0ms)[0m  [1m[34mSELECT  "managers".* FROM "managers" WHERE "managers"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:195
+  [1m[36mPoll::Officer Load (14.8ms)[0m  [1m[34mSELECT  "poll_officers".* FROM "poll_officers" WHERE "poll_officers"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:203
+  [1m[36mSDG::Manager Load (14.8ms)[0m  [1m[34mSELECT  "sdg_managers".* FROM "sdg_managers" WHERE "sdg_managers"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:199
+  Rendered shared/_admin_login_items.html.erb (282.1ms)
+  [1m[35m (16.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read_at" IS NULL[0m  [["user_id", 10]]
+  ↳ app/components/layout/notification_item_component.rb:11
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read_at" IS NULL[0m  [["user_id", 10]]
+  ↳ app/components/layout/notification_item_component.rb:15
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "notifications" WHERE "notifications"."user_id" = $1 AND "notifications"."read_at" IS NULL[0m  [["user_id", 10]]
+  ↳ app/components/layout/notification_item_component.rb:11
+  Rendered layouts/_notification_item.html.erb (75.4ms)
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+  [1m[36mSiteCustomization::ContentBlock Load (0.5ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "subnavigation_left"], ["locale", "de"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  [1m[36mSiteCustomization::ContentBlock Load (0.8ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "subnavigation_right"], ["locale", "de"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered shared/_subnavigation.html.erb (227.6ms)
+  [1m[36mCACHE SiteCustomization::ContentBlock Load (0.1ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "top_links"], ["locale", "de"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered shared/_top_links.html.erb (1.7ms)
+  [1m[36mCACHE SiteCustomization::ContentBlock Load (0.1ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "subnavigation_left"], ["locale", "de"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  [1m[36mCACHE SiteCustomization::ContentBlock Load (0.1ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "subnavigation_right"], ["locale", "de"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered shared/_subnavigation.html.erb (3.5ms)
+  Rendered layouts/_header.html.erb (955.8ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+  [1m[36mCACHE Setting Load (0.1ms)[0m  [1m[34mSELECT "settings".* FROM "settings" ORDER BY "settings"."id" ASC[0m
+  ↳ app/helpers/settings_helper.rb:16
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("i18n_content_translations"."updated_at") AS timestamp FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mCACHE I18nContent::Translation Load (0.1ms)[0m  [1m[34mSELECT "i18n_content_translations".* FROM "i18n_content_translations" WHERE "i18n_content_translations"."locale" = $1[0m  [["locale", "de"]]
+  ↳ app/models/i18n_content.rb:115
+  [1m[36mSiteCustomization::ContentBlock Load (0.6ms)[0m  [1m[34mSELECT  "site_customization_content_blocks".* FROM "site_customization_content_blocks" WHERE "site_customization_content_blocks"."name" = $1 AND "site_customization_content_blocks"."locale" = $2 LIMIT $3[0m  [["name", "footer"], ["locale", "de"], ["LIMIT", 1]]
+  ↳ app/models/site_customization/content_block.rb:9
+  Rendered layouts/_footer.html.erb (37.4ms)
+Completed 200 OK in 44927ms (Views: 42533.2ms | ActiveRecord: 962.5ms)
+
+

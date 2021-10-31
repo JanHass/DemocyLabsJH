@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="top-links">
+    <%= render "shared/locale_switcher" %>
+
+    <%= link_to root_path do %>
+      <%= t("admin.dashboard.index.back", org: setting["org_name"]) %>
+    <% end %>
+  </div>
+
+  <div class="expanded row admin-top-bar">
+    <div class="title-bar" data-responsive-toggle="responsive_menu" data-hide-for="medium">
+      <button class="menu-button" type="button" data-toggle="responsive_menu">
+        <span class="menu-icon"></span>
+        <span class="title-bar-title"><%= t("application.menu") %></span>
+      </button>
+    </div>
+
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <% if namespace == "officing" %>
+          <h1>
+            <%= link_to "#" do %>
+              <%= setting["org_name"] %>
+              <br><small><%= namespaced_header_title %></small>
+            <% end %>
+          </h1>
+        <% else %>
+          <h1>
+            <%= link_to namespaced_root_path do %>
+              <%= setting["org_name"] %>
+              <br><small><%= namespaced_header_title %></small>
+            <% end %>
+          </h1>
+        <% end %>
+      </div>
+
+      <div id="responsive_menu">
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="medium-dropdown">
+            <%= render "shared/admin_login_items" %>
+            <%= render "layouts/notification_item" %>
+            <%= render "devise/menu/login_items" %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

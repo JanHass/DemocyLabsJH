@@ -1,0 +1,32 @@
+.feeds-participation {
+  $gap: rem-calc(map-get($grid-column-gutter, medium));
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gap;
+
+  .feed-proposals {
+    flex-basis: rem-calc(480);
+    flex-grow: 2;
+  }
+
+  .feed-debates {
+    flex-basis: rem-calc(240);
+    flex-grow: 1;
+  }
+
+  .feed-proposals,
+  .feed-debates {
+    display: flex;
+    margin-left: $gap;
+    margin-top: $line-height;
+    flex-direction: column;
+
+    .feed-content {
+      flex-grow: 1;
+    }
+  }
+
+  .sdg-tag-list {
+    margin-top: $line-height / 2;
+  }
+}

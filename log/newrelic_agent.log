@@ -1,0 +1,49 @@
+# Logfile created on 2021-10-28 20:58:50 +0200 by logger.rb/v1.4.2
+[2021-10-28 20:58:50 +0200 Alienware-Jan (313)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2021-10-28 20:58:50 +0200 Alienware-Jan (313)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-10-28 20:58:50 +0200 Alienware-Jan (313)] INFO : Reading configuration from config/newrelic.yml (/mnt/h/rails/democylabs/consul)
+[2021-10-28 20:58:50 +0200 Alienware-Jan (313)] INFO : Environment: development
+[2021-10-28 20:58:50 +0200 Alienware-Jan (313)] INFO : No known dispatcher detected.
+[2021-10-28 20:58:50 +0200 Alienware-Jan (313)] INFO : Application: CONSUL (Development)
+[2021-10-28 20:58:50 +0200 Alienware-Jan (313)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2021-10-28 20:58:50 +0200 Alienware-Jan (313)] INFO : Installing ActiveJob instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing ActiveRecord 5 instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing Memcache instrumentation for dalli gem
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing Net instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing Rails 5 Action Cable instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing Rails 5 Controller instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Installing Rails 5 view instrumentation
+[2021-10-28 20:58:51 +0200 Alienware-Jan (313)] INFO : Finished instrumentation
+[2021-10-28 20:59:01 +0200 Alienware-Jan (313)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-10-28 20:59:14 +0200 Alienware-Jan (313)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2021-10-28 20:59:14 +0200 Alienware-Jan (313)] ERROR : Invalid license key
+[2021-10-28 20:59:14 +0200 Alienware-Jan (313)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2021-10-28 21:24:51 +0200 Alienware-Jan (313)] INFO : Starting Agent shutdown
+[2021-10-31 09:19:16 +0100 Alienware-Jan (1300)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2021-10-31 09:19:16 +0100 Alienware-Jan (1300)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2021-10-31 09:19:16 +0100 Alienware-Jan (1300)] INFO : Reading configuration from config/newrelic.yml (/mnt/h/rails/democylabs/consul)
+[2021-10-31 09:19:16 +0100 Alienware-Jan (1300)] INFO : Environment: development
+[2021-10-31 09:19:16 +0100 Alienware-Jan (1300)] INFO : No known dispatcher detected.
+[2021-10-31 09:19:16 +0100 Alienware-Jan (1300)] INFO : Application: CONSUL (Development)
+[2021-10-31 09:19:16 +0100 Alienware-Jan (1300)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing ActiveJob instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing ActiveRecord 5 instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing Memcache instrumentation for dalli gem
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing Net instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing deferred Rack::Builder instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing Rack::Builder middleware instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing Rails 3+ middleware instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing Rails 5 Action Cable instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing Rails 5 Controller instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Installing Rails 5 view instrumentation
+[2021-10-31 09:19:17 +0100 Alienware-Jan (1300)] INFO : Finished instrumentation
+[2021-10-31 09:19:25 +0100 Alienware-Jan (1300)] INFO : Doing deferred dependency-detection before Rack startup
+[2021-10-31 09:20:42 +0100 Alienware-Jan (1300)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2021-10-31 09:20:42 +0100 Alienware-Jan (1300)] ERROR : Invalid license key
+[2021-10-31 09:20:42 +0100 Alienware-Jan (1300)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2021-10-31 09:21:49 +0100 Alienware-Jan (1300)] INFO : Starting Agent shutdown
