@@ -430,3 +430,435 @@ Call stack
   /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:24:in `_app_views_welcome_index_html_erb___1721036136065839222_260740'
   /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
 
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:4:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:6:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:6:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:6:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:6:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_261780'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Widget::Card => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/views/shared/_card.html.erb:6:in `block in _app_views_shared__card_html_erb___4096742088074430568_263420'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_card.html.erb:3:in `_app_views_shared__card_html_erb___4096742088074430568_263420'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_cards.html.erb:4:in `block in _app_views_shared__cards_html_erb__2173466003301570261_263380'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_cards.html.erb:3:in `_app_views_shared__cards_html_erb__2173466003301570261_263380'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:24:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:27:29[WARN] user: janh
+GET /
+USE eager loading detected
+  Widget::Card => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/views/shared/_card.html.erb:10:in `block in _app_views_shared__card_html_erb___4096742088074430568_263420'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_card.html.erb:3:in `_app_views_shared__card_html_erb___4096742088074430568_263420'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_cards.html.erb:4:in `block in _app_views_shared__cards_html_erb__2173466003301570261_263380'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_cards.html.erb:3:in `_app_views_shared__cards_html_erb__2173466003301570261_263380'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:24:in `_app_views_welcome_index_html_erb__1442288635608801186_260740'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:4:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:6:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:6:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:6:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Proposal => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/proposal_component.html.erb:6:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Debate => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /mnt/h/rails/democylabs/consul/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/debate_component.html.erb:3:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:9:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/feed_component.html.erb:8:in `call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:4:in `block in call'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `each'
+  /mnt/h/rails/democylabs/consul/app/components/widget/feeds/participation_component.html.erb:2:in `call'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/_feeds.html.erb:1:in `_app_views_welcome__feeds_html_erb___2532048069175991823_284820'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:17:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Widget::Card => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/views/shared/_card.html.erb:6:in `block in _app_views_shared__card_html_erb___4096742088074430568_285680'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_card.html.erb:3:in `_app_views_shared__card_html_erb___4096742088074430568_285680'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_cards.html.erb:4:in `block in _app_views_shared__cards_html_erb__2173466003301570261_285640'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_cards.html.erb:3:in `_app_views_shared__cards_html_erb__2173466003301570261_285640'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:24:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
+2021-10-31 10:37:04[WARN] user: janh
+GET /
+USE eager loading detected
+  Widget::Card => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /mnt/h/rails/democylabs/consul/app/views/shared/_card.html.erb:10:in `block in _app_views_shared__card_html_erb___4096742088074430568_285680'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_card.html.erb:3:in `_app_views_shared__card_html_erb___4096742088074430568_285680'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_cards.html.erb:4:in `block in _app_views_shared__cards_html_erb__2173466003301570261_285640'
+  /mnt/h/rails/democylabs/consul/app/views/shared/_cards.html.erb:3:in `_app_views_shared__cards_html_erb__2173466003301570261_285640'
+  /mnt/h/rails/democylabs/consul/app/views/welcome/index.html.erb:24:in `_app_views_welcome_index_html_erb__1442288635608801186_284640'
+  /mnt/h/rails/democylabs/consul/config/initializers/wicked_pdf.rb:10:in `render'
+
