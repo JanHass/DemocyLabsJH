@@ -30,6 +30,12 @@
 
             <% else %>
               <%= f.text_field :username, maxlength: User.username_max_length %>
+              <%= f.text_field :first_name %>
+              <%= f.text_field :last_name %>
+              <%= f.text_field :phone_number %>
+              <%= f.text_field :gender %>
+              <%= f.text_field :date_of_birth %>
+              <%= f.text_field :postal_code %>
             <% end %>
           </div>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_25_152739) do
+ActiveRecord::Schema.define(version: 2021_12_22_120248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -316,6 +316,7 @@ ActiveRecord::Schema.define(version: 2021_08_25_152739) do
     t.text "summary"
     t.string "name"
     t.string "main_link_text"
+    t.string "main_link_url"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
   end
@@ -327,7 +328,6 @@ ActiveRecord::Schema.define(version: 2021_08_25_152739) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
-    t.string "main_link_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
@@ -349,6 +349,7 @@ ActiveRecord::Schema.define(version: 2021_08_25_152739) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "main_link_text"
+    t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end
@@ -393,7 +394,6 @@ ActiveRecord::Schema.define(version: 2021_08_25_152739) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
-    t.string "main_link_url"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -884,6 +884,9 @@ ActiveRecord::Schema.define(version: 2021_08_25_152739) do
     t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable_type_and_linkable_id"
   end
 
+  create_table "local_admins", force: :cascade do |t|
+  end
+
   create_table "local_census_records", id: :serial, force: :cascade do |t|
     t.string "document_number", null: false
     t.string "document_type", null: false
@@ -1235,6 +1238,14 @@ ActiveRecord::Schema.define(version: 2021_08_25_152739) do
     t.index ["geozone_restricted"], name: "index_polls_on_geozone_restricted"
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
+  end
+
+  create_table "postal_codes", force: :cascade do |t|
+    t.string "postal_code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["postal_code"], name: "index_postal_codes_on_postal_code", unique: true
   end
 
   create_table "progress_bar_translations", id: :serial, force: :cascade do |t|
@@ -1625,6 +1636,9 @@ ActiveRecord::Schema.define(version: 2021_08_25_152739) do
     t.boolean "public_interests", default: false
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
+    t.string "first_name"
+    t.string "postal_code"
+    t.string "last_name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
