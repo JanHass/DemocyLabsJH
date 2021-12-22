@@ -18,7 +18,7 @@ de:
         first_theme: Erstellen Sie das erste Community-Thema
         sub_first_theme: "Um ein Thema zu erstellen, müssen Sie %{sign_in} o %{sign_up}."
       tab:
-        participants: Teilnehmer:innen
+        participants: Teilnehmer*innen
       sidebar:
         participate: Teilnehmen
         new_topic: Thema erstellen

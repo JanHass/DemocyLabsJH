@@ -108,7 +108,7 @@ de:
     sessions:
       signed_out: Erfolgreich abgemeldet.
       signed_out_managed_user: Benutzersitzung erfolgreich abgemeldet.
-    username_label: Benutzer:innenname
+    username_label: Benutzer*innenname
     users:
       create_user: Neues Konto erstellen
       create_user_info: Wir werden ein Konto mit den folgenden Daten erstellen

@@ -38,23 +38,23 @@ de:
         one: "Tag"
         other: "Tags"
       user:
-        one: "Benutzer:in"
-        other: "Benutzer:innen"
+        one: "Benutzer*in"
+        other: "Benutzer*innen"
       moderator:
-        one: "Moderator:in"
-        other: "Moderator:innen"
+        one: "Moderator*in"
+        other: "Moderator*innen"
       administrator:
-        one: "Administrator:in"
-        other: "Administrator:innen"
+        one: "Administrator*in"
+        other: "Administrator*innen"
       valuator:
-        one: "Begutachter:in"
-        other: "Begutachter:innen"
+        one: "Begutachter*in"
+        other: "Begutachter*innen"
       valuator_group:
         one: "Begutachtungsgruppe"
         other: "Begutachtungsgruppen"
       manager:
-        one: "Manager:in"
-        other: "Manager:innen"
+        one: "Manager*in"
+        other: "Manager*innen"
       newsletter:
         one: "Newsletter"
         other: "Newsletter"
@@ -93,10 +93,10 @@ de:
         other: Meine Seiten
       site_customization/image:
         one: Bild
-        other: Benutzer:definierte Bilder
+        other: Benutzer*definierte Bilder
       site_customization/content_block:
         one: Benutzerspezifischer Inhaltsdatenblock
-        other: Benutzer:definierte Inhaltsdatenblöcke
+        other: Benutzer*definierte Inhaltsdatenblöcke
       document:
         one: Dokument
         other: Dokumente
@@ -167,7 +167,7 @@ de:
         title: "Titel"
         description: "Beschreibung"
         external_url: "Link zur weiteren Dokumentation"
-        administrator_id: "Administrator:in"
+        administrator_id: "Administrator*in"
         location: "Standort (optional)"
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
@@ -212,7 +212,7 @@ de:
         primary: "Primär"
         secondary: "Sekundär"
       budget/group:
-        max_votable_headings: "Maximale Anzahl von Rubriken, in der ein:e Benutzer:in abstimmen kann"
+        max_votable_headings: "Maximale Anzahl von Rubriken, in der ein*e Benutzer*in abstimmen kann"
       budget/group/translation:
         name: "Name der Gruppe"
       budget/heading:
@@ -235,7 +235,7 @@ de:
         summary: "Zusammenfassung"
       comment:
         body: "Kommentar"
-        user: "Benutzer:in"
+        user: "Benutzer*in"
       debate:
         author: "Autor"
         description: "Beitrag"
@@ -261,9 +261,9 @@ de:
         summary: "Zusammenfassung Vorschlag"
         retired_explanation: "Erläuterung"
       user:
-        login: "E-Mail oder Benutzer:innenname"
+        login: "E-Mail oder Benutzer*innenname"
         email: "E-Mail"
-        username: "Benutzer:innenname"
+        username: "Benutzer*innenname"
         first_name: "Vorname"
         last_name: "Nachname"
         gender: "Geschlecht"
@@ -291,7 +291,7 @@ de:
         body: "Nachricht"
       organization:
         name: "Name der Organisation"
-        responsible_name: "Der/die: Gruppenverantwortliche"
+        responsible_name: "Der/die* Gruppenverantwortliche"
       poll:
         name: "Name"
         title: "Name"
@@ -456,12 +456,12 @@ de:
         title: Titel
         url: Externes Video
       newsletter:
-        segment_recipient: Empfänger:innen
+        segment_recipient: Empfänger*innen
         subject: Betreff
         from: "Von"
         body: Inhalt der E-Mail
       admin_notification:
-        segment_recipient: Empfänger:innen
+        segment_recipient: Empfänger*innen
         title: Titel
         link: Link
         body: Text
@@ -519,7 +519,7 @@ de:
         user:
           attributes:
             email:
-              password_already_set: "Diese:r Benutzer:in hat bereits ein Passwort"
+              password_already_set: "Diese*r Benutzer*in hat bereits ein Passwort"
         debate:
           attributes:
             tag_list:
@@ -536,11 +536,11 @@ de:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "Das Empfänger:innensegment ist ungültig"
+              invalid: "Das Empfänger*innensegment ist ungültig"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "Das Benutzer:innensegment ist ungültig"
+              invalid: "Das Benutzer*innensegment ist ungültig"
         map_location:
           attributes:
             map:

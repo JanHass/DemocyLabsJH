@@ -30,7 +30,7 @@ de:
         zero: Sie haben noch über keinen Ausgabenvorschlag abgestimmt.
       reasons_for_not_balloting:
         not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
-        not_verified: Nur verifizierte Benutzer:innen können über einen Ausgabenvorschlag abstimmen; %{verify_account}.
+        not_verified: Nur verifizierte Benutzer*innen können über einen Ausgabenvorschlag abstimmen; %{verify_account}.
         organization: Organisationen ist es nicht erlaubt abzustimmen
         not_selected: Für nicht durchführbare Ausgabevorschläge kann nicht abgestimmt werden
         not_enough_money: "Sie haben bereits das gesamte verfügbare Budget zugewiesen.<br><small>Bitte denken Sie daran, dass Sie dies %{change_ballot} jederzeit</small>ändern können"
@@ -73,7 +73,7 @@ de:
       see_results: Ergebnisse anzeigen
       section_footer:
         title: Hilfe zu Bürgerhaushalten
-        description: Durch Bürgerhaushalte können Bürger:innen entscheiden, an welche Projekte ein bestimmter Teil des Budgets geht.
+        description: Durch Bürgerhaushalte können Bürger*innen entscheiden, an welche Projekte ein bestimmter Teil des Budgets geht.
       milestones: Meilensteine
     investments:
       form:
@@ -154,8 +154,8 @@ de:
           other: "Sie können nur Ausgabenvorschläge im %{count} Bezirk unterstützen. Wenn sie fortfahren, können sie ihren Wahlbezirk nicht ändern. Sind sie sicher?"
         supports:
           zero: Keine Unterstützung
-          one: 1 Unterstützer:in
-          other: "%{count} Unterstützer:innen"
+          one: 1 Unterstützer*in
+          other: "%{count} Unterstützer*innen"
         give_support: Unterstützung
       header:
         check_ballot: "Meine Abstimmung überprüfen"

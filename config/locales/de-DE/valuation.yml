@@ -52,7 +52,7 @@ de:
         duration: Zeitrahmen
         responsibles: Verantwortliche
         assigned_admin: Zugewiesener Admin
-        assigned_valuators: Zugewiesene Begutachter:innen
+        assigned_valuators: Zugewiesene Begutachter*innen
         preview: Investitionsvorschau
       edit:
         dossier: Bericht
