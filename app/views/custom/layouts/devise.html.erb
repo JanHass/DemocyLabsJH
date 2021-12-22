@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html <%= "dir=rtl" if rtl? %> lang="<%= I18n.locale %>">
+  <head>
+    <%= render "layouts/common_head", default_title: setting["org_name"] %>
+    <%= render "layouts/meta_tags" %>
+    <%= raw setting["html.per_page_code_head"] %>
+  </head>
+
+  <body class="auth-page">
+    <%= raw setting["html.per_page_code_body"] %>
+    <div class="wrapper">
+
+            <div class="row">
+            <div class="small-12 medium-9 large-7 small-centered column">
+              <div class="auth-form" style="margin-bottom: 5%;">
+              <%= render "layouts/imgAuth" %>
+
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="footer">
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
+</html>

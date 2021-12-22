@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<header>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <% if display_remote_translation_info?(@remote_translations, I18n.locale) %>
+    <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
+  <% end %>
+  <title>Seegemeinschaft Thüngersheim</title>
+  <div class="top-links">
+    <%= render "shared/locale_switcher" %>
+    <div class="hide-for-small-only">
+      <%= render "shared/top_links" %>
+    </div>
+  </div>
+
+  <div class="top-bar">
+
+    <div class="btn-group dropstart">
+      <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white;">
+        <a style="color: #05d3dd;">Menu</a>
+      </button>
+      <ul class="dropdown-menu" style="background-color: white;">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  
+    <div class="top-bar-title" style="height: 88px;width: 400px; margin-left: 28%;">
+      <%= link_to root_path, accesskey: "0" do %>
+      <div style="height: 100px;width: 400px;" >
+        <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"])%>
+      </div>
+      <% end %>
+    </div>
+
+    <div id="responsive-menu">
+      <div class="top-bar-right">
+        <ul class="menu" data-responsive-menu="medium-dropdown">
+          <%= render "shared/admin_login_items" %>
+          <%= render "layouts/notification_item" %>
+          <%= render "devise/menu/login_items" %>
+        </ul>
+
+        <div class="show-for-small-only">
+          <div class="subnavigation subnavigation-with-top-links">
+            <%= render "shared/subnavigation" %>
+            <%= render "shared/top_links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="navigation_bar" class="subnavigation">
+    <div class="hide-for-small-only" style="margin-left: 35%;">
+      <%= render "shared/subnavigation" %>
+    </div>
+
+    <%= yield :header_addon %>
+  </div>
+
+</header>
+
+<style>
+   .dropdown-toggle {
+        background:#FFF !important; 
+        color:#05d3dd !important;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

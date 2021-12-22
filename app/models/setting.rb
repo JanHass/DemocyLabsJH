@@ -146,7 +146,7 @@ class Setting < ApplicationRecord
         "max_votes_for_debate_edit": 1000,
         "max_votes_for_proposal_edit": 1000,
         "comments_body_max_length": 1000,
-        "proposal_code_prefix": "CONSUL",
+        "proposal_code_prefix": "Democy",
         "votes_for_proposal_success": 10000,
         "months_to_archive_proposals": 12,
         # Users with this email domain will automatically be marked as level 1 officials
@@ -160,13 +160,13 @@ class Setting < ApplicationRecord
         "youtube_handle": nil,
         "url": "http://example.com", # Public-facing URL of the app.
         # CONSUL installation's organization name
-        "org_name": "CONSUL",
+        "org_name": "Democy",
         "meta_title": nil,
         "meta_description": nil,
         "meta_keywords": nil,
         "proposal_notification_minimum_interval_in_days": 3,
         "direct_message_max_per_day": 3,
-        "mailer_from_name": "CONSUL",
+        "mailer_from_name": "Democy",
         "mailer_from_address": "noreply@consul.dev",
         "min_age_to_participate": 16,
         "hot_score_period_in_days": 31,
