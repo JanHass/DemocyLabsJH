@@ -2,15 +2,15 @@ de:
   settings:
     comments_body_max_length: "Maximale Länge der Kommentare"
     comments_body_max_length_description: "In Anzahl der Zeichen"
-    official_level_1_name: "Beamte*r Stufe 1"
+    official_level_1_name: "Beamte:r Stufe 1"
     official_level_1_name_description: "Tag, der auf Benutzern erscheint, die als offizielle Position der Stufe 1 markiert sind"
-    official_level_2_name: "Beamte*r Stufe 2"
+    official_level_2_name: "Beamte:r Stufe 2"
     official_level_2_name_description: "Tag, der auf Benutzern erscheint, die als offizielle Position der Stufe 2 markiert sind"
-    official_level_3_name: "Beamte*r Stufe 3"
+    official_level_3_name: "Beamte:r Stufe 3"
     official_level_3_name_description: "Tag, der auf Benutzern erscheint, die als offizielle Position der Stufe 3 markiert sind"
-    official_level_4_name: "Beamte*r Stufe 4"
+    official_level_4_name: "Beamte:r Stufe 4"
     official_level_4_name_description: "Tag, der auf Benutzern erscheint, die als offizielle Position der Stufe 4 markiert sind"
-    official_level_5_name: "Beamte*r Stufe 5"
+    official_level_5_name: "Beamte:r Stufe 5"
     official_level_5_name_description: "Tag, der auf Benutzern erscheint, die als offizielle Position der Stufe 5 markiert sind"
     max_ratio_anon_votes_on_debates: "Maximale Anzahl von anonymen Stimmen per Diskussion"
     max_ratio_anon_votes_on_debates_description: "Anonyme Stimmen stammen von registrierten Benutzern mit einem nicht bestätigten Konto"
@@ -28,15 +28,15 @@ de:
     months_to_archive_proposals_description: "Nach dieser Anzahl von Monaten werden die Anträge archiviert und können keine Unterstützung mehr erhalten\""
     email_domain_for_officials: "E-Mail-Domäne für Beamte"
     email_domain_for_officials_description: "Alle Benutzer, die mit dieser Domain registriert sind, erhalten bei der Registrierung eine Bestätigung ihres Kontos"
-    twitter_handle: "Twitter Benutzer*name"
+    twitter_handle: "Twitter Benutzer:name"
     twitter_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
     twitter_hashtag: "Twitter hashtag"
     twitter_hashtag_description: "Hashtag, der erscheint, wenn Inhalt auf Twitter geteilt wird"
-    facebook_handle: "Facebook Benutzer*name"
+    facebook_handle: "Facebook Benutzer:name"
     facebook_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
-    youtube_handle: "Benutzer*name für Youtube"
+    youtube_handle: "Benutzer:name für Youtube"
     youtube_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
-    telegram_handle: "Benutzer*name für Telegram"
+    telegram_handle: "Benutzer:name für Telegram"
     telegram_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
     instagram_handle: "Instagram handle"
     instagram_handle_description: "Falls ausgefüllt, wird es in der Fußzeile erscheinen"
@@ -64,7 +64,7 @@ de:
       successful_proposal_id: Erfolgreicher Vorschlag
       successful_proposal_id_description: Dieser Vorschlag wird als Referenz für einen erfolgreichen Vorschlag in der Unterstützungs-Anzahl verwendet und im Dashboard-Diagramm angezeigt.
       poll_short_title: Abstimmungen
-      poll_short_title_description: Kurze Beschreibung der Umfrage-Funktion. Erlaubt Benutzer*innen Umfragen zu einem Vorschlag zu erstellen
+      poll_short_title_description: Kurze Beschreibung der Umfrage-Funktion. Erlaubt Benutzer:innen Umfragen zu einem Vorschlag zu erstellen
       poll_description: Beschreibung Abstimmung
       poll_description_description: Detaillierte Beschreibung der Umfrage-Funktion
       poll_link: Weitere Informationen Link
@@ -81,7 +81,7 @@ de:
     proposal_notification_minimum_interval_in_days: "Mindestintervall (in Tagen), in dem Autoren von Vorschlägen neue Vorschlagsbenachrichtigungen senden können"
     proposal_notification_minimum_interval_in_days_description: "Die Anzahl der Tage, nach denen Benutzer Benachrichtungen an alle Unterstützer ihres Vorschlags senden können"
     direct_message_max_per_day: "Maximale Anzahl direkter Nachrichten per Tag"
-    direct_message_max_per_day_description: "Maximale Anzahl direkter Nachrichten, die Benutzer*innen am Tag senden können"
+    direct_message_max_per_day_description: "Maximale Anzahl direkter Nachrichten, die Benutzer:innen am Tag senden können"
     feature:
       twitter_login: "Twitter login"
       twitter_login_description: "Anmeldung mit Twitter-Account erlauben"
@@ -96,7 +96,7 @@ de:
       user:
         recommendations: "Empfehlungen"
         recommendations_description: "Zeigt Nutzerempfehlungen auf der Startseite auf Grundlage der Tags aus den folgenden Objekten"
-        skip_verification: "Benutzer*überprüfung überspringen"
+        skip_verification: "Benutzer:überprüfung überspringen"
         skip_verification_description: "Dies wird die Nutzerüberprüfung deaktivieren und alle registrierten Nutzer werden fähig sein, an allen Prozessen teilzunehmen"
         recommendations_on_debates: "Empfehlungen für Debatten"
         recommendations_on_debates_description: "Zeigt Nutzern Empfehlungen für Debattenseiten an, basierend auf den Tags und den Objekten, denen sie folgen"
@@ -119,11 +119,11 @@ de:
       remote_translations: "Übersetzung ablegen"
       remote_translations_description: "Zeigt eine Schaltfläche an, mit der Benutzer eine Übersetzung anfordern können, wenn keine Inhalte in ihrer Sprache existieren."
       translation_interface: "Übersetzung Interface"
-      translation_interface_description: "Zeigt die manuelle Übersetzungsoberfläche an, mit der Benutzer*innen ihren Inhalt in allen verfügbaren Sprachen der Anwendung eingeben können. Diese Option wirkt sich nur auf Benutzeranwendungsformulare aus und ist unabhängig davon immer im Administrationsbereich aktiv."
+      translation_interface_description: "Zeigt die manuelle Übersetzungsoberfläche an, mit der Benutzer:innen ihren Inhalt in allen verfügbaren Sprachen der Anwendung eingeben können. Diese Option wirkt sich nur auf Benutzeranwendungsformulare aus und ist unabhängig davon immer im Administrationsbereich aktiv."
       remote_census: "Konfigurieren Sie die Verbindung zum abgelegten Zensus (SOAP)"
       remote_census_description: "Ermöglicht die Konfiguration der Verbindung zum abgewählten Zensus jeder Institution"
       valuation_comment_notification: "Bewertung Kommentar Benachrichtigung"
-      valuation_comment_notification_description: "Senden Sie eine E-Mail an alle verbundenen Benutzer*innen, wenn ein neuer Bewertungskommentar erstellt wird - mit Ausnahme des Bewertungskommentars für Budgetinvestitionen"
+      valuation_comment_notification_description: "Senden Sie eine E-Mail an alle verbundenen Benutzer:innen, wenn ein neuer Bewertungskommentar erstellt wird - mit Ausnahme des Bewertungskommentars für Budgetinvestitionen"
       graphql_api: "GraphQL API"
     remote_census:
       general:

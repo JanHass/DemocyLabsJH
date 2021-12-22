@@ -22,7 +22,7 @@ de:
       user_permission_verify: Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren.
       user_permission_verify_info: "* Nur für in der Volkszählung registrierte Nutzer."
       user_permission_votes: An finaler Abstimmung teilnehmen
-      username_label: Benutzer*innenname
+      username_label: Benutzer:innenname
       verified_account: Konto verifiziert
       verify_my_account: Mein Konto verifizieren
   application:
@@ -32,10 +32,10 @@ de:
     comments_closed: Kommentare sind geschlossen
     verified_only: Zur Teilnahme %{verify_account}
     comment:
-      admin: Administrator*in
-      author: Verfasser*in
+      admin: Administrator:in
+      author: Verfasser:in
       deleted: Dieser Kommentar wurde gelöscht
-      moderator: Moderator*in
+      moderator: Moderator:in
       responses:
         zero: Keine Rückmeldungen
         one: 1 Antwort
@@ -127,7 +127,7 @@ de:
         title: Hilfe zu Diskussionen
         description: Teilen Sie ihre Meinung mit anderen in einer Diskussion über Themen, die Sie interessieren.
         help_text_1: "Der Raum für Diskussionen richtet sich an alle, die ihr Anliegen darlegen können und sich mit anderen Menschen austauschen wollen."
-        help_text_2: 'Um eine Diskussion zu eröffnen, müssen Sie sich auf %{org} registrieren. Benutzer*innen können auch offene Diskussionen kommentieren und sie über "Ich stimme zu" oder "Ich stimme nicht zu" Buttons bewerten.'
+        help_text_2: 'Um eine Diskussion zu eröffnen, müssen Sie sich auf %{org} registrieren. Benutzer:innen können auch offene Diskussionen kommentieren und sie über "Ich stimme zu" oder "Ich stimme nicht zu" Buttons bewerten.'
     new:
       form:
         submit_button: Eine Diskussion starten
@@ -141,7 +141,7 @@ de:
       recommendations_title: Empfehlungen für die Erstellung einer Diskussion
       start_new: Eine Diskussion starten
     show:
-      author_deleted: Benutzer*in gelöscht
+      author_deleted: Benutzer:in gelöscht
       comments:
         zero: Keine Kommentare
         one: 1 Kommentar
@@ -156,7 +156,7 @@ de:
         submit_button: Änderungen speichern
   errors:
     messages:
-      user_not_found: Benutzer*in wurde nicht gefunden
+      user_not_found: Benutzer:in wurde nicht gefunden
       invalid_date_range: "Ungültiger Datenbereich"
   form:
     accept_terms: Ich stimme der %{policy} und den %{conditions} zu
@@ -421,7 +421,7 @@ de:
       support: Unterstützung
       support_title: Vorschlag unterstützen
       supports:
-        zero: Keine Unterstützer*innen
+        zero: Keine Unterstützer:innen
         one: 1 Unterstützer/in
         other: "%{count} Unterstützer/innen"
       votes:
@@ -434,7 +434,7 @@ de:
       successful: "Dieser Vorschlag hat die erforderliche Unterstützung erreicht."
       selected: "Ausgewählter Vorschlag"
     show:
-      author_deleted: Benutzer*in gelöscht
+      author_deleted: Benutzer:in gelöscht
       code: "Antrags-Code:"
       comments:
         zero: Keine Kommentare
@@ -467,7 +467,7 @@ de:
       mailing: E-Mail
       poster: Poster
       recommended_actions: Empfohlene Aktionen
-      messages: Nachricht an Benutzer*innen
+      messages: Nachricht an Benutzer:innen
       related_content: Verwandte Inhalte
     form:
       request: Anfrage
@@ -526,12 +526,12 @@ de:
     community:
       access_community: Treten Sie der Community bei
       latest_activity: "Letzte Aktivitäten in der Gemeinschaft: %{at}"
-      participants: Teilnehmer*innen
+      participants: Teilnehmer:innen
       debates: Debatten
       comments: Kommentare
       latest_comments: Letzte Nachrichten
     messages:
-      send_notification: Sende Nachricht zu den Unterstützer*innen des Vorschlags
+      send_notification: Sende Nachricht zu den Unterstützer:innen des Vorschlags
       previous_notifications: Siehe vorherige Benachrichtigungen
     polls:
       index:
@@ -680,7 +680,7 @@ de:
     "no": "Nein"
     search_results: "Suchergebnisse"
     advanced_search:
-      author_type: "Nach Kategorie Verfasser*in"
+      author_type: "Nach Kategorie Verfasser:in"
       author_type_blank: "Kategorie auswählen"
       date: "Nach Datum"
       date_placeholder: "TT/MM/JJJJ"
@@ -697,7 +697,7 @@ de:
       title: "Erweiterte Suche"
       to: "An"
     author_info:
-      author_deleted: Benutzer*in gelöscht
+      author_deleted: Benutzer:in gelöscht
       email_deleted: E-Mail gelöscht
     back: Zurück
     check: Auswählen
@@ -752,7 +752,7 @@ de:
     unflag: Markierung aufheben
     unfollow_entity: "Nicht länger folgen %{entity}"
     outline:
-      searcher: Suchende*r
+      searcher: Suchende:r
     go_to_page: "Gehe zur Seite von "
     share: Teilen
     orbit:
@@ -791,8 +791,8 @@ de:
       debate_votes: Bewertungen der Diskussionen
       comment_votes: Bewertungen der Kommentare
       votes: Gesamtstimmen
-      verified_users: Verifizierte Benutzer*innen
-      unverified_users: Nicht verifizierte Benutzer*innen
+      verified_users: Verifizierte Benutzer:innen
+      unverified_users: Nicht verifizierte Benutzer:innen
   unauthorized:
     default: Sie sind nicht berechtigt, auf diese Seite zuzugreifen.
     manage:
@@ -856,7 +856,7 @@ de:
     comment_unauthenticated: Sie müssen sich %{signin} oder %{signup}, um abzustimmen.
     disagree: Ich stimme nicht zu
     organizations: Organisationen ist es nicht erlaubt abzustimmen
-    supports: Unterstützer*innen
+    supports: Unterstützer:innen
     verified_only: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
     budget_investments:
       not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
@@ -909,9 +909,9 @@ de:
       user_permission_debates: An Diskussionen teilnehmen
       user_permission_info: Mit Ihrem Konto können Sie...
       user_permission_proposal: Neue Vorschläge erstellen
-      user_permission_support_proposal: Vorschläge unterstützen*
+      user_permission_support_proposal: Vorschläge unterstützen:
       user_permission_verify: "Damit Sie alle Funktionen nutzen können, müssen Sie ihr Konto verifizieren."
-      user_permission_verify_info: "* Nur für Benutzer*innen im Melderegister."
+      user_permission_verify_info: ": Nur für Benutzer:innen im Melderegister."
       user_permission_verify_my_account: Mein Konto verifizieren
       user_permission_votes: An finaler Abstimmung teilnehmen
   invisible_captcha:
