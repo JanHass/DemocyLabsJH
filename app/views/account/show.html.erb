@@ -9,6 +9,7 @@
     <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
 
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
+    <h1></h1>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>
