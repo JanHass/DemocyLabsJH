@@ -9,7 +9,6 @@
         <%= sanitize(t("layouts.footer.description",
           open_source: link_to(t("layouts.footer.open_source"), t("layouts.footer.open_source_url"), target: "blank", rel: "nofollow"),
           consul:  link_to(t("layouts.footer.consul"), t("layouts.footer.consul_url"), target: "blank", rel: "nofollow"))) %>
-        <%= t("layouts.footer.contact_us") %>
       </p>
     </div>
 
@@ -17,6 +16,11 @@
       <div class="small-12 medium-4 column">
         <%= link_to t("layouts.footer.participation_title"), root_path, class: "title" %>
         <p><%= t("layouts.footer.participation_text") %></p>
+        <%= link_to t("layouts.footer.support_title"), root_path, class: "title" %>
+        <p class="info">
+        <%= sanitize(t("layouts.footer.support_text",
+        support_link: link_to(t("layouts.footer.support_link"), t("layouts.footer.support_url"), target: "blank", rel: "nofollow"))) %>
+        </p>
       </div>
     </div>
   </div>
@@ -27,7 +31,9 @@
         <div class="inline-block" id="copyright" style="margin-left: 2px;"> </div>&nbsp;|
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path("privacy") %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path("conditions") %>&nbsp;|</li>
-        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %></li>
+        <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path("accessibility") %>&nbsp;|</li>
+        <a class="inline-block" href="/help">Imprint&nbsp;|</a>
+        <a class="inline-block" href="/help">Netiquette</a>
       
     </div>
 

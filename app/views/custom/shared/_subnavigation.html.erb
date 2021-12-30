@@ -1,7 +1,8 @@
 <nav>
   <ul>
-    <%= raw content_block("subnavigation_left") %>
-
+  <%= raw content_block("subnavigation_left") %>
+  
+  <% if current_user %>
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
@@ -36,6 +37,12 @@
       </li>
     <% end %>
 
+    <% end %>
+
+    <% if !current_user %>
+        <li style="margin: 2.8%;"> </li>
+    <% end %>
+    
     <%= raw content_block("subnavigation_right") %>
   </ul>
 </nav>
