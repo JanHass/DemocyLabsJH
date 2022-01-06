@@ -71,3 +71,22 @@
 [2021-10-31 10:27:09 +0100 Alienware-Jan (2563)] ERROR : Invalid license key
 [2021-10-31 10:27:09 +0100 Alienware-Jan (2563)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
 [2021-10-31 10:38:03 +0100 Alienware-Jan (2563)] INFO : Starting Agent shutdown
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/DemocyLabsJH)
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Environment: development
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : No known dispatcher detected.
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Application: CONSUL (Development)
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Net instrumentation
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing ActiveJob instrumentation
+[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rails 5 view instrumentation
+[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Finished instrumentation
