@@ -224,7 +224,7 @@ en:
       support_title: Support
       support_text: We look forward for your questions and suggestions %{support_link}.
       support_link: here
-      support_url: /help
+      support_url: /faq
     header:
       administration_menu: Menu
       administration: Administration
