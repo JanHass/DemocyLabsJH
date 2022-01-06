@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @fellowship.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fellowship.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fellowship.description %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @fellowship.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @fellowship.updated_at %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @fellowship.organization_id %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @fellowship.author_id %>
+</p>
+
+<p>
+  <strong>Responsible:</strong>
+  <%= @fellowship.responsible_id %>
+</p>
+
+<p>
+  <strong>Flags count:</strong>
+  <%= @fellowship.flags_count %>
+</p>
+
+<p>
+  <strong>Geozone:</strong>
+  <%= @fellowship.geozone_id %>
+</p>
+
+<p>
+  <strong>Community:</strong>
+  <%= @fellowship.community_id %>
+</p>
+
+<p>
+  <strong>Clear name:</strong>
+  <%= @fellowship.clear_name %>
+</p>
+
+<%= link_to 'Edit', edit_fellowship_path(@fellowship) %> |
+<%= link_to 'Back', fellowships_path %>

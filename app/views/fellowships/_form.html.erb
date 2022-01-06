@@ -1,0 +1,77 @@
+<%= form_with(model: fellowship, local: true) do |form| %>
+  <% if fellowship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fellowship.errors.count, "error") %> prohibited this fellowship from being saved:</h2>
+
+      <ul>
+      <% fellowship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :updated_at %>
+    <%= form.datetime_select :updated_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :organization_id %>
+    <%= form.number_field :organization_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_id %>
+    <%= form.number_field :author_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :responsible_id %>
+    <%= form.number_field :responsible_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flags_count %>
+    <%= form.number_field :flags_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :geozone_id %>
+    <%= form.number_field :geozone_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :community_id %>
+    <%= form.number_field :community_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clear_name %>
+    <%= form.check_box :clear_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class Fellowship < ApplicationRecord
+end
