@@ -8,8 +8,8 @@ section "Creating header and cards for the homepage" do
   end
 
   Widget::Card.create!(
-    title_en: "CONSUL",
-    title_es: "CONSUL",
+    title_en: "Democy",
+    title_es: "Democy",
 
     description_en: "Free software for citizen participation.",
     description_es: "Software libre para la participación ciudadana.",
