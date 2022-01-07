@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_25_152739) do
+ActiveRecord::Schema.define(version: 2022_01_07_082822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -600,6 +600,28 @@ ActiveRecord::Schema.define(version: 2021_08_25_152739) do
     t.integer "year_of_birth"
     t.index ["poll_officer_id"], name: "index_failed_census_calls_on_poll_officer_id"
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
+  end
+
+  create_table "fellowships", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "fellowship_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "organization_id"
+    t.integer "community_id"
+    t.integer "author_id"
+    t.integer "responsible_id"
+    t.integer "flags_count"
+    t.integer "geozone_id"
+    t.integer "postalcode_id"
+    t.boolean "clear_name", default: false
+    t.boolean "easy_auth", default: false
+    t.string "easy_auth_code"
+    t.boolean "complex_auth", default: false
+    t.string "complex_auth_code"
+    t.index ["fellowship_description"], name: "index_fellowships_on_fellowship_description"
+    t.index ["geozone_id"], name: "index_fellowships_on_geozone_id"
+    t.index ["name"], name: "index_fellowships_on_name", unique: true
   end
 
   create_table "flags", id: :serial, force: :cascade do |t|
