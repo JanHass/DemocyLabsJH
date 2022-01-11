@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fellowships</h1>
+
+<% if @fellowship.image.attached? %>
+  <img src="<%= (url_for(@fellowship.image)) %>">
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fellowship.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @fellowship.email %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fellowship.description %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @fellowship.created_at %>
+</p>
+
+<p>
+  <strong>Updatet at:</strong>
+  <%= @fellowship.updatet_at %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @fellowship.organization_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_fellowship_path(@fellowship) %> |
+<%= link_to 'Back', fellowships_path %>

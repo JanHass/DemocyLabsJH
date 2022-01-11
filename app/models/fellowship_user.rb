@@ -1,0 +1,2 @@
+class FellowshipUser < ApplicationRecord
+end

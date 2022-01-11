@@ -124,6 +124,8 @@ module Abilities
       can [:update, :destroy], Topic, author_id: user.id
 
       can :disable_recommendations, [Debate, Proposal]
+
+      can [:read, :create, :update, :destroy], Fellowship
     end
   end
 end
