@@ -33,9 +33,17 @@
               <%= f.text_field :first_name %>
               <%= f.text_field :last_name %>
               <%= f.text_field :phone_number %>
-              <%= f.text_field :gender %>
+              
+              <%= f.select :gender, [t("activerecord.attributes.user.gender_male"), t("activerecord.attributes.user.gender_female"), t("activerecord.attributes.user.gender_diverse")], include_blank: true %>
               <%= f.text_field :date_of_birth %>
+              <%= f.text_field :street %>
+              <%= f.text_field :housenumber %>
+              <%= f.text_field :state %>
               <%= f.text_field :postal_code %>
+              <%= f.text_field :city %>
+              <%= f.text_field :country %>
+
+             
             <% end %>
           </div>
 
