@@ -24,36 +24,51 @@
         <% end %>
       </h2>
 
-      <% if @user.public_profile_show_full_name || current_administrator? %>
+      <% if (@user.public_profile_show_full_name && @user.first_name.present? && @user.last_name.present?) || (current_administrator? && @user.first_name.present? && @user.last_name.present?) %>
         <p><%= t("activerecord.attributes.user.name") + ": " + @user.first_name + " " + @user.last_name %></p>
+      <% end %>  
+      <% if (@user.public_profile_show_full_name && @user.first_name.present? && !@user.last_name.present?) || (current_administrator? && @user.first_name.present? && !@user.last_name.present?) %>
+        <p><%= t("activerecord.attributes.user.name") + ": " + @user.first_name %></p>
+      <% end %>
+      <% if (@user.public_profile_show_full_name && !@user.first_name.present? && @user.last_name.present?) || (current_administrator? && !@user.first_name.present? && @user.last_name.present?) %>
+        <p><%= t("activerecord.attributes.user.name") + ": " + @user.last_name %></p>
       <% end %>
 
-      <% if @user.public_profile_show_phone_number || current_administrator?  %>
+      <% if (@user.public_profile_show_phone_number && @user.phone_number.present?) || (current_administrator? && @user.phone_number.present?) %>
         <p><%= t("activerecord.attributes.user.phone_number") + ": " + @user.phone_number %></p>
       <% end %>
 
-      <% if @user.public_profile_show_gender || current_administrator?  %>
+      <% if (@user.public_profile_show_gender && @user.gender.present?) || (current_administrator?  && @user.gender.present?) %>
         <p><%= t("activerecord.attributes.user.gender") + ": " + @user.gender %></p>
       <% end %>
 
-      <% if @user.public_profile_show_date_of_birth || current_administrator?  %>
+      <% if (@user.public_profile_show_date_of_birth && @user.date_of_birth.present?) || (current_administrator? && @user.date_of_birth.present?)  %>
         <p><%= t("activerecord.attributes.user.date_of_birth") + ": "%> <%= localize(@user.date_of_birth, :format => :short2) %></p>
         
       <% end %>
 
-      <% if @user.public_profile_show_address || current_administrator?  %>
+      <% if (@user.public_profile_show_address && @user.street.present? && @user.housenumber.present?) || (current_administrator?  && @user.street.present? && @user.housenumber.present?)  %>
         <p><%= t("activerecord.attributes.user.street") + ": " + @user.street + " " + @user.housenumber %></p>
       <% end %>
-
-      <% if @user.public_profile_show_city || current_administrator?  %>
-        <p><%= t("activerecord.attributes.user.city") + ": " + @user.postal_code + " " + @user.city %></p>
+      <% if (@user.public_profile_show_address && @user.street.present? && !@user.housenumber.present?) || (current_administrator?  && @user.street.present? && !@user.housenumber.present?)  %>
+        <p><%= t("activerecord.attributes.user.street") + ": " + @user.street %></p>
       <% end %>
 
-      <% if @user.public_profile_show_state || current_administrator?  %>
+      <% if (@user.public_profile_show_city && @user.postal_code.present? && @user.city.present?) || (current_administrator? && @user.postal_code.present? && @user.city.present?) %>
+        <p><%= t("activerecord.attributes.user.city") + ": " + @user.postal_code + " " + @user.city %></p>
+      <% end %>
+      <% if (@user.public_profile_show_city && @user.postal_code.present? && !@user.city.present?) || (current_administrator? && @user.postal_code.present? && !@user.city.present?) %>
+        <p><%= t("activerecord.attributes.user.city") + ": " + @user.postal_code %></p>
+      <% end %>
+      <% if (@user.public_profile_show_city && !@user.postal_code.present? && @user.city.present?) || (current_administrator? && !@user.postal_code.present? && @user.city.present?) %>
+        <p><%= t("activerecord.attributes.user.city") + ": " +@user.city %></p>
+      <% end %>
+
+      <% if (@user.public_profile_show_state && @user.state.present? ) || (current_administrator? && @user.state.present? )  %>
         <p><%= t("activerecord.attributes.user.state") + ": " + @user.state %></p>
       <% end %>
 
-      <% if @user.public_profile_show_country || current_administrator?  %>
+      <% if (@user.public_profile_show_country && @user.country.present?) || (current_administrator? && @user.country.present?) %>
         <p><%= t("activerecord.attributes.user.country") + ": " + @user.country %></p>
       <% end %>
 
