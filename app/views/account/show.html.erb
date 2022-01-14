@@ -18,42 +18,46 @@
       <div class="row">
         <div class="small-12 medium-7 column">
 
-          <h2><%= t("account.show.personal") %></h2>
+          
+          <h2><details open>
+             <summary><%= t("account.show.personal") %></summary> 
 
-          <div class="small-12 medium-10">
-            <% if @account.organization? %>
-              <%= f.fields_for :organization do |fo| %>
-                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
-                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
-              <% end %>
-              <%= f.text_field :phone_number %>
+            <div class="small-12 medium-10">
+              <% if @account.organization? %>
+                <%= f.fields_for :organization do |fo| %>
+                  <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
+                  <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
+                <% end %>
+                <%= f.text_field :phone_number %>
 
-            <% else %>
-              <%= f.text_field :username, maxlength: User.username_max_length %>
-              <%= f.text_field :first_name %>
-              <%= f.text_field :last_name %>
-              <%= f.text_field :phone_number %>
+              <% else %>
+                <%= f.text_field :username, maxlength: User.username_max_length %>
+                <%= f.text_field :first_name %>
+                <%= f.text_field :last_name %>
+                <%= f.text_field :phone_number %>
               
-              <%= f.select :gender, [t("activerecord.attributes.user.gender_male"), t("activerecord.attributes.user.gender_female"), t("activerecord.attributes.user.gender_diverse")], include_blank: true %>
-              <%= f.date_field :date_of_birth %>
-              <%= f.text_field :street %>
-              <%= f.text_field :housenumber %>
-              <%= f.text_field :state %>
-              <%= f.text_field :postal_code %>
-              <%= f.text_field :city %>
-              <%= f.text_field :country %>
+                <%= f.select :gender, [t("activerecord.attributes.user.gender_male"), t("activerecord.attributes.user.gender_female"), t("activerecord.attributes.user.gender_diverse")], include_blank: true %>
+                
+                <%= f.date_field :date_of_birth %>
+                <%= f.text_field :street %>
+                <%= f.text_field :housenumber %>
+                <%= f.text_field :state %>
+                <%= f.text_field :postal_code %>
+                <%= f.text_field :city %>
+               <%= f.text_field :country %>
 
              
-            <% end %>
-          </div>
+              <% end %>
+           </div>
 
-          <div>
-            <%= f.check_box :public_activity %>
-          </div>
+            <div>
+              <%= f.check_box :public_activity %>
+            </div>
 
-          <div>
-            <%= f.check_box :public_interests %>
-          </div>
+            <div>
+             <%= f.check_box :public_interests %>
+            </div>
+          </details></h2>
 
           
 
