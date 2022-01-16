@@ -30,6 +30,8 @@ module Abilities
 
       can [:read, :help], ::SDG::Goal
       can :read, ::SDG::Phase
+
+      can [:read, :create, :update, :destroy], Fellowship
     end
   end
 end

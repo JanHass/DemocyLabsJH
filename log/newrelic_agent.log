@@ -71,22 +71,367 @@
 [2021-10-31 10:27:09 +0100 Alienware-Jan (2563)] ERROR : Invalid license key
 [2021-10-31 10:27:09 +0100 Alienware-Jan (2563)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
 [2021-10-31 10:38:03 +0100 Alienware-Jan (2563)] INFO : Starting Agent shutdown
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/DemocyLabsJH)
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Environment: development
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : No known dispatcher detected.
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Application: CONSUL (Development)
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Net instrumentation
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rails 3+ middleware instrumentation
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Memcache instrumentation for dalli gem
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing DelayedJob instrumentation [part 1/2]
-[2022-01-06 15:46:43 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing ActiveJob instrumentation
-[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing deferred Rack::Builder instrumentation
-[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rack::Builder middleware instrumentation
-[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing ActiveRecord 5 instrumentation
-[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rails 5 Controller instrumentation
-[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rails 5 Action Cable instrumentation
-[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Installing Rails 5 view instrumentation
-[2022-01-06 15:46:44 +0100 LAPTOP-QQFRMR04 (1857)] INFO : Finished instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Environment: development
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : No known dispatcher detected.
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Application: CONSUL (Development)
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing Net instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 18:22:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Finished instrumentation
+[2022-01-15 18:23:17 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-15 18:23:38 +0100 LAPTOP-BJ4HDS7P (117)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-15 18:23:40 +0100 LAPTOP-BJ4HDS7P (117)] ERROR : Invalid license key
+[2022-01-15 18:23:40 +0100 LAPTOP-BJ4HDS7P (117)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Environment: development
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : No known dispatcher detected.
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Application: CONSUL (Development)
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing Net instrumentation
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 18:34:43 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 18:34:44 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 18:34:44 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 18:34:44 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 18:34:44 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 18:34:44 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 18:34:44 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 18:34:44 +0100 LAPTOP-BJ4HDS7P (402)] INFO : Finished instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Environment: development
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : No known dispatcher detected.
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Application: CONSUL (Development)
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing Net instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 18:35:41 +0100 LAPTOP-BJ4HDS7P (441)] INFO : Finished instrumentation
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Environment: development
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : No known dispatcher detected.
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Application: CONSUL (Development)
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing Net instrumentation
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 18:41:14 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 18:41:15 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 18:41:15 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 18:41:15 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 18:41:15 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 18:41:15 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 18:41:15 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 18:41:15 +0100 LAPTOP-BJ4HDS7P (533)] INFO : Finished instrumentation
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Environment: development
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : No known dispatcher detected.
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Application: CONSUL (Development)
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing Net instrumentation
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 18:47:25 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 18:47:26 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 18:47:26 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 18:47:26 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 18:47:26 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 18:47:26 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 18:47:26 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 18:47:26 +0100 LAPTOP-BJ4HDS7P (665)] INFO : Finished instrumentation
+[2022-01-15 18:56:45 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 18:56:45 +0100 LAPTOP-BJ4HDS7P (822)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 18:56:45 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 18:56:45 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Environment: development
+[2022-01-15 18:56:45 +0100 LAPTOP-BJ4HDS7P (822)] INFO : No known dispatcher detected.
+[2022-01-15 18:56:45 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Application: CONSUL (Development)
+[2022-01-15 18:56:45 +0100 LAPTOP-BJ4HDS7P (822)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing Net instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 18:56:46 +0100 LAPTOP-BJ4HDS7P (822)] INFO : Finished instrumentation
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Environment: development
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : No known dispatcher detected.
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Application: CONSUL (Development)
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing Net instrumentation
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 19:01:39 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 19:01:40 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 19:01:40 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 19:01:40 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 19:01:40 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 19:01:40 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 19:01:40 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 19:01:40 +0100 LAPTOP-BJ4HDS7P (921)] INFO : Finished instrumentation
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Environment: development
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : No known dispatcher detected.
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Application: CONSUL (Development)
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing Net instrumentation
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 19:03:06 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 19:03:07 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 19:03:07 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 19:03:07 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 19:03:07 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 19:03:07 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 19:03:07 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 19:03:07 +0100 LAPTOP-BJ4HDS7P (953)] INFO : Finished instrumentation
+[2022-01-15 19:04:15 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 19:04:15 +0100 LAPTOP-BJ4HDS7P (985)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 19:04:15 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Environment: development
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : No known dispatcher detected.
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Application: CONSUL (Development)
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing Net instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 19:04:16 +0100 LAPTOP-BJ4HDS7P (985)] INFO : Finished instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Environment: development
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : No known dispatcher detected.
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Application: CONSUL (Development)
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing Net instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing ActiveJob instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Installing Rails 5 view instrumentation
+[2022-01-15 19:07:12 +0100 LAPTOP-BJ4HDS7P (1049)] INFO : Finished instrumentation
+[2022-01-16 08:43:48 +0100 LAPTOP-BJ4HDS7P (117)] INFO : Starting Agent shutdown
+[2022-01-16 08:44:20 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-16 08:44:20 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-16 08:44:20 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-16 08:44:20 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Environment: development
+[2022-01-16 08:44:20 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : No known dispatcher detected.
+[2022-01-16 08:44:20 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Application: CONSUL (Development)
+[2022-01-16 08:44:20 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing Net instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing ActiveJob instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Installing Rails 5 view instrumentation
+[2022-01-16 08:44:21 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Finished instrumentation
+[2022-01-16 08:44:48 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-16 08:45:00 +0100 LAPTOP-BJ4HDS7P (1323)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-16 08:45:01 +0100 LAPTOP-BJ4HDS7P (1323)] ERROR : Invalid license key
+[2022-01-16 08:45:01 +0100 LAPTOP-BJ4HDS7P (1323)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Environment: development
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : No known dispatcher detected.
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Application: CONSUL (Development)
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing Net instrumentation
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-16 09:16:02 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing ActiveJob instrumentation
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Installing Rails 5 view instrumentation
+[2022-01-16 09:16:03 +0100 LAPTOP-BJ4HDS7P (1559)] INFO : Finished instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Environment: development
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : No known dispatcher detected.
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Application: CONSUL (Development)
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing Net instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing ActiveJob instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Installing Rails 5 view instrumentation
+[2022-01-16 09:33:09 +0100 LAPTOP-BJ4HDS7P (1653)] INFO : Finished instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Environment: development
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : No known dispatcher detected.
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Application: CONSUL (Development)
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing Net instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing ActiveJob instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Installing Rails 5 view instrumentation
+[2022-01-16 09:45:17 +0100 LAPTOP-BJ4HDS7P (1796)] INFO : Finished instrumentation
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Environment: development
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : No known dispatcher detected.
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Application: CONSUL (Development)
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing Net instrumentation
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-16 10:00:46 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing ActiveJob instrumentation
+[2022-01-16 10:00:47 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-16 10:00:47 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-16 10:00:47 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-16 10:00:47 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-16 10:00:47 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-16 10:00:47 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Installing Rails 5 view instrumentation
+[2022-01-16 10:00:47 +0100 LAPTOP-BJ4HDS7P (1976)] INFO : Finished instrumentation
+[2022-01-16 10:09:34 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-16 10:09:34 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-16 10:09:34 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-16 10:09:34 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Environment: development
+[2022-01-16 10:09:34 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : No known dispatcher detected.
+[2022-01-16 10:09:34 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Application: CONSUL (Development)
+[2022-01-16 10:09:34 +0100 LAPTOP-BJ4HDS7P (2053)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing Net instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing ActiveJob instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Installing Rails 5 view instrumentation
+[2022-01-16 10:09:35 +0100 LAPTOP-BJ4HDS7P (2053)] INFO : Finished instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Environment: development
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : No known dispatcher detected.
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Application: CONSUL (Development)
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing Net instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing ActiveJob instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Installing Rails 5 view instrumentation
+[2022-01-16 12:19:06 +0100 LAPTOP-BJ4HDS7P (2405)] INFO : Finished instrumentation
+[2022-01-16 13:08:11 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `f' for #<#<Class:0x00007f725b1583b0>:0x00007f725b1e8780>
+[2022-01-16 16:41:59 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `f' for #<#<Class:0x00007f7203a9c348>:0x00007f7203d55f58>
+[2022-01-16 16:46:27 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `f' for #<#<Class:0x00007f7265db9870>:0x00007f7265db74a8>
+[2022-01-16 16:54:22 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `f' for #<#<Class:0x00007f7265db9870>:0x00007f7265ffcda8>
+[2022-01-16 17:05:18 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `lable' for #<ConsulFormBuilder:0x00007f7220841c98>
+Did you mean?  label
+[2022-01-16 17:40:31 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unable to autoload constant Abilities::Administrator, expected /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/abilities/administrator.rb to define it
+[2022-01-16 17:40:31 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unable to autoload constant Abilities::Administrator, expected /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/abilities/administrator.rb to define it
+[2022-01-16 17:41:40 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `image' for nil:NilClass
+[2022-01-16 17:46:14 +0100 LAPTOP-BJ4HDS7P (1323)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `url_for_' for #<#<Class:0x00007f72671e51f0>:0x00007f7202c8e7b0>
+Did you mean?  url_for
+[2022-01-16 18:18:47 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-16 18:18:47 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-16 18:18:47 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-01-16 18:18:47 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Environment: development
+[2022-01-16 18:18:47 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : No known dispatcher detected.
+[2022-01-16 18:18:47 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Application: CONSUL (Development)
+[2022-01-16 18:18:47 +0100 LAPTOP-BJ4HDS7P (2862)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-16 18:18:48 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Net instrumentation
+[2022-01-16 18:18:48 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-16 18:18:48 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-16 18:18:48 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-16 18:18:48 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing ActiveJob instrumentation
+[2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Rails 5 view instrumentation
+[2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Finished instrumentation
+
+
