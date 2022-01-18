@@ -11,7 +11,7 @@
 // ---------------------------------
 
 $black: #222 !default;
-$white: #fdfdfd !default;
+$white: #ffffff !default;
 
 $body-font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif !important !default;
 
@@ -58,8 +58,8 @@ $tiny-font-size:      rem-calc(12) !default;
 
 $font-family-serif: Georgia, "Times New Roman", Times, serif !default;
 
-$brand:             #004a83 !default;
-$brand-secondary:   darken($brand, 10%) !default;
+$brand:             #05d3DD !default;
+$brand-secondary:   darken($brand, 10%) !default;  //darken($brand, 20%)
 $dark:              $brand-secondary !default;
 
 $text:              $black !default;

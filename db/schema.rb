@@ -602,6 +602,69 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
   end
 
+
+  create_table "fellowship_users", force: :cascade do |t|
+    t.integer "fellowship_id"
+    t.integer "user_id"
+    t.boolean "is_fellowship_administrator", default: false
+    t.boolean "is_fellowship_moderator", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fellowships", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updatet_at"
+    t.integer "organization_id"
+    t.integer "user_id"
+    t.integer "author_id"
+    t.integer "responsible_id"
+    t.integer "flags_count"
+    t.integer "geozone_id"
+    t.integer "community_id"
+    t.boolean "clear_name"
+    t.boolean "user_required_full_name", default: false
+    t.boolean "user_required_phone_number", default: false
+    t.boolean "user_required_gender", default: false
+    t.boolean "user_required_date_of_birth", default: false
+    t.boolean "user_required_adress", default: false
+    t.boolean "user_required_state", default: false
+    t.boolean "user_required_city", default: false
+    t.boolean "user_required_country", default: false
+    t.boolean "user_public_show_full_name", default: false
+    t.boolean "user_public_show_phone_number", default: false
+    t.boolean "user_public_show_gender", default: false
+    t.boolean "user_public_show_date_of_birth", default: false
+    t.boolean "user_public_show_address", default: false
+    t.boolean "user_public_show_state", default: false
+    t.boolean "user_public_show_city", default: false
+    t.boolean "user_public_show_country", default: false
+    t.boolean "admin_required_full_name", default: false
+    t.boolean "admin_required_phone_number", default: false
+    t.boolean "admin_required_gender", default: false
+    t.boolean "admin_required_date_of_birth", default: false
+    t.boolean "admin_required_address", default: false
+    t.boolean "admin_required_state", default: false
+    t.boolean "admin_required_city", default: false
+    t.boolean "admin_required_country", default: false
+    t.boolean "admin_public_show_full_name", default: false
+    t.boolean "admin_public_show_phone_number", default: false
+    t.boolean "admin_public_show_gender", default: false
+    t.boolean "admin_public_show_date_of_birth", default: false
+    t.boolean "admin_public_show_address", default: false
+    t.boolean "admin_public_show_state", default: false
+    t.boolean "admin_public_show_city", default: false
+    t.boolean "admin_public_show_country", default: false
+    t.datetime "updated_at", null: false
+    t.integer "zip_code"
+    t.index ["author_id"], name: "index_fellowships_on_author_id"
+    t.index ["email"], name: "index_fellowships_on_email"
+    t.index ["name"], name: "index_fellowships_on_name"
+  end
+
   create_table "flags", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.string "flaggable_type"
