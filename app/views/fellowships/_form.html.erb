@@ -1,0 +1,65 @@
+<%= form_with(model: fellowship, local: true) do |form| %>
+  <% if fellowship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fellowship.errors.count, "error") %> prohibited this fellowship from being saved:</h2>
+
+      <ul>
+      <% fellowship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class="required-fields">
+  <legend><%= t("shared.required") %></legend>
+
+    <div class="field">
+      <%= form.label :name, "Group Title" %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+  </fieldset>
+
+  <fieldset class="opional-fields">
+    <legend><%= t("shared.optional") %></legend>
+
+    <div class="field">
+      <%= form.label :zip_code, " Group Zip Code" %>
+      <%= form.text_field :zip_code %>
+    </div>
+
+    <div class="field">
+      <%= form.label :clear_name, "Only clear name allowed?" %>
+      <%= form.check_box :clear_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :user_required_full_name %>
+      <%= form.check_box :user_required_full_name %>
+    </div>
+
+    <div class="field">
+      <% if fellowship.image.attached? %>
+        <%= image_tag fellowship.image, style: "width: 200px; display: block" %>
+      <% end %>
+
+      <%= form.label :image, "Add Image" %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </fieldset>
+
+<% end %>

@@ -939,7 +939,7 @@ footer {
 }
 
 .footer {
-  background: #f1f1f1;
+  background: #05d3dd;
   clear: both;
   margin-top: $line-height * 2;
   padding-bottom: $line-height;
@@ -1033,7 +1033,7 @@ footer {
 .auth-form {
 
   @include breakpoint(medium) {
-    padding-top: $line-height * 4;
+    padding-top: $line-height + 1;
   }
 
   p,

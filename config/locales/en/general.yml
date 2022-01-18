@@ -214,13 +214,17 @@ en:
       consul: CONSUL application
       consul_url: https://github.com/consul/consul
       contact_us: For technical assistance visit
-      copyright: CONSUL, %{year}
+      copyright: Democy Labs, %{year}
       description: This portal uses the %{consul} which is %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decide how to shape the city you want to live in.
       participation_title: Participation
       privacy: Privacy Policy
+      support_title: Support
+      support_text: We look forward for your questions and suggestions %{support_link}.
+      support_link: here
+      support_url: /faq
     header:
       administration_menu: Menu
       administration: Administration

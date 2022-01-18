@@ -111,6 +111,8 @@ module Abilities
 
       can :manage, LocalCensusRecord
       can [:create, :read], LocalCensusRecords::Import
+
+      can [:read, :create, :update, :destroy], Fellowship
     end
   end
 end
