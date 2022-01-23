@@ -47,7 +47,7 @@ class FellowshipsController < ApplicationController
   # DELETE /fellowships/1
   def destroy
     @fellowship.destroy
-    redirect_to fellowships_url, notice: 'Fellowship was successfully destroyed.'
+    redirect_to fellowships_url, notice: 'Fellowship was successfully deleted.'
   end
 
   private
