@@ -93,6 +93,7 @@
 
           </details></h2>
 
+          
 
           <% if @account.email.present? %>
             
@@ -119,6 +120,8 @@
                 <%= f.check_box :email_on_direct_message %>
              </div>
             </details></h2>
+
+
           <% end %>
 
 
@@ -145,6 +148,13 @@
             <% end %>
             </details></h2>
           <% end %>
+
+          <h2><details>
+            <summary><%= t("activerecord.attributes.user.my_groups") %></summary> 
+
+             <p> Hier Gruppen Tabelle eingügen </p>
+
+            </details></h2>
 
           <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
         </div>

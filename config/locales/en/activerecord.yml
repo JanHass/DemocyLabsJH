@@ -296,6 +296,8 @@ en:
         public_profile_show_city: "Show city"
         public_profile_show_country: "Show country"
 
+        my_groups: "My Groups"
+
         email_digest: "Receive a summary of proposal notifications"
         email_on_comment: "Notify me by email when someone comments on my proposals or debates"
         email_on_comment_reply: "Notify me by email when someone replies to my comments"
@@ -310,6 +312,63 @@ en:
         recommended_debates: "Show debates recommendations"
         recommended_proposals: "Show proposals recommendations"
         redeemable_code: "Verification code received via email"
+
+      fellowship:  
+        creategroup: "Create new group"
+        required: "Required fields"
+        optional: "Optional fields"
+        name: "Group name"
+        email: "E-Mail"
+        description: "group description"
+        zip_code: "Postal code"
+        user_required_full_name:  "Users need first and last name"
+        user_required_phone_number: "Users need a phone number"
+        user_required_gender: "Users need a gender"
+        user_required_date_of_birth: "Users need a date of birth"
+        user_required_adress: "Users need a street and house number"
+        user_required_state:  "Users need a federal state"
+        user_required_city:  "Users need a city"
+        user_required_country:  "Users need a country"
+        user_public_show_full_name: "Users must publicly share their first and last name"
+        user_public_show_phone_number: "Users must share a phone number publicly"
+        user_public_show_gender: "Users must publicly share their gender"
+        user_public_show_date_of_birth: "Users must share their birthday publicly"
+        user_public_show_address: "Users must publicly share their street and house number"
+        user_public_show_state: "Users must share their state publicly"
+        user_public_show_city: "Users must share their city publicly"
+        user_public_show_country: "Users must share their country publicly"
+        admin_required_full_name: "Administrators need first and last name"
+        admin_required_phone_number: "Administrators need a phone number"
+        admin_required_gender: "Administrators need a gender"
+        admin_required_date_of_birth: "Administrators need a birthday"
+        admin_required_address: "Administrators need a street and house number"
+        admin_required_state: "Administrators need a federal state"
+        admin_required_city: "Administrators need a city"
+        admin_required_country: "Administrators need a country"
+        admin_public_show_full_name: "Admins must share their name publicly"
+        admin_public_show_phone_number: "Admins must share a phone number publicly"
+        admin_public_show_gender: "Admins must share their gender publicly "
+        admin_public_show_date_of_birth: "Admins must share their birthday publicly"
+        admin_public_show_address: "Administrators must share their street and house number publicly"
+        admin_public_show_state: "Admins must share their state publicly"
+        admin_public_show_city: "Administrators must share their city publicly"
+        admin_public_show_country: "Administrators must share their land publicly"
+        image: "Add group picture"
+        user_requirements: "Requirements for group members"
+        admin_requierments: "Requirements for group administrators"
+        info_user_required: "If selected, users must have filled out the following data in their profile. Users are free to
+                             whether these are displayed in the public profile. Group administrators see this data in the member overview.
+                             If these data are not filled out by the respective users, they can only read group posts."
+        info_user_show_public: "If selected, users must display the following data in their public profile.
+                                 If these data are not filled out by the respective users, they can only read group posts. "   
+        info_admin_required: "If selected, administrators must have filled out the following data in their profile. The administrators are free to
+                             whether these are displayed in the public profile. Group administrators see this data in the member overview.
+                             If these data are not filled out by the respective administrators, they can only read group posts. "
+        info_admin_show_public: "If selected, administrators must display the following data in their public profile.
+                                 If these data are not filled out by the respective administrators, they can only read group posts."
+
+
+
       direct_message:
         title: "Title"
         body: "Message"

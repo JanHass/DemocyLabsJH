@@ -12,48 +12,188 @@
   <% end %>
 
   <fieldset class="required-fields">
-  <legend><%= t("shared.required") %></legend>
+  <legend><%= t("activerecord.attributes.fellowship.required") %></legend>
 
     <div class="field">
-      <%= form.label :name, "Group Title" %>
+      
       <%= form.text_field :name %>
     </div>
 
     <div class="field">
-      <%= form.label :email %>
       <%= form.email_field :email %>
     </div>
 
     <div class="field">
-      <%= form.label :description %>
-      <%= form.text_area :description %>
+      <%= form.text_area :description, :rows=>5 %>
     </div>
   </fieldset>
 
   <fieldset class="opional-fields">
-    <legend><%= t("shared.optional") %></legend>
+    <legend><%= t("activerecord.attributes.fellowship.optional") %></legend>
 
     <div class="field">
-      <%= form.label :zip_code, " Group Zip Code" %>
       <%= form.text_field :zip_code %>
     </div>
 
-    <div class="field">
-      <%= form.label :clear_name, "Only clear name allowed?" %>
-      <%= form.check_box :clear_name %>
-    </div>
 
-    <div class="field">
-      <%= form.label :user_required_full_name %>
-      <%= form.check_box :user_required_full_name %>
-    </div>
+
+    <h2><details>
+        <summary><%= t("activerecord.attributes.fellowship.user_requirements") %></summary>
+
+        <p><%= t("activerecord.attributes.fellowship.info_user_required") %></p>
+
+        <div class="field">
+          <%= form.check_box :user_required_full_name %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :user_required_phone_number %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :user_required_gender %>
+       </div>
+
+        <div class="field">
+         <%= form.check_box :user_required_date_of_birth %>
+       </div>
+
+       <div class="field">
+          <%= form.check_box :user_required_adress %>
+        </div>
+
+       <div class="field">
+          <%= form.check_box :user_required_state %>
+        </div>
+
+        <div class="field">
+         <%= form.check_box :user_required_city %>
+       </div>
+
+        <div class="field">
+          <%= form.check_box :user_required_country %>
+        </div>
+
+        <p><%= t("activerecord.attributes.fellowship.info_user_show_public") %></p>
+
+        <div class="field">
+         <%= form.check_box :user_public_show_full_name %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :user_public_show_phone_number %>
+       </div>
+
+        <div class="field">
+          <%= form.check_box :user_public_show_gender %>
+        </div>
+
+        <div class="field">
+         <%= form.check_box :user_public_show_date_of_birth %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :user_public_show_address %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :user_public_show_state %>
+        </div>
+
+
+        <div class="field">
+         <%= form.check_box :user_public_show_city %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :user_public_show_country %>
+        </div>
+    </details></h2>  
+
+    <h2><details>
+        <summary><%= t("activerecord.attributes.fellowship.admin_requierments") %></summary> 
+
+        <p><%= t("activerecord.attributes.fellowship.info_admin_required") %></p>
+
+        <div class="field">
+          <%= form.check_box :admin_required_full_name %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :admin_required_phone_number %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :admin_required_gender %>
+        </div>
+
+        <div class="field">
+         <%= form.check_box :admin_required_date_of_birth %>
+       </div>
+
+        <div class="field">
+         <%= form.check_box :admin_required_address %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :admin_required_state %>
+        </div>
+
+        <div class="field">
+         <%= form.check_box :admin_required_city %>
+        </div>
+
+        <div class="field">
+         <%= form.check_box :admin_required_country %>
+        </div>
+
+        <p><%= t("activerecord.attributes.fellowship.info_admin_show_public") %></p>
+
+        <div class="field">
+          <%= form.check_box :admin_public_show_full_name %>
+        </div>
+
+
+       <div class="field">
+          <%= form.check_box :admin_public_show_phone_number %>
+       </div>
+
+        <div class="field">
+          <%= form.check_box :admin_public_show_gender %>
+        </div>
+
+        <div class="field">
+          <%= form.check_box :admin_public_show_date_of_birth %>
+       </div>
+
+       <div class="field">
+         <%= form.check_box :admin_public_show_address %>
+       </div>
+
+        <div class="field">
+         <%= form.check_box :admin_public_show_state %>
+        </div>
+
+        <div class="field">
+         <%= form.check_box :admin_public_show_city %>
+        </div>
+
+        <div class="field">
+         <%= form.check_box :admin_public_show_country %>
+        </div>
+
+    </details></h2>
+
+
+
+
 
     <div class="field">
       <% if fellowship.image.attached? %>
         <%= image_tag fellowship.image, style: "width: 200px; display: block" %>
       <% end %>
 
-      <%= form.label :image, "Add Image" %>
+      
       <%= form.file_field :image %>
     </div>
 
