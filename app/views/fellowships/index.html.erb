@@ -31,7 +31,7 @@
 
 <br>
 
-<%= link_to 'New Fellowship', new_fellowship_path, class: "btn btn-success btn-lg" %>
+<%= link_to 'New Fellowship', new_fellowship_path, class: "success button" %>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -47,10 +47,10 @@
        border: none;
        color: white;
    }
-   .btn-success
-   {
-       background:#3adb76 !important; 
-       border: none;
+
+   .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
+    {
        color: white;
-   }
+       text-decoration:none;
+    }
 </style>
