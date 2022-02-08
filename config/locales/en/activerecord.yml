@@ -298,6 +298,17 @@ en:
 
         my_groups: "My Groups"
 
+        
+        fellowship_name: "Group name"
+        fellowship_descripton: "Description"
+        fellowship_requirements: "User requierments"
+        fellowship_all_requirements: "Show all requirements"
+        fellowship_show: "Show"
+        fellowship_leave: "Leave Group"
+        fellowship_role: "Role"
+        fellowship_user: "User"
+        fellowship_admin: "Administrator"
+
         email_digest: "Receive a summary of proposal notifications"
         email_on_comment: "Notify me by email when someone comments on my proposals or debates"
         email_on_comment_reply: "Notify me by email when someone replies to my comments"

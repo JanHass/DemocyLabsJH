@@ -293,6 +293,16 @@ de:
 
         my_groups: "Meine Gruppen"
 
+        fellowship_name: "Gruppenname"
+        fellowship_descripton: "Beschreibung"
+        fellowship_requirements: "Anforderungen"
+        fellowship_all_requirements: "alle Anforderungen anzeigen"
+        fellowship_show: "Anzeigen"
+        fellowship_leave: "Gruppe Verlassen"
+        fellowship_role: "eigene Rolle"
+        fellowship_user: "Nutzer"
+        fellowship_admin: "Administrator"
+
         email_digest: "Benachrichtigungen mit Zusammenfassung über Vorschlag erhalten"
         email_on_comment: "Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
         email_on_comment_reply: "Benachrichtigen Sie mich per E-Mail, wenn jemand auf meine Kommentare antwortet"
