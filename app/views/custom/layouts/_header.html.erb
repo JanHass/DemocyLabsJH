@@ -75,10 +75,10 @@
     </div>
     <% end %>
   
-    <div class="top-bar-title" style="height: 88px;width: 400px; margin-left: 29.5%;">
+    <div class="top-bar-title" style="height: 88px;width: 400px;">
       <%= link_to root_path, accesskey: "0" do %>
-      <div style="height: 100px;width: 400px; " >
-        <%= image_tag(image_path_for("logo_header.png"), alt: setting["org_name"])%>
+      <div style="height: 100px;width: 400px;" class="cntimg" >
+        <%= image_tag(image_path_for("logo_header.png"))%>
       </div>
       <% end %>
     </div>
@@ -112,9 +112,20 @@
 </header>
 
 <style>
-   .dropdown-toggle {
-        background:#FFF !important; 
-        color:#05d3dd !important;
+   .dropdown-toggle 
+   {
+      background:#FFF !important; 
+      color:#05d3dd !important;
+   }
+
+    .cntimg
+    {
+      position: absolute;
+      margin: auto;
+      left: 1.5%;
+      right: 0;
+      text-align: center;
+      z-index: 1;
     }
 </style>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>

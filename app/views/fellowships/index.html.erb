@@ -12,7 +12,7 @@
   <div class="row g-0">
     <div class="col-md-4">
       <% if fellowship.image.attached? %>
-      <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top" alt="...">
+      <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top">
       <% end %>
     </div>
     <div class="col-md-8">
@@ -21,6 +21,7 @@
         <p class="card-text" style="margin-top: 2%;"><%= fellowship.description %></p>
         <p class="card-text"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
       </div>
+      <div style="float: right; margin-right: 3%; margin-top: 9%; color: #3adb76;"><i class="fas fa-check-square fa-lg"></i></div>
     </div>
     <%= link_to 'Show', fellowship, class: "btn btn-info" %>
   </div>
