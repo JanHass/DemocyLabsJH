@@ -8,7 +8,6 @@
     <strong>Description:</strong>
     <textarea rows="3" class="form-control" style="width: 50%;" readonly><%= @fellowship.description %></textarea>
   </p>
-<% end %>
 
 <p class="sizer" style="margin-top: 2%;">
   <strong>Name:</strong>
@@ -16,10 +15,14 @@
 </p>
 
 <p class="sizer">
+<strong> Description:</strong>
+<%= @fellowship.description %>
+</p>
+
+<p class="sizer">
   <strong>Email:</strong>
   <input class="form-control" type="text" value="<%= @fellowship.email %>" style="width: 25%;" readonly>
 </p>
-
 
 <p class="sizer">
   <strong>Created at:</strong>
@@ -40,6 +43,11 @@
 <%= link_to 'Back', fellowships_path, class: "btn btn-info" %>
 <%= link_to 'Edit', edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
 <%= link_to 'Delete', @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+
+<%= link_to "Join Group", join_fellowship_path(@fellowship) %>
+<%= link_to "Leave Group", leave_fellowship_path(@fellowship) %>
+
+
 
 <style>
   .btn-info

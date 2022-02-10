@@ -45,5 +45,6 @@ FactoryBot.define do
     admin_public_show_state { false }
     admin_public_show_city { false }
     admin_public_show_country { false }
+
   end
 end

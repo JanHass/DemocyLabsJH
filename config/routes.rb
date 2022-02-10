@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :fellowships
+  
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   draw :devise
   draw :direct_upload
   draw :document
+  draw :fellowship
   draw :graphql
   draw :legislation
   draw :management
