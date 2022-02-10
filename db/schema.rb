@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_093433) do
+ActiveRecord::Schema.define(version: 2022_01_16_175903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -601,7 +601,6 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.index ["poll_officer_id"], name: "index_failed_census_calls_on_poll_officer_id"
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
   end
-
 
   create_table "fellowship_users", force: :cascade do |t|
     t.integer "fellowship_id"
