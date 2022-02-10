@@ -22,12 +22,12 @@ class Proposal < ApplicationRecord
   include SDG::Relatable
 
 
-  #include PgSearch
+  include PgSearch
 
-  #pg_search_scope :search_full_text, against: :responsible_name, :using => {
-   # :tsearch => {:prefix => true},
-  #  :trigram => {}
-  #}
+  pg_search_scope :search_full_text, against: :responsible_name, :using => {
+    :tsearch => {:prefix => true},
+    :trigram => {}
+  }
 
 
 

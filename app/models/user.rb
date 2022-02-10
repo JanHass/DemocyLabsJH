@@ -81,6 +81,13 @@ class User < ApplicationRecord
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
+  
+  validates :phone_number, format: { with: /\A\d+\z/, message: "Nur Zahlen erlaubt" }
+
+  
+  validates :first_name, presence: true
+  
+  
 
   validate :validate_username_length
 

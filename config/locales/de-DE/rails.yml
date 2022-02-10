@@ -194,4 +194,5 @@ de:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
       api: "%Y-%m-%d %H"
+      short2: "%d. %B %Y"
     pm: nachmittags
