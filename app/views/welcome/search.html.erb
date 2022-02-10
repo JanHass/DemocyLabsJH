@@ -1,0 +1,10 @@
+<h3>Search Results</h3>
+
+    <% @results_fellowships.each do |result| %>
+        <%= link_to result.name, "/fellowships/" + result.id.to_s %><br>
+    <% end %>
+
+    <% @results_proposals.each do |result| %>
+        <%= result.responsible_name %><br>
+    <% end %>
+

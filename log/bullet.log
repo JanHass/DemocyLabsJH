@@ -969,3 +969,1231 @@ Call stack
   /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb___1414360991940429495_1394900'
   /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
 
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:3:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_319740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:5:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_319740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:5:in `_app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_325580'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_325580'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_325580'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:43:23[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_325580'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_325400'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_319420'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:3:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_342340'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  Proposal => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:5:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_342340'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  Proposal => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:5:in `_app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  Proposal => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_347920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  Proposal => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_347920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  Proposal => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_347920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:41[WARN] user: alex
+GET /proposals?page=2
+USE eager loading detected
+  Proposal => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_347920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_347760'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_342160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:3:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_360920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  Proposal => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:5:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_360920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  Proposal => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:5:in `_app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  Proposal => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_366480'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  Proposal => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/tag_list.rb:15:in `tag_records'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/targets/tag_list_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:26:in `targets_list'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.html.erb:3:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_366480'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  Proposal => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/tag_list.rb:15:in `tag_records'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/targets/tag_list_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:26:in `targets_list'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.html.erb:3:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_366480'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:44:55[WARN] user: alex
+GET /proposals?page=3
+USE eager loading detected
+  Proposal => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/tag_list.rb:15:in `tag_records'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/targets/tag_list_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:26:in `targets_list'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.html.erb:3:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_366480'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_366320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_360740'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:45:28[WARN] user: alex
+GET /proposals?utf8=%E2%9C%93&search=Glen&advanced_search%5Bdate_min%5D=&advanced_search%5Bdate_min%5D=&advanced_search%5Bdate_max%5D=&advanced_search%5Bgoal%5D=&advanced_search%5Btarget%5D=&commit=Filter
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_371780'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:45:28[WARN] user: alex
+GET /proposals?utf8=%E2%9C%93&search=Glen&advanced_search%5Bdate_min%5D=&advanced_search%5Bdate_min%5D=&advanced_search%5Bdate_max%5D=&advanced_search%5Bgoal%5D=&advanced_search%5Btarget%5D=&commit=Filter
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_371780'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:45:34[WARN] user: alex
+GET /proposals?advanced_search%5Bdate_max%5D=&advanced_search%5Bdate_min%5D=&advanced_search%5Bgoal%5D=&advanced_search%5Btarget%5D=&commit=Filter&order=hot_score&page=1&search=Glen&utf8=%E2%9C%93
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_378960'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 13:45:34[WARN] user: alex
+GET /proposals?advanced_search%5Bdate_max%5D=&advanced_search%5Bdate_min%5D=&advanced_search%5Bgoal%5D=&advanced_search%5Btarget%5D=&commit=Filter&order=hot_score&page=1&search=Glen&utf8=%E2%9C%93
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_378960'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:3:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_1509280'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:5:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_1509280'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:5:in `_app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1515100'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1515100'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1515100'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:28[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1515100'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1514920'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1508980'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:41[WARN] user: alex
+GET /proposals/59-tagged-proposal-title-for-locale-en
+USE eager loading detected
+  Comment => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/comments/_comment.html.erb:78:in `block in _app_views_comments__comment_html_erb__1503976298772972029_1532260'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/comments/_comment.html.erb:2:in `_app_views_comments__comment_html_erb__1503976298772972029_1532260'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/comments/_comment_list.html.erb:5:in `block (2 levels) in _app_views_comments__comment_list_html_erb__421664882255634278_1532180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/comments/_comment_list.html.erb:4:in `block in _app_views_comments__comment_list_html_erb__421664882255634278_1532180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/comments/_comment_list.html.erb:3:in `_app_views_comments__comment_list_html_erb__421664882255634278_1532180'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/comments_component.html.erb:13:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/comments_component.html.erb:5:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_comments.html.erb:1:in `_app_views_proposals__comments_html_erb__1490473390343135333_1531960'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/show.html.erb:100:in `_app_views_proposals_show_html_erb___3186316818530333271_1529340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:41[WARN] user: alex
+GET /proposals/59-tagged-proposal-title-for-locale-en
+USE eager loading detected
+  ProposalNotification => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposal_notifications/_actions.html.erb:9:in `_app_views_proposal_notifications__actions_html_erb__572326067304649528_1532860'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_notifications.html.erb:17:in `block in _app_views_proposals__notifications_html_erb___3436547837578969747_1532800'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_notifications.html.erb:10:in `_app_views_proposals__notifications_html_erb___3436547837578969747_1532800'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/show.html.erb:103:in `_app_views_proposals_show_html_erb___3186316818530333271_1529340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:41[WARN] user: alex
+GET /proposals/59-tagged-proposal-title-for-locale-en
+USE eager loading detected
+  Milestone => [:status]
+  Add to your query: .includes([:status])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestone.html.erb:13:in `_app_views_milestones__milestone_html_erb__2361514611398903851_1533380'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones_content.html.erb:14:in `block in _app_views_milestones__milestones_content_html_erb__1664528656010160528_1533020'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones_content.html.erb:13:in `_app_views_milestones__milestones_content_html_erb__1664528656010160528_1533020'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones.html.erb:2:in `_app_views_milestones__milestones_html_erb___320637686322218798_1533000'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/show.html.erb:104:in `_app_views_proposals_show_html_erb___3186316818530333271_1529340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:41[WARN] user: alex
+GET /proposals/59-tagged-proposal-title-for-locale-en
+USE eager loading detected
+  Milestone => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestone.html.erb:25:in `_app_views_milestones__milestone_html_erb__2361514611398903851_1533380'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones_content.html.erb:14:in `block in _app_views_milestones__milestones_content_html_erb__1664528656010160528_1533020'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones_content.html.erb:13:in `_app_views_milestones__milestones_content_html_erb__1664528656010160528_1533020'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones.html.erb:2:in `_app_views_milestones__milestones_html_erb___320637686322218798_1533000'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/show.html.erb:104:in `_app_views_proposals_show_html_erb___3186316818530333271_1529340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:41[WARN] user: alex
+GET /proposals/59-tagged-proposal-title-for-locale-en
+USE eager loading detected
+  Milestone => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestone.html.erb:28:in `_app_views_milestones__milestone_html_erb__2361514611398903851_1533380'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones_content.html.erb:14:in `block in _app_views_milestones__milestones_content_html_erb__1664528656010160528_1533020'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones_content.html.erb:13:in `_app_views_milestones__milestones_content_html_erb__1664528656010160528_1533020'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones.html.erb:2:in `_app_views_milestones__milestones_html_erb___320637686322218798_1533000'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/show.html.erb:104:in `_app_views_proposals_show_html_erb___3186316818530333271_1529340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:17:41[WARN] user: alex
+GET /proposals/59-tagged-proposal-title-for-locale-en
+USE eager loading detected
+  Milestone => [:documents]
+  Add to your query: .includes([:documents])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestone.html.erb:31:in `_app_views_milestones__milestone_html_erb__2361514611398903851_1533380'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones_content.html.erb:14:in `block in _app_views_milestones__milestones_content_html_erb__1664528656010160528_1533020'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones_content.html.erb:13:in `_app_views_milestones__milestones_content_html_erb__1664528656010160528_1533020'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/milestones/_milestones.html.erb:2:in `_app_views_milestones__milestones_html_erb___320637686322218798_1533000'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/show.html.erb:104:in `_app_views_proposals_show_html_erb___3186316818530333271_1529340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:3:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_1541340'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:5:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_1541340'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:5:in `_app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1546900'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1546900'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1546900'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:19:40[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1546900'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1546740'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1541160'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:3:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_1933680'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_featured_proposal.html.erb:5:in `_app_views_proposals__featured_proposal_html_erb__1738546498513150298_1933680'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:62:in `block in _app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:61:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:76:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:image]
+  Add to your query: .includes([:image])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:5:in `_app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1939500'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1939500'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1939500'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:51[WARN] user: alex
+GET /proposals
+USE eager loading detected
+  Proposal => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___1285515478425642670_1939500'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:60:in `block in _app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_proposal.html.erb:21:in `_app_views_proposals__proposal_html_erb__59049844210885330_1939320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/index.html.erb:94:in `_app_views_proposals_index_html_erb__2032348084365029342_1933380'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:48:52[WARN] user: alex
+GET /proposals/11
+AVOID eager loading detected
+  Comment => [:user]
+  Remove from your query: .includes([:user])
+Call stack
+
+2022-02-06 14:48:52[WARN] user: alex
+GET /proposals/11
+AVOID eager loading detected
+  User => [:organization]
+  Remove from your query: .includes([:organization])
+Call stack
+
+2022-02-06 14:48:53[WARN] user: alex
+GET /proposals/11-title-for-locale-en
+USE eager loading detected
+  ProposalNotification => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposal_notifications/_actions.html.erb:9:in `_app_views_proposal_notifications__actions_html_erb__572326067304649528_1956540'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_notifications.html.erb:17:in `block in _app_views_proposals__notifications_html_erb___3436547837578969747_1956480'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/_notifications.html.erb:10:in `_app_views_proposals__notifications_html_erb___3436547837578969747_1956480'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/proposals/show.html.erb:103:in `_app_views_proposals_show_html_erb___3186316818530333271_1953280'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:49:21[WARN] user: alex
+GET /users/45
+USE eager loading detected
+  Proposal => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/users/_proposal.html.erb:4:in `_app_views_users__proposal_html_erb___2798296201656049163_1959320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/users/_proposals.html.erb:11:in `block in _app_views_users__proposals_html_erb___2499696067079705647_1959280'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/users/_proposals.html.erb:10:in `_app_views_users__proposals_html_erb___2499696067079705647_1959280'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/users/public_activity_component.rb:66:in `render_user_partial'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/users/public_activity_component.html.erb:21:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/users/show.html.erb:25:in `_app_views_users_show_html_erb___4129727594177371784_1958940'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-06 14:49:21[WARN] user: alex
+GET /users/45
+USE eager loading detected
+  Proposal => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/abilities/common.rb:23:in `block in initialize'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/users/_proposal.html.erb:21:in `_app_views_users__proposal_html_erb___2798296201656049163_1959320'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/users/_proposals.html.erb:11:in `block in _app_views_users__proposals_html_erb___2499696067079705647_1959280'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/users/_proposals.html.erb:10:in `_app_views_users__proposals_html_erb___2499696067079705647_1959280'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/users/public_activity_component.rb:66:in `render_user_partial'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/users/public_activity_component.html.erb:21:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/users/show.html.erb:25:in `_app_views_users_show_html_erb___4129727594177371784_1958940'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:10[WARN] user: alex
+GET /debates
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:55:in `_app_views_debates_index_html_erb__3329978596786548907_274340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:10[WARN] user: alex
+GET /debates
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:55:in `_app_views_debates_index_html_erb__3329978596786548907_274340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:10[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:8:in `block in _app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_274340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:10[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:15:in `block in _app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_274340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:10[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb__1528056131763432920_280240'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_274340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:10[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb__1528056131763432920_280240'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_274340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:10[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb__1528056131763432920_280240'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_274340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:10[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb__1528056131763432920_280240'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_280060'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_274340'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:11[WARN] user: alex
+GET /debates
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:55:in `_app_views_debates_index_html_erb__3329978596786548907_284660'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:11[WARN] user: alex
+GET /debates
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:55:in `_app_views_debates_index_html_erb__3329978596786548907_284660'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:11[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:8:in `block in _app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_284660'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:11[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:15:in `block in _app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_284660'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:11[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb__1528056131763432920_292300'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_284660'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:11[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb__1528056131763432920_292300'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_284660'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:11[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb__1528056131763432920_292300'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_284660'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-08 10:04:11[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb__1528056131763432920_292300'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__2251639648562153415_292180'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__3329978596786548907_284660'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 16:55:05[WARN] user: alex
+GET /debates
+USE eager loading detected
+  SDG::Target => [:goal]
+  Add to your query: .includes([:goal])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:25:in `i18n_key'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/sdg/target.rb:11:in `title'
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:55:in `_app_views_debates_index_html_erb__4563463667306706297_271920'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 16:55:05[WARN] user: alex
+GET /debates
+USE eager loading detected
+  SDG::LocalTarget => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/related.rb:46:in `code_and_title'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/concerns/sdg/options_for_select.rb:11:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.rb:33:in `target_options'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:50:in `block in call'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/shared/advanced_search_component.html.erb:1:in `call'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:55:in `_app_views_debates_index_html_erb__4563463667306706297_271920'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 16:55:05[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:translations]
+  Add to your query: .includes([:translations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:8:in `block in _app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__4563463667306706297_271920'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 16:55:05[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:author]
+  Add to your query: .includes([:author])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:15:in `block in _app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__4563463667306706297_271920'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 16:55:05[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_goals]
+  Add to your query: .includes([:sdg_goals])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___4376552136279525147_278260'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__4563463667306706297_271920'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 16:55:05[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_relations]
+  Add to your query: .includes([:sdg_relations])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___4376552136279525147_278260'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__4563463667306706297_271920'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 16:55:05[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_global_targets]
+  Add to your query: .includes([:sdg_global_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___4376552136279525147_278260'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__4563463667306706297_271920'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 16:55:05[WARN] user: alex
+GET /debates
+USE eager loading detected
+  Debate => [:sdg_local_targets]
+  Add to your query: .includes([:sdg_local_targets])
+Call stack
+  /home/alex/consul_developer/DemocyLabsJH/app/models/concerns/sdg/relatable.rb:56:in `sdg_targets'
+  /home/alex/consul_developer/DemocyLabsJH/app/components/sdg/tag_list_component.rb:11:in `render?'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/shared/_tags.html.erb:3:in `_app_views_shared__tags_html_erb___4376552136279525147_278260'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:45:in `block in _app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/_debate.html.erb:1:in `_app_views_debates__debate_html_erb__4145439207955719700_278040'
+  /home/alex/consul_developer/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb__4563463667306706297_271920'
+  /home/alex/consul_developer/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+

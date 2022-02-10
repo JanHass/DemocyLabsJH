@@ -435,3 +435,473 @@ Did you mean?  url_for
 [2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Finished instrumentation
 
 
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Environment: development
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : No known dispatcher detected.
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Application: CONSUL (Development)
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing ActiveJob instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing Net instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing Rails 5 view instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-17 02:36:33 +0100 ProjektVM (51753)] INFO : Finished instrumentation
+[2022-01-17 02:36:34 +0100 ProjektVM (51753)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-17 02:36:48 +0100 ProjektVM (51753)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-17 02:36:50 +0100 ProjektVM (51753)] ERROR : Invalid license key
+[2022-01-17 02:36:50 +0100 ProjektVM (51753)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-17 02:39:29 +0100 ProjektVM (51753)] INFO : Starting Agent shutdown
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Environment: development
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : No known dispatcher detected.
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Application: CONSUL (Development)
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing ActiveJob instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing Net instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing Rails 5 view instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-17 02:39:39 +0100 ProjektVM (51923)] INFO : Finished instrumentation
+[2022-01-17 02:39:40 +0100 ProjektVM (51923)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-17 02:39:53 +0100 ProjektVM (51923)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-17 02:39:55 +0100 ProjektVM (51923)] ERROR : Invalid license key
+[2022-01-17 02:39:55 +0100 ProjektVM (51923)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-17 03:14:36 +0100 ProjektVM (51923)] INFO : Starting Agent shutdown
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Environment: development
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : No known dispatcher detected.
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Application: CONSUL (Development)
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing ActiveJob instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing Net instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing Rails 5 view instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-17 03:53:37 +0100 ProjektVM (4046)] INFO : Finished instrumentation
+[2022-01-17 03:53:39 +0100 ProjektVM (4046)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-17 03:53:52 +0100 ProjektVM (4046)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-17 03:53:54 +0100 ProjektVM (4046)] ERROR : Invalid license key
+[2022-01-17 03:53:54 +0100 ProjektVM (4046)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Environment: development
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : No known dispatcher detected.
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Application: CONSUL (Development)
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing ActiveJob instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing Net instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing Rails 5 view instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-17 04:18:20 +0100 ProjektVM (5001)] INFO : Finished instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Environment: development
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : No known dispatcher detected.
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Application: CONSUL (Development)
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing ActiveJob instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing Net instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing Rails 5 view instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-17 04:21:57 +0100 ProjektVM (5284)] INFO : Finished instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Environment: development
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : No known dispatcher detected.
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Application: CONSUL (Development)
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing ActiveJob instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing Net instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing Rails 5 view instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-17 04:22:35 +0100 ProjektVM (5329)] INFO : Finished instrumentation
+[2022-01-17 04:49:31 +0100 ProjektVM (4046)] INFO : Starting Agent shutdown
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Environment: development
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : No known dispatcher detected.
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Application: CONSUL (Development)
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing ActiveJob instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing Net instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing Rails 5 view instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-17 04:49:50 +0100 ProjektVM (6978)] INFO : Finished instrumentation
+[2022-01-17 04:49:52 +0100 ProjektVM (6978)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-17 04:50:24 +0100 ProjektVM (6978)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-17 04:50:26 +0100 ProjektVM (6978)] ERROR : Invalid license key
+[2022-01-17 04:50:26 +0100 ProjektVM (6978)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Environment: development
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : No known dispatcher detected.
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Application: CONSUL (Development)
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing ActiveJob instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing Net instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing Rails 5 view instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-17 04:52:37 +0100 ProjektVM (7255)] INFO : Finished instrumentation
+[2022-01-17 05:05:17 +0100 ProjektVM (6978)] INFO : Starting Agent shutdown
+[2022-01-21 02:38:10 +0100 ProjektVM (3473)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-21 02:38:10 +0100 ProjektVM (3473)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-21 02:38:10 +0100 ProjektVM (3473)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Environment: development
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : No known dispatcher detected.
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Application: CONSUL (Development)
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing ActiveJob instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing Net instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing Rails 5 view instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-21 02:38:11 +0100 ProjektVM (3473)] INFO : Finished instrumentation
+[2022-01-21 02:38:13 +0100 ProjektVM (3473)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-21 02:38:48 +0100 ProjektVM (3473)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-21 02:38:50 +0100 ProjektVM (3473)] ERROR : Invalid license key
+[2022-01-21 02:38:50 +0100 ProjektVM (3473)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-21 03:58:03 +0100 ProjektVM (5013)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-21 03:58:03 +0100 ProjektVM (5013)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-21 03:58:03 +0100 ProjektVM (5013)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-21 03:58:03 +0100 ProjektVM (5013)] INFO : Environment: development
+[2022-01-21 03:58:03 +0100 ProjektVM (5013)] INFO : No known dispatcher detected.
+[2022-01-21 03:58:03 +0100 ProjektVM (5013)] INFO : Application: CONSUL (Development)
+[2022-01-21 03:58:03 +0100 ProjektVM (5013)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing ActiveJob instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing Net instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing Rails 5 view instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-21 03:58:04 +0100 ProjektVM (5013)] INFO : Finished instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Environment: development
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : No known dispatcher detected.
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Application: CONSUL (Development)
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing ActiveJob instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing Net instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing Rails 5 view instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-21 04:22:49 +0100 ProjektVM (6635)] INFO : Finished instrumentation
+[2022-01-21 04:23:59 +0100 ProjektVM (3473)] INFO : Starting Agent shutdown
+[2022-01-21 04:35:07 +0100 ProjektVM (7141)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-21 04:35:07 +0100 ProjektVM (7141)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-21 04:35:07 +0100 ProjektVM (7141)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-21 04:35:07 +0100 ProjektVM (7141)] INFO : Environment: development
+[2022-01-21 04:35:07 +0100 ProjektVM (7141)] INFO : No known dispatcher detected.
+[2022-01-21 04:35:07 +0100 ProjektVM (7141)] INFO : Application: CONSUL (Development)
+[2022-01-21 04:35:07 +0100 ProjektVM (7141)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing ActiveJob instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing Net instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing Rails 5 view instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-21 04:35:08 +0100 ProjektVM (7141)] INFO : Finished instrumentation
+[2022-01-21 04:35:10 +0100 ProjektVM (7141)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Environment: development
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : No known dispatcher detected.
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Application: CONSUL (Development)
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing ActiveJob instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing Net instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing Rails 5 view instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-23 02:31:57 +0100 ProjektVM (6693)] INFO : Finished instrumentation
+[2022-01-23 02:31:59 +0100 ProjektVM (6693)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-23 02:32:33 +0100 ProjektVM (6693)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-23 02:32:35 +0100 ProjektVM (6693)] ERROR : Invalid license key
+[2022-01-23 02:32:35 +0100 ProjektVM (6693)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-23 03:23:01 +0100 ProjektVM (6693)] INFO : Starting Agent shutdown
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Environment: development
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : No known dispatcher detected.
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Application: CONSUL (Development)
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing ActiveJob instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing Net instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing Rails 5 view instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-23 12:31:03 +0100 ProjektVM (3769)] INFO : Finished instrumentation
+[2022-01-23 12:31:06 +0100 ProjektVM (3769)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-23 12:31:25 +0100 ProjektVM (3769)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-23 12:31:26 +0100 ProjektVM (3769)] ERROR : Invalid license key
+[2022-01-23 12:31:26 +0100 ProjektVM (3769)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-23 13:04:46 +0100 ProjektVM (3769)] INFO : Starting Agent shutdown
+[2022-01-23 14:42:14 +0100 ProjektVM (10721)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-23 14:42:14 +0100 ProjektVM (10721)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-23 14:42:14 +0100 ProjektVM (10721)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-23 14:42:14 +0100 ProjektVM (10721)] INFO : Environment: development
+[2022-01-23 14:42:14 +0100 ProjektVM (10721)] INFO : No known dispatcher detected.
+[2022-01-23 14:42:14 +0100 ProjektVM (10721)] INFO : Application: CONSUL (Development)
+[2022-01-23 14:42:14 +0100 ProjektVM (10721)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing ActiveJob instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing Net instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing Rails 5 view instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-23 14:42:15 +0100 ProjektVM (10721)] INFO : Finished instrumentation
+[2022-01-23 14:42:17 +0100 ProjektVM (10721)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-23 14:42:23 +0100 ProjektVM (10721)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-23 14:42:26 +0100 ProjektVM (10721)] ERROR : Invalid license key
+[2022-01-23 14:42:26 +0100 ProjektVM (10721)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-23 14:59:58 +0100 ProjektVM (10721)] INFO : Starting Agent shutdown
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Environment: development
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : No known dispatcher detected.
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Application: CONSUL (Development)
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing ActiveJob instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing Net instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing Rails 5 view instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Installing Rails 5 Controller instrumentation
+[2022-01-23 18:11:27 +0100 ProjektVM (2720)] INFO : Finished instrumentation
+[2022-01-23 18:11:30 +0100 ProjektVM (2720)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-01-23 18:11:51 +0100 ProjektVM (2720)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-01-23 18:11:54 +0100 ProjektVM (2720)] ERROR : Invalid license key
+[2022-01-23 18:11:54 +0100 ProjektVM (2720)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-01-23 20:52:14 +0100 ProjektVM (2720)] INFO : Starting Agent shutdown
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Environment: development
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : No known dispatcher detected.
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Application: CONSUL (Development)
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing ActiveJob instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing Net instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing Rails 5 view instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-05 22:08:48 +0100 ProjektVM (3475)] INFO : Finished instrumentation
+[2022-02-05 22:08:51 +0100 ProjektVM (3475)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-05 22:09:49 +0100 ProjektVM (3475)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-05 22:09:52 +0100 ProjektVM (3475)] ERROR : Invalid license key
+[2022-02-05 22:09:52 +0100 ProjektVM (3475)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-06 01:29:59 +0100 ProjektVM (3475)] INFO : Starting Agent shutdown
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Environment: development
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : No known dispatcher detected.
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Application: CONSUL (Development)
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing ActiveJob instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing Net instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing Rails 5 view instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-06 13:41:10 +0100 ProjektVM (3337)] INFO : Finished instrumentation
+[2022-02-06 13:41:12 +0100 ProjektVM (3337)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-06 13:41:49 +0100 ProjektVM (3337)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-06 13:41:52 +0100 ProjektVM (3337)] ERROR : Invalid license key
+[2022-02-06 13:41:52 +0100 ProjektVM (3337)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-06 14:59:14 +0100 ProjektVM (3337)] INFO : Starting Agent shutdown
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Environment: development
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : No known dispatcher detected.
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Application: CONSUL (Development)
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing ActiveJob instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing Net instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing Rails 5 view instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-06 18:49:12 +0100 ProjektVM (3060)] INFO : Finished instrumentation
+[2022-02-06 18:49:15 +0100 ProjektVM (3060)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-06 18:49:42 +0100 ProjektVM (3060)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-06 18:49:44 +0100 ProjektVM (3060)] ERROR : Invalid license key
+[2022-02-06 18:49:44 +0100 ProjektVM (3060)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-06 19:14:32 +0100 ProjektVM (3060)] INFO : Starting Agent shutdown
+[2022-02-08 10:02:30 +0100 ProjektVM (3529)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-08 10:02:30 +0100 ProjektVM (3529)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-08 10:02:30 +0100 ProjektVM (3529)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-02-08 10:02:30 +0100 ProjektVM (3529)] INFO : Environment: development
+[2022-02-08 10:02:30 +0100 ProjektVM (3529)] INFO : No known dispatcher detected.
+[2022-02-08 10:02:30 +0100 ProjektVM (3529)] INFO : Application: CONSUL (Development)
+[2022-02-08 10:02:30 +0100 ProjektVM (3529)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing ActiveJob instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing Net instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing Rails 5 view instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-08 10:02:31 +0100 ProjektVM (3529)] INFO : Finished instrumentation
+[2022-02-08 10:02:34 +0100 ProjektVM (3529)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-08 10:02:46 +0100 ProjektVM (3529)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-08 10:02:48 +0100 ProjektVM (3529)] ERROR : Invalid license key
+[2022-02-08 10:02:48 +0100 ProjektVM (3529)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-08 11:05:01 +0100 ProjektVM (3529)] INFO : Starting Agent shutdown
+[2022-02-10 16:52:42 +0100 ProjektVM (3425)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-10 16:52:42 +0100 ProjektVM (3425)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-10 16:52:42 +0100 ProjektVM (3425)] INFO : Reading configuration from config/newrelic.yml (/home/alex/consul_developer/DemocyLabsJH)
+[2022-02-10 16:52:42 +0100 ProjektVM (3425)] INFO : Environment: development
+[2022-02-10 16:52:42 +0100 ProjektVM (3425)] INFO : No known dispatcher detected.
+[2022-02-10 16:52:42 +0100 ProjektVM (3425)] INFO : Application: CONSUL (Development)
+[2022-02-10 16:52:42 +0100 ProjektVM (3425)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing ActiveJob instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing Net instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing Rails 5 view instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-10 16:52:43 +0100 ProjektVM (3425)] INFO : Finished instrumentation
+[2022-02-10 16:52:46 +0100 ProjektVM (3425)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-10 16:54:34 +0100 ProjektVM (3425)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-10 16:54:36 +0100 ProjektVM (3425)] ERROR : Invalid license key
+[2022-02-10 16:54:36 +0100 ProjektVM (3425)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-10 16:56:02 +0100 ProjektVM (3425)] INFO : Starting Agent shutdown

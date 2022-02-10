@@ -21,6 +21,16 @@ class Proposal < ApplicationRecord
   include Randomizable
   include SDG::Relatable
 
+
+  #include PgSearch
+
+  #pg_search_scope :search_full_text, against: :responsible_name, :using => {
+   # :tsearch => {:prefix => true},
+  #  :trigram => {}
+  #}
+
+
+
   acts_as_votable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
