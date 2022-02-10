@@ -4,7 +4,10 @@ class AccountController < ApplicationController
   load_and_authorize_resource class: "User"
 
   def show
+    @fellowships = Fellowship.all
   end
+
+  
 
   def update
     if @account.update(account_params)

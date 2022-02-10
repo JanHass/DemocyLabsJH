@@ -3,6 +3,7 @@ class FellowshipsController < ApplicationController
   
 
   load_and_authorize_resource
+  
 
   before_action :set_fellowship, only: [:show, :edit, :update, :destroy]
 
@@ -80,6 +81,14 @@ class FellowshipsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def fellowship_params
-      params.require(:fellowship).permit(:name, :email, :image, :description, :created_at, :updatet_at, :organization_id, :user_id, :author_id, :responsible_id, :flags_count, :geozone_id, :community_id, :clear_name, :user_required_full_name, :user_required_phone_number, :user_required_gender, :user_required_date_of_birth, :user_required_adress, :user_required_state, :user_required_city, :user_required_country, :user_public_show_full_name, :user_public_show_phone_number, :user_public_show_gender, :user_public_show_date_of_birth, :user_public_show_address, :user_public_show_state, :user_public_show_city, :user_public_show_country, :admin_required_full_name, :admin_required_phone_number, :admin_required_gender, :admin_required_date_of_birth, :admin_required_address, :admin_required_state, :admin_required_city, :admin_required_country, :admin_public_show_full_name, :admin_public_show_phone_number, :admin_public_show_gender, :admin_public_show_date_of_birth, :admin_public_show_address, :admin_public_show_state, :admin_public_show_city, :admin_public_show_country)
+      params.require(:fellowship).permit(:name, :email, :image, :description, :created_at, :updatet_at, :organization_id, 
+      :user_id, :author_id, :responsible_id, :flags_count, :geozone_id, :community_id, :clear_name, :user_required_full_name, 
+      :user_required_phone_number, :user_required_gender, :user_required_date_of_birth, :user_required_adress, :user_required_state, 
+      :user_required_city, :user_required_country, :user_public_show_full_name, :user_public_show_phone_number, :user_public_show_gender, 
+      :user_public_show_date_of_birth, :user_public_show_address, :user_public_show_state, :user_public_show_city, :user_public_show_country, 
+      :admin_required_full_name, :admin_required_phone_number, :admin_required_gender, :admin_required_date_of_birth, :admin_required_address, 
+      :admin_required_state, :admin_required_city, :admin_required_country, :admin_public_show_full_name, :admin_public_show_phone_number, 
+      :admin_public_show_gender, :admin_public_show_date_of_birth, :admin_public_show_address, :admin_public_show_state, :admin_public_show_city, 
+      :admin_public_show_country)
     end
 end

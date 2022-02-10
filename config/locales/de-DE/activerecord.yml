@@ -291,6 +291,18 @@ de:
         public_profile_show_city: "Stadt im öffentlichen Profil anzeigen"
         public_profile_show_country: "Land im öffentlichen Profil anzeigen"
 
+        my_groups: "Meine Gruppen"
+
+        fellowship_name: "Gruppenname"
+        fellowship_descripton: "Beschreibung"
+        fellowship_requirements: "Anforderungen"
+        fellowship_all_requirements: "alle Anforderungen anzeigen"
+        fellowship_show: "Anzeigen"
+        fellowship_leave: "Gruppe Verlassen"
+        fellowship_role: "eigene Rolle"
+        fellowship_user: "Nutzer"
+        fellowship_admin: "Administrator"
+
         email_digest: "Benachrichtigungen mit Zusammenfassung über Vorschlag erhalten"
         email_on_comment: "Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
         email_on_comment_reply: "Benachrichtigen Sie mich per E-Mail, wenn jemand auf meine Kommentare antwortet"
@@ -305,6 +317,64 @@ de:
         recommended_debates: "Debatten-Empfehlungen anzeigen"
         recommended_proposals: "Antrags-Empfehlungen anzeigen"
         redeemable_code: "Bestätigungscode per Post (optional)"
+
+
+      fellowship:  
+
+        creategroup: "Neue Gruppe erstellen"
+        required: "Pflichtfelder"
+        optional: "Optionale Felder"
+        name: "Gruppenname"
+        email: "E-Mail"
+        description: "Gruppenbeschreibung"
+        zip_code: "Postleitzahl"
+        user_required_full_name:  "Nutzer:innen benötigen Vor- und Nachname"
+        user_required_phone_number: "Nutzer:innen benötigen eine Telefonnummer"
+        user_required_gender: "Nutzer:innen benötigen ein Geschlecht"
+        user_required_date_of_birth: "Nutzer:innen benötigen ein Geburtsdatum"
+        user_required_adress: "Nutzer:innen benötigen eine Straße und Hausnummer"
+        user_required_state:  "Nutzer:innen benötigen ein Bundesland"
+        user_required_city:  "Nutzer:innnen benötigen eine Stadt"
+        user_required_country:  "Nutzer:innen benötigen ein Land"
+        user_public_show_full_name: "Nutzer:innen müssen Vor- und Nachname öffentlich teilen"
+        user_public_show_phone_number: "Nutzer:innen müssen eine Telefonnummer öffentlich teilen"
+        user_public_show_gender: "Nutzer:innen müssen ihr Geschlecht öffentlich teilen"
+        user_public_show_date_of_birth: "Nutzer:innen müssen ihr Geburtstag öffentlich teilen"
+        user_public_show_address: "Nutzer:innen müssen ihre Straße und Hausnummer öffentlich teilen"
+        user_public_show_state: "Nutzer:innen müssen ihr Bundesland öffentlich teilen"
+        user_public_show_city: "Nutzer:innen müssen ihre Stadt öffentlich teilen"
+        user_public_show_country: "Nutzer:innen müssen ihr Land öffentlich teilen"
+        admin_required_full_name: "Administrator:innen benötigen Vor- und Nachname"
+        admin_required_phone_number: "Administrator:innen benötigen eine Telefonnummer"
+        admin_required_gender: "Administrator:innen benötigen ein Geschlecht"
+        admin_required_date_of_birth: "Administrator:innen benötigen ein Geburtstag"
+        admin_required_address: "Administrator:innen benötigen eine Straße und Hausnummer"
+        admin_required_state: "Administrator:innen benötigen ein Bundesland"
+        admin_required_city: "Administrator:innen benötigen eine Stadt"
+        admin_required_country: "Administrator:innen benötigen ein Land"
+        admin_public_show_full_name: "Administrator:innen müssen ihren Namen öffentlich teilen"
+        admin_public_show_phone_number: "Administrator:innen müssen eine Telefonnummer öffentlich teilen"
+        admin_public_show_gender: "Administrator:innen müssen ihr Geschlecht öffentlich teilen"
+        admin_public_show_date_of_birth: "Administrator:innen müssen ihr Geburtstag öffentlich teilen"
+        admin_public_show_address: "Administrator:innen müssen ihre Straße und Hausnummer öffentlich teilen"
+        admin_public_show_state: "Administrator:innen müssen ihr Bundesland öffentlich teilen"
+        admin_public_show_city: "Administrator:innen müssen ihre Stadt öffentlich teilen"
+        admin_public_show_country: "Administrator:innen müssen ihr Land öffentlich teilen"
+        image: "Gruppenbild hinzufügen"
+        user_requirements: "Voraussetzungen für Gruppen-Mitglieder:innen"
+        admin_requierments: "Voraussetzungen für Gruppen-Administrator:innen"
+        info_user_required: "Falls ausgewählt, müssen Nutzer:innen die folgenden Daten in Ihren Profil ausgefüllt haben. Es steht den Nutzer:innen frei, 
+                            ob diese im öffentlichen Profil angezeigt werden. Gruppen-Administrator:innen sehen diese Daten in der Mitgliederübersicht. 
+                            Falls diese Daten von den jeweiligen Nutzer:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."
+        info_user_show_public: "Falls ausgewählt, müssen Nutzer:innen die folgenden Daten in Ihren öffentlichen Profil darstellen.
+                                Falls diese Daten von den jeweiligen Nutzer:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."   
+        info_admin_required: "Falls ausgewählt, müssen Administrator:innen die folgenden Daten in Ihren Profil ausgefüllt haben. Es steht den Administrator:innen frei, 
+                            ob diese im öffentlichen Profil angezeigt werden. Gruppen-Administrator:innen sehen diese Daten in der Mitgliederübersicht. 
+                            Falls diese Daten von den jeweiligen Administrator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."
+        info_admin_show_public: "Falls ausgewählt, müssen Administrator:innen die folgenden Daten in Ihren öffentlichen Profil darstellen.
+                                Falls diese Daten von den jeweiligen Administrator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."                 
+
+
       direct_message:
         title: "Titel"
         body: "Nachricht"
@@ -629,3 +699,5 @@ de:
         restrict_dependent_destroy:
           has_one: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"
           has_many: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"
+
+        

@@ -604,7 +604,6 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
   end
 
-
   create_table "fellowship_users", force: :cascade do |t|
     t.boolean "is_fellowship_administrator", default: false
     t.boolean "is_fellowship_moderator", default: false
