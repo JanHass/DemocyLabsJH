@@ -9,6 +9,8 @@
     <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
 
     <h1 class="inline-block"><%= t("account.show.title") %></h1>
+    <h1></h1>
+    <h1></h1>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>
@@ -16,52 +18,109 @@
       <div class="row">
         <div class="small-12 medium-7 column">
 
-          <h2><%= t("account.show.personal") %></h2>
+          
+          <h2><details open>
+             <summary><%= t("account.show.personal") %></summary> 
 
-          <div class="small-12 medium-10">
-            <% if @account.organization? %>
-              <%= f.fields_for :organization do |fo| %>
-                <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
-                <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
+            <div class="small-12 medium-10">
+              <% if @account.organization? %>
+                <%= f.fields_for :organization do |fo| %>
+                  <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
+                  <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
+                <% end %>
+                <%= f.text_field :phone_number %>
+
+              <% else %>
+                <%= f.text_field :username, maxlength: User.username_max_length %>
+                <%= f.text_field :first_name %>
+                <%= f.text_field :last_name %>
+                <%= f.text_field :phone_number %>
+              
+                
+                
+                <%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],[t("activerecord.attributes.user.gender_female"),'female'],[t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %>
+
+                <%= f.date_field :date_of_birth %>
+                <%= f.text_field :street %>
+                <%= f.text_field :housenumber %>
+                <%= f.text_field :state %>
+                <%= f.text_field :postal_code %>
+                <%= f.text_field :city %>
+               <%= f.text_field :country %>
+
+             
               <% end %>
-              <%= f.text_field :phone_number %>
+           </div>
 
-            <% else %>
-              <%= f.text_field :username, maxlength: User.username_max_length %>
-            <% end %>
-          </div>
+            <div>
+              <%= f.check_box :public_activity %>
+            </div>
 
-          <div>
-            <%= f.check_box :public_activity %>
-          </div>
+            <div>
+             <%= f.check_box :public_interests %>
+            </div>
+          </details></h2>
 
-          <div>
-            <%= f.check_box :public_interests %>
-          </div>
+          
+
+          <h2><details>
+             <summary><%= t("activerecord.attributes.user.public_profile") %></summary> 
+
+              <div>
+                <%= f.check_box :public_profile_show_full_name %>
+              </div>
+              <div>
+                <%= f.check_box :public_profile_show_phone_number %>
+             </div>
+              <div>
+                <%= f.check_box :public_profile_show_gender %>
+             </div>
+             <div>
+                <%= f.check_box :public_profile_show_date_of_birth %>
+              </div>
+             <div>
+                <%= f.check_box :public_profile_show_address %>
+              </div>
+             <div>
+                <%= f.check_box :public_profile_show_state %>
+             </div>
+              <div>
+               <%= f.check_box :public_profile_show_city %>
+             </div>
+             <div>
+                <%= f.check_box :public_profile_show_country %>
+             </div>
+
+          </details></h2>
+
 
           <% if @account.email.present? %>
-            <h2><%= t("account.show.notifications") %></h2>
+            
+            <h2><details>
+              <summary><%= t("account.show.notifications") %></summary>
 
-            <div>
-              <%= f.check_box :email_on_comment %>
-            </div>
+              <div>
+                <%= f.check_box :email_on_comment %>
+              </div>
 
-            <div>
-              <%= f.check_box :email_on_comment_reply %>
-            </div>
+              <div>
+               <%= f.check_box :email_on_comment_reply %>
+              </div>
 
-            <div>
-              <%= f.check_box :newsletter %>
-            </div>
+             <div>
+               <%= f.check_box :newsletter %>
+              </div>
 
-            <div>
-              <%= f.check_box :email_digest %>
-            </div>
+              <div>
+                <%= f.check_box :email_digest %>
+              </div>
 
-            <div>
-              <%= f.check_box :email_on_direct_message %>
-            </div>
+             <div>
+                <%= f.check_box :email_on_direct_message %>
+             </div>
+            </details></h2>
           <% end %>
+
 
           <% if @account.official_level == 1 %>
             <div>
@@ -70,7 +129,8 @@
           <% end %>
 
           <% if feature?("user.recommendations") %>
-            <h2><%= t("account.show.recommendations") %></h2>
+          <h2><details>
+            <summary><%= t("account.show.recommendations") %></summary>
 
             <% if feature?("user.recommendations_on_debates") %>
               <div>
@@ -83,6 +143,7 @@
                 <%= f.check_box :recommended_proposals %>
               </div>
             <% end %>
+            </details></h2>
           <% end %>
 
           <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
@@ -140,6 +201,17 @@
         </div>
       </div>
     <% end %>
+
+
+
+    
+
+
+  
+  
+
+  
+
 
   </div>
 </div>

@@ -316,6 +316,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.text "summary"
     t.string "name"
     t.string "main_link_text"
+    t.string "main_link_url"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
   end
@@ -327,7 +328,6 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
-    t.string "main_link_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
@@ -349,6 +349,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "main_link_text"
+    t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end
@@ -393,7 +394,6 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
-    t.string "main_link_url"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -603,6 +603,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.index ["poll_officer_id"], name: "index_failed_census_calls_on_poll_officer_id"
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
   end
+
 
   create_table "fellowship_users", force: :cascade do |t|
     t.boolean "is_fellowship_administrator", default: false
@@ -948,6 +949,9 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable_type_and_linkable_id"
+  end
+
+  create_table "local_admins", force: :cascade do |t|
   end
 
   create_table "local_census_records", id: :serial, force: :cascade do |t|
@@ -1303,6 +1307,14 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.index ["geozone_restricted"], name: "index_polls_on_geozone_restricted"
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
+  end
+
+  create_table "postal_codes", force: :cascade do |t|
+    t.string "postal_code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["postal_code"], name: "index_postal_codes_on_postal_code", unique: true
   end
 
   create_table "progress_bar_translations", id: :serial, force: :cascade do |t|
@@ -1695,6 +1707,22 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.boolean "public_interests", default: false
     t.boolean "recommended_debates", default: true
     t.boolean "recommended_proposals", default: true
+    t.string "first_name"
+    t.string "postal_code"
+    t.string "last_name"
+    t.string "street"
+    t.string "housenumber"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.boolean "public_profile_show_full_name", default: false
+    t.boolean "public_profile_show_phone_number", default: false
+    t.boolean "public_profile_show_gender", default: false
+    t.boolean "public_profile_show_date_of_birth", default: false
+    t.boolean "public_profile_show_address", default: false
+    t.boolean "public_profile_show_state", default: true
+    t.boolean "public_profile_show_city", default: true
+    t.boolean "public_profile_show_country", default: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["date_of_birth"], name: "index_users_on_date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true

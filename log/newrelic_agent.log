@@ -433,3 +433,5 @@ Did you mean?  url_for
 [2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Rails 5 Action Cable instrumentation
 [2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Installing Rails 5 view instrumentation
 [2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Finished instrumentation
+
+

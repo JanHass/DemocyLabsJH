@@ -201,5 +201,5 @@ en:
       short: "%d %b %H:%M"
       short_datetime: "%Y-%m-%d %H:%M"
       api: "%Y-%m-%d %H"
-      short2: "%d. %B %Y"
+      short2: "%B %d, %Y"
     pm: pm
