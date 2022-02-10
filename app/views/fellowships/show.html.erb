@@ -1,41 +1,64 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Fellowships</h1>
+<h1>Groups</h1>
 
 <% if @fellowship.image.attached? %>
   <img src="<%= (url_for(@fellowship.image)) %>">
 <% end %>
 
-<p>
+<p class="sizer" style="margin-top: 2%;">
   <strong>Name:</strong>
   <%= @fellowship.name %>
 </p>
 
-<p>
+<p class="sizer">
+<strong> Description:</strong>
+<%= @fellowship.description %>
+</p>
+
+<p class="sizer">
   <strong>Email:</strong>
   <%= @fellowship.email %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @fellowship.description %>
-</p>
-
-<p>
+<p class="sizer">
   <strong>Created at:</strong>
   <%= @fellowship.created_at %>
 </p>
 
-<p>
-  <strong>Updatet at:</strong>
+<p class="sizer">
+  <strong>Updated at:</strong>
   <%= @fellowship.updatet_at %>
 </p>
 
-<p>
+<p class="sizer">
   <strong>Organization:</strong>
   <%= @fellowship.organization_id %>
 </p>
 
+<%= link_to 'Back', fellowships_path, class: "btn btn-info" %>
+<%= link_to 'Edit', edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
+<%= link_to 'Delete', @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 
-<%= link_to 'Edit', edit_fellowship_path(@fellowship) %> |
-<%= link_to 'Back', fellowships_path %>
+<%= link_to "Join Group", join_fellowship_path(@fellowship) %>
+<%= link_to "Leave Group", leave_fellowship_path(@fellowship) %>
+
+
+
+<style>
+  .btn-info
+   {
+       background:#05d3dd !important; 
+       border: none;
+       color: white;
+   }
+   .btn-primary
+   {
+       border: none;
+   }
+
+   .sizer
+   {
+    font-size: 20px;
+   }
+</style>
