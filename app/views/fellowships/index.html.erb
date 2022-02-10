@@ -2,8 +2,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<h1>Groups</h1>
+<%= render "shared/fellowships_header", i18n_namespace: "Fellowships", image: "group_icon" %>
 
+<h1>Groups</h1>
 
 <h2>My Groups<h2>
 
@@ -30,7 +31,6 @@
     </div>
   </div>
 <% end %>
-
 <table>
 
   <tbody>
@@ -41,7 +41,7 @@
   <div class="row g-0">
     <div class="col-md-4">
       <% if fellowship.image.attached? %>
-      <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top" alt="...">
+      <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top">
       <% end %>
     </div>
     <div class="col-md-8">
@@ -50,6 +50,7 @@
         <p class="card-text" style="margin-top: 2%;"><%= fellowship.description %></p>
         <p class="card-text"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
       </div>
+      <div style="float: right; margin-right: 3%; margin-top: 9%; color: #3adb76;"><i class="fas fa-check-square fa-lg"></i></div>
     </div>
     <%= link_to 'Show', fellowship, class: "btn btn-info" %>
   </div>
@@ -60,7 +61,7 @@
 
 <br>
 
-<%= link_to 'New Fellowship', new_fellowship_path, class: "btn btn-success btn-lg" %>
+<%= link_to 'New Fellowship', new_fellowship_path, class: "success button" %>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -76,10 +77,10 @@
        border: none;
        color: white;
    }
-   .btn-success
-   {
-       background:#3adb76 !important; 
-       border: none;
+
+   .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
+    {
        color: white;
-   }
+       text-decoration:none;
+    }
 </style>
