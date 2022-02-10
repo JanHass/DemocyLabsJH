@@ -3,6 +3,11 @@
   margin-top: $line-height / 4;
   position: relative;
 
+  ul
+  {
+    padding-left: 0%;
+  }
+
   .locale-form {
     @include has-fa-icon(angle-down, solid, after);
     display: inline-block;
@@ -34,7 +39,7 @@
       height: $line-height;
       margin-bottom: 0;
       outline: none;
-      padding-left: $line-height / 4;
+      padding-left: 0;
       padding-right: calc(#{$line-height / 4} + 1em);
       width: auto;
 

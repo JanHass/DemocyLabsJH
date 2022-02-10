@@ -24,6 +24,8 @@ class User < ApplicationRecord
   has_many :debates, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :activities
+  has_many :fellowship_users, :dependent => :destroy
+  has_many :fellowships, through: :fellowship_users
   has_many :budget_investments, -> { with_hidden },
     class_name:  "Budget::Investment",
     foreign_key: :author_id,
@@ -242,6 +244,7 @@ class User < ApplicationRecord
 
     official_position_badge? && official_level == 1
   end
+
 
   def block
     hide

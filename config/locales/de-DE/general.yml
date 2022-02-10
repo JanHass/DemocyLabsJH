@@ -220,7 +220,7 @@ de:
       consul: CONSUL Anwendung
       consul_url: https://github.com/consul/consul
       contact_us: Für technische Unterstützung geben Sie ein
-      copyright: CONSUL, %{year}
+      copyright: Democy Labs, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
