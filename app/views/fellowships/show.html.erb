@@ -1,41 +1,69 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Fellowships</h1>
+<%= render "shared/fellowships_header", i18n_namespace: "Show Fellowship", image: "group_icon" %>
 
 <% if @fellowship.image.attached? %>
-  <img src="<%= (url_for(@fellowship.image)) %>">
+  <img src="<%= (url_for(@fellowship.image)) %>" style="max-width: 25%; max-height: 25%; margin-bottom: 1%;">
+  <p class="sizer">
+    <strong>Description:</strong>
+    <textarea rows="3" class="form-control" style="width: 50%;" readonly><%= @fellowship.description %></textarea>
+  </p>
 <% end %>
 
-<p>
+<p class="sizer" style="margin-top: 2%;">
   <strong>Name:</strong>
-  <%= @fellowship.name %>
+  <input class="form-control" type="text" value="<%= @fellowship.name %>" style="width: 25%;" readonly>
 </p>
 
-<p>
+<p class="sizer">
+<strong> Description:</strong>
+<%= @fellowship.description %>
+</p>
+
+<p class="sizer">
   <strong>Email:</strong>
-  <%= @fellowship.email %>
+  <input class="form-control" type="text" value="<%= @fellowship.email %>" style="width: 25%;" readonly>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @fellowship.description %>
-</p>
-
-<p>
+<p class="sizer">
   <strong>Created at:</strong>
-  <%= @fellowship.created_at %>
+  <input class="form-control" type="text" value="<%= localize(@fellowship.created_at, :format => :short2) %>" style="width: 25%;" readonly>
 </p>
 
-<p>
-  <strong>Updatet at:</strong>
-  <%= @fellowship.updatet_at %>
+<p class="sizer">
+  <strong>Updated at:</strong>
+  <input class="form-control" type="text" value="<%= @fellowship.updatet_at %>" style="width: 25%;" readonly>
 </p>
 
-<p>
+
+<p class="sizer">
   <strong>Organization:</strong>
-  <%= @fellowship.organization_id %>
+  <input class="form-control" type="text" value="<%= @fellowship.organization_id %>" style="width: 25%;" readonly>
 </p>
 
+<%= link_to 'Back', fellowships_path, class: "btn btn-info" %>
+<%= link_to 'Edit', edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
+<%= link_to 'Delete', @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 
-<%= link_to 'Edit', edit_fellowship_path(@fellowship) %> |
-<%= link_to 'Back', fellowships_path %>
+<%= link_to "Join Group", join_fellowship_path(@fellowship) %>
+<%= link_to "Leave Group", leave_fellowship_path(@fellowship) %>
+
+
+
+<style>
+  .btn-info
+   {
+       background:#05d3dd !important; 
+       border: none;
+       color: white;
+   }
+   .btn-primary
+   {
+       border: none;
+   }
+
+   .sizer
+   {
+    font-size: 20px;
+   }
+</style>

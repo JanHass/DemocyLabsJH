@@ -6,6 +6,10 @@
 
     <%= render "shared/globalize_locales", resource: debate %>
 
+    <div class="fellowships>
+    <%= f.collection_select(:fellowship_id, Fellowship.all, :id, :name) %>
+    </div>
+
     <%= f.translatable_fields do |translations_form| %>
       <div>
         <%= translations_form.text_field :title,

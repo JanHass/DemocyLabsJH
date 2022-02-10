@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_16_175903) do
+ActiveRecord::Schema.define(version: 2022_02_10_152703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -533,6 +533,7 @@ ActiveRecord::Schema.define(version: 2022_01_16_175903) do
     t.integer "geozone_id"
     t.tsvector "tsv"
     t.datetime "featured_at"
+    t.bigint "fellowship_id"
     t.index ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at"
     t.index ["author_id"], name: "index_debates_on_author_id"
     t.index ["cached_votes_down"], name: "index_debates_on_cached_votes_down"
@@ -540,6 +541,7 @@ ActiveRecord::Schema.define(version: 2022_01_16_175903) do
     t.index ["cached_votes_total"], name: "index_debates_on_cached_votes_total"
     t.index ["cached_votes_up"], name: "index_debates_on_cached_votes_up"
     t.index ["confidence_score"], name: "index_debates_on_confidence_score"
+    t.index ["fellowship_id"], name: "index_debates_on_fellowship_id"
     t.index ["geozone_id"], name: "index_debates_on_geozone_id"
     t.index ["hidden_at"], name: "index_debates_on_hidden_at"
     t.index ["hot_score"], name: "index_debates_on_hot_score"
@@ -603,12 +605,14 @@ ActiveRecord::Schema.define(version: 2022_01_16_175903) do
   end
 
   create_table "fellowship_users", force: :cascade do |t|
-    t.integer "fellowship_id"
-    t.integer "user_id"
     t.boolean "is_fellowship_administrator", default: false
     t.boolean "is_fellowship_moderator", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "fellowship_id"
+    t.bigint "user_id"
+    t.index ["fellowship_id"], name: "index_fellowship_users_on_fellowship_id"
+    t.index ["user_id"], name: "index_fellowship_users_on_user_id"
   end
 
   create_table "fellowships", force: :cascade do |t|
@@ -1296,7 +1300,9 @@ ActiveRecord::Schema.define(version: 2022_01_16_175903) do
     t.string "related_type"
     t.integer "related_id"
     t.tsvector "tsv"
+    t.bigint "fellowship_id"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true
+    t.index ["fellowship_id"], name: "index_polls_on_fellowship_id"
     t.index ["geozone_restricted"], name: "index_polls_on_geozone_restricted"
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
@@ -1378,11 +1384,13 @@ ActiveRecord::Schema.define(version: 2022_01_16_175903) do
     t.integer "community_id"
     t.datetime "published_at"
     t.boolean "selected", default: false
+    t.bigint "fellowship_id"
     t.index ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at"
     t.index ["author_id"], name: "index_proposals_on_author_id"
     t.index ["cached_votes_up"], name: "index_proposals_on_cached_votes_up"
     t.index ["community_id"], name: "index_proposals_on_community_id"
     t.index ["confidence_score"], name: "index_proposals_on_confidence_score"
+    t.index ["fellowship_id"], name: "index_proposals_on_fellowship_id"
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id"
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at"
     t.index ["hot_score"], name: "index_proposals_on_hot_score"

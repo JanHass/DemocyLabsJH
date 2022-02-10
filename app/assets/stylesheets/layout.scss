@@ -51,6 +51,7 @@ body {
   flex-direction: column;
   font-size: $base-font-size;
   min-height: 100%;
+  overflow-x: hidden;
 
   &.public {
     @include breakpoint($global-width) {
@@ -517,7 +518,7 @@ button,
 
 body > header,
 .wrapper > header {
-  @include grid-column-gutter;
+  
   margin-bottom: $line-height;
 
   @include breakpoint(small down) {
@@ -527,6 +528,10 @@ body > header,
 
   .selected {
     border-bottom: 1px solid #fff;
+  }
+
+  .grid-column-gutter{
+    padding-left: 0%;
   }
 
   .remote-translations-button {
@@ -751,7 +756,7 @@ body > header,
 .subnavigation {
   display: flex;
   flex-direction: column;
-
+  
   @include breakpoint(medium) {
     background: $body-background;
     color: $text;
@@ -924,7 +929,7 @@ footer {
     text-decoration: underline;
 
     &:hover {
-      color: $text-medium;
+      color: white;
     }
   }
 
