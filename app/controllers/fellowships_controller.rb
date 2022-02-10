@@ -50,6 +50,28 @@ class FellowshipsController < ApplicationController
     redirect_to fellowships_url, notice: 'Fellowship was successfully deleted.'
   end
 
+  # Join a Group
+  def join
+    @fellowship = Fellowship.find(params[:id])
+    @m = @fellowship.fellowship_users.build(:user_id => current_user.id)
+    respond_to do |format|
+      if @m.save
+        format.html { redirect_to(@fellowship, :notice => 'You have joined this group.') }
+      else
+        format.html { redirect_to(@fellowship, :notice => 'Join error.') }
+      end
+    end
+  end
+  
+  def leave
+    
+    @fellowship_user = current_user.fellowship_users.find(params[:id])
+    @fellowship_user.destroy
+    flash[:notice] = "You left the Group."
+    redirect_to @fellowship
+       
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_fellowship
