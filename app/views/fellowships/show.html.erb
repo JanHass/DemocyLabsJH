@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= render "shared/fellowships_header", i18n_namespace: "Show Fellowship", image: "group_icon" %>
-
+<%= render "shared/fellowships_header", i18n_namespace: "Show Group", image: "group_icon" %>
 <% if @fellowship.image.attached? %>
   <img src="<%= (url_for(@fellowship.image)) %>" style="max-width: 25%; max-height: 25%; margin-bottom: 1%;">
   <p class="sizer">
@@ -13,11 +12,6 @@
 <p class="sizer" style="margin-top: 2%;">
   <strong>Name:</strong>
   <input class="form-control" type="text" value="<%= @fellowship.name %>" style="width: 25%;" readonly>
-</p>
-
-<p class="sizer">
-<strong> Description:</strong>
-<%= @fellowship.description %>
 </p>
 
 <p class="sizer">
@@ -44,9 +38,9 @@
 <%= link_to 'Back', fellowships_path, class: "btn btn-info" %>
 <%= link_to 'Edit', edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
 <%= link_to 'Delete', @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-
-<%= link_to "Join Group", join_fellowship_path(@fellowship) %>
-<%= link_to "Leave Group", leave_fellowship_path(@fellowship) %>
+<div style="padding: 0.5%;"></div>
+<%= link_to "Join Group", join_fellowship_path(@fellowship), class: "btn btn-success" %>
+<%= link_to "Leave Group", leave_fellowship_path(@fellowship), class: "btn btn-warning" %>
 
 
 
@@ -65,5 +59,10 @@
    .sizer
    {
     font-size: 20px;
+   }
+
+   .btn-danger
+   {
+       margin-right: 10%;
    }
 </style>
