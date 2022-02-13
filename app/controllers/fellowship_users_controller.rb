@@ -10,6 +10,10 @@ class FellowshipUsersController < ApplicationController
           redirect_to :back
         end
       end
+
+      
+
+      
     
       def destroy
         @fellowship_user = current_user.fellowship_users.find(params[:id])

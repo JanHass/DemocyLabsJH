@@ -63,7 +63,7 @@ class FellowshipsController < ApplicationController
       end
     end
   end
-  
+
   def leave
     
     @fellowship_user = current_user.fellowship_users.find(params[:id])

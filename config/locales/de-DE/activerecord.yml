@@ -321,6 +321,8 @@ de:
 
       fellowship:  
 
+        mygroups: "Meine Gruppen"
+        allgroups: "Alle Gruppen"
         creategroup: "Neue Gruppe erstellen"
         required: "Pflichtfelder"
         optional: "Optionale Felder"
@@ -372,7 +374,20 @@ de:
                             ob diese im öffentlichen Profil angezeigt werden. Gruppen-Administrator:innen sehen diese Daten in der Mitgliederübersicht. 
                             Falls diese Daten von den jeweiligen Administrator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."
         info_admin_show_public: "Falls ausgewählt, müssen Administrator:innen die folgenden Daten in Ihren öffentlichen Profil darstellen.
-                                Falls diese Daten von den jeweiligen Administrator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."                 
+                                Falls diese Daten von den jeweiligen Administrator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."   
+
+        join_group: "Beitreten"  
+        back: "Zurück"
+        edit: "Gruppe Bearbeiten"
+        delete: "Gruppe Löschen"
+        leave: "Gruppe verlassen"
+        popup_req_password_label: "Einschreibeschlüssel benötigt!"
+
+        popup_req_password_close: "Abbrechen"
+        popup_req_password_text1: "Um dieser Gruppe beizutreten wird ein Einschreibeschlüssel benötigt."
+        popup_req_password_text2: "Einschreibeschlüssel:"
+        popup_req_password_wrong: "Einschreibeschlüssel ungültig!"
+
 
 
       direct_message:

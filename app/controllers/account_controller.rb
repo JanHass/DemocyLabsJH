@@ -4,7 +4,7 @@ class AccountController < ApplicationController
   load_and_authorize_resource class: "User"
 
   def show
-    @fellowships = Fellowship.all
+    @fellowships = Fellowship.all 
   end
 
   

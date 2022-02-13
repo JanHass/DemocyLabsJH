@@ -378,6 +378,19 @@ en:
         info_admin_show_public: "If selected, administrators must display the following data in their public profile.
                                  If these data are not filled out by the respective administrators, they can only read group posts."
 
+        join_group: "Join"  
+        back: "Back"
+        edit: "Edit Group"
+        delete: "Delete Group"
+        leave: "Leave Group"
+        popup_req_password_label: "Password required!"
+
+        popup_req_password_close: "Close"
+        popup_req_password_text1: "A password is required to join this group. "
+        popup_req_password_text2: "Password:"
+        popup_req_password_wrong: "Password invalid!"
+                         
+
 
 
       direct_message:
