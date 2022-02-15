@@ -330,7 +330,7 @@ en:
         optional: "Optional fields"
         name: "Group name"
         email: "E-Mail"
-        description: "group description"
+        description: "Group description"
         zip_code: "Postal code"
         user_required_full_name:  "Users need first and last name"
         user_required_phone_number: "Users need a phone number"
@@ -364,7 +364,7 @@ en:
         admin_public_show_state: "Admins must share their state publicly"
         admin_public_show_city: "Administrators must share their city publicly"
         admin_public_show_country: "Administrators must share their land publicly"
-        image: "Add group picture"
+        image: "Add/Change group picture"
         user_requirements: "Requirements for group members"
         admin_requierments: "Requirements for group administrators"
         info_user_required: "If selected, users must have filled out the following data in their profile. Users are free to
