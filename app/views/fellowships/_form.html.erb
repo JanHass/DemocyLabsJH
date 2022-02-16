@@ -36,16 +36,32 @@
       <%= form.text_field :zip_code %>
     </div>
 
-    <div class="field">
-      <%= form.check_box :join_password_required %>
+    <%= form_for(@fellowship) do |f| %>
+    <div id="password_required">
+      <%= form.check_box :join_password_required, :id => "passwordisrequired", :onclick => "toggle_password_field();" %>
     </div>
-
-    <div class="field">
+    <div id="password_field">
       <%= form.text_field :join_password %>
     </div>
+    <% end %>
 
 
 
+    <script>
+    function toggle_password_field()
+    {
+      var checkbox = document.getElementById('passwordisrequired');
+      if (checkbox.checked)
+      {
+        document.getElementById("password_field").style['display'] = "block";
+      }
+      else
+      {
+        document.getElementById("password_field").style['display'] = "none";
+      }
+    }
+    </script>
+    
 
     <h2><details>
         <summary><%= t("activerecord.attributes.fellowship.user_requirements") %></summary>
