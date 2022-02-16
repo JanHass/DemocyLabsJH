@@ -324,7 +324,10 @@ en:
         recommended_proposals: "Show proposals recommendations"
         redeemable_code: "Verification code received via email"
 
-      fellowship:  
+      fellowship: 
+        mygroups: "My Groups"
+        allgroups: "All Groups"
+        showgroup: "Show Group" 
         creategroup: "Create new group"
         required: "Required fields"
         optional: "Optional fields"
@@ -332,6 +335,8 @@ en:
         email: "E-Mail"
         description: "group description"
         zip_code: "Postal code"
+        join_password_required: "Provide group with password"
+        join_password: "Password"
         user_required_full_name:  "Users need first and last name"
         user_required_phone_number: "Users need a phone number"
         user_required_gender: "Users need a gender"
@@ -384,6 +389,8 @@ en:
         delete: "Delete Group"
         leave: "Leave Group"
         popup_req_password_label: "Password required!"
+        created_at: "Created at"
+        updated_at: "Last update at"
 
         popup_req_password_close: "Close"
         popup_req_password_text1: "A password is required to join this group. "

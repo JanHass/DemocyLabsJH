@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_10_152703) do
+ActiveRecord::Schema.define(version: 2022_02_16_085901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -663,6 +663,8 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.boolean "admin_public_show_country", default: false
     t.datetime "updated_at", null: false
     t.integer "zip_code"
+    t.boolean "join_password_required", default: false
+    t.string "join_password"
     t.index ["author_id"], name: "index_fellowships_on_author_id"
     t.index ["email"], name: "index_fellowships_on_email"
     t.index ["name"], name: "index_fellowships_on_name"

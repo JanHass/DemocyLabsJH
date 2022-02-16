@@ -1,39 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<%= render "shared/fellowships_header", i18n_namespace: "Show Group", image: "group_icon" %>
+<%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.showgroup"), image: "group_icon" %>
+
 <% if @fellowship.image.attached? %>
   <img src="<%= (url_for(@fellowship.image)) %>" style="max-width: 25%; max-height: 25%; margin-bottom: 1%;">
   <p class="sizer">
-    <strong>Description:</strong>
+    <strong><%= t("activerecord.attributes.fellowship.description") %></strong>
     <textarea rows="3" class="form-control" style="width: 50%;" readonly><%= @fellowship.description %></textarea>
   </p>
 <% end %>
 
 <p class="sizer" style="margin-top: 2%;">
-  <strong>Name:</strong>
+  <strong><%= t("activerecord.attributes.fellowship.name") %></strong>
   <input class="form-control" type="text" value="<%= @fellowship.name %>" style="width: 25%;" readonly>
 </p>
 
 <p class="sizer">
-  <strong>Email:</strong>
+  <strong><%= t("activerecord.attributes.fellowship.email") %></strong>
   <input class="form-control" type="text" value="<%= @fellowship.email %>" style="width: 25%;" readonly>
 </p>
 
 <p class="sizer">
-  <strong>Created at:</strong>
+  <strong><%= t("activerecord.attributes.fellowship.created_at") %></strong>
   <input class="form-control" type="text" value="<%= localize(@fellowship.created_at, :format => :short2) %>" style="width: 25%;" readonly>
 </p>
 
 <p class="sizer">
-  <strong>Updated at:</strong>
+  <strong><%= t("activerecord.attributes.fellowship.updated_at") %></strong>
   <input class="form-control" type="text" value="<%= @fellowship.updatet_at %>" style="width: 25%;" readonly>
 </p>
 
 
-<p class="sizer">
-  <strong>Organization:</strong>
-  <input class="form-control" type="text" value="<%= @fellowship.organization_id %>" style="width: 25%;" readonly>
-</p>
+
 
 <%= link_to t("activerecord.attributes.fellowship.back"), fellowships_path, class: "btn btn-info" %>
 <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
@@ -44,12 +42,9 @@
 
 
 <!-- Abfrage Join: ersetzen durch required password und check ob nutzer schon beigetreten -->
-<% if ( @fellowship.user_required_full_name? ) %>
-
-
-  
+<% if ( @fellowship.join_password_required? ) %>
   <button type="button" class="btn btn-primary" id="btnpopup" data-bs-toggle="modal" data-bs-target="#join_req_password">
-    Join Group (Password)
+    <%= t("activerecord.attributes.fellowship.join_group") %>
   </button>
 
   <!-- Modal Passowrt eingabe --> 
@@ -59,89 +54,28 @@
         <div class="modal-header">
           <h5 class="modal-title" id="req_password_Label"><%= t("activerecord.attributes.fellowship.popup_req_password_label") %></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-       </div>
+        </div>
         <div class="modal-body">
           <%= t("activerecord.attributes.fellowship.popup_req_password_text1") %>
           <br><br>
-          <%= t("activerecord.attributes.fellowship.popup_req_password_text2") %>
           
+          <%= form_with url: join_fellowship_path(@fellowship), local: true, method: :get do %>
+          <div>
+            <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
+            <%= text_field_tag "password", nil %>
+          </div>
 
-          <input type="text" class="form-control" id="entered_password" max="20">
+          
         </div>
         <div class="modal-footer">
          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
-         <button type="button" class="btn btn-primary"  data-bs-dismiss="modal"  onclick="checkpassword()"> 
-            <%= t("activerecord.attributes.fellowship.join_group") %>
-          </button>
+          <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "btn btn-success" %>  
+         <% end %>
         </div>
      </div>
     </div>
   </div>
-  <!-- Modal Passowrt falsch --> 
-  <div class="modal fade" id="wrong_req_password" tabindex="-1" aria-labelledby="wrong_password_Label" aria-hidden="true">
-   <div class="modal-dialog">
-     <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="wrong_req_password_Label"><%= t("activerecord.attributes.fellowship.popup_req_password_label") %></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-       </div>
-        <div class="modal-body">
-          <%= t("activerecord.attributes.fellowship.popup_req_password_text1") %>
-          <br><br>
-          <%= t("activerecord.attributes.fellowship.popup_req_password_text2") %>
-          
-
-          <input type="text" class="form-control" id="entered_password_2" max="20">
-          <p style="color:red;"><%= t("activerecord.attributes.fellowship.popup_req_password_wrong") %></p>
-        </div>
-        <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
-         <button type="button" class="btn btn-primary"  data-bs-dismiss="modal"  onclick="checkpassword()"> 
-            <%= t("activerecord.attributes.fellowship.join_group") %>
-          </button>
-        </div>
-     </div>
-    </div>
-  </div>
-
-  <script>
-    function checkpassword() 
-    {
-      
-     
-      var enteredpassword = document.getElementById("entered_password").value;
-      var enteredpassword_if_first_false = document.getElementById("entered_password_2").value;
-      
-      
-      var grouppassword = "<%= @fellowship.name %>";
-      
-      
-      if ((enteredpassword === grouppassword) || (enteredpassword_if_first_false === grouppassword))
-      {
-        alert("Richtiges Passwort");
-          
-       var aaa = "<%= @fellowship.join %>";
-
-
-        alert("nach join");
-        
-        window.location.reload();
-        
-      }
-      else
-      {
-        sleep(500).then(() => { $('#wrong_req_password').modal('show'); });
-      }
-    
-
-      return 
-    }
-    function sleep(ms) 
-    {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-  </script>
-
+  
 <% else %>
   <%= link_to  t("activerecord.attributes.fellowship.join_group") , join_fellowship_path(@fellowship), class: "btn btn-success" %>
 <% end %>

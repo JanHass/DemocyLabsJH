@@ -323,6 +323,7 @@ de:
 
         mygroups: "Meine Gruppen"
         allgroups: "Alle Gruppen"
+        showgroup: "Gruppe Anzeigen"
         creategroup: "Neue Gruppe erstellen"
         required: "Pflichtfelder"
         optional: "Optionale Felder"
@@ -330,6 +331,8 @@ de:
         email: "E-Mail"
         description: "Gruppenbeschreibung"
         zip_code: "Postleitzahl"
+        join_password_required: "Gruppe mit Einschreibeschlüssel versehen?"
+        join_password: "Einschreibeschlüssel"
         user_required_full_name:  "Nutzer:innen benötigen Vor- und Nachname"
         user_required_phone_number: "Nutzer:innen benötigen eine Telefonnummer"
         user_required_gender: "Nutzer:innen benötigen ein Geschlecht"
@@ -382,6 +385,8 @@ de:
         delete: "Gruppe Löschen"
         leave: "Gruppe verlassen"
         popup_req_password_label: "Einschreibeschlüssel benötigt!"
+        created_at: "Gruppe erstellt am"
+        updated_at: "Zuletzt bearbeitet am"
 
         popup_req_password_close: "Abbrechen"
         popup_req_password_text1: "Um dieser Gruppe beizutreten wird ein Einschreibeschlüssel benötigt."

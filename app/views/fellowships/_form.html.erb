@@ -25,6 +25,8 @@
     <div class="field">
       <%= form.text_area :description, :rows=>5 %>
     </div>
+
+
   </fieldset>
 
   <fieldset class="opional-fields">
@@ -33,6 +35,15 @@
     <div class="field">
       <%= form.text_field :zip_code %>
     </div>
+
+    <div class="field">
+      <%= form.check_box :join_password_required %>
+    </div>
+
+    <div class="field">
+      <%= form.text_field :join_password %>
+    </div>
+
 
 
 

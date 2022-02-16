@@ -54,6 +54,45 @@ class FellowshipsController < ApplicationController
   # Join a Group
   def join
     @fellowship = Fellowship.find(params[:id])
+
+    #If Password to join is required
+    if @fellowship.join_password_required?
+
+      #If Group Password == User entered Passwort -> Join
+      if params[:password] == @fellowship.join_password
+        @m = @fellowship.fellowship_users.build(:user_id => current_user.id)
+
+        respond_to do |format|
+          if @m.save
+            format.html { redirect_to(@fellowship, :notice => 'Beigetreten.') }
+          else
+            format.html { redirect_to(@fellowship, :alert => 'Join error.') }
+          end
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to(@fellowship, :alert => "Falsches Passwort") }
+        end
+      end 
+      
+
+    #If NO Password to join is required
+    else  
+      @m = @fellowship.fellowship_users.build(:user_id => current_user.id)
+      respond_to do |format|
+        if @m.save
+          format.html { redirect_to(@fellowship, :notice => 'You have joined this group.') }
+        else
+          format.html { redirect_to(@fellowship, :notice => 'Join error.') }
+        end
+      end
+    end
+  end
+
+
+
+  def joinBAK
+    @fellowship = Fellowship.find(params[:id])
     @m = @fellowship.fellowship_users.build(:user_id => current_user.id)
     respond_to do |format|
       if @m.save
@@ -61,8 +100,12 @@ class FellowshipsController < ApplicationController
       else
         format.html { redirect_to(@fellowship, :notice => 'Join error.') }
       end
-    end
+    end 
   end
+
+  
+  
+  helper_method :join
 
   def leave
     
@@ -89,6 +132,6 @@ class FellowshipsController < ApplicationController
       :admin_required_full_name, :admin_required_phone_number, :admin_required_gender, :admin_required_date_of_birth, :admin_required_address, 
       :admin_required_state, :admin_required_city, :admin_required_country, :admin_public_show_full_name, :admin_public_show_phone_number, 
       :admin_public_show_gender, :admin_public_show_date_of_birth, :admin_public_show_address, :admin_public_show_state, :admin_public_show_city, 
-      :admin_public_show_country)
+      :admin_public_show_country, :join_password_required, :join_password)
     end
 end
