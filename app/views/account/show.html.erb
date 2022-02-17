@@ -155,7 +155,7 @@
               </thead>
           
               <tbody>
-                <% @fellowships.each do |fellowship| %>
+                <% current_user.fellowships.each do |fellowship| %>
                   <tr>
                     <td><p><%= fellowship.name %></p></td>
                     <td><p><%= fellowship.description %></p></td>
@@ -246,8 +246,8 @@
                     </td>
                 
                     <td style='width: 15%';><p>Hier Nutzerrolle einfügen (Admin, ...)</p></td>
-                    <td style='width: 6%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship,class: "button" %></p></td>
-                    <td style='width: 15%';><p><button class="button">Leave Group</button></p></td>
+                    <td style='width: 6%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship,class: "button hollow" %></p></td>
+                    <td style='width: 15%';><p><button class="button hollow alert">Leave Group</button></p></td>
                  </tr>
                 <% end %>
               </tbody>
@@ -376,6 +376,14 @@ details summary::-webkit-details-marker {
 details > ul {
   padding-bottom: 1rem;
   margin-bottom: 0;
+}
+
+.button.hollow.alert
+{
+    padding-top: 0.85em;
+    padding-right: 1em;
+    padding-bottom: 0.85em;
+    padding-left: 1em;
 }
 
 </style>
