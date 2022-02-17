@@ -30,7 +30,7 @@ class FellowshipsController < ApplicationController
     @fellowship = Fellowship.new(fellowship_params)
 
     if @fellowship.save
-      redirect_to @fellowship, notice: 'Fellowship was successfully created.'
+      redirect_to @fellowship, notice: t("activerecord.attributes.fellowship.create_success")
     else
       render :new
     end
@@ -39,7 +39,7 @@ class FellowshipsController < ApplicationController
   # PATCH/PUT /fellowships/1
   def update
     if @fellowship.update(fellowship_params)
-      redirect_to @fellowship, notice: 'Fellowship was successfully updated.'
+      redirect_to @fellowship, notice: t("activerecord.attributes.fellowship.update_success")
     else
       render :edit
     end
@@ -48,7 +48,7 @@ class FellowshipsController < ApplicationController
   # DELETE /fellowships/1
   def destroy
     @fellowship.destroy
-    redirect_to fellowships_url, notice: 'Fellowship was successfully deleted.'
+    redirect_to fellowships_url, notice: t("activerecord.attributes.fellowship.delete_success")
   end
 
   # Join a Group
@@ -64,14 +64,14 @@ class FellowshipsController < ApplicationController
 
         respond_to do |format|
           if @m.save
-            format.html { redirect_to(@fellowship, :notice => 'Beigetreten.') }
+            format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.join_success")) }
           else
-            format.html { redirect_to(@fellowship, :alert => 'Join error.') }
+            format.html { redirect_to(@fellowship, :alert => t("activerecord.attributes.fellowship.join_error")) }
           end
         end
       else
         respond_to do |format|
-          format.html { redirect_to(@fellowship, :alert => "Falsches Passwort") }
+          format.html { redirect_to(@fellowship, :alert => t("activerecord.attributes.fellowship.join_wrong_password")) }
         end
       end 
       
@@ -81,28 +81,13 @@ class FellowshipsController < ApplicationController
       @m = @fellowship.fellowship_users.build(:user_id => current_user.id)
       respond_to do |format|
         if @m.save
-          format.html { redirect_to(@fellowship, :notice => 'You have joined this group.') }
+          format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.join_success")) }
         else
-          format.html { redirect_to(@fellowship, :notice => 'Join error.') }
+          format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.join_error")) }
         end
       end
     end
   end
-
-
-
-  def joinBAK
-    @fellowship = Fellowship.find(params[:id])
-    @m = @fellowship.fellowship_users.build(:user_id => current_user.id)
-    respond_to do |format|
-      if @m.save
-        format.html { redirect_to(@fellowship, :notice => 'You have joined this group.') }
-      else
-        format.html { redirect_to(@fellowship, :notice => 'Join error.') }
-      end
-    end 
-  end
-
   
   
   helper_method :join

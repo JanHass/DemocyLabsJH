@@ -24,8 +24,11 @@ class FellowshipUsersController < ApplicationController
       end
 
       private
+      
+
+
       def fellowship_user_params
-        params.require(:fellowship_user).permit(:fellowship_id, :user_id)
+        params.require(:fellowship_user).permit(:fellowship_id, :user_id, :updated_at, :created_at, :is_fellowship_moderator, :is_fellowship_administrator)
       end
 
     end
