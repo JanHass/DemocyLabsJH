@@ -25,7 +25,6 @@
       <%= avatar_image(@user, seed: @user.id, size: 100) %>
 
       <% if (@user.public_profile_show_full_name && @user.first_name.present? && @user.last_name.present?) || (current_administrator? && @user.first_name.present? && @user.last_name.present?) %>
-        <p><%= t("activerecord.attributes.user.name") + ": " + @user.first_name + " " + @user.last_name %></p>
         <p class="sizer">
           <strong><%= t("activerecord.attributes.user.name")+ ":" %></strong>
           <input class="form-control" type="text" value="<%= @user.first_name%>&nbsp;<%= @user.last_name%>" style="width: 25%;" readonly>
@@ -54,7 +53,6 @@
       <% end %>
 
       <% if (@user.public_profile_show_address && @user.street.present? && @user.housenumber.present?) || (current_administrator?  && @user.street.present? && @user.housenumber.present?)  %>
-        <p><%= t("activerecord.attributes.user.street") + ": " + @user.street + " " + @user.housenumber %></p>
         <p class="sizer">
           <strong><%= t("activerecord.attributes.user.street")+ ":" %></strong>
           <input class="form-control" type="text" value="<%=@user.street%>&nbsp;<%=@user.housenumber %>" style="width: 25%;" readonly>
@@ -62,19 +60,31 @@
       <% end %>
 
       <% if (@user.public_profile_show_address && @user.street.present? && !@user.housenumber.present?) || (current_administrator?  && @user.street.present? && !@user.housenumber.present?)  %>
-        <p><%= t("activerecord.attributes.user.street") + ": " + @user.street %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.street")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.street %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_city && @user.postal_code.present? && @user.city.present?) || (current_administrator? && @user.postal_code.present? && @user.city.present?) %>
-        <p><%= t("activerecord.attributes.user.city") + ": " + @user.postal_code + " " + @user.city %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.city")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.postal_code %>&nbsp;<%=@user.city %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_city && @user.postal_code.present? && !@user.city.present?) || (current_administrator? && @user.postal_code.present? && !@user.city.present?) %>
-        <p><%= t("activerecord.attributes.user.city") + ": " + @user.postal_code %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.city")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.postal_code %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_city && !@user.postal_code.present? && @user.city.present?) || (current_administrator? && !@user.postal_code.present? && @user.city.present?) %>
-        <p><%= t("activerecord.attributes.user.city") + ": " +@user.city %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.city")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.city %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_state && @user.state.present? ) || (current_administrator? && @user.state.present? )  %>

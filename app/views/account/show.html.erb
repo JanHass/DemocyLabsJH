@@ -1,4 +1,7 @@
 <%= render "shared/myaccount_header", i18n_namespace: "My Account", image: "user-solid" %>
+<%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow ", :style => 'margin-bottom: 0%' %>
+            
+<%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "button hollow alert", :style => 'margin-bottom: 0%'%>
 <div class="row account">
   <div class="small-12 column">
     
@@ -257,12 +260,9 @@
 
             </details></h3>
 
-          <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
-          <div style="margin-bottom: 0.1%;"></div>
+          <%= f.submit t("account.show.save_changes_submit"), class: "button success margin-top" %>
           
-            <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button" %>
-            
-            <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "button", :style => 'background-color: red'  %>
+           
             <div style="margin-bottom: 5%;"></div>
         </div>
 

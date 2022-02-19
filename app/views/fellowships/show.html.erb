@@ -36,9 +36,9 @@
   <input class="form-control" type="text" value="<%= @fellowship.organization_id %>" style="width: 25%;" readonly>
 </p>
 
-<%= link_to 'Back', fellowships_path, class: "button" %>
-<%= link_to 'Edit', edit_fellowship_path(@fellowship), class: "button" %>
-<%= link_to 'Delete', @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button", :style => 'background-color: red' %>
+<%= link_to 'Back', fellowships_path, class: "button hollow"%>
+<%= link_to 'Edit', edit_fellowship_path(@fellowship), class: "button hollow" %>
+<%= link_to 'Delete', @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button hollow alert" %>
 <div style="padding: 0.5%;"></div>
 <%= link_to "Join Group", join_fellowship_path(@fellowship), class: "button" %>
 <%= link_to "Leave Group", leave_fellowship_path(@fellowship), class: "button" %>
@@ -50,4 +50,11 @@
     {
       text-decoration:none;
     }
+    .button.hollow.alert
+{
+    padding-top: 0.85em;
+    padding-right: 1em;
+    padding-bottom: 0.85em;
+    padding-left: 1em;
+}
 </style>
