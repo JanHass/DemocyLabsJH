@@ -42,7 +42,6 @@
 
 <h2><details>
   <summary>Gruppenmitglieder</summary> 
-
     <table>
       <thead>
         <tr>
@@ -82,34 +81,31 @@
               </button>
               
               <!-- Modal  / PopUp User Rolle bearbeiten --> 
-  <div class="modal fade" id="change_user_role" tabindex="-1" aria-labelledby="change_user_role_label" aria-hidden="true">
-   <div class="modal-dialog">
-     <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="change_user_role_label"> User Rolle ändern </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Text dazu</p>
-          <p><%= fellowship_user.user.username %></p>
-          <br><br>
-          
-          <%= form_with url: changeuserrole_fellowship_path(@fellowship), local: true, method: :get do %>
-          <div>
-            <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
-            <%= select_tag "userrole", options_for_select([ "User", "Gruppen-Moderator", "Gruppen-Administrator" ], "User") %>
-          </div>
-
-          
-        </div>
-        <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
-          <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "btn btn-success" %>  
-         <% end %>
-        </div>
-     </div>
-    </div>
-  </div>
+              <div class="modal fade" id="change_user_role" tabindex="-1" aria-labelledby="change_user_role_label" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                 <h5 class="modal-title" id="change_user_role_label"> User Rolle ändern </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <%= form_with url: changeuserrole_fellowship_path(@fellowship), local: true, method: :get do %>
+                  <div class="modal-body">
+                    <p>Text dazu</p>
+                    <p><%= fellowship_user.user.username %></p>
+                    <br><br>
+                    <div>
+                      <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
+                      <%= select_tag "userrole", options_for_select([ "User", "Gruppen-Moderator", "Gruppen-Administrator" ], "User") %>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+                    <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "btn btn-success" %>  
+                  </div>
+                <% end %>
+              </div>
+              </div>
+              </div>
 
             </td>
             <td style='width: 10%';><p>Nutzer Rolle entfernen</p></td>
