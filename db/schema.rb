@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_10_152703) do
+ActiveRecord::Schema.define(version: 2022_02_19_105928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -316,7 +316,6 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.text "summary"
     t.string "name"
     t.string "main_link_text"
-    t.string "main_link_url"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
   end
@@ -328,6 +327,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
+    t.string "main_link_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
@@ -349,7 +349,6 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "main_link_text"
-    t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end
@@ -394,6 +393,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.string "main_link_url"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -663,6 +663,7 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.boolean "admin_public_show_country", default: false
     t.datetime "updated_at", null: false
     t.integer "zip_code"
+    t.integer "owner_id"
     t.index ["author_id"], name: "index_fellowships_on_author_id"
     t.index ["email"], name: "index_fellowships_on_email"
     t.index ["name"], name: "index_fellowships_on_name"
@@ -948,9 +949,6 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable_type_and_linkable_id"
-  end
-
-  create_table "local_admins", force: :cascade do |t|
   end
 
   create_table "local_census_records", id: :serial, force: :cascade do |t|
@@ -1856,6 +1854,8 @@ ActiveRecord::Schema.define(version: 2022_02_10_152703) do
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
+  add_foreign_key "fellowship_users", "fellowships"
+  add_foreign_key "fellowship_users", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "follows", "users"
   add_foreign_key "geozones_polls", "geozones"

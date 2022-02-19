@@ -5,9 +5,8 @@ class AccountController < ApplicationController
 
   def show
     @fellowships = Fellowship.all
+    @fellowship_users = FellowshipUser.all
   end
-
-  
 
   def update
     if @account.update(account_params)

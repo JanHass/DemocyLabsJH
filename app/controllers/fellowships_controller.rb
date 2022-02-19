@@ -14,6 +14,8 @@ class FellowshipsController < ApplicationController
 
   # GET /fellowships/1
   def show
+    @fellowship = Fellowship.find(params[:id])
+    
   end
 
   # GET /fellowships/new
@@ -27,14 +29,16 @@ class FellowshipsController < ApplicationController
 
   # POST /fellowships
   def create
-    @fellowship = Fellowship.new(fellowship_params)
+    @fellowship = current_user.build_owned_fellowship(fellowship_params)
+    @fellowship.members << current_user
 
     if @fellowship.save
-      redirect_to @fellowship, notice: 'Fellowship was successfully created.'
+        redirect_to current_user
     else
-      render :new
+        redirect_to new_fellowship_path
     end
   end
+
 
   # PATCH/PUT /fellowships/1
   def update
@@ -47,31 +51,50 @@ class FellowshipsController < ApplicationController
 
   # DELETE /fellowships/1
   def destroy
+    @fellowship = current_user.owned_fellowship.find(params[:id])
+    flash[:alert] = "Are you sure you want to delete your fellowship? Your fellowship and all of its associations will be permanently deleted."
     @fellowship.destroy
-    redirect_to fellowships_url, notice: 'Fellowship was successfully deleted.'
-  end
+
+    if @fellowship.destroy
+       redirect_to current_user
+       flash[:notice] = "You deleted the fellowship."
+    else
+        redirect_to current_user
+        #set up error handler
+        flash[:notice] = "Failed to delete fellowship."
+    end
+end
 
   # Join a Group
-  def join
-    @fellowship = Fellowship.find(params[:id])
-    @m = @fellowship.fellowship_users.build(:user_id => current_user.id)
-    respond_to do |format|
-      if @m.save
-        format.html { redirect_to(@fellowship, :notice => 'You have joined this group.') }
-      else
-        format.html { redirect_to(@fellowship, :notice => 'Join error.') }
-      end
-    end
-  end
-  
-  def leave
+#  def join
+ #   @fellowship = Fellowship.find(params[:id])
+  #  @m = @fellowship.fellowship_users.build(:user_id => current_user.id)
+   # respond_to do |format|
+    #  if @m.save
+     #   format.html { redirect_to(@fellowship, :notice => 'You have joined this group.') }
+      #else
+       # format.html { redirect_to(@fellowship, :notice => 'Join error.') }
+    #  end
+   # end
+ # end
     
-    @fellowship_user = current_user.fellowship_users.find(params[:id])
-    @fellowship_user.destroy
-    flash[:notice] = "You left the Group."
-    redirect_to @fellowship
-       
-  end
+ # def leave
+  #  @fellowship = Fellowship.find(params[:id]) 
+   # @fellowship.fellowship_users.each do |fellowship_user|
+#
+ #     if ( current_user.id == fellowship_user.user_id && fellowship_user.fellowship_id == @fellowship.id )
+  #      fellowship_user.destroy
+   #     
+    #    respond_to do |format|
+     #     format.html { redirect_to(@fellowship, :alert => "Verlassen" ) }   
+      #  end
+     # else
+           
+        
+    #  end
+   # end  
+ # end
+ 
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -89,6 +112,7 @@ class FellowshipsController < ApplicationController
       :admin_required_full_name, :admin_required_phone_number, :admin_required_gender, :admin_required_date_of_birth, :admin_required_address, 
       :admin_required_state, :admin_required_city, :admin_required_country, :admin_public_show_full_name, :admin_public_show_phone_number, 
       :admin_public_show_gender, :admin_public_show_date_of_birth, :admin_public_show_address, :admin_public_show_state, :admin_public_show_city, 
-      :admin_public_show_country)
+      :admin_public_show_country, :zip_code)
     end
+  
 end

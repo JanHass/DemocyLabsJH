@@ -435,3 +435,374 @@ Did you mean?  url_for
 [2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Finished instrumentation
 
 
+[2022-02-10 17:33:51 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-10 17:33:51 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-10 17:33:51 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Environment: development
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : No known dispatcher detected.
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Application: CONSUL (Development)
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing Net instrumentation
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-10 17:33:52 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing ActiveJob instrumentation
+[2022-02-10 17:33:53 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-10 17:33:53 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-10 17:33:53 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-10 17:33:53 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-10 17:33:53 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-10 17:33:53 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Installing Rails 5 view instrumentation
+[2022-02-10 17:33:53 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Finished instrumentation
+[2022-02-10 17:34:40 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-10 17:34:47 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-10 17:34:49 +0100 LAPTOP-BJ4HDS7P (2584)] ERROR : Invalid license key
+[2022-02-10 17:34:49 +0100 LAPTOP-BJ4HDS7P (2584)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-11 13:00:46 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `is_fellowship_administrator?' for nil:NilClass
+[2022-02-11 13:03:48 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `is_fellowship_administrator?' for nil:NilClass
+[2022-02-11 13:08:01 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/account/show.html.erb:364: syntax error, unexpected end-of-input, expecting `end'
+[2022-02-11 13:08:46 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `is_fellowship_administrator' for nil:NilClass
+[2022-02-11 13:19:00 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `user' for #<#<Class:0x00007fe1005b2758>:0x00007fe123525768>
+Did you mean?  super
+[2022-02-11 13:22:39 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `is_fellowship_administrator?' for #<FellowshipUser::ActiveRecord_Associations_CollectionProxy:0x00007fe11762ba60>
+[2022-02-11 13:24:06 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `is_fellowship_administrator?' for #<FellowshipUser::ActiveRecord_Associations_CollectionProxy:0x00007fe153c52678>
+[2022-02-11 13:32:40 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_user' for #<User:0x00007fe1016f5ba0>
+Did you mean?  fellowship_users
+               fellowship_users=
+               fellowship_user_ids
+               fellowships
+               fellowship_ids
+               fellowships=
+               fellowship_ids=
+[2022-02-11 13:33:34 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `is_fellowship_administrator?' for #<FellowshipUser::ActiveRecord_Associations_CollectionProxy:0x00007fe10193b568>
+[2022-02-11 13:34:36 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `is_fellowship_administrator?' for #<FellowshipUser::ActiveRecord_Associations_CollectionProxy:0x00007fe0f08f1d20>
+[2022-02-11 13:44:17 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `fellowship_user' for #<#<Class:0x00007fe1025f7b58>:0x00007fe1025ef048>
+Did you mean?  fellowship_users
+               @fellowship_users
+               fellowship_url
+               fellowships_url
+               fellowship_path
+               @fellowships
+[2022-02-11 13:45:20 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `fellowship_user' for #<#<Class:0x00007fe1025f7b58>:0x00007fe1019b3810>
+Did you mean?  fellowship_users
+               @fellowship_users
+               fellowship_url
+               fellowships_url
+               fellowship_path
+               @fellowships
+[2022-02-11 13:45:43 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_users' for nil:NilClass
+[2022-02-11 13:47:07 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_users' for nil:NilClass
+[2022-02-11 13:52:59 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `all' for nil:NilClass
+[2022-02-11 13:53:34 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `user_id' for nil:NilClass
+[2022-02-11 13:54:08 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `user_id' for nil:NilClass
+[2022-02-11 14:02:22 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `user_id' for #<User:0x00007fe0f1575948>
+Did you mean?  user_type
+[2022-02-11 14:07:06 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Couldn't find FellowshipUser with 'id'=2 [WHERE "fellowship_users"."user_id" = $1]
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Environment: development
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : No known dispatcher detected.
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Application: CONSUL (Development)
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing Net instrumentation
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-11 14:15:10 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing ActiveJob instrumentation
+[2022-02-11 14:15:11 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-11 14:15:11 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-11 14:15:11 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-11 14:15:11 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-11 14:15:11 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-11 14:15:11 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Installing Rails 5 view instrumentation
+[2022-02-11 14:15:11 +0100 LAPTOP-BJ4HDS7P (3142)] INFO : Finished instrumentation
+[2022-02-11 14:35:59 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-11 14:35:59 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-11 14:35:59 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-11 14:35:59 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Environment: development
+[2022-02-11 14:35:59 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : No known dispatcher detected.
+[2022-02-11 14:35:59 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Application: CONSUL (Development)
+[2022-02-11 14:35:59 +0100 LAPTOP-BJ4HDS7P (3332)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing Net instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing ActiveJob instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Installing Rails 5 view instrumentation
+[2022-02-11 14:36:00 +0100 LAPTOP-BJ4HDS7P (3332)] INFO : Finished instrumentation
+[2022-02-11 14:39:09 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unable to autoload constant Abilities::Administrator, expected /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/abilities/administrator.rb to define it
+[2022-02-11 14:41:21 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Couldn't find FellowshipUser with 'id'=2 [WHERE "fellowship_users"."user_id" = $1]
+[2022-02-11 14:51:47 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_id' for #<Fellowship:0x00007fe102d59e00>
+Did you mean?  fellowship_url
+               fellowships_url
+               fellowship_path
+[2022-02-11 14:55:50 +0100 LAPTOP-BJ4HDS7P (2584)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_id' for #<Fellowship:0x00007fe118a21290>
+Did you mean?  fellowship_url
+               fellowships_url
+               fellowship_path
+[2022-02-11 15:01:12 +0100 LAPTOP-BJ4HDS7P (2584)] INFO : Starting Agent shutdown
+[2022-02-11 15:02:39 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-11 15:02:39 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-11 15:02:39 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-11 15:02:39 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Environment: development
+[2022-02-11 15:02:39 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : No known dispatcher detected.
+[2022-02-11 15:02:39 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Application: CONSUL (Development)
+[2022-02-11 15:02:39 +0100 LAPTOP-BJ4HDS7P (3829)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing Net instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing ActiveJob instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Installing Rails 5 view instrumentation
+[2022-02-11 15:02:40 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Finished instrumentation
+[2022-02-11 15:03:04 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-11 15:03:12 +0100 LAPTOP-BJ4HDS7P (3829)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-11 15:03:13 +0100 LAPTOP-BJ4HDS7P (3829)] ERROR : Invalid license key
+[2022-02-11 15:03:13 +0100 LAPTOP-BJ4HDS7P (3829)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Environment: development
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : No known dispatcher detected.
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Application: CONSUL (Development)
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Net instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing ActiveJob instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rails 5 view instrumentation
+[2022-02-12 09:55:51 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Finished instrumentation
+[2022-02-12 09:56:27 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-12 09:56:34 +0100 LAPTOP-BJ4HDS7P (260)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-12 09:56:36 +0100 LAPTOP-BJ4HDS7P (260)] ERROR : Invalid license key
+[2022-02-12 09:56:36 +0100 LAPTOP-BJ4HDS7P (260)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-15 17:45:30 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-15 17:45:30 +0100 LAPTOP-BJ4HDS7P (280)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-15 17:45:30 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-15 17:45:30 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Environment: development
+[2022-02-15 17:45:30 +0100 LAPTOP-BJ4HDS7P (280)] INFO : No known dispatcher detected.
+[2022-02-15 17:45:30 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Application: CONSUL (Development)
+[2022-02-15 17:45:30 +0100 LAPTOP-BJ4HDS7P (280)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-15 17:45:31 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing Net instrumentation
+[2022-02-15 17:45:31 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-15 17:45:31 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-15 17:45:31 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-15 17:45:31 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing ActiveJob instrumentation
+[2022-02-15 17:45:32 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-15 17:45:32 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-15 17:45:32 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-15 17:45:32 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-15 17:45:32 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-15 17:45:32 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Installing Rails 5 view instrumentation
+[2022-02-15 17:45:32 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Finished instrumentation
+[2022-02-15 17:46:36 +0100 LAPTOP-BJ4HDS7P (280)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-15 17:48:46 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-15 17:48:46 +0100 LAPTOP-BJ4HDS7P (339)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-15 17:48:46 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Environment: development
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] INFO : No known dispatcher detected.
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Application: CONSUL (Development)
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing Net instrumentation
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-15 17:48:47 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing ActiveJob instrumentation
+[2022-02-15 17:48:48 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-15 17:48:48 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-15 17:48:48 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-15 17:48:48 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-15 17:48:48 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-15 17:48:48 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Installing Rails 5 view instrumentation
+[2022-02-15 17:48:48 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Finished instrumentation
+[2022-02-15 17:49:53 +0100 LAPTOP-BJ4HDS7P (339)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Environment: development
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : No known dispatcher detected.
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Application: CONSUL (Development)
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing Net instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing ActiveJob instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Installing Rails 5 view instrumentation
+[2022-02-15 17:53:01 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Finished instrumentation
+[2022-02-15 17:53:24 +0100 LAPTOP-BJ4HDS7P (430)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-15 17:53:37 +0100 LAPTOP-BJ4HDS7P (430)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-15 17:53:39 +0100 LAPTOP-BJ4HDS7P (430)] ERROR : Invalid license key, please visit support.newrelic.com
+[2022-02-15 17:53:39 +0100 LAPTOP-BJ4HDS7P (430)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Environment: development
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : No known dispatcher detected.
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Application: CONSUL (Development)
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing Net instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing ActiveJob instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Installing Rails 5 view instrumentation
+[2022-02-15 17:56:09 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Finished instrumentation
+[2022-02-15 17:56:35 +0100 LAPTOP-BJ4HDS7P (162)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-15 17:56:40 +0100 LAPTOP-BJ4HDS7P (162)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-15 17:56:42 +0100 LAPTOP-BJ4HDS7P (162)] ERROR : Invalid license key, please visit support.newrelic.com
+[2022-02-15 17:56:42 +0100 LAPTOP-BJ4HDS7P (162)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-16 16:55:47 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-16 16:55:47 +0100 LAPTOP-BJ4HDS7P (260)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-16 16:55:47 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Environment: development
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : No known dispatcher detected.
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Application: CONSUL (Development)
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Net instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing ActiveJob instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Installing Rails 5 view instrumentation
+[2022-02-16 16:55:48 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Finished instrumentation
+[2022-02-16 16:56:16 +0100 LAPTOP-BJ4HDS7P (260)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-16 16:56:23 +0100 LAPTOP-BJ4HDS7P (260)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-16 16:56:25 +0100 LAPTOP-BJ4HDS7P (260)] ERROR : Invalid license key, please visit support.newrelic.com
+[2022-02-16 16:56:25 +0100 LAPTOP-BJ4HDS7P (260)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-17 16:33:39 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#leave is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-17 16:34:32 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:108: syntax error, unexpected end-of-input, expecting `end'
+[2022-02-17 16:36:38 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#leave is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-17 16:41:49 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:111: syntax error, unexpected end-of-input, expecting `end'
+[2022-02-17 16:44:09 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `fellowship_user' for #<FellowshipsController:0x00007f54c697f7d0>
+Did you mean?  fellowship_url
+               fellowships_url
+               fellowship_path
+[2022-02-17 16:45:16 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `user_id' for nil:NilClass
+[2022-02-17 16:47:52 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#leave is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-17 16:53:51 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#leave is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-17 16:55:36 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:77: syntax error, unexpected ',', expecting `end'
+...lowship, :alert => "Leave" ) }, xhr: true  
+...                              ^
+/mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:81: else without rescue is useless
+        else
+        ^~~~
+/mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:83: syntax error, unexpected ',', expecting `end'
+..., :notice => 'Leave error.') }, xhr: true
+...                              ^
+/mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:89: syntax error, unexpected `end', expecting end-of-input
+  end
+  ^~~
+
+[2022-02-17 17:04:44 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#leave is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-17 17:07:48 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#leave is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-17 17:09:21 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unable to autoload constant Layout::LocaleSwitcherComponent, expected /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/components/layout/locale_switcher_component.rb to define it
+[2022-02-17 17:14:10 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_user' for #<User:0x00007f549d12aa68>
+Did you mean?  fellowship_users
+               fellowship_users=
+               fellowship_user_ids
+               fellowships
+               fellowship_ids
+               fellowships=
+               fellowship_ids=
+[2022-02-17 17:15:21 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `id' for #<FellowshipUser::ActiveRecord_Associations_CollectionProxy:0x00007f549eee9f18>
+Did you mean?  ids
+[2022-02-17 17:16:47 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Couldn't find FellowshipUser with 'id'=6 [WHERE "fellowship_users"."user_id" = $1]
+[2022-02-17 17:18:33 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `fellowship_user' for #<FellowshipsController:0x00007f5472c6d798>
+Did you mean?  fellowship_url
+               fellowships_url
+               fellowship_path
+[2022-02-19 11:22:50 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `users' for #<Fellowship:0x00007f546e06d3e8>
+Did you mean?  user_id
+[2022-02-19 11:23:45 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `users' for #<Fellowship:0x00007f54cb86e698>
+Did you mean?  user_id
+[2022-02-19 11:25:14 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `each' for nil:NilClass
+[2022-02-19 11:29:00 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `each' for nil:NilClass
+[2022-02-19 11:29:47 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `each' for nil:NilClass
+[2022-02-19 11:43:21 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `owned_fellowship' for #<User:0x00007f5481b02548>
+[2022-02-19 11:47:45 +0100 LAPTOP-BJ4HDS7P (260)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::UndefinedColumn: ERROR:  column fellowships.owner_id does not exist
+LINE 1: SELECT  "fellowships".* FROM "fellowships" WHERE "fellowship...
+                                                         ^
+HINT:  Perhaps you meant to reference the column "fellowships.user_id".
+: SELECT  "fellowships".* FROM "fellowships" WHERE "fellowships"."owner_id" = $1 LIMIT $2
+[2022-02-19 11:58:55 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-19 11:58:55 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-19 11:58:55 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-19 11:58:55 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Environment: development
+[2022-02-19 11:58:55 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : No known dispatcher detected.
+[2022-02-19 11:58:55 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Application: CONSUL (Development)
+[2022-02-19 11:58:55 +0100 LAPTOP-BJ4HDS7P (24256)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-19 11:58:56 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing Net instrumentation
+[2022-02-19 11:58:56 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-19 11:58:56 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-19 11:58:56 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-19 11:58:56 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing ActiveJob instrumentation
+[2022-02-19 11:58:57 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-19 11:58:57 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-19 11:58:57 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-19 11:58:57 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-19 11:58:57 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-19 11:58:57 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Installing Rails 5 view instrumentation
+[2022-02-19 11:58:57 +0100 LAPTOP-BJ4HDS7P (24256)] INFO : Finished instrumentation

@@ -969,3 +969,198 @@ Call stack
   /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/debates/index.html.erb:65:in `_app_views_debates_index_html_erb___1414360991940429495_1394900'
   /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
 
+2022-02-10 17:40:26[WARN] user: rodribo
+GET /
+USE eager loading detected
+  Follow => [:followable]
+  Add to your query: .includes([:followable])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `map'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `interests'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/debate.rb:61:in `recommendations'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/welcome_controller.rb:36:in `set_user_recommendations'
+
+2022-02-10 17:42:29[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:17:in `block in _app_views_fellowships_index_html_erb__637583476951061189_280380'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:11:in `_app_views_fellowships_index_html_erb__637583476951061189_280380'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 17:45:47[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:17:in `block in _app_views_fellowships_index_html_erb__637583476951061189_287420'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:11:in `_app_views_fellowships_index_html_erb__637583476951061189_287420'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-10 17:49:12[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:17:in `block in _app_views_fellowships_index_html_erb__637583476951061189_291500'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:11:in `_app_views_fellowships_index_html_erb__637583476951061189_291500'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-11 11:29:48[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:17:in `block in _app_views_fellowships_index_html_erb__637583476951061189_300760'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:11:in `_app_views_fellowships_index_html_erb__637583476951061189_300760'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-11 11:29:54[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:17:in `block in _app_views_fellowships_index_html_erb__637583476951061189_300760'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:11:in `_app_views_fellowships_index_html_erb__637583476951061189_300760'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-11 13:52:36[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:17:in `block in _app_views_fellowships_index_html_erb__637583476951061189_4205540'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:11:in `_app_views_fellowships_index_html_erb__637583476951061189_4205540'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-11 14:39:26[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:43:in `block in _app_views_fellowships_index_html_erb__637583476951061189_4787560'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:39:in `_app_views_fellowships_index_html_erb__637583476951061189_4787560'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-11 14:41:06[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:43:in `block in _app_views_fellowships_index_html_erb__637583476951061189_4794240'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:39:in `_app_views_fellowships_index_html_erb__637583476951061189_4794240'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-11 14:44:08[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:43:in `block in _app_views_fellowships_index_html_erb__637583476951061189_4801400'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:39:in `_app_views_fellowships_index_html_erb__637583476951061189_4801400'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-11 14:47:26[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:43:in `block in _app_views_fellowships_index_html_erb__637583476951061189_4805280'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:39:in `_app_views_fellowships_index_html_erb__637583476951061189_4805280'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-11 15:05:02[WARN] user: rodribo
+GET /
+USE eager loading detected
+  Follow => [:followable]
+  Add to your query: .includes([:followable])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `map'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `interests'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/debate.rb:61:in `recommendations'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/welcome_controller.rb:36:in `set_user_recommendations'
+
+2022-02-12 10:01:00[WARN] user: rodribo
+GET /
+USE eager loading detected
+  Follow => [:followable]
+  Add to your query: .includes([:followable])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `map'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `interests'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/debate.rb:61:in `recommendations'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/welcome_controller.rb:36:in `set_user_recommendations'
+
+2022-02-12 10:01:00[WARN] user: rodribo
+GET /
+USE eager loading detected
+  Follow => [:followable]
+  Add to your query: .includes([:followable])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `map'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `interests'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/debate.rb:61:in `recommendations'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/welcome_controller.rb:36:in `set_user_recommendations'
+
+2022-02-17 13:26:56[WARN] user: rodribo
+GET /
+USE eager loading detected
+  Follow => [:followable]
+  Add to your query: .includes([:followable])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `map'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/user.rb:418:in `interests'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/debate.rb:61:in `recommendations'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/welcome_controller.rb:36:in `set_user_recommendations'
+
+2022-02-17 17:09:24[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:42:in `block in _app_views_fellowships_index_html_erb___2717348071960369485_4696440'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:38:in `_app_views_fellowships_index_html_erb___2717348071960369485_4696440'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-17 17:20:12[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:42:in `block in _app_views_fellowships_index_html_erb___2717348071960369485_5811060'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:38:in `_app_views_fellowships_index_html_erb___2717348071960369485_5811060'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-17 17:22:37[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:42:in `block in _app_views_fellowships_index_html_erb___2717348071960369485_5818480'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:38:in `_app_views_fellowships_index_html_erb___2717348071960369485_5818480'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+
+2022-02-19 09:31:02[WARN] user: rodribo
+GET /fellowships
+USE eager loading detected
+  Fellowship => [:image_attachment]
+  Add to your query: .includes([:image_attachment])
+Call stack
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:42:in `block in _app_views_fellowships_index_html_erb___2717348071960369485_5820120'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/fellowships/index.html.erb:38:in `_app_views_fellowships_index_html_erb___2717348071960369485_5820120'
+  /mnt/c/Users/joel9/Consul/DemocyLabsJH/config/initializers/wicked_pdf.rb:10:in `render'
+

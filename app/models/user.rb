@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_many :activities
   has_many :fellowship_users, :dependent => :destroy
   has_many :fellowships, through: :fellowship_users
+  has_one :owned_fellowship, foreign_key: 'owner_id', class_name: 'Fellowship', dependent: :destroy
   has_many :budget_investments, -> { with_hidden },
     class_name:  "Budget::Investment",
     foreign_key: :author_id,
