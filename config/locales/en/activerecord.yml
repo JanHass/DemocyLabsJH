@@ -396,6 +396,17 @@ en:
         popup_req_password_text1: "A password is required to join this group. "
         popup_req_password_text2: "Password:"
         popup_req_password_wrong: "Password invalid!"
+
+        join_success: "Successfully joined the group!"
+        join_error: "There was an error joining the group!"
+        join_wrong_password: "The entered password is invalid!"
+        create_success: "This group was created successfully!"
+        update_success: "This group has been updated successfully!"
+        delete_success: "This group has been deleted!"
+
+        fellowship_admin: "Group Admin"
+        fellowship_user: "Group User"
+        fellowship_moderator: "Group Moderator"
                          
 
 

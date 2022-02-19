@@ -393,6 +393,20 @@ de:
         popup_req_password_text2: "Einschreibeschlüssel:"
         popup_req_password_wrong: "Einschreibeschlüssel ungültig!"
 
+        join_success: "Erfolgreich der Gruppe beigetreten!"
+        join_error: "Es gab einen Fehler beim beitreten der Gruppe!"
+        join_wrong_password: "Das eingegebene Passwort ist falsch!"
+        create_success: "Die Gruppe wurde erstellt!"
+        update_success: "Die Gruppe wurde aktualisiert!"
+        delete_success: "Die Gruppe wurde gelöscht!"
+
+        fellowship_admin: "Gruppen-Administrator"
+        fellowship_user: "Gruppen-Nutzer"
+        fellowship_moderator: "Gruppen-Moderator"
+
+
+
+
 
 
       direct_message:

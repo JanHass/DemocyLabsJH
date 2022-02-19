@@ -8,12 +8,22 @@
     <strong><%= t("activerecord.attributes.fellowship.description") %></strong>
     <textarea rows="3" class="form-control" style="width: 50%;" readonly><%= @fellowship.description %></textarea>
   </p>
-<% end %>
+  <p class="sizer" style="margin-top: 2%;">
+  <strong><%= t("activerecord.attributes.fellowship.name") %></strong>
+  <input class="form-control" type="text" value="<%= @fellowship.name %>" style="width: 25%;" readonly>
+  </p>
+<% else %>
 
 <p class="sizer" style="margin-top: 2%;">
   <strong><%= t("activerecord.attributes.fellowship.name") %></strong>
   <input class="form-control" type="text" value="<%= @fellowship.name %>" style="width: 25%;" readonly>
 </p>
+<p class="sizer">
+    <strong><%= t("activerecord.attributes.fellowship.description") %></strong>
+    <textarea rows="3" class="form-control" style="width: 50%;" readonly><%= @fellowship.description %></textarea>
+</p>
+
+<% end %>
 
 <p class="sizer">
   <strong><%= t("activerecord.attributes.fellowship.email") %></strong>
@@ -30,39 +40,64 @@
   <input class="form-control" type="text" value="<%= @fellowship.updatet_at %>" style="width: 25%;" readonly>
 </p>
 
+<h2><details>
+  <summary>Gruppenmitglieder</summary> 
 
-
-
-<%= link_to t("activerecord.attributes.fellowship.back"), fellowships_path, class: "btn btn-info" %>
-<%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
-<%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-<div style="padding: 0.5%;"></div>
-<%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship), class: "btn btn-warning" %>
-
-
-
-<!-- Abfrage Join: ersetzen durch required password und check ob nutzer schon beigetreten -->
-<% if ( @fellowship.join_password_required? ) %>
-  <button type="button" class="btn btn-primary" id="btnpopup" data-bs-toggle="modal" data-bs-target="#join_req_password">
-    <%= t("activerecord.attributes.fellowship.join_group") %>
-  </button>
-
-  <!-- Modal Passowrt eingabe --> 
-  <div class="modal fade" id="join_req_password" tabindex="-1" aria-labelledby="req_password_Label" aria-hidden="true">
+    <table>
+      <thead>
+        <tr>
+          <th><p>Username</th>
+          <th><p>Vorname</p></th>
+          <th><p>Nachname</p></th>
+          <th><p>Rolle</p></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+          
+      <tbody>
+        <% @fellowship.fellowship_users.each do |fellowship_user| %>
+          <tr>
+            <td style='width: 15%';>
+              <p><%= fellowship_user.user.username %></p>
+            </td>
+            <td style='width: 25%';>
+              <p><%= fellowship_user.user.first_name %></p>
+            </td>
+            <td style='width: 25%';>
+              <p><%= fellowship_user.user.last_name %></p>      
+            </td>
+            <td style='width: 15%';>
+              <% if fellowship_user.is_fellowship_administrator? %>
+                <p>Admin</p>
+              <% elsif fellowship_user.is_fellowship_moderator? %>
+                <p>Moderator</p>
+              <% else %>
+                <p>Normaler User</p>
+              <% end %>     
+            </td>
+            <td style='width: 10%';><p><%= link_to 'Anzeigen', fellowship_user.user %></p></td>
+            <td style='width: 10%';>
+              <button type="button" class="btn btn-primary" id="btnpopup_userrole" data-bs-toggle="modal" data-bs-target="#change_user_role">
+                "Ändern"
+              </button>
+              
+              <!-- Modal  / PopUp User Rolle bearbeiten --> 
+  <div class="modal fade" id="change_user_role" tabindex="-1" aria-labelledby="change_user_role_label" aria-hidden="true">
    <div class="modal-dialog">
      <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="req_password_Label"><%= t("activerecord.attributes.fellowship.popup_req_password_label") %></h5>
+          <h5 class="modal-title" id="change_user_role_label"> User Rolle ändern </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <%= t("activerecord.attributes.fellowship.popup_req_password_text1") %>
+          <p>Text dazu</p>
+          <p><%= fellowship_user.user.username %></p>
           <br><br>
           
-          <%= form_with url: join_fellowship_path(@fellowship), local: true, method: :get do %>
+          <%= form_with url: changeuserrole_fellowship_path(@fellowship), local: true, method: :get do %>
           <div>
             <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
-            <%= text_field_tag "password", nil %>
+            <%= select_tag "userrole", options_for_select([ "User", "Gruppen-Moderator", "Gruppen-Administrator" ], "User") %>
           </div>
 
           
@@ -75,9 +110,73 @@
      </div>
     </div>
   </div>
+
+            </td>
+            <td style='width: 10%';><p>Nutzer Rolle entfernen</p></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </details></h2>
+
   
-<% else %>
-  <%= link_to  t("activerecord.attributes.fellowship.join_group") , join_fellowship_path(@fellowship), class: "btn btn-success" %>
+
+
+<!-- Buttons -->
+<%= link_to t("activerecord.attributes.fellowship.back"), fellowships_path, class: "btn btn-info" %>
+<% @show_join_button = true %> <!-- Hilfsvariable für Join Button. Wenn User in Gruppe -> False -->
+
+<!-- Check-Schleife  ob User in Fellowship -->
+<% current_user.fellowship_users.each do |fellowship_user| %>
+  <% if fellowship_user.fellowship_id == @fellowship.id %> <!--  wenn User in Gruppe ist-->
+    <% @show_join_button = false %>
+    <% if fellowship_user.is_fellowship_administrator %>
+      <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
+      <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    <% end %>
+   
+  
+    
+    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship), class: "btn btn-warning" %>
+
+  <% end %> 
+<% end %>  
+<% if @show_join_button == true %>
+  <% if ( @fellowship.join_password_required? ) %>
+      <button type="button" class="btn btn-primary" id="btnpopup" data-bs-toggle="modal" data-bs-target="#join_req_password">
+       <%= t("activerecord.attributes.fellowship.join_group") %>
+      </button>
+
+      <!-- Modal  / PopUp Passowrt eingabe --> 
+      <div class="modal fade" id="join_req_password" tabindex="-1" aria-labelledby="req_password_Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="req_password_Label"><%= t("activerecord.attributes.fellowship.popup_req_password_label") %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= t("activerecord.attributes.fellowship.popup_req_password_text1") %>
+            <br><br>
+          
+            <%= form_with url: join_fellowship_path(@fellowship), local: true, method: :get do %>
+            <div>
+              <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
+              <%= text_field_tag "password", nil %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+            <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "btn btn-success" %>  
+          <% end %>
+          </div>
+        </div>
+      </div>
+      </div>
+  
+  <% else %>
+      <%= link_to  t("activerecord.attributes.fellowship.join_group") , join_fellowship_path(@fellowship), class: "btn btn-success" %>
+  <% end %>
 <% end %>
 
 

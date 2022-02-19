@@ -7,6 +7,8 @@ class FellowshipsController < ApplicationController
 
   before_action :set_fellowship, only: [:show, :edit, :update, :destroy]
 
+  @show_join_button = true
+
   # GET /fellowships
   def index
     @fellowships = Fellowship.all
@@ -92,7 +94,32 @@ class FellowshipsController < ApplicationController
   
   helper_method :join
 
+  def changeuserrole
+    @fellowship = Fellowship.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
+    end 
+
+  end
+
   def leave
+    @fellowship = Fellowship.find(params[:id]) 
+    @fellowship.fellowship_users.each do |fellowship_user|
+
+      if ( current_user.id == fellowship_user.user_id && fellowship_user.fellowship_id == @fellowship.id )
+        fellowship_user.destroy
+        
+        respond_to do |format|
+          format.html { redirect_to(@fellowship, :alert => "Verlassen" ) }   
+        end
+      else
+           
+        
+      end
+    end  
+  end
+
+  def leavebak
     
     @fellowship_user = current_user.fellowship_users.find(params[:id])
     @fellowship_user.destroy

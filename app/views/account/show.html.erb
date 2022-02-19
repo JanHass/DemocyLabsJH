@@ -281,16 +281,18 @@
                     </td>
                 
                     <td style='width: 15%';>
+                      
                       <% current_user.fellowship_users.each do |fellowship_user| %>
-                      <% if fellowship_user.is_fellowship_administrator? %>
-                        <p><%= t("activerecord.attributes.fellowship.fellowship_admin") %></p>
-                      <% elsif fellowship_user.is_fellowship_moderator? %> 
-                        <p><%= t("activerecord.attributes.fellowship.fellowship_moderator") %></p>
-                      <% else %>
-                        <p><%= t("activerecord.attributes.fellowship.fellowship_user") %></p>
-                      <% end %> 
+                        <% if (fellowship_user.is_fellowship_administrator? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.fellowship_admin") %></p>
+                        <% elsif (fellowship_user.is_fellowship_moderator? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.fellowship_moderator") %></p>
+                        <% elsif fellowship_user.fellowship_id == fellowship.id  %>
+                          <p><%= t("activerecord.attributes.fellowship.fellowship_user") %></p>
+                        <% end%>
+                      <% end %>   
                     </td>
-                    <% end %>
+                    
                     <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship %></p></td>
                     <td style='width: 10%';><p><%=  t("activerecord.attributes.user.fellowship_leave") %></p></td>
                  </tr>
