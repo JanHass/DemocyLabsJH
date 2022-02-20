@@ -324,7 +324,10 @@ en:
         recommended_proposals: "Show proposals recommendations"
         redeemable_code: "Verification code received via email"
 
-      fellowship:  
+      fellowship: 
+        mygroups: "My Groups"
+        allgroups: "All Groups"
+        showgroup: "Show Group" 
         creategroup: "Create new group"
         required: "Required fields"
         optional: "Optional fields"
@@ -332,6 +335,8 @@ en:
         email: "E-Mail"
         description: "Group description"
         zip_code: "Postal code"
+        join_password_required: "Provide group with password"
+        join_password: "Password"
         user_required_full_name:  "Users need first and last name"
         user_required_phone_number: "Users need a phone number"
         user_required_gender: "Users need a gender"
@@ -377,6 +382,32 @@ en:
                              If these data are not filled out by the respective administrators, they can only read group posts. "
         info_admin_show_public: "If selected, administrators must display the following data in their public profile.
                                  If these data are not filled out by the respective administrators, they can only read group posts."
+
+        join_group: "Join"  
+        back: "Back"
+        edit: "Edit Group"
+        delete: "Delete Group"
+        leave: "Leave Group"
+        popup_req_password_label: "Password required!"
+        created_at: "Created at"
+        updated_at: "Last update at"
+
+        popup_req_password_close: "Close"
+        popup_req_password_text1: "A password is required to join this group. "
+        popup_req_password_text2: "Password:"
+        popup_req_password_wrong: "Password invalid!"
+
+        join_success: "Successfully joined the group!"
+        join_error: "There was an error joining the group!"
+        join_wrong_password: "The entered password is invalid!"
+        create_success: "This group was created successfully!"
+        update_success: "This group has been updated successfully!"
+        delete_success: "This group has been deleted!"
+
+        fellowship_admin: "Group Admin"
+        fellowship_user: "Group User"
+        fellowship_moderator: "Group Moderator"
+                         
 
 
 
