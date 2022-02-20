@@ -125,7 +125,7 @@ module Abilities
 
       can :disable_recommendations, [Debate, Proposal]
 
-      can [:read, :create, :update, :destroy, :join, :leave], Fellowship
+      can [:read, :create, :update, :destroy, :join, :leave, :kick], Fellowship
 
     end
   end

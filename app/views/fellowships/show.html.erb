@@ -27,6 +27,7 @@
 
 <p class="sizer">
   <strong><%= t("activerecord.attributes.fellowship.email") %></strong>
+
   <input class="form-control" type="text" value="<%= @fellowship.email %>" style="width: 25%;" readonly>
 </p>
 
@@ -35,10 +36,11 @@
   <input class="form-control" type="text" value="<%= localize(@fellowship.created_at, :format => :short2) %>" style="width: 25%;" readonly>
 </p>
 
-<p class="sizer">
-  <strong><%= t("activerecord.attributes.fellowship.updated_at") %></strong>
-  <input class="form-control" type="text" value="<%= @fellowship.updatet_at %>" style="width: 25%;" readonly>
-</p>
+
+  <p class="sizer">
+    <strong><%= t("activerecord.attributes.fellowship.updated_at") %></strong>
+    <input class="form-control" type="text" value="<%= @fellowship.updatet_at %>" style="width: 25%;" readonly>
+  </p>
 
 <h2><details>
   <summary>Gruppenmitglieder</summary> 
@@ -67,10 +69,12 @@
               <p><%= fellowship_user.user.last_name %></p>      
             </td>
             <td style='width: 15%';>
-              <% if fellowship_user.is_fellowship_administrator? %>
-                <p>Admin</p>
+              <% if fellowship_user.is_fellowship_administrator? && fellowship_user.is_fellowship_owner? %>
+                <p>Eigentümer</p>
               <% elsif fellowship_user.is_fellowship_moderator? %>
                 <p>Moderator</p>
+              <% elsif fellowship_user.is_fellowship_administrator? %>
+                <p>Administrator</p>
               <% else %>
                 <p>Normaler User</p>
               <% end %>     
@@ -124,9 +128,19 @@
               </div>
               </div>
               </div>
- 
 
-  
+            </td>
+            <td style='width: 10%';>
+               <% if fellowship_user.is_fellowship_administrator%>
+                 <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>
+               <% else %>
+                 <%= link_to t("activerecord.attributes.fellowship.kick"), kick_fellowship_path(fellowship_user_id: fellowship_user.id), class: "btn btn-warning"%> 
+               <% end %>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </details></h2>  
 
 
 <!-- Buttons -->
@@ -185,6 +199,7 @@
       <%= link_to  t("activerecord.attributes.fellowship.join_group") , join_fellowship_path(@fellowship), class: "btn btn-success" %>
   <% end %>
 <% end %>
+
 
 
 
