@@ -27,6 +27,7 @@
 
 <p class="sizer">
   <strong><%= t("activerecord.attributes.fellowship.email") %></strong>
+
   <input class="form-control" type="text" value="<%= @fellowship.email %>" style="width: 25%;" readonly>
 </p>
 
@@ -40,7 +41,6 @@
     <strong><%= t("activerecord.attributes.fellowship.updated_at") %></strong>
     <input class="form-control" type="text" value="<%= @fellowship.updatet_at %>" style="width: 25%;" readonly>
   </p>
-
 
 <h2><details>
   <summary>Gruppenmitglieder</summary> 
@@ -183,6 +183,7 @@
       <%= link_to  t("activerecord.attributes.fellowship.join_group") , join_fellowship_path(@fellowship), class: "btn btn-success" %>
   <% end %>
 <% end %>
+
 
 
 
