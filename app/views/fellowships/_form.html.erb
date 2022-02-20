@@ -22,15 +22,18 @@
       <%= form.email_field :email %>
     </div>
 
-    <div class="field">
-      <%= form.text_area :description, :rows=>5 %>
-    </div>
-
-
   </fieldset>
 
   <fieldset class="opional-fields">
     <legend><%= t("activerecord.attributes.fellowship.optional") %></legend>
+
+    <div class="field">
+      <%= form.text_area :short_description, :rows=>3 %>
+    </div>
+
+    <div class="field">
+      <%= form.text_area :description, :rows=>5 %>
+    </div>
 
     <div class="field">
       <%= form.text_field :zip_code %>

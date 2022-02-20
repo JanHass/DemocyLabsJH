@@ -31,7 +31,11 @@ class FellowshipsController < ApplicationController
   def create
     @fellowship = Fellowship.new(fellowship_params)
 
+    # New Group --> Current user add to Group with Adminstatus
     if @fellowship.save
+      @n = @fellowship.fellowship_users.build(:user_id => current_user.id, :is_fellowship_administrator => true, :is_fellowship_owner => true)
+      @n.save
+      
       redirect_to @fellowship, notice: t("activerecord.attributes.fellowship.create_success")
     else
       render :new
@@ -41,6 +45,7 @@ class FellowshipsController < ApplicationController
   # PATCH/PUT /fellowships/1
   def update
     if @fellowship.update(fellowship_params)
+      
       redirect_to @fellowship, notice: t("activerecord.attributes.fellowship.update_success")
     else
       render :edit
@@ -113,11 +118,23 @@ class FellowshipsController < ApplicationController
           format.html { redirect_to(@fellowship, :alert => "Verlassen" ) }   
         end
       else
-           
-        
+      
       end
     end  
   end
+
+  def kick 
+    @fellowship = Fellowship.find(params[:id])
+    m = params[:fellowship_user_id]
+    @fellowship_user = @fellowship.fellowship_users.find(m)
+
+    @fellowship_user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(@fellowship, :alert => "User wurde entfernt") }
+    end
+  end
+
 
   def leavebak
     
@@ -144,6 +161,6 @@ class FellowshipsController < ApplicationController
       :admin_required_full_name, :admin_required_phone_number, :admin_required_gender, :admin_required_date_of_birth, :admin_required_address, 
       :admin_required_state, :admin_required_city, :admin_required_country, :admin_public_show_full_name, :admin_public_show_phone_number, 
       :admin_public_show_gender, :admin_public_show_date_of_birth, :admin_public_show_address, :admin_public_show_state, :admin_public_show_city, 
-      :admin_public_show_country, :join_password_required, :join_password)
+      :admin_public_show_country, :join_password_required, :join_password, :short_description)
     end
 end

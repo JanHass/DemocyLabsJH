@@ -5,6 +5,7 @@ resources :fellowships do
         get :changeuserrole
         post "fellowships" => "fellowships#join"
         post "fellowships" => "fellowships#changeuserrole"
+        get :kick
 
     end
       
