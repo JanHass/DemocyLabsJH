@@ -161,7 +161,7 @@
                 <% current_user.fellowships.each do |fellowship| %>
                   <tr>
                     <td style='width: 15%';>
-                      <p>
+                      <p style="text-align: center;">
                         <% if fellowship.image.attached? %>
                             <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top">
                         <% end %>
@@ -254,8 +254,8 @@
                       </details></p>             
                       
                     </td>
-                    <td style='width: 15%';>
-                      
+                    
+                    <td style='width: 15%';>   
                       <% current_user.fellowship_users.each do |fellowship_user| %>
                         <% if (fellowship_user.is_fellowship_administrator? && fellowship_user.fellowship_id == fellowship.id) %>
                           <p><%= t("activerecord.attributes.fellowship.fellowship_admin") %></p>
@@ -267,77 +267,20 @@
                       <% end %>   
                     </td>
                     
-                    <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship %></p></td>
+                    <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship, class: "button hollow" %></p></td>
                     <td style='width: 10%';><p><%=  t("activerecord.attributes.user.fellowship_leave") %></p></td>
                  </tr>
                 <% end %>
               </tbody>
             </table>
 
-          
-
             </details></h3>
 
-          <%= f.submit t("account.show.save_changes_submit"), class: "button success margin-top" %>
-          
-           
-            <div style="margin-bottom: 5%;"></div>
+          <%= f.submit t("account.show.save_changes_submit"), class: "button hollow success margin-top" %>
 
-        </div>
-
-        <div class="user-permissions small-12 medium-5 column">
-          <h2><%= t("account.show.user_permission_title") %></h2>
-
-          <p style="font-size: larger;"><%= t("account.show.user_permission_info") %></p>
-
-          <ul>
-            <li style="font-size: larger;"><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li style="font-size: larger;"><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
-            <li style="font-size: larger;">
-              <% if current_user.level_two_or_three_verified? %>
-                <span class="icon-check"></span>
-              <% else %>
-                <span class="icon-x"></span>
-              <% end %>
-              <%= t("account.show.user_permission_support_proposal") %>
-            </li>
-            <li style="font-size: larger;">
-              <% if current_user.level_three_verified? %>
-                <span class="icon-check"></span>
-              <% else %>
-                <span class="icon-x"></span>
-              <% end %>
-              <%= t("account.show.user_permission_votes") %>
-            </li>
-          </ul>
-
-          <p style="font-size: larger;">
-            <span><%= t("account.show.user_permission_verify_info") %></span>
-          </p>
-          <p style="font-size: larger;">
-            <%= t("account.show.user_permission_verify") %>
-          </p>
-
-          <% unless @account.organization? %>
-            <div>
-              <span class="verify-account">
-                <% if current_user.level_three_verified? %>
-                  <p class="already-verified" style="font-size: larger;">
-                    <span class="icon-check"></span>
-                    <%= t("account.show.verified_account") %>
-                  </p>
-                <% elsif current_user.level_two_verified? %>
-                  <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
-                <% else %>
-                  <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
-                <% end %>
-              </span>
-            </div>
-          <% end %>
-        </div>
+        </div>  
       </div>
     <% end %>
-
   </div>
 </div>
 

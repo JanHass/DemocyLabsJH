@@ -28,6 +28,24 @@
     <legend><%= t("activerecord.attributes.fellowship.optional") %></legend>
 
     <div class="field">
+      <% if fellowship.image.attached? %>
+        <%= image_tag fellowship.image, style: "width: 200px; display: block" %>
+      <% end %>
+
+      
+      <%= form.file_field :image %>
+    </div>
+
+    <%= form_for(@fellowship) do |f| %>
+    <div id="password_required">
+      <%= form.check_box :join_password_required, :id => "passwordisrequired", :onclick => "toggle_password_field();" %>
+    </div>
+    <div id="password_field" style="display: none;">
+      <%= form.text_field :join_password %>
+    </div>
+    <% end %>
+
+    <div class="field">
       <%= form.text_area :short_description, :rows=>3 %>
     </div>
 
@@ -39,14 +57,7 @@
       <%= form.text_field :zip_code %>
     </div>
 
-    <%= form_for(@fellowship) do |f| %>
-    <div id="password_required">
-      <%= form.check_box :join_password_required, :id => "passwordisrequired", :onclick => "toggle_password_field();" %>
-    </div>
-    <div id="password_field">
-      <%= form.text_field :join_password %>
-    </div>
-    <% end %>
+   
 
 
 
@@ -212,16 +223,9 @@
 
     </details></h2>
 
-    <div class="field">
-      <% if fellowship.image.attached? %>
-        <%= image_tag fellowship.image, style: "width: 200px; display: block" %>
-      <% end %>
+    
 
-      
-      <%= form.file_field :image %>
-    </div>
-
-    <div class="actions">
+    <div class="actions" style="margin-top: 2%;">
       <%= form.submit %>
     </div>
     
@@ -238,7 +242,9 @@
         }
    .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
     {
-       color: white;
+       color: #3adb76;
+       background-color: white;
+       border-color: #3adb76;
     }
 </style>
 

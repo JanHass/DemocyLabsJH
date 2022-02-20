@@ -301,7 +301,7 @@ en:
         
         fellowship_name: "Group name"
         fellowship_descripton: "Description"
-        fellowship_requirements: "User requierments"
+        fellowship_requirements: "User requirements"
         fellowship_all_requirements: "Show all requirements"
         fellowship_show: "Show"
         fellowship_leave: "Leave Group"
