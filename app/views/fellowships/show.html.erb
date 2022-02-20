@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.showgroup"), image: "group_icon" %>
 
@@ -200,30 +200,17 @@
   <% end %>
 <% end %>
 
-
-
-
 <style>
-  .btn-info
-   {
-       background:#05d3dd !important; 
-       border: none;
-       color: white;
-   }
-   .btn-primary
-   {
-       border: none;
-   }
-
-   .sizer
-   {
-    font-size: 20px;
-   }
-
-   .btn-danger
-   {
-       margin-right: 10%;
-   }
- 
-
+   .button
+    {
+      text-decoration:none;
+    }
+    .button.hollow.alert
+{
+    padding-top: 0.85em;
+    padding-right: 1em;
+    padding-bottom: 0.85em;
+    padding-left: 1em;
+}
 </style>
+

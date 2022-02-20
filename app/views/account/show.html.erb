@@ -1,4 +1,7 @@
 <%= render "shared/myaccount_header", i18n_namespace: "My Account", image: "user-solid" %>
+<%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow ", :style => 'margin-bottom: 0%' %>
+            
+<%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "button hollow alert", :style => 'margin-bottom: 0%'%>
 <div class="row account">
   <div class="small-12 column">
     
@@ -248,12 +251,9 @@
                           <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_country") %></p>
                         <% end %>
 
-                      </details></p>
-
-                     
+                      </details></p>             
                       
                     </td>
-                
                     <td style='width: 15%';>
                       
                       <% current_user.fellowship_users.each do |fellowship_user| %>
@@ -278,7 +278,10 @@
 
             </details></h3>
 
-          <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
+          <%= f.submit t("account.show.save_changes_submit"), class: "button success margin-top" %>
+          
+           
+            <div style="margin-bottom: 5%;"></div>
 
         </div>
 
@@ -394,8 +397,12 @@ details > ul {
   margin-bottom: 0;
 }
 
-/* label{
-  margin-left: 5%;
-} */
+.button.hollow.alert
+{
+    padding-top: 0.85em;
+    padding-right: 1em;
+    padding-bottom: 0.85em;
+    padding-left: 1em;
+}
 
 </style>
