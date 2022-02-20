@@ -96,10 +96,33 @@ class FellowshipsController < ApplicationController
 
   def changeuserrole
     @fellowship = Fellowship.find(params[:id])
+    @userid = 
     respond_to do |format|
       format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
     end 
+  end  
 
+  def changetoadmin
+    @fellowship = Fellowship.find(params[:id])
+    @userid = params[:userid]
+    
+
+
+    respond_to do |format|
+       format.html { redirect_to(@fellowship, :alert => @userid ) }
+    end 
+  end
+  def changetomod
+    @fellowship = Fellowship.find(params[:id])
+    respond_to do |format|
+       format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
+    end 
+  end
+  def changetouser
+    @fellowship = Fellowship.find(params[:id])
+    respond_to do |format|
+       format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
+    end 
   end
 
   def leave
