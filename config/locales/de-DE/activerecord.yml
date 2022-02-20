@@ -321,6 +321,9 @@ de:
 
       fellowship:  
 
+        mygroups: "Meine Gruppen"
+        allgroups: "Alle Gruppen"
+        showgroup: "Gruppe Anzeigen"
         creategroup: "Neue Gruppe erstellen"
         required: "Pflichtfelder"
         optional: "Optionale Felder"
@@ -328,6 +331,8 @@ de:
         email: "E-Mail"
         description: "Gruppenbeschreibung"
         zip_code: "Postleitzahl"
+        join_password_required: "Gruppe mit Einschreibeschlüssel versehen?"
+        join_password: "Einschreibeschlüssel"
         user_required_full_name:  "Nutzer:innen benötigen Vor- und Nachname"
         user_required_phone_number: "Nutzer:innen benötigen eine Telefonnummer"
         user_required_gender: "Nutzer:innen benötigen ein Geschlecht"
@@ -372,7 +377,36 @@ de:
                             ob diese im öffentlichen Profil angezeigt werden. Gruppen-Administrator:innen sehen diese Daten in der Mitgliederübersicht. 
                             Falls diese Daten von den jeweiligen Administrator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."
         info_admin_show_public: "Falls ausgewählt, müssen Administrator:innen die folgenden Daten in Ihren öffentlichen Profil darstellen.
-                                Falls diese Daten von den jeweiligen Administrator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."                 
+                                Falls diese Daten von den jeweiligen Administrator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."   
+
+        join_group: "Beitreten"  
+        back: "Zurück"
+        edit: "Gruppe Bearbeiten"
+        delete: "Gruppe Löschen"
+        leave: "Gruppe verlassen"
+        popup_req_password_label: "Einschreibeschlüssel benötigt!"
+        created_at: "Gruppe erstellt am"
+        updated_at: "Zuletzt bearbeitet am"
+
+        popup_req_password_close: "Abbrechen"
+        popup_req_password_text1: "Um dieser Gruppe beizutreten wird ein Einschreibeschlüssel benötigt."
+        popup_req_password_text2: "Einschreibeschlüssel:"
+        popup_req_password_wrong: "Einschreibeschlüssel ungültig!"
+
+        join_success: "Erfolgreich der Gruppe beigetreten!"
+        join_error: "Es gab einen Fehler beim beitreten der Gruppe!"
+        join_wrong_password: "Das eingegebene Passwort ist falsch!"
+        create_success: "Die Gruppe wurde erstellt!"
+        update_success: "Die Gruppe wurde aktualisiert!"
+        delete_success: "Die Gruppe wurde gelöscht!"
+
+        fellowship_admin: "Gruppen-Administrator"
+        fellowship_user: "Gruppen-Nutzer"
+        fellowship_moderator: "Gruppen-Moderator"
+
+
+
+
 
 
       direct_message:

@@ -155,13 +155,20 @@
               </thead>
           
               <tbody>
-                <% @fellowships.each do |fellowship| %>
+                <% current_user.fellowships.each do |fellowship| %>
                   <tr>
-                    <td><p><%= fellowship.name %></p></td>
-                    <td><p><%= fellowship.description %></p></td>
-                    <td>
-                      <details>
-                      <summary style="font-size:66%;"><%= t("activerecord.attributes.user.fellowship_all_requirements") %></summary>
+                    <td style='width: 15%';>
+                      <p>
+                        <% if fellowship.image.attached? %>
+                            <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top">
+                        <% end %>
+                        <%= fellowship.name %>
+                      </p>
+                    </td>
+                    <td style='width: 25%';><p><%= fellowship.description %></p></td>
+                    <td style='width: 25%';>
+                      <p><details>
+                      <summary style="font-size:70%;"><%= t("activerecord.attributes.user.fellowship_all_requirements") %></summary>
                         
                         
                         <% if (fellowship.user_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
@@ -241,13 +248,27 @@
                           <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_country") %></p>
                         <% end %>
 
-                      </details>
+                      </details></p>
+
+                     
                       
                     </td>
                 
-                    <td style='width: 15%';><p>Hier Nutzerrolle einfügen (Admin, ...)</p></td>
-                    <td style='width: 6%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship,class: "button" %></p></td>
-                    <td style='width: 15%';><p><button class="button" style="background-color: #F96209;">Leave Group</button></p></td>
+                    <td style='width: 15%';>
+                      
+                      <% current_user.fellowship_users.each do |fellowship_user| %>
+                        <% if (fellowship_user.is_fellowship_administrator? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.fellowship_admin") %></p>
+                        <% elsif (fellowship_user.is_fellowship_moderator? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.fellowship_moderator") %></p>
+                        <% elsif fellowship_user.fellowship_id == fellowship.id  %>
+                          <p><%= t("activerecord.attributes.fellowship.fellowship_user") %></p>
+                        <% end%>
+                      <% end %>   
+                    </td>
+                    
+                    <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship %></p></td>
+                    <td style='width: 10%';><p><%=  t("activerecord.attributes.user.fellowship_leave") %></p></td>
                  </tr>
                 <% end %>
               </tbody>
@@ -257,13 +278,8 @@
 
             </details></h3>
 
-          <%= f.submit t("account.show.save_changes_submit"), class: "success button margin-top" %>
-          <div style="margin-bottom: 0.1%;"></div>
-          
-            <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "btn btn-primary" %>
-            
-            <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "btn btn-danger" %>
-            <div style="margin-bottom: 5%;"></div>
+          <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
+
         </div>
 
         <div class="user-permissions small-12 medium-5 column">
