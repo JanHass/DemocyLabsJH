@@ -7,6 +7,7 @@ resources :fellowships do
         get :changetoadmin
         get :changetomod
         get :changetouser
+        get :tablesort
 
         post "fellowships" => "fellowships#join"
         post "fellowships" => "fellowships#changeuserrole"

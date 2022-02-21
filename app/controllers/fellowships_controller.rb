@@ -8,7 +8,7 @@ class FellowshipsController < ApplicationController
   before_action :set_fellowship, only: [:show, :edit, :update, :destroy]
 
   @show_join_button = true
-  
+
   # GET /fellowships
   def index
     @fellowships = Fellowship.all
@@ -174,6 +174,11 @@ class FellowshipsController < ApplicationController
     flash[:notice] = "You left the Group."
     redirect_to @fellowship
        
+  end
+
+  def tablesort
+    @fellowship_users = @fellowship.fellowship_users.user.order(params[:sort])
+  
   end
 
   private
