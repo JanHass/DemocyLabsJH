@@ -42,7 +42,7 @@
     <input class="form-control" type="text" value="<%= @fellowship.updatet_at %>" style="width: 25%;" readonly>
   </p>
 
-<h2><details>
+<h2><details class="overflow-auto" style="max-height: 800px;">
   <summary>Gruppenmitglieder</summary> 
     <table>
       <thead>
@@ -80,9 +80,9 @@
               <% end %>     
               </td>
             <td style='width: 15%';>
-              <%= link_to "Als Admin", changetoadmin_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "button hollow" %>
-              <%= link_to "Als Moderator", changetomod_fellowship_path(@fellowship), class: "button hollow" %>
-              <%= link_to "Als User", changetouser_fellowship_path(@fellowship), class: "button hollow" %>
+              <%= link_to "Als Admin", changetoadmin_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "button hollow expanded" %>
+              <%= link_to "Als Moderator", changetomod_fellowship_path(@fellowship), class: "button hollow expanded", :style=>"margin-top: 2%" %>
+              <%= link_to "Als User", changetouser_fellowship_path(@fellowship), class: "button hollow expanded", :style=>"margin-top: 2%" %>
 
               
             </td>
