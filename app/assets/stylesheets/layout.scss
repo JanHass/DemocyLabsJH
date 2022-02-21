@@ -611,7 +611,7 @@ body > header,
       padding-left: 0;
 
       @include breakpoint(medium) {
-        font-size: $small-font-size;
+        font-size: 1.0625rem;;
         padding: rem-calc(8) rem-calc(16);
       }
     }
@@ -1111,7 +1111,7 @@ form {
   }
 
   [type=file] {
-    margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
+    margin: $line-height / 2 0 $line-height / 2 0;
   }
 
   .cke {

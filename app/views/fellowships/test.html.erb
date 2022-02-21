@@ -1,7 +1,4 @@
-
-
 <%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.showgroup"), image: "group_icon" %>
-
 <% if @fellowship.image.attached? %>
   <img src="<%= (url_for(@fellowship.image)) %>" style="max-width: 25%; max-height: 25%; margin-bottom: 1%;">
   <p class="sizer">
@@ -78,30 +75,24 @@
               <% else %>
                 <p>Normaler User</p>
               <% end %>     
-              </td>
+            </td>
             <td style='width: 15%';>
-              <%= link_to "Als Admin", changetoadmin_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "button hollow" %>
-              <%= link_to "Als Moderator", changetomod_fellowship_path(@fellowship), class: "button hollow" %>
-              <%= link_to "Als User", changetouser_fellowship_path(@fellowship), class: "button hollow" %>
+              <%= link_to "Als Admin", changetoadmin_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "btn btn-primary" %>
+              <%= link_to "Als Moderator", changetomod_fellowship_path(@fellowship), class: "btn btn-primary" %>
+              <%= link_to "Als User", changetouser_fellowship_path(@fellowship), class: "btn btn-primary" %>
 
               
             </td>
-            <td style='width: 10%';><%= link_to 'Show', fellowship_user.user, class:"button hollow" %></td>
+            <td style='width: 10%';><p><%= link_to 'Anzeigen', fellowship_user.user %></p></td>
             <td style='width: 10%';>
-              <button type="button" class="button hollow" id="btnpopup_userrole" data-bs-toggle="modal" data-bs-target="#change_user_role" data-userid="Test">
-                Change
+              <button type="button" class="btn btn-primary" id="btnpopup_userrole" data-bs-toggle="modal" data-bs-target="#change_user_role" data-userid="Test">
+                "Ändern"
               </button>
               
               
 
             </td>
-            <td style='width: 10%';>
-              <% if fellowship_user.is_fellowship_administrator%>
-                <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>
-              <% else %>
-                <%= link_to t("activerecord.attributes.fellowship.kick"), kick_fellowship_path(fellowship_user_id: fellowship_user.id), class: "button alert hollow"%> 
-              <% end %>
-           </td>
+            <td style='width: 10%';><p>Nutzer Rolle entfernen</p></td>
           </tr>
         <% end %>
       </tbody>
@@ -127,20 +118,30 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
-                    <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "button success hollow" %>  
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+                    <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "btn btn-success" %>  
                   </div>
                 <% end %>
               </div>
               </div>
               </div>
 
-            
-  
+            </td>
+            <td style='width: 10%';>
+               <% if fellowship_user.is_fellowship_administrator%>
+                 <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>
+               <% else %>
+                 <%= link_to t("activerecord.attributes.fellowship.kick"), kick_fellowship_path(fellowship_user_id: fellowship_user.id), class: "btn btn-warning"%> 
+               <% end %>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </details></h2>  
 
 
 <!-- Buttons -->
-
+<%= link_to t("activerecord.attributes.fellowship.back"), fellowships_path, class: "btn btn-info" %>
 <% @show_join_button = true %> <!-- Hilfsvariable für Join Button. Wenn User in Gruppe -> False -->
 
 <!-- Check-Schleife  ob User in Fellowship -->
@@ -148,24 +149,22 @@
   <% if fellowship_user.fellowship_id == @fellowship.id %> <!--  wenn User in Gruppe ist-->
     <% @show_join_button = false %>
     <% if fellowship_user.is_fellowship_administrator %>
-      <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "button hollow margin top", :style=>"margin-bottom: 0%" %>
-      <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
+      <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
+      <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
     <% end %>
    
   
     
-    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship), class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
-
+    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship), class: "btn btn-warning" %>
   <% end %> 
 <% end %>  
-
 <% if @show_join_button == true %>
   <% if ( @fellowship.join_password_required? ) %>
-      <button type="button" class="button success hollow margin top" style="margin-bottom: 0%;" id="btnpopup" data-bs-toggle="modal" data-bs-target="#join_req_password">
+      <button type="button" class="btn btn-primary" id="btnpopup" data-bs-toggle="modal" data-bs-target="#join_req_password">
        <%= t("activerecord.attributes.fellowship.join_group") %>
       </button>
 
-      <!-- Modal  / PopUp Passwort eingabe --> 
+      <!-- Modal  / PopUp Passowrt eingabe --> 
       <div class="modal fade" id="join_req_password" tabindex="-1" aria-labelledby="req_password_Label" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -184,8 +183,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
-            <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "button hollow success" %>  
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+            <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "btn btn-success" %>  
           <% end %>
           </div>
         </div>
@@ -193,11 +192,9 @@
       </div>
   
   <% else %>
-      <%= link_to  t("activerecord.attributes.fellowship.join_group") , join_fellowship_path(@fellowship), class: "button hollow success margin top", :style=>"margin-bottom: 0%" %>
+      <%= link_to  t("activerecord.attributes.fellowship.join_group") , join_fellowship_path(@fellowship), class: "btn btn-success" %>
   <% end %>
 <% end %>
-<div style="margin-bottom: 1rem;"></div>
-<%= link_to t("activerecord.attributes.fellowship.back"), fellowships_path, class: "button hollow", :style=>"margin-bottom: 0%" %>
 
 <style>
    .button
@@ -211,47 +208,19 @@
     padding-bottom: 0.85em;
     padding-left: 1em;
 }
-
-  details {
-width: 100%;
-margin-bottom: .5rem;
-box-shadow: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
-border-radius: 5px;
-
-}
-
-summary {
-padding: 1rem;
-padding-left: 2.2rem;
-position: relative;
-cursor: pointer;
-}
-
-summary:before {
-content: '';
-border-width: .4rem;
-border-style: solid;
-border-color: transparent transparent transparent #fff;
-position: absolute;
-top: 1.3rem;
-left: 1rem;
-transform: rotate(0);
-transform-origin: .2rem 50%;
-transition: .25s transform ease;
-}
-
-details[open] > summary:before {
-transform: rotate(90deg);
-}
-
-
-details summary::-webkit-details-marker {
-display:none;
-}
-
-details > ul {
-padding-bottom: 1rem;
-margin-bottom: 0;
-}
 </style>
+
+    © 2022 GitHub, Inc.
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
 

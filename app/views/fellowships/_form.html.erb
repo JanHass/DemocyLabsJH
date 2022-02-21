@@ -22,28 +22,42 @@
       <%= form.email_field :email %>
     </div>
 
-    <div class="field">
-      <%= form.text_area :description, :rows=>5 %>
-    </div>
-
-
   </fieldset>
 
   <fieldset class="opional-fields">
     <legend><%= t("activerecord.attributes.fellowship.optional") %></legend>
 
     <div class="field">
-      <%= form.text_field :zip_code %>
+      <% if fellowship.image.attached? %>
+        <%= image_tag fellowship.image, style: "width: 200px; display: block" %>
+      <% end %>
+
+      
+      <%= form.file_field :image %>
     </div>
 
     <%= form_for(@fellowship) do |f| %>
     <div id="password_required">
       <%= form.check_box :join_password_required, :id => "passwordisrequired", :onclick => "toggle_password_field();" %>
     </div>
-    <div id="password_field">
+    <div id="password_field" style="display: none;">
       <%= form.text_field :join_password %>
     </div>
     <% end %>
+
+    <div class="field">
+      <%= form.text_area :short_description, :rows=>3 %>
+    </div>
+
+    <div class="field">
+      <%= form.text_area :description, :rows=>5 %>
+    </div>
+
+    <div class="field">
+      <%= form.text_field :zip_code %>
+    </div>
+
+   
 
 
 
@@ -66,72 +80,71 @@
     <h2><details>
         <summary><%= t("activerecord.attributes.fellowship.user_requirements") %></summary>
 
-        <p><%= t("activerecord.attributes.fellowship.info_user_required") %></p>
+        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_user_required") %></p>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_required_full_name %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_required_phone_number %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_required_gender %>
        </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :user_required_date_of_birth %>
        </div>
 
-       <div class="field">
+       <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_required_adress %>
         </div>
 
-       <div class="field">
+       <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_required_state %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :user_required_city %>
        </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_required_country %>
         </div>
 
-        <p><%= t("activerecord.attributes.fellowship.info_user_show_public") %></p>
+        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_user_show_public") %></p>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :user_public_show_full_name %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_public_show_phone_number %>
        </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_public_show_gender %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :user_public_show_date_of_birth %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_public_show_address %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_public_show_state %>
         </div>
 
-
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :user_public_show_city %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :user_public_show_country %>
         </div>
     </details></h2>  
@@ -139,91 +152,80 @@
     <h2><details>
         <summary><%= t("activerecord.attributes.fellowship.admin_requierments") %></summary> 
 
-        <p><%= t("activerecord.attributes.fellowship.info_admin_required") %></p>
+        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_admin_required") %></p>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_required_full_name %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_required_phone_number %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_required_gender %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_required_date_of_birth %>
        </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_required_address %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_required_state %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_required_city %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_required_country %>
         </div>
 
-        <p><%= t("activerecord.attributes.fellowship.info_admin_show_public") %></p>
+        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_admin_show_public") %></p>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_public_show_full_name %>
         </div>
 
 
-       <div class="field">
+       <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_public_show_phone_number %>
        </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_public_show_gender %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_public_show_date_of_birth %>
        </div>
 
-       <div class="field">
+       <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_public_show_address %>
        </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_public_show_state %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_public_show_city %>
         </div>
 
-        <div class="field">
+        <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_public_show_country %>
         </div>
 
     </details></h2>
 
+    
 
-
-
-
-    <div class="field">
-      <% if fellowship.image.attached? %>
-        <%= image_tag fellowship.image, style: "width: 200px; display: block" %>
-      <% end %>
-
-      
-      <%= form.file_field :image %>
-    </div>
-
-    <div class="actions">
+    <div class="actions" style="margin-top: 2%;">
       <%= form.submit %>
     </div>
     
@@ -231,19 +233,18 @@
 
 <% end %>
 
-<%= link_to 'Back', fellowship, class: "btn btn-info" %>
+<%= link_to 'Back', fellowship, class: "button hollow" %>
 
 <style>
-  .btn-info
-   {
-       background:#05d3dd !important; 
-       border: none;
-       color: white;
-   }
-
+        .button
+        {
+            text-decoration: none;
+        }
    .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
     {
-       color: white;
+       color: #3adb76;
+       background-color: white;
+       border-color: #3adb76;
     }
 </style>
 

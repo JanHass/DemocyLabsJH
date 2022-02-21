@@ -74,6 +74,7 @@
   &::after {
     @include full-width-cover($adjust-margin: $adjust-margin, $adjust-padding: $adjust-padding);
     border-#{$position}: $border;
+    border-bottom: none;
   }
 }
 
