@@ -257,12 +257,14 @@
                     
                     <td style='width: 15%';>   
                       <% current_user.fellowship_users.each do |fellowship_user| %>
-                        <% if (fellowship_user.is_fellowship_administrator? && fellowship_user.fellowship_id == fellowship.id) %>
-                          <p><%= t("activerecord.attributes.fellowship.fellowship_admin") %></p>
+                        <% if (fellowship_user.is_fellowship_owner? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.owner") %></p>
+                        <% elsif (fellowship_user.is_fellowship_administrator? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.admin") %></p>
                         <% elsif (fellowship_user.is_fellowship_moderator? && fellowship_user.fellowship_id == fellowship.id) %>
-                          <p><%= t("activerecord.attributes.fellowship.fellowship_moderator") %></p>
+                          <p><%= t("activerecord.attributes.fellowship.moderator") %></p>
                         <% elsif fellowship_user.fellowship_id == fellowship.id  %>
-                          <p><%= t("activerecord.attributes.fellowship.fellowship_user") %></p>
+                          <p><%= t("activerecord.attributes.fellowship.user") %></p>
                         <% end%>
                       <% end %>   
                     </td>
