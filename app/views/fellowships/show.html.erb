@@ -181,7 +181,7 @@
 <% current_user.fellowship_users.each do |fellowship_user| %>
   <% if fellowship_user.fellowship_id == @fellowship.id %> <!--  wenn User in Gruppe ist-->
     <% @show_join_button = false %>
-    <% if fellowship_user.is_fellowship_administrator %>
+    <% if fellowship_user.is_fellowship_administrator || fellowship_user.is_fellowship_owner %>
       <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "button hollow margin top", :style=>"margin-bottom: 0%" %>
       <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
     <% end %>

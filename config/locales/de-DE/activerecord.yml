@@ -425,6 +425,10 @@ de:
         change_role_not_auth: "Fehlende Berechtigung um diese Aktion auszuführen!"
         change_role_no_owner_error: "Diese Aktion kann nicht ausgeführt werden, da eine Gruppe mindestens eine(n) Eigentümer:in benötigt."
 
+        delete_error: "Gruppe konnte nicht gelöscht werden!"
+        kick_user_success: "Nutzer:in wurde aus der Gruppe entfernt!"
+        kick_user_error: "Nutzer:in konnte nicht entfernt werden!"
+
 
 
 

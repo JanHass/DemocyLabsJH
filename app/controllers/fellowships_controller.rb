@@ -33,7 +33,7 @@ class FellowshipsController < ApplicationController
 
     # New Group --> Current user add to Group with Adminstatus
     if @fellowship.save
-      @n = @fellowship.fellowship_users.build(:user_id => current_user.id, :is_fellowship_administrator => true, :is_fellowship_owner => true)
+      @n = @fellowship.fellowship_users.build(:user_id => current_user.id, :is_fellowship_owner => true)
       @n.save
       
       redirect_to @fellowship, notice: t("activerecord.attributes.fellowship.create_success")
@@ -54,8 +54,22 @@ class FellowshipsController < ApplicationController
 
   # DELETE /fellowships/1
   def destroy
-    @fellowship.destroy
-    redirect_to fellowships_url, notice: t("activerecord.attributes.fellowship.delete_success")
+    @fellowship = Fellowship.find(params[:id])
+    
+    @fellowship.fellowship_users.each do |fellowship_user|
+      if fellowship_user.user_id == current_user.id && fellowship_user.fellowship_id == @fellowship.id
+        if fellowship_user.is_fellowship_owner == true
+          @fellowship.destroy
+          redirect_to fellowships_url, notice: t("activerecord.attributes.fellowship.delete_success")
+          return
+        else
+          redirect_to @fellowship, notice: t("activerecord.attributes.fellowship.delete_error")
+          return
+        end
+        break
+      end
+    end
+    redirect_to @fellowship, notice: t("activerecord.attributes.fellowship.delete_error")
   end
 
   # Join a Group
@@ -253,23 +267,23 @@ class FellowshipsController < ApplicationController
   def kick 
     @fellowship = Fellowship.find(params[:id])
     m = params[:fellowship_user_id]
-    @fellowship_user = @fellowship.fellowship_users.find(m)
+    @selected_fellowship_user = @fellowship.fellowship_users.find(m)
 
-    @fellowship_user.destroy
+    @fellowship.fellowship_users.each do |fellowship_user|
+      if fellowship_user.user_id == current_user.id && fellowship_user.fellowship_id == @fellowship.id
+        if (fellowship_user.is_fellowship_owner || (fellowship_user.is_fellowship_administrator && !@selected_fellowship_user.is_fellowship_administrator && !@selected_fellowship_user.is_fellowship_owner))
+          @selected_fellowship_user.destroy
 
+          respond_to do |format|
+            format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.kick_user_success") ) }
+          end
+          return
+        end 
+      end 
+    end 
     respond_to do |format|
-      format.html { redirect_to(@fellowship, :alert => "User wurde entfernt") }
-    end
-  end
-
-
-  def leavebak
-    
-    @fellowship_user = current_user.fellowship_users.find(params[:id])
-    @fellowship_user.destroy
-    flash[:notice] = "You left the Group."
-    redirect_to @fellowship
-       
+      format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.kick_user_error") ) }
+    end   
   end
 
   def tablesort

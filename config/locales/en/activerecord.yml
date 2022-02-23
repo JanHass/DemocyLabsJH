@@ -420,7 +420,7 @@ en:
         moderator: "Moderator"
         user: "User"
         show_user: "Show profile"
-        kick: "remove"
+        kick: "Remove user"
 
         leave_success: "Group left"
         error: "Error"
@@ -429,6 +429,10 @@ en:
         change_role_error: "Error changing group role! "
         change_role_not_auth: "Missing authorization to perform this action!"
         change_role_no_owner_error: "This action cannot be performed because a group requires at least one owner. "
+
+        delete_error: "Group could not be deleted!"
+        kick_user_success: "User has been removed from the group! "
+        kick_user_error: "User could not be removed! "
                          
 
 
