@@ -412,10 +412,18 @@ de:
         change_role: "Rolle ändern zu"
         owner: "Eigentümer:in"
         admin: "Administrator:in"
-        moderator: "Modestrator:in"
+        moderator: "Moderator:in"
         user: "Benutzer:in"
         show_user: "Profil anzeigen"
         kick: "Benutzer:in Entfernen"
+
+        leave_success: "Gruppe verlassen"
+        error: "Fehler"
+
+        change_role_success: "Gruppen-Rolle erfolgreich angepasst!"
+        change_role_error: "Fehler beim ändern der Gruppen-Rolle!"
+        change_role_not_auth: "Fehlende Berechtigung um diese Aktion auszuführen!"
+        change_role_no_owner_error: "Diese Aktion kann nicht ausgeführt werden, da eine Gruppe mindestens eine(n) Eigentümer:in benötigt."
 
 
 

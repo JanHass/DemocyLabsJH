@@ -417,10 +417,18 @@ en:
         change_role: "Change role to"
         owner: "Owner"
         admin: "Administrator"
-        moderator: "Modestrator"
+        moderator: "Moderator"
         user: "User"
         show_user: "Show profile"
         kick: "remove"
+
+        leave_success: "Group left"
+        error: "Error"
+
+        change_role_success: "Group role successfully changed!"
+        change_role_error: "Error changing group role! "
+        change_role_not_auth: "Missing authorization to perform this action!"
+        change_role_no_owner_error: "This action cannot be performed because a group requires at least one owner. "
                          
 
 

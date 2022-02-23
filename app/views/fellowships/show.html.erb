@@ -108,16 +108,16 @@
               <td style='width: 15%';>
                 <% if @currentuser_is_fellowship_owner || (@currentuser_is_fellowship_admin && !fellowship_user.is_fellowship_owner && !fellowship_user.is_fellowship_administrator && current_user.id != fellowship_user.user_id) %>
                   <% if @currentuser_is_fellowship_owner && !fellowship_user.is_fellowship_owner %>
-                   <%= link_to t("activerecord.attributes.fellowship.owner"), changetoowner_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "button hollow_small" %>
+                   <%= link_to t("activerecord.attributes.fellowship.owner"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "owner" ), class: "button hollow_small" %>
                  <% end %>
                  <% if !fellowship_user.is_fellowship_administrator %>
-                   <%= link_to t("activerecord.attributes.fellowship.admin"), changetoadmin_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "button hollow_small" %>
+                   <%= link_to t("activerecord.attributes.fellowship.admin"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "admin" ), class: "button hollow_small" %>
                  <% end %>
                  <% if !fellowship_user.is_fellowship_moderator %>
-                   <%= link_to t("activerecord.attributes.fellowship.moderator"), changetomod_fellowship_path(@fellowship), class: "button hollow_small" %>
+                   <%= link_to t("activerecord.attributes.fellowship.moderator"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "mod" ), class: "button hollow_small" %>
                  <% end %>  
                  <% if fellowship_user.is_fellowship_administrator || fellowship_user.is_fellowship_moderator || fellowship_user.is_fellowship_owner %>
-                   <%= link_to t("activerecord.attributes.fellowship.user"), changetouser_fellowship_path(@fellowship), class: "button hollow_small" %>
+                   <%= link_to t("activerecord.attributes.fellowship.user"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "user" ), class: "button hollow_small" %>
                  <% end %>
                 <% else %>
                   <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>   
@@ -188,7 +188,7 @@
    
   
     
-    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship), class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
+    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship, :origin => "fellowship"), class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
 
   <% end %> 
 <% end %>  

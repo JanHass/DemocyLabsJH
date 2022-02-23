@@ -31,7 +31,7 @@ module Abilities
       can [:read, :help], ::SDG::Goal
       can :read, ::SDG::Phase
 
-      can [:read, :create, :update, :destroy, :join, :leave, :changetoadmin, :changetomod , :changetouser, :changetoowner, :kick, :tablesort], Fellowship
+      can [:read, :create, :update, :destroy, :join, :leave, :changeuserrole, :kick, :tablesort], Fellowship
 
     end
   end

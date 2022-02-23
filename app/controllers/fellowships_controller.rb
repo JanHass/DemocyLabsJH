@@ -90,7 +90,7 @@ class FellowshipsController < ApplicationController
         if @m.save
           format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.join_success")) }
         else
-          format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.join_error")) }
+          format.html { redirect_to(@fellowship, :alert => t("activerecord.attributes.fellowship.join_error")) }
         end
       end
     end
@@ -99,59 +99,155 @@ class FellowshipsController < ApplicationController
   
   helper_method :join
 
+  
+
   def changeuserrole
     @fellowship = Fellowship.find(params[:id])
-    @userid = 
-    respond_to do |format|
-      format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
-    end 
-  end  
-
-  def changetoowner
-    @fellowship = Fellowship.find(params[:id])
-    respond_to do |format|
-       format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
-    end 
-  end
-
-  def changetoadmin
-    @fellowship = Fellowship.find(params[:id])
     @userid = params[:userid]
-    
+    @newrole = params[:newrole]
+    @currentuser_admin = false
+    @currentuser_mod = false
+    @currentuser_owner = false
+    @multi_owner = false
 
+    #Rolle des aktuellen Nutzers bestimmen
+    @fellowship.fellowship_users.each do |current_fellowship_user|
+      if current_fellowship_user.user_id == current_user.id && current_fellowship_user.fellowship_id == @fellowship.id
+        if current_fellowship_user.is_fellowship_administrator
+          @currentuser_admin = true
+        end
+        if current_fellowship_user.is_fellowship_moderator
+          @currentuser_mod = true
+        end
+        if current_fellowship_user.is_fellowship_owner
+          @currentuser_owner = true
+        end
+        break
+      end
+    end
 
+    # Check ob min 1 weiterer Owner vorhanden ist, wenn Rolle von aktuellen Nutzer geändert wird
+    # Wenn false => Error => Es muss min. 1 Owner pro Gruppe sein
+    if current_user.id.to_s == @userid && @currentuser_owner
+      @fellowship.fellowship_users.each do |fellowship_user|
+        if fellowship_user.user_id.to_s != @userid && fellowship_user.fellowship_id == @fellowship.id && fellowship_user.is_fellowship_owner
+         @multi_owner = true
+         break
+        end
+      end
+      if @multi_owner == false
+        respond_to do |format|
+          format.html { redirect_to(@fellowship, :alert => t("activerecord.attributes.fellowship.change_role_no_owner_error") ) }
+        end
+        return
+      end
+    end
+
+    #fellowship user in Fellowship_Users Table finden
+    @fellowship.fellowship_users.each do |fellowship_user|
+      #Rolle anpassen wenn User gefunden und in DB speichern
+      if fellowship_user.user_id.to_s == @userid && fellowship_user.fellowship_id == @fellowship.id
+
+        if @newrole == "admin" && ((@currentuser_admin && !fellowship_user.is_fellowship_owner) || @currentuser_owner)
+          fellowship_user.update(:is_fellowship_administrator => true, :is_fellowship_moderator => false, :is_fellowship_owner => false)
+        elsif @newrole == "mod" && ((@currentuser_admin && !fellowship_user.is_fellowship_owner && !fellowship_user.is_fellowship_admin) || @currentuser_owner)
+          fellowship_user.update(:is_fellowship_administrator => false, :is_fellowship_moderator => true, :is_fellowship_owner => false)
+        elsif @newrole == "user" && ((@currentuser_admin && !fellowship_user.is_fellowship_owner && !fellowship_user.is_fellowship_admin) || @currentuser_owner)
+          fellowship_user.update(:is_fellowship_administrator => false, :is_fellowship_moderator => false, :is_fellowship_owner => false)
+        elsif @newrole =="owner" && @currentuser_owner
+          fellowship_user.update(:is_fellowship_administrator => false, :is_fellowship_moderator => false, :is_fellowship_owner => true)
+        else
+          #Wenn keine if Abfrage greift, fehlt den aktuellen Nutzer die Freigabe für diese Aktion
+          respond_to do |format|
+            format.html { redirect_to(@fellowship, :alert => t("activerecord.attributes.fellowship.change_role_not_auth") ) }
+          end
+          return  
+        end
+        #Erfolgreich Rolle geändert
+        respond_to do |format|
+          format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.change_role_success") ) }
+        end
+        return  
+      end
+    end
+    #Allgemeiner Fehler / Gewählten Nutzer nicht gefudnen
     respond_to do |format|
-       format.html { redirect_to(@fellowship, :alert => @userid ) }
-    end 
-  end
-  def changetomod
-    @fellowship = Fellowship.find(params[:id])
-    respond_to do |format|
-       format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
-    end 
-  end
-  def changetouser
-    @fellowship = Fellowship.find(params[:id])
-    respond_to do |format|
-       format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
-    end 
+      format.html { redirect_to(@fellowship, :alert => t("activerecord.attributes.fellowship.change_role_error") ) }
+    end  
   end
   
 
   def leave
     @fellowship = Fellowship.find(params[:id]) 
-    @fellowship.fellowship_users.each do |fellowship_user|
+    @origin = params[:origin]
+    @current_fellowship_user
+    @return_message = t("activerecord.attributes.fellowship.change_role_no_owner_error").to_s
+    @return_type = "alert"
 
-      if ( current_user.id == fellowship_user.user_id && fellowship_user.fellowship_id == @fellowship.id )
-        fellowship_user.destroy
-        
-        respond_to do |format|
-          format.html { redirect_to(@fellowship, :alert => "Verlassen" ) }   
-        end
-      else
+    
+
+    #Fellowship_User finden
+    @fellowship.fellowship_users.each do |fellowship_user|
       
+      if ( current_user.id == fellowship_user.user_id && fellowship_user.fellowship_id == @fellowship.id )
+        @current_fellowship_user = fellowship_user
+        
+        #Wenn aktueller Nutzer kein Admin, dann normal weiter
+        if @current_fellowship_user.is_fellowship_owner == false
+          fellowship_user.destroy
+          @return_message = t("activerecord.attributes.fellowship.leave_success").to_s
+          @return_type = "notice"
+          break
+        end 
+      end     
+    end
+
+    # Wenn Aktueller Nutzer = Fellowship Owner => Üverprüfen ob noch ein weiterer Owner vorhanden ist.
+    if @current_fellowship_user.is_fellowship_owner
+      @return_message = t("activerecord.attributes.fellowship.change_role_no_owner_error").to_s
+      @return_type = "alert"
+
+      @fellowship.fellowship_users.each do |fellowship_user|
+        if fellowship_user.user_id != @current_fellowship_user.user_id && fellowship_user.fellowship_id == @fellowship.id && fellowship_user.is_fellowship_owner
+          @current_fellowship_user.destroy
+          @return_message = "String"
+          @return_message = t("activerecord.attributes.fellowship.leave_success").to_s
+          @return_type = "notice"
+          break
+        end
+      end 
+    end
+    
+
+
+    #Returns with Message
+    
+    if @origin == "account" && @return_type == "alert"
+      respond_to do |format|
+        format.html { redirect_to(account_url, :alert => @return_message ) }  
       end
+      return
+    elsif @origin == "account" && @return_type == "notice"
+      respond_to do |format|
+        format.html { redirect_to(account_url, :notice => @return_message ) }  
+      end
+      return
+    elsif @origin == "fellowship" && @return_type == "alert" 
+      respond_to do |format|
+       format.html { redirect_to(@fellowship, :alert => @return_message ) }  
+      end
+      return
+    elsif @origin == "fellowship" && @return_type == "notice" 
+      respond_to do |format|
+        format.html { redirect_to(@fellowship, :notice => @return_message ) }   
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to(@fellowship, :alert => @return_message ) }   
+      end
+      return
     end  
+
   end
 
   def kick 
@@ -177,7 +273,8 @@ class FellowshipsController < ApplicationController
   end
 
   def tablesort
-    @fellowship_users = @fellowship.fellowship_users.user.order(params[:sort])
+    @fellowship_users = @fellowship.fellowship_users.order(params[:sort])
+    redirect_to @fellowship
   
   end
 

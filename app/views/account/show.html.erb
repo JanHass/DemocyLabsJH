@@ -270,7 +270,7 @@
                     </td>
                     
                     <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship, class: "button hollow" %></p></td>
-                    <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_leave"), leave_fellowship_path(fellowship), class: "button alert hollow" %></p></td>
+                    <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_leave"), leave_fellowship_path(fellowship, :origin => "account"), class: "button alert hollow" %></p></td>
                  </tr>
                 <% end %>
               </tbody>
