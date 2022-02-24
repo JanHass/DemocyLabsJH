@@ -247,8 +247,18 @@ en:
         terms_of_service: "Terms of service"
         title: "Title"
         modal_new_debate_titel: "Select Group"
-        modal_new_debate_text: "Please select the group you would like to start a debate in: "
+        modal_new_debate_text: "Please select the group you would like to start a debate in:"
         modal_new_debate_button_new: "Start debate"
+        req_false: "The required group requirements have not been met! To start a debate, all group requirements must be met."
+        group_req: "Group requirements"
+        btn_close: "Close"
+        btn_req: "Show requirements"
+        group_req_help: "Under My Account you can customize your account to meet the requirements"
+        my_account: "My account"
+        voting_only_member: "Only group members who meet all group requirements are allowed to vote!"
+
+
+
       debate/translation:
         title: "Debate title"
         description: "Initial debate text"
