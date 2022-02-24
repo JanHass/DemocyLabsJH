@@ -242,6 +242,17 @@ de:
         tag_list: "Inhalte"
         terms_of_service: "Nutzungsbedingungen"
         title: "Titel"
+        modal_new_debate_titel: "Gruppe wählen"
+        modal_new_debate_text: "Bitte wählen Sie die Gruppe, in der Sie eine Diskussion starten möchten:"
+        modal_new_debate_button_new: "Diskussion starten"
+        req_false: "Die erforderlichen Gruppen-Anforderungen wurden nicht erfüllt! Um eine Diskussion zu starten, müssen alle Gruppen-Anforderungen erfüllt sein."
+        group_req: "Gruppenanforderungen"
+        btn_close: "Schließen"
+        btn_req: "Anforderungen anzeigen"
+        group_req_help: "Unter Mein Konto können Sie ihr Konto anpassen, um die Anforderungen erfüllen"
+        my_account: "Mein Konto"
+        
+        
       debate/translation:
         title: "Titel der Debatte"
         description: "Initialer Debattenbeitrag"
@@ -428,6 +439,8 @@ de:
         delete_error: "Gruppe konnte nicht gelöscht werden!"
         kick_user_success: "Nutzer:in wurde aus der Gruppe entfernt!"
         kick_user_error: "Nutzer:in konnte nicht entfernt werden!"
+
+        members: "Mitglieder:"
 
 
 

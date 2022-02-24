@@ -4,6 +4,7 @@ resources :fellowships do
         get :leave
         get :changeuserrole
         get :tablesort
+        
 
         post "fellowships" => "fellowships#join"
         post "fellowships" => "fellowships#changeuserrole"

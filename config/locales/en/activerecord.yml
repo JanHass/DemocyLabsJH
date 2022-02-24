@@ -246,6 +246,9 @@ en:
         tag_list: "Topics"
         terms_of_service: "Terms of service"
         title: "Title"
+        modal_new_debate_titel: "Select Group"
+        modal_new_debate_text: "Please select the group you would like to start a debate in: "
+        modal_new_debate_button_new: "Start debate"
       debate/translation:
         title: "Debate title"
         description: "Initial debate text"
@@ -431,8 +434,9 @@ en:
         change_role_no_owner_error: "This action cannot be performed because a group requires at least one owner. "
 
         delete_error: "Group could not be deleted!"
-        kick_user_success: "User has been removed from the group! "
-        kick_user_error: "User could not be removed! "
+        kick_user_success: "User has been removed from the group!"
+        kick_user_error: "User could not be removed!"
+        members: "Members:"
                          
 
 

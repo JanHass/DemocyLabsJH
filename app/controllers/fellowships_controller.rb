@@ -56,6 +56,7 @@ class FellowshipsController < ApplicationController
   def destroy
     @fellowship = Fellowship.find(params[:id])
     
+    #Abfrage ob Current User = Group Owner => Nur Owner können löschen
     @fellowship.fellowship_users.each do |fellowship_user|
       if fellowship_user.user_id == current_user.id && fellowship_user.fellowship_id == @fellowship.id
         if fellowship_user.is_fellowship_owner == true
@@ -206,7 +207,7 @@ class FellowshipsController < ApplicationController
       if ( current_user.id == fellowship_user.user_id && fellowship_user.fellowship_id == @fellowship.id )
         @current_fellowship_user = fellowship_user
         
-        #Wenn aktueller Nutzer kein Admin, dann normal weiter
+        #Wenn aktueller Nutzer kein Owner, dann normal weiter
         if @current_fellowship_user.is_fellowship_owner == false
           fellowship_user.destroy
           @return_message = t("activerecord.attributes.fellowship.leave_success").to_s

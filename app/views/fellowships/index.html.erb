@@ -6,6 +6,8 @@
 
 <h2><%= t("activerecord.attributes.fellowship.mygroups") %></h2>
 
+<% @member_counter=0 %>
+
 <% current_user.fellowships.each do |fellowship| %>
   
     
@@ -21,6 +23,16 @@
               <h5 class="card-header"><%= fellowship.name %></h5>
               <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p>
               <p class="card-text"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+              <p class="card-text"><small class="text-muted">
+                <%= t("activerecord.attributes.fellowship.members") %> 
+                <% @member_counter=0 %>
+                <% fellowship.fellowship_users.each do |fellowship_user| %>
+                  <% if fellowship_user.fellowship_id == fellowship.id %>
+                    <% @member_counter = @member_counter + 1 %>
+                  <% end %>
+                <%end%>  
+                <%= @member_counter %>
+              </small></p>
             </div>
             <div style="float: right; margin-right: 3%; margin-top: 7%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
           </div>

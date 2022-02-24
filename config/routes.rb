@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   get "/welcome", to: "welcome#welcome"
   get "/consul.json", to: "installation#details"
 
+  post "/debates/new", to: "debates#new"
+
     
 
   resources :stats, only: [:index]
