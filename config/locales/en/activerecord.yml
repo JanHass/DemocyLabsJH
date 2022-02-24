@@ -256,6 +256,7 @@ en:
         group_req_help: "Under My Account you can customize your account to meet the requirements"
         my_account: "My account"
         voting_only_member: "Only group members who meet all group requirements are allowed to vote!"
+        comment_only_member: "Only group members who meet all group requirements can see and comment on comments!"
 
 
 

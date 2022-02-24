@@ -252,6 +252,7 @@ de:
         group_req_help: "Unter Mein Konto können Sie ihr Konto anpassen, um die Anforderungen erfüllen"
         my_account: "Mein Konto"
         voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen abstimmen!"
+        comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
         
         
       debate/translation:
