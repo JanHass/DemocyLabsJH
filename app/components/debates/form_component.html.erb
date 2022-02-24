@@ -1,11 +1,8 @@
-<!-- Aktuelle Nutzer Rolle checken -->
-
-<!-- ------------------------------->
-
 
 <%= translatable_form_for(debate, html: { class: "debate-form" }) do |f| %>
 
   <% if params[:fellowshipid].present? %>
+
     <%= render "shared/errors", resource: debate %>
 
     <% @fellowship = Fellowship.find(params[:fellowshipid]) %>
@@ -406,8 +403,9 @@
       <div style="display: none;">
         <%= f.number_field :fellowship_id, value: @fellowship.id.to_i %>
       </div>
-
+      <div style="display: none;">
       <%= render SDG::RelatedListSelectorComponent.new(f) %>
+      </div>
     </fieldset>
 
     <div class="actions">
