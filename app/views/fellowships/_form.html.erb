@@ -80,79 +80,88 @@
     <h2><details>
         <summary><%= t("activerecord.attributes.fellowship.user_requirements") %></summary>
 
-        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_user_required") %></p>
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_required_full_name %>
-        </div>
+          <h3 style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.user_req_data") %></h3>
+          
+        
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_required_phone_number %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_required_full_name %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_required_gender %>
-       </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_required_phone_number %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-         <%= form.check_box :user_required_date_of_birth %>
-       </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_required_gender %>
+          </div>
 
-       <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_required_adress %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+          <%= form.check_box :user_required_date_of_birth %>
+          </div>
 
-       <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_required_state %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_required_adress %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-         <%= form.check_box :user_required_city %>
-       </div>
+           <div class="field" style="margin-left: 5%;">
+          <%= form.check_box :user_required_city %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_required_country %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_required_state %>
+          </div>
 
-        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_user_show_public") %></p>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_required_country %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-         <%= form.check_box :user_public_show_full_name %>
-        </div>
+          <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_user_required") %></p>
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_public_show_phone_number %>
-       </div>
+          <br><br>
+          <h3 style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.user_pub_data") %></h3>
+          
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_public_show_gender %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+          <%= form.check_box :user_public_show_full_name %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-         <%= form.check_box :user_public_show_date_of_birth %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_public_show_phone_number %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_public_show_address %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_public_show_gender %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_public_show_state %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+          <%= form.check_box :user_public_show_date_of_birth %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-         <%= form.check_box :user_public_show_city %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_public_show_address %>
+          </div>
 
-        <div class="field" style="margin-left: 5%;">
-          <%= form.check_box :user_public_show_country %>
-        </div>
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_public_show_state %>
+          </div>
+
+          <div class="field" style="margin-left: 5%;">
+          <%= form.check_box :user_public_show_city %>
+          </div>
+
+          <div class="field" style="margin-left: 5%;">
+            <%= form.check_box :user_public_show_country %>
+          </div>
+          <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_user_show_public") %></p>
     </details></h2>  
 
     <h2><details>
         <summary><%= t("activerecord.attributes.fellowship.admin_requierments") %></summary> 
 
-        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_admin_required") %></p>
+        <h3 style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.admin_req_data") %></h3>
+
 
         <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_required_full_name %>
@@ -186,7 +195,12 @@
          <%= form.check_box :admin_required_country %>
         </div>
 
-        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_admin_show_public") %></p>
+        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_admin_required") %></p>
+        <br><br>
+
+        <h3 style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.admin_pub_data") %></h3>
+
+        
 
         <div class="field" style="margin-left: 5%;">
           <%= form.check_box :admin_public_show_full_name %>
@@ -220,20 +234,21 @@
         <div class="field" style="margin-left: 5%;">
          <%= form.check_box :admin_public_show_country %>
         </div>
+        <p style="margin-left: 5%;"><%= t("activerecord.attributes.fellowship.info_admin_show_public") %></p>
 
     </details></h2>
 
     
 
     <div class="actions" style="margin-top: 2%;">
-      <%= form.submit %>
+      <%= form.submit t("activerecord.attributes.fellowship.save_fellowship") %>
     </div>
     
   </fieldset>
 
 <% end %>
 
-<%= link_to 'Back', fellowship, class: "button hollow" %>
+<%= link_to t("activerecord.attributes.fellowship.back"), fellowship, class: "button hollow" %>
 
 <style>
         .button
