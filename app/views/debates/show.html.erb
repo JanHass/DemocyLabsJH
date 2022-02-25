@@ -56,12 +56,14 @@
         <div id="<%= dom_id(@debate) %>_votes">
           <%= render "debates/votes", debate: @debate %>
         </div>
+        <div style="display: none;">
         <%= render "shared/social_share",
           share_title: t("debates.show.share"),
           title: @debate.title,
           url: debate_url(@debate),
           description: @debate.title,
           mobile: @debate.title %>
+        </div>  
       </aside>
     </div>
   </div>

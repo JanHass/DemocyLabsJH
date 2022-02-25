@@ -268,6 +268,13 @@ de:
         selected: "Als ausgewählt markieren"
         terms_of_service: "Nutzungsbedingungen"
         video_url: "Externes Video URL"
+        modal_new_proposal_titel: "Gruppe wählen"
+        modal_new_proposal_text: "Bitte wählen Sie die Gruppe, in der Sie einen Vorschlag erstellen möchten:"
+        modal_new_proposal_button_new: "Vorschlag erstellen"
+        voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen teilnehmen!"
+        comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
+
+
       proposal/translation:
         title: "Titel des Vorschlages"
         description: "Vorschlagstext"

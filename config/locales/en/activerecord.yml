@@ -273,6 +273,12 @@ en:
         selected: "Mark as selected"
         terms_of_service: "Terms of service"
         video_url: "External video URL"
+        modal_new_proposal_titel: "Select Group"
+        modal_new_proposal_text: "Please select the group in which you would like to create a proposal: "
+        modal_new_proposal_button_new: "Create Proposal "
+        voting_only_member: "Only group members who meet all group requirements are allowed to participate! "
+        comment_only_member: "Only group members who meet all group requirements can see and comment on comments!"
+
       proposal/translation:
         title: "Proposal title"
         description: "Proposal text"
