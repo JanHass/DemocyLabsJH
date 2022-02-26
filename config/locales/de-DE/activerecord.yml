@@ -337,6 +337,8 @@ de:
         recommended_proposals: "Antrags-Empfehlungen anzeigen"
         redeemable_code: "Bestätigungscode per Post (optional)"
 
+        my_account: "Mein Konto"
+
 
       fellowship:  
 
@@ -495,6 +497,9 @@ de:
         admin_pub_data: "Administrator:innen / Moderator:innen müssen folgende Daten öffentlich teilen:"
 
         short_description: "Kurzbeschreibung"
+
+        delete_fellowship_text_1: "Möchten Sie die Gruppe wirklich löschen?"
+        delete_fellowship_text_2: "Wenn Sie die Gruppe löschen, werden alle dazugehörigen Beiträge mit gelöscht!"
 
 
 

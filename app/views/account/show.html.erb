@@ -1,4 +1,4 @@
-<%= render "shared/myaccount_header", i18n_namespace: "My Account", image: "user-solid" %>
+<%= render "shared/myaccount_header", i18n_namespace: t("activerecord.attributes.user.my_account"), image: "user-solid" %>
 <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow ", :style => 'margin-bottom: 0%' %>
             
 <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "button hollow alert", :style => 'margin-bottom: 0%'%>

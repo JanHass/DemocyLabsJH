@@ -348,6 +348,8 @@ en:
         recommended_proposals: "Show proposals recommendations"
         redeemable_code: "Verification code received via email"
 
+        my_account: "My Account"
+
       fellowship: 
         mygroups: "My Groups"
         allgroups: "All Groups"
@@ -503,6 +505,9 @@ en:
         admin_pub_data: "Administrators / moderators must share the following data publicly: "
 
         short_description: "Short description"
+
+        delete_fellowship_text_1: "Do you really want to delete the group? "
+        delete_fellowship_text_2: "If you delete the group, all related posts will be deleted as well! "
                          
 
 

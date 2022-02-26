@@ -155,9 +155,9 @@
       <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "button hollow margin top", :style=>"margin-bottom: 0%" %>
 
       <% if fellowship_user.is_fellowship_owner %>
-        <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
-        <button type="button" class="button success hollow margin top" style="margin-bottom: 0%;" id="btndelete" data-bs-toggle="modal" data-bs-target="#delete_fellowship">
-        <%= "delete" %>
+        
+        <button type="button" class="button hollow alert margin top" style="margin-bottom: 0%;" id="btndelete" data-bs-toggle="modal" data-bs-target="#delete_fellowship">
+        <%= t("activerecord.attributes.fellowship.delete") %>
         </button>
       <% end %>
     <% end %>
@@ -215,15 +215,17 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="delete_fellowship_label"> Gruppe löschen </h5>
+          <h5 class="modal-title" id="delete_fellowship_label"> <%= t("activerecord.attributes.fellowship.delete") %> </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Text dazu</p>
+          <b><%= t("activerecord.attributes.fellowship.delete_fellowship_text_1") %></b>
           <br><br>
+          <p><%= t("activerecord.attributes.fellowship.delete_fellowship_text_2") %></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+          <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete,  class: "button hollow alert" %>
           
         </div>
       </div>
