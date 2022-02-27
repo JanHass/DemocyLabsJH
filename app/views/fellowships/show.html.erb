@@ -66,7 +66,7 @@
     <table>
       <thead>
         <tr>
-          <th><p><%= link_to t("activerecord.attributes.user.username"), tablesort_fellowship_path(:sort => 'username') %></p></th>
+          <th><p><%= link_to t("activerecord.attributes.user.username"), tablesort_fellowship_path(:sort => "username") %></p></th>
           <th><p><%= link_to t("activerecord.attributes.user.first_name"), tablesort_fellowship_path(:sort => 'first_name') %></p></th>
           <th><p><%= link_to t("activerecord.attributes.user.last_name"), tablesort_fellowship_path(:sort => 'last_name') %></p></th>
           <th><p><%= link_to t("activerecord.attributes.fellowship.role"), tablesort_fellowship_path(:sort => 'role') %></p></th>
@@ -93,15 +93,18 @@
               <p><%= fellowship_user.user.last_name %></p>      
             </td>
             <td style='width: 15%';>
+
               <% if fellowship_user.is_fellowship_owner? %>
                 <p><%= t("activerecord.attributes.fellowship.owner") %></p>
               <% elsif fellowship_user.is_fellowship_moderator? %>
                 <p><%= t("activerecord.attributes.fellowship.moderator") %></p>
               <% elsif fellowship_user.is_fellowship_administrator? %>
                 <p><%= t("activerecord.attributes.fellowship.admin") %></p>
+
               <% else %>
                 <p><%= t("activerecord.attributes.fellowship.user") %></p>
               <% end %>     
+
             </td>
 
             <% if @currentuser_is_fellowship_admin || @currentuser_is_fellowship_mod || @currentuser_is_fellowship_owner %>
@@ -246,6 +249,7 @@
     padding-bottom: 0.85em;
     padding-left: 1em;
 }
+
 .button.hollow_small
 {
     padding-top: 0.1em;
@@ -258,6 +262,7 @@
     width: 120pt ;
     height: 20pt ; 
 }
+
 
   details {
 width: 100%;

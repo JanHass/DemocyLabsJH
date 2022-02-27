@@ -2,6 +2,7 @@
 
 
 
+
 <%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.fellowship"), image: "group_icon" %>
 
 <h2><%= t("activerecord.attributes.fellowship.mygroups") %></h2>
@@ -22,6 +23,7 @@
             <div class="card-body">
               <h5 class="card-header"><%= fellowship.name %></h5>
               <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p>
+
               <p class="card-text"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p>
               <p class="card-text"><small class="text-muted">
                 <%= t("activerecord.attributes.fellowship.members") %> 
@@ -33,6 +35,7 @@
                 <%end%>  
                 <%= @member_counter %>
               </small></p>
+
             </div>
             <div style="float: right; margin-right: 3%; margin-top: 7%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
           </div>
@@ -47,7 +50,9 @@
   <hr style="border-width: 5px;"></hr>
   <tbody>
   <h2 style="margin-bottom: 1%;"> <%= t("activerecord.attributes.fellowship.allgroups") %> </h2>
+
     <%= link_to t("activerecord.attributes.fellowship.create_new_fellowship"), new_fellowship_path, class: "success button", :style => 'margin-bottom: 2.5%', :style => 'width: 11%' %>
+
     <div></div>
 
     <% @fellowships.each do |fellowship| %>
@@ -62,7 +67,9 @@
       <div class="card-body">
         <h5 class="card-header"><%= fellowship.name %></h5>
         <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p>
+
         <p class="card-text"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+
       </div>
       <% if current_user.fellowships.include?(fellowship)  %>  
       <div style="float: right; margin-right: 3%; margin-top: 7%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
