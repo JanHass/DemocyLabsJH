@@ -33,6 +33,7 @@ module Abilities
 
       can [:read, :create, :update, :destroy, :join, :leave, :changetoadmin, :changetomod , :changetouser, :changetoowner, :kick, :tablesort], Fellowship
 
+
     end
   end
 end

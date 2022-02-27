@@ -167,8 +167,9 @@
                 <th><p><%= t("activerecord.attributes.user.fellowship_descripton") %></p></th>
                 <th><p ><%= t("activerecord.attributes.user.fellowship_requirements") %></p></th>
                 <th><p><%= t("activerecord.attributes.user.fellowship_role") %></p></th>
+
                 <th></th>
-                
+
                 <th colspan="3"></th>
               </tr>
               </thead>
@@ -286,7 +287,9 @@
                     </td>
                     
                     <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship, class: "button hollow" %></p></td>
+
                     <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_leave"), leave_fellowship_path(fellowship), class: "button alert hollow" %></p></td>
+
                  </tr>
                 <% end %>
               </tbody>
@@ -323,6 +326,7 @@
     cursor: inherit;
     display: block;
 }
+
   .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
     {
        color: white;
