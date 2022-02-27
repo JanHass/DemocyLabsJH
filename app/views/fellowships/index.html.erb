@@ -5,6 +5,8 @@
 
 <%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.fellowship"), image: "group_icon" %>
 
+<%= link_to t("activerecord.attributes.fellowship.create_new_fellowship"), new_fellowship_path, class: "button", :style => 'margin-bottom: 2.5%', :style => 'width: 12%' %>
+
 <h2><%= t("activerecord.attributes.fellowship.mygroups") %></h2>
 
 <% @member_counter=0 %>
@@ -16,14 +18,15 @@
         <div class="row g-0">
           <div class="col-md-4">
             <% if fellowship.image.attached? %>
-              <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top" alt="...">
+              <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top" style="height: 14vw; width:11vw"></img>
+              <% else %>
+              <div style="height: 14vw; width:11vw"> </div>
             <% end %>
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-header"><%= fellowship.name %></h5>
               <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p>
-
               <p class="card-text"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p>
               <p class="card-text"><small class="text-muted">
                 <%= t("activerecord.attributes.fellowship.members") %> 
@@ -35,9 +38,9 @@
                 <%end%>  
                 <%= @member_counter %>
               </small></p>
-
             </div>
-            <div style="float: right; margin-right: 3%; margin-top: 7%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
+            <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 11%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+            <div style="float: right; margin-left: 57%; position: absolute; bottom: 15%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
           </div>
           <%= link_to t("activerecord.attributes.fellowship.fellowship_show"), fellowship, class: "btn btn-info" %>
         </div>
@@ -51,7 +54,6 @@
   <tbody>
   <h2 style="margin-bottom: 1%;"> <%= t("activerecord.attributes.fellowship.allgroups") %> </h2>
 
-    <%= link_to t("activerecord.attributes.fellowship.create_new_fellowship"), new_fellowship_path, class: "success button", :style => 'margin-bottom: 2.5%', :style => 'width: 11%' %>
 
     <div></div>
 
@@ -60,7 +62,9 @@
   <div class="row g-0">
     <div class="col-md-4">
       <% if fellowship.image.attached? %>
-      <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top">
+      <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top" style="height: 14vw; width:11vw"></img>
+      <% else %>
+      <div style="height: 14vw; width:11vw"> </div>
       <% end %>
     </div>
     <div class="col-md-8">
@@ -68,11 +72,20 @@
         <h5 class="card-header"><%= fellowship.name %></h5>
         <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p>
 
-        <p class="card-text"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p>
 
+        <p class="card-text"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p>
       </div>
-      <% if current_user.fellowships.include?(fellowship)  %>  
-      <div style="float: right; margin-right: 3%; margin-top: 7%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
+      <% if current_user.fellowships.include?(fellowship) %>  
+      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 10%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+        <% if fellowship.join_password_required %>
+          <i class="fas fa-lock fa-1x" style="float: right; margin-left: 50%; position: absolute; bottom: 18%; font-size: x-large;"></i>
+        <% end %>
+      <div style="float: right; margin-left: 57%; position: absolute; bottom: 15%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
+      <% else %>
+        <% if fellowship.join_password_required %>
+        <i class="fas fa-lock fa-1x" style="float: right; margin-left: 59%; position: absolute; bottom: 18%; font-size: x-large;"></i>
+        <% end %>
+      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 16%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
       <% end %>
 
     </div>
@@ -94,6 +107,11 @@
        background:#05d3dd !important; 
        border: none;
        color: white;
+   }
+
+   .button
+   {
+      text-decoration: none;
    }
 
    .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
