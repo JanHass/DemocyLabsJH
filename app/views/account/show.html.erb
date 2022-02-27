@@ -11,10 +11,26 @@
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>
 
+      <div class="input-group">
+        <% if @account.avatar.attached? %>
+           <%= image_tag(@account.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
+        <% else %>
+           <%= image_tag 'Default_Profile_Avatar.png', height: 200, width: 200, class: "rounded-circle" %>
+        <% end %>
+
+      </div>
+
+      <div>
+        <label class="button-image">
+          <%= f.file_field :avatar, class: "btn btn-primary btn-file" %>
+        </label>
+      </div> 
+
+    
+
       <div class="row">
         <div class="small-12 medium-7 column">
 
-          
           <h3><details>
              <summary><%= t("account.show.personal") %></summary> 
 
@@ -287,6 +303,26 @@
 </div>
 
 <style>
+.btn-file {
+    position: relative;
+    overflow: hidden;
+	  margin: 10;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
   .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
     {
        color: white;

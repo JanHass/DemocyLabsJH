@@ -177,7 +177,10 @@ class FellowshipsController < ApplicationController
   end
 
   def tablesort
-    @fellowship_users = @fellowship.fellowship_users.user.order(params[:sort])
+    @fellowship_users = User.order(params[:sort])
+    respond_to do |format|
+      format.html { redirect_to(@fellowship, :alert => "User wurde entfernt") }
+    end
   
   end
 
