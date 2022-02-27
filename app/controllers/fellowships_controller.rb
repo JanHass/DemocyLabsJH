@@ -90,7 +90,7 @@ class FellowshipsController < ApplicationController
         if @m.save
           format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.join_success")) }
         else
-          format.html { redirect_to(@fellowship, :notice => t("activerecord.attributes.fellowship.join_error")) }
+          format.html { redirect_to(@fellowship, :alert => t("activerecord.attributes.fellowship.join_error")) }
         end
       end
     end

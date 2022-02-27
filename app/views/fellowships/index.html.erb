@@ -60,10 +60,16 @@
         <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p>
       </div>
       <% if current_user.fellowships.include?(fellowship) %>  
-      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 11%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 10%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+        <% if fellowship.join_password_required %>
+          <i class="fas fa-lock fa-1x" style="float: right; margin-left: 50%; position: absolute; bottom: 18%; font-size: x-large;"></i>
+        <% end %>
       <div style="float: right; margin-left: 57%; position: absolute; bottom: 15%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
       <% else %>
-      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 17%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+        <% if fellowship.join_password_required %>
+        <i class="fas fa-lock fa-1x" style="float: right; margin-left: 59%; position: absolute; bottom: 18%; font-size: x-large;"></i>
+        <% end %>
+      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 16%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
       <% end %>
 
     </div>
