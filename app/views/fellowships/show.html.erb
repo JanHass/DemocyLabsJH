@@ -111,16 +111,16 @@
               <td style='width: 15%';>
                 <% if @currentuser_is_fellowship_owner || (@currentuser_is_fellowship_admin && !fellowship_user.is_fellowship_owner && !fellowship_user.is_fellowship_administrator && current_user.id != fellowship_user.user_id) %>
                   <% if @currentuser_is_fellowship_owner && !fellowship_user.is_fellowship_owner %>
-                   <%= link_to t("activerecord.attributes.fellowship.owner"), changetoowner_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "button hollow_small" %>
+                   <%= link_to t("activerecord.attributes.fellowship.owner"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "owner" ), class: "button hollow_small" %>
                  <% end %>
                  <% if !fellowship_user.is_fellowship_administrator %>
-                   <%= link_to t("activerecord.attributes.fellowship.admin"), changetoadmin_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "button hollow_small" %>
+                   <%= link_to t("activerecord.attributes.fellowship.admin"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "admin" ), class: "button hollow_small" %>
                  <% end %>
                  <% if !fellowship_user.is_fellowship_moderator %>
-                   <%= link_to t("activerecord.attributes.fellowship.moderator"), changetomod_fellowship_path(@fellowship), class: "button hollow_small" %>
+                   <%= link_to t("activerecord.attributes.fellowship.moderator"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "mod" ), class: "button hollow_small" %>
                  <% end %>  
                  <% if fellowship_user.is_fellowship_administrator || fellowship_user.is_fellowship_moderator || fellowship_user.is_fellowship_owner %>
-                   <%= link_to t("activerecord.attributes.fellowship.user"), changetouser_fellowship_path(@fellowship), class: "button hollow_small" %>
+                   <%= link_to t("activerecord.attributes.fellowship.user"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "user" ), class: "button hollow_small" %>
                  <% end %>
                 <% else %>
                   <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>   
@@ -145,36 +145,6 @@
     </table>
   </details></h2>
 
-  <!-- Modal  / PopUp User Rolle bearbeiten --> 
-              <div class="modal fade" id="change_user_role" tabindex="-1" aria-labelledby="change_user_role_label" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                 <h5 class="modal-title" id="change_user_role_label"> User Rolle ändern </h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <%= form_with url: changeuserrole_fellowship_path(@fellowship), local: true, method: :get do %>
-                  <div class="modal-body">
-                    <p>Text dazu</p>
-                    
-                    <br><br>
-                    <div>
-                      <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
-                      <%= select_tag "userrole", options_for_select([ ["User", 'user'], ["Gruppen-Moderator", 'mod'], ["Gruppen-Administrator", 'admin'] ], "User") %>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
-                    <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "button success hollow" %>  
-                  </div>
-                <% end %>
-              </div>
-              </div>
-              </div>
-
-            
-  
-
 
 <!-- Buttons -->
 
@@ -184,14 +154,20 @@
 <% current_user.fellowship_users.each do |fellowship_user| %>
   <% if fellowship_user.fellowship_id == @fellowship.id %> <!--  wenn User in Gruppe ist-->
     <% @show_join_button = false %>
-    <% if fellowship_user.is_fellowship_administrator %>
+    <% if fellowship_user.is_fellowship_administrator || fellowship_user.is_fellowship_owner %>
       <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "button hollow margin top", :style=>"margin-bottom: 0%" %>
-      <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
+
+      <% if fellowship_user.is_fellowship_owner %>
+        
+        <button type="button" class="button hollow alert margin top" style="margin-bottom: 0%;" id="btndelete" data-bs-toggle="modal" data-bs-target="#delete_fellowship">
+        <%= t("activerecord.attributes.fellowship.delete") %>
+        </button>
+      <% end %>
     <% end %>
    
   
     
-    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship), class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
+    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship, :origin => "fellowship"), class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
 
   <% end %> 
 <% end %>  
@@ -235,6 +211,31 @@
 <% end %>
 <div style="margin-bottom: 1rem;"></div>
 <%= link_to t("activerecord.attributes.fellowship.back"), fellowships_path, class: "button hollow", :style=>"margin-bottom: 0%" %>
+
+
+<!-- Modal  / PopUp Gruppe löschen --> 
+  <div class="modal fade" id="delete_fellowship" tabindex="-1" aria-labelledby="delete_fellowship_label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="delete_fellowship_label"> <%= t("activerecord.attributes.fellowship.delete") %> </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <b><%= t("activerecord.attributes.fellowship.delete_fellowship_text_1") %></b>
+          <br><br>
+          <p><%= t("activerecord.attributes.fellowship.delete_fellowship_text_2") %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+          <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete,  class: "button hollow alert" %>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 <style>
    .button

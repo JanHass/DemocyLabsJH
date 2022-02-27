@@ -3,11 +3,8 @@ resources :fellowships do
         get :join
         get :leave
         get :changeuserrole
-        get :changetoowner
-        get :changetoadmin
-        get :changetomod
-        get :changetouser
         get :tablesort
+        
 
         post "fellowships" => "fellowships#join"
         post "fellowships" => "fellowships#changeuserrole"
