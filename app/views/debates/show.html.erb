@@ -3,11 +3,23 @@
   <%= render "shared/canonical", href: debate_url(@debate) %>
 <% end %>
 
+<% if @debate.fellowship_id.present? %>
+  <% @fellowship= Fellowship.find(@debate.fellowship_id)%>
+<% end %>  
+
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
   <div class="debate-show">
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
+        <% if @debate.fellowship_id.present? %>
+          <div><h4>
+            <% if @fellowship.image.attached? %>
+                <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
+            <% end %>       
+            <%= link_to @fellowship.name, @fellowship %>
+          </h4></div> 
+        <% end%>   
 
         <h1><%= @debate.title %></h1>
         <% if @debate.conflictive? %>

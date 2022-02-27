@@ -40,12 +40,13 @@
 
   <%= render "shared/search_form", search_path: proposals_path(page: 1), i18n_namespace: "proposals.index.search_form" %>
   
-  
-    <% if show_recommended_proposals? %>
-      <%= render "shared/recommended_index", recommended: @recommended_proposals,
-                                            disable_recommendations_path: recommendations_disable_proposals_path,
-                                            namespace: "proposals" %>
-    <% end %>
+    <div style="display: none;">
+      <% if show_recommended_proposals? %>
+        <%= render "shared/recommended_index", recommended: @recommended_proposals,
+                                              disable_recommendations_path: recommendations_disable_proposals_path,
+                                              namespace: "proposals" %>
+      <% end %>
+    </div>
   
 
   <div class="row">
