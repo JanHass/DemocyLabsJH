@@ -435,3 +435,200 @@ Did you mean?  url_for
 [2022-01-16 18:18:49 +0100 LAPTOP-BJ4HDS7P (2862)] INFO : Finished instrumentation
 
 
+[2022-02-21 17:05:48 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-21 17:05:48 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-21 17:05:48 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-21 17:05:48 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Environment: development
+[2022-02-21 17:05:48 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : No known dispatcher detected.
+[2022-02-21 17:05:48 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Application: CONSUL (Development)
+[2022-02-21 17:05:48 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing Net instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing ActiveJob instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Installing Rails 5 view instrumentation
+[2022-02-21 17:05:49 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Finished instrumentation
+[2022-02-21 17:06:18 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-21 17:06:26 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler not available: No DJ worker present. Skipping DJ queue sampler
+[2022-02-21 17:06:28 +0100 LAPTOP-BJ4HDS7P (2697)] ERROR : Invalid license key, please visit support.newrelic.com
+[2022-02-21 17:06:28 +0100 LAPTOP-BJ4HDS7P (2697)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2022-02-21 19:53:11 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_users' for nil:NilClass
+[2022-02-21 19:54:42 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_users' for #<Class:0x00007fa7575655a8>
+[2022-02-21 19:54:55 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_users' for #<Class:0x00007fa7575655a8>
+[2022-02-21 19:55:54 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `to_model' for #<Fellowship::ActiveRecord_Relation:0x00007fa70efbd1e8>
+Did you mean?  to_xml
+[2022-02-21 19:57:32 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `to_model' for #<Fellowship::ActiveRecord_Relation:0x00007fa74547dad0>
+Did you mean?  to_xml
+[2022-02-21 19:58:24 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#tablesort is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-21 19:59:17 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `to_model' for #<Fellowship::ActiveRecord_Relation:0x00007fa70f20a248>
+Did you mean?  to_xml
+[2022-02-21 20:01:49 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `to_model' for #<Fellowship::ActiveRecord_Relation:0x00007fa70dba5b60>
+Did you mean?  to_xml
+[2022-02-21 20:05:21 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `fellowship_user' for #<Fellowship:0x00007fa70e79cc20>
+Did you mean?  fellowship_users
+               fellowship_users=
+               fellowship_url
+               fellowships_url
+               fellowship_user_ids
+               fellowship_user_url
+               fellowship_path
+[2022-02-21 20:06:08 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `users' for #<FellowshipUser::ActiveRecord_Associations_CollectionProxy:0x00007fa70e20ec18>
+[2022-02-21 20:08:15 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Couldn't find FellowshipUser with 'id'=13 [WHERE "fellowship_users"."fellowship_id" = $1]
+[2022-02-22 07:43:14 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:206: syntax error, unexpected end-of-input, expecting `end'
+[2022-02-22 07:44:22 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `users' for nil:NilClass
+[2022-02-22 07:45:41 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `user' for nil:NilClass
+Did you mean?  super
+[2022-02-22 07:46:37 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `users' for #<FellowshipUser:0x00007fa6f65a78b0>
+Did you mean?  user
+               user=
+[2022-02-22 07:48:51 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `find' for #<FellowshipUser:0x00007fa715ad2348>
+[2022-02-22 07:49:44 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unable to autoload constant Fellowship_user, expected /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/fellowship_user.rb to define it
+[2022-02-22 07:50:55 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `find' for 1:Integer
+[2022-02-22 07:51:55 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `users' for #<FellowshipUser:0x00007fa6fdbd20a8>
+Did you mean?  user
+               user=
+[2022-02-22 07:52:50 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `find_by' for #<FellowshipUser:0x00007fa6fdd9a2a0>
+[2022-02-22 08:05:00 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:206: syntax error, unexpected `end', expecting end-of-input
+[2022-02-22 08:05:47 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Couldn't find FellowshipUser with 'id'=13
+[2022-02-22 08:07:02 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Couldn't find FellowshipUser without an ID
+[2022-02-22 08:16:53 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `fellowship' for #<FellowshipsController:0x00007fa70e1829c0>
+Did you mean?  @fellowship
+[2022-02-22 08:18:35 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `fellowship_user' for #<FellowshipsController:0x00007fa6f5efbe80>
+Did you mean?  fellowship_url
+               fellowships_url
+               fellowship_user_url
+               fellowship_path
+[2022-02-22 08:20:25 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `user' for nil:NilClass
+Did you mean?  super
+[2022-02-22 08:21:24 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `users' for nil:NilClass
+[2022-02-22 08:25:27 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `user_id' for #<FellowshipsController:0x00007fa6fda2edc8>
+Did you mean?  user_session
+[2022-02-22 14:05:10 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/controllers/fellowships_controller.rb:207: syntax error, unexpected `end', expecting end-of-input
+[2022-02-22 14:13:12 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Unable to autoload constant Abilities::Common, expected /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/models/abilities/common.rb to define it
+[2022-02-22 14:14:29 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#tablesort is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-22 14:17:21 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#tablesort is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-22 14:30:29 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: FellowshipsController#tablesort is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+[2022-02-22 14:31:51 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: ActionController::UnknownFormat
+[2022-02-22 15:51:30 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `account' for #<#<Class:0x00007fa707d33758>:0x00007fa707d303a0>
+Did you mean?  @account
+               @accounts
+[2022-02-22 15:53:18 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `form' for #<#<Class:0x00007fa707d33758>:0x00007fa706017908>
+Did you mean?  for
+               fork
+[2022-02-22 16:14:30 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `resource' for #<#<Class:0x00007fa6ed497b18>:0x00007fa6ed495778>
+Did you mean?  rescue
+[2022-02-22 16:17:03 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `account' for #<#<Class:0x00007fa6ed497b18>:0x00007fa747efbdc0>
+Did you mean?  @account
+               @accounts
+[2022-02-22 16:18:02 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `inline_svg_pack_tag' for #<#<Class:0x00007fa6ed497b18>:0x00007fa747ecfc48>
+[2022-02-22 16:38:06 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/account/show.html.erb:18: syntax error, unexpected local variable or method, expecting ')'
+..., class: "rounded", size: 200 x 200) );@output_buffer.safe_a...
+...                              ^
+/mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/account/show.html.erb:18: syntax error, unexpected ')', expecting `end'
+...: "rounded", size: 200 x 200) );@output_buffer.safe_append='
+...                              ^
+
+[2022-02-22 16:38:52 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/account/show.html.erb:18: syntax error, unexpected local variable or method, expecting ')'
+...class: "rounded", size => 200 x 200) );@output_buffer.safe_a...
+...                              ^
+/mnt/c/Users/joel9/Consul/DemocyLabsJH/app/views/account/show.html.erb:18: syntax error, unexpected ')', expecting `end'
+..."rounded", size => 200 x 200) );@output_buffer.safe_append='
+...                              ^
+
+[2022-02-22 17:43:34 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: cannot load such file -- mini_magick
+[2022-02-22 17:55:24 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: cannot load such file -- mini_magick
+[2022-02-22 17:57:53 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: cannot load such file -- mini_magick
+[2022-02-22 17:59:30 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: cannot load such file -- mini_magick
+[2022-02-22 18:52:04 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `proceed' for "rounded-circle":String
+Did you mean?  prepend
+[2022-02-22 18:56:25 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: wrong number of arguments (given 3, expected 1..2)
+[2022-02-22 19:33:45 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: cannot load such file -- mini_magick
+[2022-02-22 19:34:58 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: cannot load such file -- mini_magick
+[2022-02-22 19:36:12 +0100 LAPTOP-BJ4HDS7P (2697)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: cannot load such file -- mini_magick
+[2022-02-22 19:48:02 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-22 19:48:02 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-22 19:48:02 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-22 19:48:02 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Environment: development
+[2022-02-22 19:48:02 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : No known dispatcher detected.
+[2022-02-22 19:48:02 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Application: CONSUL (Development)
+[2022-02-22 19:48:02 +0100 LAPTOP-BJ4HDS7P (4223)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-22 19:48:02 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing Net instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing ActiveJob instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Installing Rails 5 view instrumentation
+[2022-02-22 19:48:03 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Finished instrumentation
+[2022-02-22 19:48:28 +0100 LAPTOP-BJ4HDS7P (4223)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Environment: development
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : No known dispatcher detected.
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Application: CONSUL (Development)
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing Net instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing ActiveJob instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Installing Rails 5 view instrumentation
+[2022-02-22 19:50:48 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Finished instrumentation
+[2022-02-22 19:51:10 +0100 LAPTOP-BJ4HDS7P (4312)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Starting the New Relic agent version 4.1.0.333 in "development" environment.
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Reading configuration from config/newrelic.yml (/mnt/c/Users/joel9/Consul/DemocyLabsJH)
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Environment: development
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : No known dispatcher detected.
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Application: CONSUL (Development)
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing Net instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing Rails 3+ middleware instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing Memcache instrumentation for dalli gem
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing DelayedJob instrumentation [part 1/2]
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing ActiveJob instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing deferred Rack::Builder instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing Rack::Builder middleware instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing ActiveRecord 5 instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing Rails 5 Controller instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing Rails 5 Action Cable instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Installing Rails 5 view instrumentation
+[2022-02-22 19:51:30 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Finished instrumentation
+[2022-02-22 19:51:55 +0100 LAPTOP-BJ4HDS7P (4342)] INFO : Doing deferred dependency-detection before Rack startup
+[2022-02-22 19:52:01 +0100 LAPTOP-BJ4HDS7P (2697)] INFO : Starting Agent shutdown

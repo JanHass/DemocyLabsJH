@@ -107,6 +107,13 @@ class FellowshipsController < ApplicationController
     end 
   end  
 
+  def changetoowner
+    @fellowship = Fellowship.find(params[:id])
+    respond_to do |format|
+       format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
+    end 
+  end
+
   def changetoadmin
     @fellowship = Fellowship.find(params[:id])
     @userid = params[:userid]
@@ -129,6 +136,7 @@ class FellowshipsController < ApplicationController
        format.html { redirect_to(@fellowship, :alert => "Methode aufgerufen") }
     end 
   end
+  
 
   def leave
     @fellowship = Fellowship.find(params[:id]) 
@@ -166,6 +174,14 @@ class FellowshipsController < ApplicationController
     flash[:notice] = "You left the Group."
     redirect_to @fellowship
        
+  end
+
+  def tablesort
+    @fellowship_users = User.order(params[:sort])
+    respond_to do |format|
+      format.html { redirect_to(@fellowship, :alert => "User wurde entfernt") }
+    end
+  
   end
 
   private

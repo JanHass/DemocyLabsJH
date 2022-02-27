@@ -407,6 +407,20 @@ en:
         fellowship_admin: "Group Admin"
         fellowship_user: "Group User"
         fellowship_moderator: "Group Moderator"
+
+        fellowship_show: "Show group "
+        create_new_fellowship: "Create new group "
+        created_at: "created at"
+        fellowship: "Groups"
+        group_members: "Group member"
+        role: "role"
+        change_role: "Change role to"
+        owner: "Owner"
+        admin: "Administrator"
+        moderator: "Modestrator"
+        user: "User"
+        show_user: "Show profile"
+        kick: "remove"
                          
 
 

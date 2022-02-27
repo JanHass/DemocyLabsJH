@@ -263,7 +263,7 @@ de:
       user:
         login: "E-Mail oder Benutzer:innenname"
         email: "E-Mail"
-        username: "Benutzer:innenname"
+        username: "Anmeldename"
         first_name: "Vorname"
         last_name: "Nachname"
         name: "Name"
@@ -300,8 +300,7 @@ de:
         fellowship_show: "Anzeigen"
         fellowship_leave: "Gruppe Verlassen"
         fellowship_role: "eigene Rolle"
-        fellowship_user: "Nutzer"
-        fellowship_admin: "Administrator"
+        
 
         email_digest: "Benachrichtigungen mit Zusammenfassung über Vorschlag erhalten"
         email_on_comment: "Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
@@ -403,6 +402,20 @@ de:
         fellowship_admin: "Gruppen-Administrator"
         fellowship_user: "Gruppen-Nutzer"
         fellowship_moderator: "Gruppen-Moderator"
+
+        fellowship_show: "Gruppe anzeigen"
+        create_new_fellowship: "Neue Gruppe erstellen"
+        created_at: "Erstellt am"
+        fellowship: "Gruppen"
+        group_members: "Gruppenmitglieder"
+        role: "Rolle"
+        change_role: "Rolle ändern zu"
+        owner: "Eigentümer:in"
+        admin: "Administrator:in"
+        moderator: "Modestrator:in"
+        user: "Benutzer:in"
+        show_user: "Profil anzeigen"
+        kick: "Benutzer:in Entfernen"
 
 
 
