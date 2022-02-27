@@ -2,11 +2,14 @@
 
 
 
-<%= render "shared/fellowships_header", i18n_namespace: "Groups", image: "group_icon" %>
 
-<%= link_to 'New Group', new_fellowship_path, class: "button", :style => 'margin-bottom: 2.5%', :style => 'width: 12%' %>
+<%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.fellowship"), image: "group_icon" %>
+
+<%= link_to t("activerecord.attributes.fellowship.create_new_fellowship"), new_fellowship_path, class: "button", :style => 'margin-bottom: 2.5%', :style => 'width: 12%' %>
 
 <h2><%= t("activerecord.attributes.fellowship.mygroups") %></h2>
+
+<% @member_counter=0 %>
 
 <% current_user.fellowships.each do |fellowship| %>
   
@@ -24,11 +27,22 @@
             <div class="card-body">
               <h5 class="card-header"><%= fellowship.name %></h5>
               <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p>
+              <p class="card-text"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+              <p class="card-text"><small class="text-muted">
+                <%= t("activerecord.attributes.fellowship.members") %> 
+                <% @member_counter=0 %>
+                <% fellowship.fellowship_users.each do |fellowship_user| %>
+                  <% if fellowship_user.fellowship_id == fellowship.id %>
+                    <% @member_counter = @member_counter + 1 %>
+                  <% end %>
+                <%end%>  
+                <%= @member_counter %>
+              </small></p>
             </div>
             <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 11%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
             <div style="float: right; margin-left: 57%; position: absolute; bottom: 15%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div>
           </div>
-          <%= link_to 'Show', fellowship, class: "btn btn-info" %>
+          <%= link_to t("activerecord.attributes.fellowship.fellowship_show"), fellowship, class: "btn btn-info" %>
         </div>
       </div>
     
@@ -39,7 +53,6 @@
   <hr style="border-width: 5px;"></hr>
   <tbody>
   <h2 style="margin-bottom: 1%;"> <%= t("activerecord.attributes.fellowship.allgroups") %> </h2>
-    
 
 
     <div></div>
@@ -58,6 +71,9 @@
       <div class="card-body">
         <h5 class="card-header"><%= fellowship.name %></h5>
         <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p>
+
+
+        <p class="card-text"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p>
       </div>
       <% if current_user.fellowships.include?(fellowship) %>  
       <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 10%;"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
@@ -73,7 +89,7 @@
       <% end %>
 
     </div>
-    <%= link_to 'Show', fellowship, class: "btn btn-info" %>
+    <%= link_to t("activerecord.attributes.fellowship.fellowship_show"), fellowship, class: "btn btn-info" %>
   </div>
 </div>
     <% end %>

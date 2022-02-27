@@ -242,6 +242,7 @@ en:
       proposals: Proposals
       poll_questions: Voting
       budgets: Participatory budgeting
+      fellowships: "Gruppen"
       notification_item:
         new_notifications:
           one: You have a new notification
