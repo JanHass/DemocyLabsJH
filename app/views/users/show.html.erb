@@ -1,4 +1,9 @@
+<!-- My Content landing page -->
+
+<!-- header bar with icon -->
 <%= render "shared/mycontent_header", i18n_namespace: "My Content", image: "id-card-solid" %>
+
+<!-- Public profile data -->
 <main>
   <div class="activity row margin-top">
     <div class="small-12 column">
@@ -103,8 +108,8 @@
 
       <hr style="margin-top: 2%;"></hr>
 
+      <!-- Profile Activities -->
       <%= render Users::PublicActivityComponent.new(@user) %>
-
     </div>
   </div>
 </main>

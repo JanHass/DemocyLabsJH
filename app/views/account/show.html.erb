@@ -1,11 +1,15 @@
+<!-- My account page -->
+
+<!-- header bar with icon -->
 <%= render "shared/myaccount_header", i18n_namespace: t("activerecord.attributes.user.my_account"), image: "user-solid" %>
-<%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow ", :style => 'margin-bottom: 0%' %>
-            
+
+<!-- top buttons -->
+<%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow ", :style => 'margin-bottom: 0%' %>     
 <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "button hollow alert", :style => 'margin-bottom: 0%'%>
 <div class="row account">
   <div class="small-12 column">
     
-
+<!-- User Image -->
     <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
@@ -27,7 +31,7 @@
       </div> 
 
     
-
+<!-- Personal Details -->
       <div class="row">
         <div class="small-12 medium-7 column">
 
@@ -72,7 +76,7 @@
           </details></h3>
 
           
-
+<!-- Public Profile -->
           <h3><details>
              <summary><%= t("activerecord.attributes.user.public_profile") %></summary> 
 
@@ -104,9 +108,8 @@
           </details></h3>
 
           
-
+<!-- Notifications -->
           <% if @account.email.present? %>
-            
             <h3><details>
               <summary><%= t("account.show.notifications") %></summary>
 
@@ -130,8 +133,6 @@
                 <%= f.check_box :email_on_direct_message %>
              </div>
             </details></h3>
-
-
           <% end %>
 
           <% if @account.official_level == 1 %>
@@ -140,6 +141,7 @@
             </div>
           <% end %>
 
+<!-- Recommendations -->
           <% if feature?("user.recommendations") %>
           <h3><details>
             <summary><%= t("account.show.recommendations") %></summary>
@@ -157,6 +159,8 @@
             </details></h3>
           <% end %>
 
+
+<!-- My Groups -->
           <h3><details class="overflow-auto" style="max-height: 800px;">
             <summary><%= t("activerecord.attributes.user.my_groups") %></summary> 
 
@@ -297,6 +301,7 @@
 
             </details></h3>
 
+          <!-- Save Button -->
           <%= f.submit t("account.show.save_changes_submit"), class: "button hollow success margin-top" %>
 
         </div>  
@@ -335,12 +340,20 @@
     {
       text-decoration:none;
     }
+    .button.hollow.alert
+    {
+    padding-top: 0.85em;
+    padding-right: 1em;
+    padding-bottom: 0.85em;
+    padding-left: 1em;
+    }   
     p
     {
         font-size: 66%;
     }
 
-    details {
+/* Styles for the dropdown fields (details and summary tags) */
+  details {
   width: 100%;
   margin-bottom: .5rem;
   box-shadow: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
@@ -380,14 +393,6 @@ details summary::-webkit-details-marker {
 details > ul {
   padding-bottom: 1rem;
   margin-bottom: 0;
-}
-
-.button.hollow.alert
-{
-    padding-top: 0.85em;
-    padding-right: 1em;
-    padding-bottom: 0.85em;
-    padding-left: 1em;
 }
 
 </style>
