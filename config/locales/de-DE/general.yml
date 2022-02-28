@@ -246,6 +246,8 @@ de:
       poll_questions: Abstimmung
       budgets: Bürgerhaushalte
       fellowships: "Gruppen"
+      help: "Hilfe"
+      menu: "Menü"
       notification_item:
         new_notifications:
           zero: "Sie haben keine neuen Benachrichtigungen"
