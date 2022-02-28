@@ -136,6 +136,7 @@ button,
   @extend %button;
   @include inverted-selection;
   background: $brand;
+  text-decoration: none;
 
   &.warning,
   &.warning:hover {
@@ -355,10 +356,11 @@ button,
   color: $text-medium;
   display: inline-block;
   padding-right: $line-height / 2;
+  text-decoration: none;
 }
 
 .back:not([class^="icon-"]) {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .tabs-content {

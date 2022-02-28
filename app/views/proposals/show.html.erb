@@ -34,7 +34,7 @@
             <% if @fellowship.image.attached? %>
                 <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
             <% end %>       
-            <%= link_to @fellowship.name, @fellowship %>
+            <%= link_to @fellowship.name, @fellowship, class: "button hollow" %>
           </h4></div> 
         <% end%>   
 
