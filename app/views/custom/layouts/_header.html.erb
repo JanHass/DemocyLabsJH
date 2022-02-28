@@ -20,11 +20,14 @@
   <div class="top-bar">
 
     <% if !current_user || !current_user.administrator? %>
+    <!-- Help Button if current user is no admin -->
     <a class="button" href="/help" role="button" style="color: #05d3dd; background-color: white; margin-bottom: 0%; text-decoration: none; height: 50%;">Help</a>
     <% end %>
 
     <% if current_user%>  
     <% if current_user.administrator? %>
+
+    <!-- Dropdown button if current user is admin -->
     <div class="dropdown" style="display:inline-block">
       <button onclick="myFunction()" class="button" style="margin-bottom: 0%; background-color: white; color: #05d3dd;border: none;"> <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;Menu</button>
       <div id="myDropdown" class="dropdown-content">
@@ -75,11 +78,11 @@
       </div>
 
       <ul class="menu" data-responsive-menu="medium-dropdown">
-        <%= render "layouts/notification_item" %>
+        <%= render "layouts/notification_item" %> <!-- notification icon -->
       </ul>
       
       <ul class="menu" data-responsive-menu="medium-dropdown" style="margin-top: 1.5%; margin-left: 1%;">
-        <%= render "account/avatar" %>
+        <%= render "account/avatar" %> <!-- account image -->
       </ul>
 
 <% end %>
@@ -88,11 +91,12 @@
     <div class="top-bar-title" style="height: 75px;width: 420px;">
       <%= link_to root_path, accesskey: "0" do %>
       <div style="height: 100px;width: 420px;" class="cntimg" >
-        <%= image_tag(image_path_for("logo_labs.png"))%>
+        <%= image_tag(image_path_for("logo_labs.png"))%> <!-- logo -->
       </div>
       <% end %>
     </div>
 
+    <!-- account and login/logout buttons -->
     <div id="responsive-menu">
       <div class="top-bar-right">
         <ul class="menu" data-responsive-menu="medium-dropdown">
