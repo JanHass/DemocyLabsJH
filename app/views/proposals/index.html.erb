@@ -38,6 +38,7 @@
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
 
+  <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: "button expanded" %>
   <%= render "shared/search_form", search_path: proposals_path(page: 1), i18n_namespace: "proposals.index.search_form" %>
   
     <div style="display: none;">

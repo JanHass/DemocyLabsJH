@@ -71,13 +71,21 @@
       </div>
       </div>
 
+      <ul class="menu" data-responsive-menu="medium-dropdown">
+        <%= render "layouts/notification_item" %>
+      </ul>
+      
+      <ul class="menu" data-responsive-menu="medium-dropdown" style="margin-top: 1.5%; margin-left: 1%;">
+        <%= render "account/avatar" %>
+      </ul>
+
 <% end %>
 <% end %>
   
-    <div class="top-bar-title" style="height: 88px;width: 400px;">
+    <div class="top-bar-title" style="height: 75px;width: 420px;">
       <%= link_to root_path, accesskey: "0" do %>
-      <div style="height: 100px;width: 400px;" class="cntimg" >
-        <%= image_tag(image_path_for("logo_header.png"))%>
+      <div style="height: 100px;width: 420px;" class="cntimg" >
+        <%= image_tag(image_path_for("logo_labs.png"))%>
       </div>
       <% end %>
     </div>
@@ -86,7 +94,6 @@
       <div class="top-bar-right">
         <ul class="menu" data-responsive-menu="medium-dropdown">
           <%= render "shared/admin_login_items" %>
-          <%= render "layouts/notification_item" %>
           <%= render "devise/menu/login_items" %>
         </ul>
 
@@ -99,6 +106,7 @@
       </div>
     </div>
   </div>
+  
 
   <div id="navigation_bar" class="subnavigation">
     <% if current_user%> 
