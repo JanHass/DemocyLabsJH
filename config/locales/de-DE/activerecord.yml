@@ -253,6 +253,7 @@ de:
         my_account: "Mein Konto"
         voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen abstimmen!"
         comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
+        no_group: "Fehler! Keine Gruppe gewählt. Bitte starten sie eine neue Diskussion nur über den Menüpunkt 'Diskussionen'."
         
         
       debate/translation:
@@ -273,6 +274,7 @@ de:
         modal_new_proposal_button_new: "Vorschlag erstellen"
         voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen teilnehmen!"
         comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
+        no_group: "Fehler! Keine Gruppe gewählt. Bitte starten sie einen neuen Vorschlag nur über den Menüpunkt 'Vorschläge'."
 
 
       proposal/translation:

@@ -8,6 +8,7 @@ class DebatesController < ApplicationController
   before_action :set_view, only: :index
   before_action :debates_recommendations, only: :index, if: :current_user
 
+
   feature_flag :debates
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle

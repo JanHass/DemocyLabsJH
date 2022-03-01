@@ -38,7 +38,10 @@
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
 
-  <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: "button expanded" %>
+  
+  <button type="button" class="button expanded"  id="btnnewdebate" data-bs-toggle="modal" data-bs-target="#select_fellowship">
+          <%= t("proposals.index.start_proposal") %>
+  </button>
   <%= render "shared/search_form", search_path: proposals_path(page: 1), i18n_namespace: "proposals.index.search_form" %>
   
     <div style="display: none;">
@@ -77,6 +80,7 @@
           </div>
         </div>
       <% end %>
+
 
       <% unless params[:retired].present? || params[:selected].present? %>
         <%= render Shared::AdvancedSearchComponent.new %>
@@ -123,9 +127,7 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <button type="button" class="button expanded" style="margin-bottom: 0%;" id="btnnewdebate" data-bs-toggle="modal" data-bs-target="#select_fellowship">
-          <%= t("proposals.index.start_proposal") %>
-        </button>            
+                    
         <div style="display: none;">
           <div class="sidebar-divider"></div>
           <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
@@ -160,7 +162,7 @@
           
           <%= form_with url: new_proposal_path do |f|  %>
             <div>
-              <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name %>
+              <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name, label: t("activerecord.attributes.proposal.modal_new_proposal_titel") %>
               <%= hidden_field_tag "userid", current_user.id %>
               
             </div>

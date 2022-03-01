@@ -1,12 +1,17 @@
 
 <%= translatable_form_for(debate, html: { class: "debate-form" }) do |f| %>
 
-  <% if params[:fellowshipid].present? %>
+  <% if params[:userid].present? %>
+    <% current_user = User.find(params[:userid]) %>
+  <% else %>  
+    
+  <% end %>  
+
+  <% if params[:fellowshipid].present? && current_user.present? %>
 
     <%= render "shared/errors", resource: debate %>
 
     <% @fellowship = Fellowship.find(params[:fellowshipid]) %>
-    <% current_user = User.find(params[:userid]) %>
 
     <% @currentuser_is_member = false %>
     <% @currentuser_owner = false %>
@@ -427,7 +432,8 @@
     <% end %>  
 
   <% else %>
-    <h1>FEHLER KEINE GRUPPE GEWÄHLT</h1>
+    <h2><%= t("activerecord.attributes.debate.no_group") %></h2>
+    
   <% end %>
  
 

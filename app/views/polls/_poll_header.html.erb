@@ -7,6 +7,19 @@
         <%= link_to t("polls.poll_header.back_to_proposal"), [@poll.related] %>
       <% end %>
 
+      <% if @poll.fellowship_id.present? %>
+        <% @fellowship= Fellowship.find(@poll.fellowship_id)%>
+      <% end %>
+
+      <% if @poll.fellowship_id.present? %>
+              <div><h1>
+                <% if @fellowship.image.attached? %>
+                  <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
+                <% end %>       
+                <%= link_to @fellowship.name, @fellowship %>
+              </h1></div> 
+        <% end %>   
+
       <h1><%= @poll.name %></h1>
 
       <%= auto_link_already_sanitized_html simple_format(@poll.summary) %>
@@ -21,6 +34,7 @@
       <%= render SDG::TagListComponent.new(@poll, linkable: false) %>
     </div>
 
+    <div style="display: none;">
     <aside class="small-12 medium-3 column margin-top">
       <%= render "shared/social_share",
         share_title: t("shared.share"),
@@ -29,5 +43,6 @@
         description: @poll.name,
         mobile: @poll.name %>
     </aside>
+    </div>
   </div>
 </div>
