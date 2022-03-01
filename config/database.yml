@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   host: localhost
   pool: 5
-  username: consulDB
-  password: democy
+  username: alex
+  password: alex
 
 development: &development
   <<: *default

@@ -11,8 +11,12 @@ class User < ApplicationRecord
 
   include Graphqlable
 
+
   has_one_attached :avatar
   has_one_attached :image
+
+  has_many :objection
+  has_many :pro_contra
   has_one :administrator
   has_one :moderator
   has_one :valuator

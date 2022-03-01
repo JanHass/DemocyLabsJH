@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_02_20_124114) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1073,6 +1075,24 @@ ActiveRecord::Schema.define(version: 2022_02_20_124114) do
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
+  create_table "objections", force: :cascade do |t|
+    t.text "body"
+    t.text "sources"
+    t.string "email"
+    t.float "rating"
+    t.integer "likes"
+    t.integer "dislikes"
+    t.integer "reported"
+    t.bigint "user_id"
+    t.bigint "pro_contra_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "debates_id"
+    t.index ["debates_id"], name: "index_objections_on_debates_id"
+    t.index ["pro_contra_id"], name: "index_objections_on_pro_contra_id"
+    t.index ["user_id"], name: "index_objections_on_user_id"
+  end
+
   create_table "organizations", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.string "name", limit: 60
@@ -1315,6 +1335,33 @@ ActiveRecord::Schema.define(version: 2022_02_20_124114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["postal_code"], name: "index_postal_codes_on_postal_code", unique: true
+  end
+
+  create_table "pro_contras", force: :cascade do |t|
+    t.string "tag"
+    t.text "body"
+    t.text "sources"
+    t.string "email"
+    t.float "rating"
+    t.integer "likes"
+    t.integer "dislikes"
+    t.integer "reported"
+    t.integer "move"
+    t.integer "pc"
+    t.bigint "user_id"
+    t.bigint "debate_id"
+    t.bigint "proposal_id"
+    t.bigint "poll_id"
+    t.bigint "vote_id"
+    t.bigint "fellowship_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["debate_id"], name: "index_pro_contras_on_debate_id"
+    t.index ["fellowship_id"], name: "index_pro_contras_on_fellowship_id"
+    t.index ["poll_id"], name: "index_pro_contras_on_poll_id"
+    t.index ["proposal_id"], name: "index_pro_contras_on_proposal_id"
+    t.index ["user_id"], name: "index_pro_contras_on_user_id"
+    t.index ["vote_id"], name: "index_pro_contras_on_vote_id"
   end
 
   create_table "progress_bar_translations", id: :serial, force: :cascade do |t|
@@ -1872,6 +1919,9 @@ ActiveRecord::Schema.define(version: 2022_02_20_124114) do
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
+  add_foreign_key "objections", "debates", column: "debates_id"
+  add_foreign_key "objections", "pro_contras"
+  add_foreign_key "objections", "users"
   add_foreign_key "organizations", "users"
   add_foreign_key "poll_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_booth_assignments", "polls"
@@ -1889,6 +1939,12 @@ ActiveRecord::Schema.define(version: 2022_02_20_124114) do
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "polls", "budgets"
+  add_foreign_key "pro_contras", "debates"
+  add_foreign_key "pro_contras", "fellowships"
+  add_foreign_key "pro_contras", "polls"
+  add_foreign_key "pro_contras", "proposals"
+  add_foreign_key "pro_contras", "users"
+  add_foreign_key "pro_contras", "votes"
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
