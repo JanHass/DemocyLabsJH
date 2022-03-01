@@ -1,0 +1,15 @@
+<h3>Search Results</h3>
+
+    <% @results_postal_codes.each do |result| %>
+        <%= link_to result.zip_code, "/fellowships/" + result.id.to_s %><br>
+    <% end %>
+
+    <% @results_fellowships.each do |result| %>
+        <%= link_to result.name, "/fellowships/" + result.id.to_s %><br>
+    <% end %>
+
+    <% @results_proposals.each do |result| %>
+        <%= link_to result.title, "/proposals/" + result.proposal_id.to_s %><br>
+    <% end %>
+
+

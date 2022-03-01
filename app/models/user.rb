@@ -11,6 +11,9 @@ class User < ApplicationRecord
 
   include Graphqlable
 
+  has_many :objection
+  has_many :pro_contra
+
   has_one :administrator
   has_one :moderator
   has_one :valuator

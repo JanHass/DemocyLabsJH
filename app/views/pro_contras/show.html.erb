@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @pro_contra.tag %>
+</p>
+<p>
+  <strong>Argument:</strong>
+  <%= @pro_contra.body %>
+</p>
+<p>
+  <strong>Sources:</strong>
+  <%= @pro_contra.sources %>
+</p>
+
+
+<h2>Comments</h2>
+<% @pro_contra.objections.each do |objection| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= objection.user_id %>
+  </p>
+  <p>
+    <strong>Objection:</strong>
+    <%= objection.body %>
+  </p>
+  <p>
+    <strong>Sources:</strong>
+    <%= objection.sources %>
+  </p>
+<% end %>
+
+ 
+<h2>Add a comment:</h2>
+<%= form_for([@pro_contra, @pro_contra.objections.build]) do |f| %>
+   <p>
+    <%= f.hidden_field :debates_id, :value => @pro_contra.debate_id, :readonly => true%>
+  </p>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.text_area :sources %>
+  </p>
+  <p>
+    <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<!--<%= link_to 'Edit', edit_pro_contra_path(@pro_contra) %> |
+<%= link_to 'Back', pro_contras_path %>-->

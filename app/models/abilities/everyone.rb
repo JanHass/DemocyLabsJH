@@ -32,6 +32,10 @@ module Abilities
       can :read, ::SDG::Phase
 
       can [:read, :create, :update, :destroy], Fellowship
+      can [:search], Proposal
+      can [:search], Fellowship
+      can [:search], Debate
+      can [:search], Vote
     end
   end
 end

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  resources :pro_contras do
+    resources :objections
+  end
+
+  resources :debates do
+    resources :pro_contras
+  end
+  
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
@@ -33,7 +41,8 @@ Rails.application.routes.draw do
   root "welcome#index"
   get "/welcome", to: "welcome#welcome"
   get "/consul.json", to: "installation#details"
-
+  get '/search', to: "welcome#search"
+  
   resources :stats, only: [:index]
   resources :images, only: [:destroy]
   resources :documents, only: [:destroy]

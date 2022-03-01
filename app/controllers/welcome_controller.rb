@@ -7,6 +7,58 @@ class WelcomeController < ApplicationController
 
   layout "devise", only: [:welcome, :verification]
 
+  def search
+    if params[:search].blank?
+      if params[:selected_param] == "Groups"
+        @results_fellowships = Fellowship.all
+        @results_proposals = []
+        @results_postal_codes = []
+        #redirect_to user_path and return
+      end
+      if params[:selected_param] == "Proposals"
+        @results_proposals = ProposalTranslations.all
+        @results_fellowships = []
+        @results_postal_codes = []
+      end
+      if params[:selected_param] == "Postal Codes"
+        @results_postal_codes = Fellowship.all
+        @results_fellowships = []
+        @results_proposals  = []
+      end
+      if params[:selected_param] == "All"
+        @results_postal_codes = []
+        @results_fellowships = Fellowship.all
+        @results_proposals  = ProposalTranslations.all
+      end
+      
+    else
+      if params[:selected_param] == "All"
+        @parameter = params[:search].to_s
+        @results_fellowships = Fellowship.where("lower(name) LIKE lower(:search)", search: "%#{@parameter}%")
+        @results_proposals = ProposalTranslations.where("lower(title) LIKE lower(:search)", search: "%#{@parameter}%")
+        @results_postal_codes = Fellowship.where("CAST(zip_code AS TEXT) LIKE lower(:search)", search: "%#{@parameter}%")
+      end
+      if params[:selected_param] == "Groups"
+        @parameter = params[:search].to_s
+        @results_fellowships = Fellowship.where("lower(name) LIKE lower(:search)", search: "%#{@parameter}%")
+        @results_proposals = []
+        @results_postal_codes = []
+      end
+      if params[:selected_param] == "Proposals"
+        @parameter = params[:search].to_s
+        @results_proposals = ProposalTranslations.where("lower(title) LIKE lower(:search)", search: "%#{@parameter}%")
+        @results_fellowships = []
+        @results_postal_codes = []
+      end
+      if params[:selected_param] == "Postal Codes"
+        @parameter = params[:search].to_s
+        @results_postal_codes = Fellowship.where("CAST(zip_code AS TEXT) LIKE lower(:search)", search: "%#{@parameter}%") 
+        @results_fellowships = []
+        @results_proposals  = []
+      end
+    end
+  end
+
   def index
     @header = Widget::Card.header.first
     @feeds = Widget::Feed.active
