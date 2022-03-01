@@ -29,10 +29,16 @@ Rails.application.routes.draw do
   draw :user
   draw :valuation
   draw :verification
+  draw :fellowship_user
 
   root "welcome#index"
   get "/welcome", to: "welcome#welcome"
   get "/consul.json", to: "installation#details"
+
+  post "/debates/new", to: "debates#new"
+  post "/proposals/new", to: "proposals#new"
+
+    
 
   resources :stats, only: [:index]
   resources :images, only: [:destroy]

@@ -1,3 +1,4 @@
+
 <% preview = false unless local_assigns.has_key? :preview %>
 <% provide :title do %><%= @proposal.title %><% end %>
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
@@ -13,6 +14,10 @@
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
 <% end %>
 
+<% if @proposal.fellowship_id.present? %>
+  <% @fellowship= Fellowship.find(@proposal.fellowship_id)%>
+<% end %>
+
 <% cache [locale_and_user_status(@proposal),
           @proposal,
           @proposal.author,
@@ -23,6 +28,15 @@
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= back_link_to proposals_path unless preview %>
+
+        <% if @proposal.fellowship_id.present? %>
+          <div><h4>
+            <% if @fellowship.image.attached? %>
+                <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
+            <% end %>       
+            <%= link_to @fellowship.name, @fellowship %>
+          </h4></div> 
+        <% end%>   
 
         <h1><%= @proposal.title %></h1>
         <% if @proposal.retired? %>
@@ -40,7 +54,9 @@
         <% end %>
 
         <%= render "proposals/info", proposal: @proposal %>
-        <%= render "shared/geozone", geozonable: @proposal %>
+        <div style="display: none;">
+          <%= render "shared/geozone", geozonable: @proposal %>
+        </div>
 
         <% unless @proposal.selected? %>
           <%= render "relationable/related_content", relationable: @proposal %>
@@ -66,18 +82,21 @@
             </div>
           <% end %>
 
+          
           <%= render "proposals/support_status", proposal: @proposal %>
 
-          <%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
+          <div style="display: none;">
+            <%= render "proposals/social_share", proposal: @proposal, share_title: t("proposals.show.share") %>
 
-          <% if current_user %>
-            <div class="sidebar-divider"></div>
-            <p class="sidebar-title"><%= t("shared.follow") %></p>
+            <% if current_user %>
+              <div class="sidebar-divider"></div>
+              <p class="sidebar-title"><%= t("shared.follow") %></p>
 
-            <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal) %>
-          <% end %>
+              <%= render "follows/follow_button", follow: find_or_build_follow(current_user, @proposal) %>
+            <% end %>
 
-          <%= render "communities/access_button", community: @proposal.community %>
+            <%= render "communities/access_button", community: @proposal.community %>
+          </div>  
         </aside>
       <% end %>
     </div>

@@ -6,22 +6,22 @@
     <br>
     <%= proposal.summary %>
   </td>
-  <td class="small-2 text-center">
+  <td class="small-1 text-center">
     <% if proposal.retired? %>
-      <span class="label alert"><%= t("users.proposals.retired") %></span>
+      <span class="label alert" style="font-size: large; color: white;"><%= t("users.proposals.retired") %></span>
     <% elsif proposal.draft? %>
-      <span class="label info"><%= t("users.proposals.draft") %></span>
+      <span class="label info" style="font-size: large; color: white;"><%= t("users.proposals.draft") %></span>
     <% else %>
-      <span class="label success"><%= t("users.proposals.published") %></span>
+      <span class="label success" style="font-size: large; color: white;"><%= t("users.proposals.published") %></span>
     <% end %>
   </td>
 
   <% if proposal.retired? %>
     <td class="help-text"><%= t("users.proposals.retired_help_text") %></td>
   <% elsif can?(:dashboard, proposal) %>
-    <td>
+    <td class="small-2 text-center">
       <%= link_to t("proposals.show.dashboard_proposal_link"),
-                  progress_proposal_dashboard_path(proposal), class: "button hollow expanded" %>
+                  progress_proposal_dashboard_path(proposal), class: "button hollow" %>
     </td>
   <% else %>
     <td class="text-center">
@@ -29,3 +29,10 @@
     </td>
   <% end %>
 </tr>
+
+<style>
+   .button
+  {
+    text-decoration: none;
+  }
+</style>
