@@ -11,9 +11,12 @@ class User < ApplicationRecord
 
   include Graphqlable
 
+
+  has_one_attached :avatar
+  has_one_attached :image
+
   has_many :objection
   has_many :pro_contra
-
   has_one :administrator
   has_one :moderator
   has_one :valuator
@@ -86,12 +89,6 @@ class User < ApplicationRecord
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
-  
-  validates :phone_number, format: { with: /\A\d+\z/, message: "Nur Zahlen erlaubt" }
-
-  
-  validates :first_name, presence: true
-  
   
 
   validate :validate_username_length

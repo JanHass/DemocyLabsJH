@@ -40,15 +40,19 @@
     </div>
 
     <% if sdg? %>
+      <div style="display: none;">
       <div class="filter">
         <label for="advanced_search_goal"><%= t("shared.advanced_search.goal") %></label>
         <%= select_tag("advanced_search[goal]", goal_options,
                       include_blank: t("shared.advanced_search.goal_blank")) %>
       </div>
+      </div>
+      <div style="display: none;">
       <div class="filter">
         <label for="advanced_search_target"><%= t("shared.advanced_search.target") %></label>
         <%= select_tag("advanced_search[target]", target_options,
                       include_blank: t("shared.advanced_search.target_blank")) %>
+      </div>
       </div>
     <% end %>
 

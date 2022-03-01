@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_225139) do
+
+ActiveRecord::Schema.define(version: 2022_02_20_124114) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -611,6 +613,7 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
     t.datetime "updated_at", null: false
     t.bigint "fellowship_id"
     t.bigint "user_id"
+    t.boolean "is_fellowship_owner", default: false
     t.index ["fellowship_id"], name: "index_fellowship_users_on_fellowship_id"
     t.index ["user_id"], name: "index_fellowship_users_on_user_id"
   end
@@ -663,6 +666,9 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
     t.boolean "admin_public_show_country", default: false
     t.datetime "updated_at", null: false
     t.integer "zip_code"
+    t.boolean "join_password_required", default: false
+    t.string "join_password"
+    t.text "short_description"
     t.index ["author_id"], name: "index_fellowships_on_author_id"
     t.index ["email"], name: "index_fellowships_on_email"
     t.index ["name"], name: "index_fellowships_on_name"
@@ -1898,6 +1904,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
+  add_foreign_key "fellowship_users", "fellowships"
+  add_foreign_key "fellowship_users", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "follows", "users"
   add_foreign_key "geozones_polls", "geozones"

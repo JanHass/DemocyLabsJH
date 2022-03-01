@@ -1,74 +1,107 @@
-<p id="notice"><%= notice %></p>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- group landing page -->
+<% if current_user%>  
 
-<%= render "shared/fellowships_header", i18n_namespace: "Fellowships", image: "group_icon" %>
+<!-- header bar with icon -->
+<%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.fellowship"), image: "group_icon" %>
 
-<h1>Groups</h1>
+<!-- new Group button -->
+<%= link_to t("activerecord.attributes.fellowship.create_new_fellowship"), new_fellowship_path, class: "button", :style => 'margin-bottom: 2.5%', :style => 'width: 20%' %>
 
-<h2>My Groups<h2>
+<!-- My Groups headline -->
+<h2><%= t("activerecord.attributes.fellowship.mygroups") %></h2>
 
+<!-- group member counter -->
+<% @member_counter=0 %>
+
+<!-- Cards for my groups -->
 <% current_user.fellowships.each do |fellowship| %>
-  <div class="container-fluid">
-    <div class="col-8">
-      <div class="card mb-3" style="max-width: 100%;">
+    
+      <div class="card mb-3" style="width: 40%; margin-right:1.7%">
         <div class="row g-0">
           <div class="col-md-4">
             <% if fellowship.image.attached? %>
-              <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top" alt="...">
+              <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top" style="height: 14vw; width:11vw"></img> <!-- group image -->
+              <% else %>
+              <div style="height: 14vw; width:11vw"> </div>
             <% end %>
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-header"><%= fellowship.name %></h5>
-              <p class="card-text" style="margin-top: 2%;"><%= fellowship.description %></p>
-              <p class="card-text"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+              <h5 class="card-header"><%= fellowship.name %></h5> <!-- group name -->
+              <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p> <!-- short group description -->
+              <p class="card-text" style="float: left;  margin-left: 0.1%; position: absolute; bottom: 23.5%;"><small class="text-muted"> <!-- number of group members -->
+                <%= t("activerecord.attributes.fellowship.members") %> 
+                <% @member_counter=0 %>
+                <% fellowship.fellowship_users.each do |fellowship_user| %>
+                  <% if fellowship_user.fellowship_id == fellowship.id %>
+                    <% @member_counter = @member_counter + 1 %>
+                  <% end %>
+                <%end%>  
+                <%= @member_counter %>
+              </small></p>
             </div>
+            <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 11%;"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p> <!-- creation date -->
+            <div style="float: right; margin-left: 57%; position: absolute; bottom: 15%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div> <!-- icon for joined groups -->
           </div>
-          <%= link_to 'Show', fellowship, class: "btn btn-info" %>
+          <%= link_to t("activerecord.attributes.fellowship.fellowship_show"), fellowship, class: "btn btn-info" %> <!-- show group button -->
         </div>
       </div>
-    </div>
-  </div>
 <% end %>
 <table>
 
+  <hr style="border-width: 5px;"></hr>
   <tbody>
-  <h2> All Groups<h2>
 
+  <!-- All Groups headline -->
+  <h2 style="margin-bottom: 1%;"> <%= t("activerecord.attributes.fellowship.allgroups") %> </h2>
+
+
+<!-- Cards for all groups -->
     <% @fellowships.each do |fellowship| %>
-<div class="card mb-3" style="max-width: 40%;">
+<div class="card mb-3" style="width: 40%; margin-right: 2%;">
   <div class="row g-0">
     <div class="col-md-4">
       <% if fellowship.image.attached? %>
-      <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top">
+      <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top" style="height: 14vw; width:11vw"></img> <!-- group image -->
+      <% else %>
+      <div style="height: 14vw; width:11vw"> </div>
       <% end %>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-header"><%= fellowship.name %></h5>
-        <p class="card-text" style="margin-top: 2%;"><%= fellowship.description %></p>
-        <p class="card-text"><small class="text-muted">Created at <%= localize(fellowship.created_at, :format => :short2) %></small></p>
+        <h5 class="card-header"><%= fellowship.name %></h5> <!-- group name -->
+        <p class="card-text" style="margin-top: 2%;"><%= fellowship.short_description %></p> <!-- short group description -->
+        <p class="card-text" style="float: left;  margin-left: 0.1%; position: absolute; bottom: 22.5%;"><small class="text-muted"> <!-- number of group members -->
+          <%= t("activerecord.attributes.fellowship.members") %> 
+          <% @member_counter=0 %>
+          <% fellowship.fellowship_users.each do |fellowship_user| %>
+            <% if fellowship_user.fellowship_id == fellowship.id %>
+              <% @member_counter = @member_counter + 1 %>
+            <% end %>
+          <%end%>  
+          <%= @member_counter %>
+        </small></p>
       </div>
-      <div style="float: right; margin-right: 3%; margin-top: 9%; color: #3adb76;"><i class="fas fa-check-square fa-lg"></i></div>
+      <% if current_user.fellowships.include?(fellowship) %>  
+      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 10%;"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p> <!-- creation date -->
+        <% if fellowship.join_password_required %>
+          <i class="fas fa-lock fa-1x" style="float: right; margin-left: 50%; position: absolute; bottom: 18%; font-size: x-large;"></i> <!-- icon if password is needed to join the group -->
+        <% end %>
+      <div style="float: right; margin-left: 57%; position: absolute; bottom: 15%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div> <!-- icon for joined groups -->
+      <% else %>
+        <% if fellowship.join_password_required %>
+        <i class="fas fa-lock fa-1x" style="float: right; margin-left: 59%; position: absolute; bottom: 18%; font-size: x-large;"></i> <!-- icon if password is needed to join the group -->
+        <% end %>
+      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 16%;"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p> <!-- creation date -->
+      <% end %>
+
     </div>
-    <%= link_to 'Show', fellowship, class: "btn btn-info" %>
+    <%= link_to t("activerecord.attributes.fellowship.fellowship_show"), fellowship, class: "btn btn-info" %> <!-- show group button -->
   </div>
 </div>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Fellowship', new_fellowship_path, class: "success button" %>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <style>
   .btn-info
@@ -78,9 +111,16 @@
        color: white;
    }
 
+   .button
+   {
+      text-decoration: none;
+   }
+
    .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
     {
        color: white;
        text-decoration:none;
     }
+    .card {display:inline-block;}
 </style>
+<% end %>

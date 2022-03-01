@@ -3,6 +3,11 @@
   <%= render "shared/canonical", href: debate_url(@debate) %>
 <% end %>
 
+
+<% if @debate.fellowship_id.present? %>
+  <% @fellowship= Fellowship.find(@debate.fellowship_id)%>
+<% end %>  
+
 <details style="position:relative">
 <div style="float:left; width:50%;">
 <h2 style="float:center"> Pro-Arguments</h2>
@@ -79,6 +84,14 @@
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
+        <% if @debate.fellowship_id.present? %>
+          <div><h4>
+            <% if @fellowship.image.attached? %>
+                <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
+            <% end %>       
+            <%= link_to @fellowship.name, @fellowship %>
+          </h4></div> 
+        <% end%>   
 
         <h1><%= @debate.title %></h1>
         <% if @debate.conflictive? %>
@@ -127,12 +140,14 @@
         <div id="<%= dom_id(@debate) %>_votes">
           <%= render "debates/votes", debate: @debate %>
         </div>
+        <div style="display: none;">
         <%= render "shared/social_share",
           share_title: t("debates.show.share"),
           title: @debate.title,
           url: debate_url(@debate),
           description: @debate.title,
           mobile: @debate.title %>
+        </div>  
       </aside>
     </div>
   </div>
