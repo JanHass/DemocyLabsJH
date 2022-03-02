@@ -25,20 +25,18 @@
 
       <% if polls_by_geozone_restriction[false].present? %>
         <h3 class="section-title-divider">
-          <div style="display: none;">
-            <span><%= t("polls.index.no_geozone_restricted") %></span>
+        <div style="display: none;">
+          <span><%= t("polls.index.no_geozone_restricted") %></span>
           </div>
         </h3>
         <%= render "poll_group", poll_group: polls_by_geozone_restriction[false] %>
       <% end %>
 
-      
-
       <% if polls_by_geozone_restriction[true].present? %>
         <h3 class="section-title-divider">
-          <div style="display: none;">
-            <span><%= t("polls.index.geozone_restricted") %></span>
-          </div>
+        <div style="display: none;">
+          <span><%= t("polls.index.geozone_restricted") %></span>
+        </div>  
         </h3>
         <%= render "poll_group", poll_group: polls_by_geozone_restriction[true] %>
       <% end %>

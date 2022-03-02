@@ -30,11 +30,11 @@
             <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
             <% end %>
             
-            
+
             <button type="button" class="button expanded" style="margin-bottom: 0%;" id="btnnewdebate" data-bs-toggle="modal" data-bs-target="#select_fellowship">
               <%= t("debates.index.start_debate") %>
             </button>
-        
+
             <%= render "shared/search_form", search_path: debates_path(page: 1),i18n_namespace: "debates.index.search_form" %>
             
             <% if feature?("user.recommendations") && @recommended_debates.present? %>
@@ -64,7 +64,7 @@
 
       <div class="show-for-small-only">
         
-        
+
       </div>
 
       <% if @debates.any? || current_user.blank? %>

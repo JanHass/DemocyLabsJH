@@ -1,3 +1,4 @@
+<!-- Header for all pages -->
 <header style="margin-bottom: 0%;">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
@@ -7,6 +8,7 @@
     <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
   <% end %>
 
+<!-- Top small bar with language switcher -->
   <div class="top-links">
     <%= render "shared/locale_switcher" %>
     <div class="hide-for-small-only">
@@ -14,18 +16,22 @@
     </div>
   </div>
 
+<!-- Top bar with Menu/Help Button, Logo and Account details -->
   <div class="top-bar">
 
     <% if !current_user || !current_user.administrator? %>
-    <a class="button" href="/help" role="button" style="color: #05d3dd; background-color: white; margin-bottom: 0%; text-decoration: none; height: 50%;"><%= t("layouts.header.help") %></a>
+    <!-- Help Button if current user is no admin -->
+    <a class="button" href="/help" role="button" style="color: #05d3dd; background-color: white; margin-bottom: 0%; text-decoration: none; height: 50%;">Help</a>
     <% end %>
 
     <% if current_user%>  
     <% if current_user.administrator? %>
+
+    <!-- Dropdown button if current user is admin -->
     <div class="dropdown" style="display:inline-block">
-      <button onclick="myFunction()" class="button" style="margin-bottom: 0%; background-color: white; color: #05d3dd;border: none;"> <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp; <%= t("layouts.header.menu") %></button>
+      <button onclick="myFunction()" class="button" style="margin-bottom: 0%; background-color: white; color: #05d3dd;border: none;"> <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;Menu</button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="help" style="margin-top: 2.5%; margin-bottom: 2.5%;"><%= t("layouts.header.help") %></a>
+        <a href="help" style="margin-top: 2.5%; margin-bottom: 2.5%;">Help</a>
         
       <% if show_admin_menu?(current_user) %>
     
@@ -72,11 +78,11 @@
       </div>
 
       <ul class="menu" data-responsive-menu="medium-dropdown">
-        <%= render "layouts/notification_item" %>
+        <%= render "layouts/notification_item" %> <!-- notification icon -->
       </ul>
       
       <ul class="menu" data-responsive-menu="medium-dropdown" style="margin-top: 1.5%; margin-left: 1%;">
-        <%= render "account/avatar" %>
+        <%= render "account/avatar" %> <!-- account image -->
       </ul>
 
 <% end %>
@@ -85,11 +91,12 @@
     <div class="top-bar-title" style="height: 75px;width: 420px;">
       <%= link_to root_path, accesskey: "0" do %>
       <div style="height: 100px;width: 420px;" class="cntimg" >
-        <%= image_tag(image_path_for("logo_labs.png"))%>
+        <%= image_tag(image_path_for("logo_labs.png"))%> <!-- logo -->
       </div>
       <% end %>
     </div>
 
+    <!-- account and login/logout buttons -->
     <div id="responsive-menu">
       <div class="top-bar-right">
         <ul class="menu" data-responsive-menu="medium-dropdown">
@@ -107,7 +114,7 @@
     </div>
   </div>
   
-
+<!-- Navigation bar -->
   <div id="navigation_bar" class="subnavigation">
     <% if current_user%> 
     <div class="hide-for-small-only" style="text-align: center; margin-bottom: 2%;">

@@ -7,7 +7,7 @@
         <%= link_to t("polls.poll_header.back_to_proposal"), [@poll.related] %>
       <% end %>
 
-      <% if @poll.fellowship_id.present? %>
+<% if @poll.fellowship_id.present? %>
         <% @fellowship= Fellowship.find(@poll.fellowship_id)%>
       <% end %>
 
@@ -34,7 +34,7 @@
       <%= render SDG::TagListComponent.new(@poll, linkable: false) %>
     </div>
 
-    <div style="display: none;">
+ <div style="display: none;">
     <aside class="small-12 medium-3 column margin-top">
       <%= render "shared/social_share",
         share_title: t("shared.share"),
@@ -43,6 +43,6 @@
         description: @poll.name,
         mobile: @poll.name %>
     </aside>
-    </div>
   </div>
+</div>
 </div>

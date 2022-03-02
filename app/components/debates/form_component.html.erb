@@ -12,6 +12,7 @@
     <%= render "shared/errors", resource: debate %>
 
     <% @fellowship = Fellowship.find(params[:fellowshipid]) %>
+    
 
     <% @currentuser_is_member = false %>
     <% @currentuser_owner = false %>
@@ -433,7 +434,6 @@
 
   <% else %>
     <h2><%= t("activerecord.attributes.debate.no_group") %></h2>
-    
   <% end %>
  
 

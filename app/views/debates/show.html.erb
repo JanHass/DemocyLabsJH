@@ -3,9 +3,81 @@
   <%= render "shared/canonical", href: debate_url(@debate) %>
 <% end %>
 
+
 <% if @debate.fellowship_id.present? %>
   <% @fellowship= Fellowship.find(@debate.fellowship_id)%>
 <% end %>  
+
+<details style="position:relative">
+<div style="float:left; width:50%;">
+<h2 style="float:center"> Pro-Arguments</h2>
+<% @debates_pro_contra.each do |pc| %>
+  <% if pc.pc == 1%>
+    <p>
+      <strong>Tag:</strong>
+      <%= pc.tag %>
+    </p>
+    <p>
+      <strong>Body:</strong>
+      <%= pc.body %>
+    </p>
+    <p>
+      <strong>Sources:</strong>
+      <%= pc.sources %>
+    </p>
+    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><br>
+  <% end %>
+
+<% end %>
+
+<br>
+</div>
+<div style="float:right; width:50%;">
+<h2 style="float:center"> Contra-Arguments</h2>
+<% @debates_pro_contra.each do |pc| %>
+  <% if pc.pc == 0%>
+    <p>
+      <strong>Tag:</strong>
+      <%= pc.tag %>
+    </p>
+    <p>
+      <strong>Body:</strong>
+      <%= pc.body %>
+    </p>
+    <p>
+      <strong>Sources:</strong>
+      <%= pc.sources %>
+    </p>
+    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><br>
+  <% end %>
+
+<% end %>
+</div>
+
+<div style="float:center">
+<h2>Add Pro-Contra:</h2>
+<%= form_for([@debate, @debate.pro_contras.build]) do |f| %>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.text_area :sources %>
+  </p>
+  <p>
+    <%= f.text_field :tag %>
+  </p>
+  <p>
+    <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
+  </p>
+  <p>
+    <%= f.select(:pc, [['Pro', 1], ['Contra', 0]]) %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+</div>
+</details>
 
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
   <div class="debate-show">
