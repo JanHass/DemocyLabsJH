@@ -48,25 +48,28 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-.style_image {
-  width: 95%;
+.style_image 
+{
+  width: 45%;
   height: 25%;
-  margin-right: 5%;
   margin-top: 8%;
-  margin-left: 2%;
 }
 
-.style_image1 {
-  width: 50%;
+.style_image1 
+{
+  width: 40%;
   height: 20%;
-  margin-right: 5%;
-  margin-left: 27%;
+  margin-top: 8%;
 }
 
-.style_image2 {
-  width: 10%;
-  
-  margin-right: 10%;
+.style_image2 
+{
+  width: 30%;
+}
+
+.style_image3 {
+  width: 35%;
+  margin-top: 5%;
 }
 </style>
 
@@ -99,21 +102,30 @@
         </div>
       </div>
 
-      <a href="fellowships" style="display: inline; width: 15%; height: 5%;margin-top: 5%;"><%= image_tag(image_path_for("users-solid.png"), :class=>"style_image")%></a>
-      <a href="debates" style="display: inline; width: 25%; height: 5%;margin-top: 5%;"><%= image_tag(image_path_for("comment-dots-solid.png"), :class=>"style_image1")%></a>
-   
-      <div style="margin-left: 52.85%; margin-bottom: 3%;">
-        <h4 style="margin-right:11.15%; display:inline; margin-bottom: 10%;"><a href="fellowships" style="color: black; text-decoration: none;">Gruppen</a></h4>
-        <h4 style="display:inline"><a href="debates" style="color: black; text-decoration: none;">Diskussionen</a></h4>
-      </div>
-      <div style="margin-left: 52%;" >
-          <a href="proposals"><%= image_tag(image_path_for("lightbulb-solid.png"), :class=>"style_image2")%></a>
-          <a href="polls"><%=image_tag(image_path_for("circle-check-solid.png"), :class=>"style_image2")%></a>
-      </div>
-      <div style="margin-left: 52.33%; margin-top: 1%;">
-        <h4 style="margin-right:9%; display:inline" ><a href="proposals" style="color: black; text-decoration: none;">Vorschläge</a></h4>
-        <h4 style="display:inline"><a href="polls" style="color: black; text-decoration: none;">Abstimmungen</a></h4>
-      </div>
+      <table style="height: fit-content; display: inline; width: 50%; background-color: #f3f3f7;">  
+        <tbody>
+          <tr>
+            <td style='width: 15%;height: 15%;text-align: center; background-color: #f3f3f7;'>
+                <a href="fellowships" style="display: inline; width: 15%; height: 5%;margin-top: 5%;"><%= image_tag(image_path_for("users-solid.png"), :class=>"style_image")%></a>
+                <h4 style="text-align: center; margin-top: 3%;"><a href="fellowships" style="color: black; text-decoration: none;"><%= "Übersetzung Gruppen" %></a></h4>
+            </td>
+            <td style='width: 15%;height: 15%;text-align: center; background-color: #f3f3f7;'>
+                <a href="debates" style="display: inline; width: 25%; height: 5%;margin-top: 5%;"><%= image_tag(image_path_for("comment-dots-solid.png"), :class=>"style_image1")%></a>
+                <h4 style="text-align: center;"><a href="debates" style="color: black; text-decoration: none;"><%= "Übersetzung Diskussion" %></a></h4>
+            </td>  
+          </tr>
+          <tr>
+            <td style='width: 15%;height: 15%;text-align: center; background-color: #f3f3f7;';>
+                <a href="proposals"><%= image_tag(image_path_for("lightbulb-solid.png"), :class=>"style_image2")%></a>
+                <h4 style="text-align: center;margin-top: 2%;"><a href="proposals" style="color: black; text-decoration: none;"><%= "Übersetzung Vorschläge" %></a></h4>
+            </td>
+            <td style='width: 15%; height: 15%; text-align: center; background-color: #f3f3f7;'>
+                <a href="polls"><%=image_tag(image_path_for("circle-check-solid.png"), :class=>"style_image3")%></a>
+                <h4 style="text-align: center; margin-top: 2.5%; "><a href="polls" style="color: black; text-decoration: none;"><%= "Übersetzung Abstimmung" %></a></h4>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       
     </div>
   </div>
