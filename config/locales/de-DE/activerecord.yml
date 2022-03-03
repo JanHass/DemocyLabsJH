@@ -315,6 +315,8 @@ de:
 
         my_groups: "Meine Gruppen"
 
+        show_public_profile: "Öffentliches Profil anzeigen"
+
         fellowship_name: "Gruppenname"
         fellowship_descripton: "Beschreibung"
         fellowship_requirements: "Anforderungen"
@@ -340,6 +342,8 @@ de:
         redeemable_code: "Bestätigungscode per Post (optional)"
 
         my_account: "Mein Konto"
+
+        
 
 
       fellowship:  

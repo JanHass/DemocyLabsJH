@@ -104,6 +104,11 @@
              <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_country %>
              </div>
+             <div style="margin-left: 5%;">
+               <%= link_to t("activerecord.attributes.user.show_public_profile"), current_user, class:"button hollow" %>
+             </div>
+
+             
 
           </details></h3>
 
@@ -141,7 +146,8 @@
             </div>
           <% end %>
 
-<!-- Recommendations -->
+<!-- Recommendations NICHT AKTIV-->
+          <div style="display: none;">
           <% if feature?("user.recommendations") %>
           <h3><details>
             <summary><%= t("account.show.recommendations") %></summary>
@@ -158,6 +164,7 @@
             <% end %>
             </details></h3>
           <% end %>
+          </div>
 
 
 <!-- My Groups -->

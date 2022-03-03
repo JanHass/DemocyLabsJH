@@ -21,7 +21,7 @@
 
     <% if !current_user || !current_user.administrator? %>
     <!-- Help Button if current user is no admin -->
-    <a class="button" href="/help" role="button" style="color: #05d3dd; background-color: white; margin-bottom: 0%; text-decoration: none; height: 50%;">Help</a>
+    <a class="button" href="/help" role="button" style="color: #05d3dd; background-color: white; margin-bottom: 0%; text-decoration: none; height: 50%;"><%= t("layouts.header.help") %></a>
     <% end %>
 
     <% if current_user%>  
@@ -29,9 +29,9 @@
 
     <!-- Dropdown button if current user is admin -->
     <div class="dropdown" style="display:inline-block">
-      <button onclick="myFunction()" class="button" style="margin-bottom: 0%; background-color: white; color: #05d3dd;border: none;"> <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;Menu</button>
+      <button onclick="myFunction()" class="button" style="margin-bottom: 0%; background-color: white; color: #05d3dd;border: none;"> <i class="fa fa-angle-double-down"></i>&nbsp;&nbsp;<%= t("layouts.header.menu") %></button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="help" style="margin-top: 2.5%; margin-bottom: 2.5%;">Help</a>
+        <a href="help" style="margin-top: 2.5%; margin-bottom: 2.5%;"><%= t("layouts.header.help") %></a>
         
       <% if show_admin_menu?(current_user) %>
     
