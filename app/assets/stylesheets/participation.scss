@@ -205,7 +205,6 @@
   border-top: 1px solid $border;
 
   @include breakpoint(medium) {
-    border-left: 1px solid $border;
     border-top: 0;
   }
 }
@@ -716,6 +715,7 @@
 
     @include breakpoint(medium) {
       text-align: center;
+      border-left: none;
     }
 
     .against {
