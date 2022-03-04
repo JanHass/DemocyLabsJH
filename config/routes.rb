@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   draw :objection
   draw :pro_contra
 
+
   root "welcome#index"
   get "/welcome", to: "welcome#welcome"
   get "/consul.json", to: "installation#details"

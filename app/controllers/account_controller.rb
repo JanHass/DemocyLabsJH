@@ -11,8 +11,6 @@ class AccountController < ApplicationController
   
 
   def update
-    #@user = User.find(params[:id])
-    #@user.update_attribute(:avatar, params[:user][:avatar])
 
     if @account.update(account_params)
       redirect_to account_path, notice: t("flash.actions.save_changes.notice")

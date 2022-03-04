@@ -14,8 +14,6 @@
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
 <% end %>
 
-
-
 <details style="position:relative">
 <div style="float:left; width:50%;">
 <h2 style="float:center"> Pro-Arguments</h2>
@@ -96,8 +94,6 @@
 <% end %>
 </div>
 </details>
-
-
 
 <% if @proposal.fellowship_id.present? %>
   <% @fellowship= Fellowship.find(@proposal.fellowship_id)%>
