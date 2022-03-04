@@ -84,10 +84,10 @@
 
 <!-- Pro / Kontra -->
 
-<h3><details style="position:relative">
+<h3><details style="position:relative; margin-bottom: 2.5%;">
   <summary>Pro / Kontra</summary>
 <div style="float:left; width:50%;">
-<h2 style="float:center"> Pro-Arguments</h2>
+<h3 style="float:center; margin-left: 10%;"> Pro-Arguments</h3>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 1%>
     <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
@@ -111,7 +111,7 @@
 <br>
 </div>
 <div style="float:right; width:50%;">
-<h2 style="float:center"> Contra-Arguments</h2>
+<h3 style="float:center;"> Contra-Arguments</h3>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 0%>
     <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
@@ -132,8 +132,8 @@
 <% end %>
 </div>
 
-<div style="float:center">
-<h2>Add Pro-Contra:</h2>
+<div style="float:center; margin-left: 5%; margin-right: 5%;">
+<h3>Add Pro-Contra:</h3>
 <%= form_for([@debate, @debate.pro_contras.build]) do |f| %>
   <p>
     <%= f.text_area :body %>
