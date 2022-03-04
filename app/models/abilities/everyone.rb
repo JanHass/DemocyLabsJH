@@ -32,6 +32,7 @@ module Abilities
       can :read, ::SDG::Phase
 
       can [:read, :create, :update, :destroy, :join, :leave, :changeuserrole, :kick, :tablesort], Fellowship
+      can [:purgeavatar], User
 
 
     end
