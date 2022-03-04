@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @pro_contra.tag %>
+</p>
+<p>
+  <strong>Argument:</strong>
+  <%= @pro_contra.body %>
+</p>
+<p>
+  <strong>Sources:</strong>
+  <%= @pro_contra.sources %>
+</p>
+
+<%if current_user.present? %>
+  <%if @pro_contra.user_id == current_user.id %>
+      <%= link_to 'Destroy', @pro_contra, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<%end%>
+
+<h2>Comments</h2>
+<% @pro_contra.objections.each do |objection| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= objection.user_first_name %><%= " " %> <%= objection.user_last_name %>
+  </p>
+  <p>
+    <strong>Objection:</strong>
+    <%= objection.body %>
+  </p>
+  <p>
+    <strong>Sources:</strong>
+    <%= objection.sources %>
+  </p>
+  <%if current_user.present? %>
+    <%if objection.user_id == current_user.id %>
+        <%= link_to "Destroy", @objection, method: :delete_objection, data: { confirm: 'Are you sure?' },  class: "button hollow alert" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@pro_contra, @pro_contra.objections.build]) do |f| %>
+   <p>
+    <%= f.hidden_field :debates_id, :value => @pro_contra.debate_id, :readonly => true%>
+  </p>
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.text_area :sources %>
+  </p>
+  <%if current_user.present? %>
+    <p>
+      <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
+      <%= f.hidden_field :user_first_name, :value => current_user.first_name, :readonly => true%>
+      <%= f.hidden_field :user_last_name, :value => current_user.last_name, :readonly => true%>
+    </p>
+  <%else%>
+    <p>
+      <%= f.hidden_field :user_id, :value => "1", :readonly => true%>
+      <%= f.hidden_field :user_first_name, :value => "Anonymous", :readonly => true%>
+    </p>
+  <%end%>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<!--<%= link_to 'Edit', edit_pro_contra_path(@pro_contra) %> |
+<%= link_to 'Back', pro_contras_path %>-->

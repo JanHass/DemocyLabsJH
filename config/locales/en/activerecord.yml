@@ -317,6 +317,7 @@ en:
         public_profile_show_country: "Show country"
 
         my_groups: "My Groups"
+        show_public_profile: "Show public profile"
 
         new_fellowship: "Create group"
         edit_fellowship: "Edit group"

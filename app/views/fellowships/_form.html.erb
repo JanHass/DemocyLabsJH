@@ -240,11 +240,15 @@
     </details></h2>
 
     
-
-    <div class="actions" style="margin-top: 2%;">
-      <%= form.submit t("activerecord.attributes.fellowship.save_fellowship") %>
-    </div>
-    
+    <% if @fellowship.id.present?%>
+      <div class="actions" style="margin-top: 2%;">
+        <%= form.submit t("activerecord.attributes.fellowship.save_fellowship") %>
+      </div>
+    <% else%>
+      <div class="actions" style="margin-top: 2%;">
+        <%= form.submit t("activerecord.attributes.fellowship.new_fellowship") %>
+      </div>
+    <%end%>
   </fieldset>
 
 <% end %>

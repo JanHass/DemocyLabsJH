@@ -13,9 +13,10 @@ class PollsController < ApplicationController
   has_orders %w[most_voted newest oldest], only: :show
 
   def index
-    @polls = Kaminari.paginate_array(
-      @polls.created_by_admin.not_budget.send(@current_filter).includes(:geozones).sort_for_list(current_user)
-    ).page(params[:page])
+    #@polls = Kaminari.paginate_array(
+    #  @polls.created_by_admin.not_budget.send(@current_filter).includes(:geozones).sort_for_list(current_user)
+    #).page(params[:page])
+    @polls = Kaminari.paginate_array(Poll.all.send(@current_filter)).page(params[:page])
   end
 
   def show
@@ -32,6 +33,8 @@ class PollsController < ApplicationController
 
     @commentable = @poll
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+    @polls_pro_contra = ProContra.where(" poll_id=#{@poll.id.to_s}")
+    
   end
 
   def stats

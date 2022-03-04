@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   
+  resources :pro_contras do
+    resources :objections
+  end
+
+  resources :debates do
+    resources :pro_contras
+  end
+
+  resources :proposals do
+    resources :pro_contras
+  end
+
+  resources :polls do
+    resources :pro_contras
+  end
+
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
@@ -30,6 +46,9 @@ Rails.application.routes.draw do
   draw :valuation
   draw :verification
   draw :fellowship_user
+  draw :objection
+  draw :pro_contra
+
 
   root "welcome#index"
   get "/welcome", to: "welcome#welcome"
@@ -38,7 +57,7 @@ Rails.application.routes.draw do
   post "/debates/new", to: "debates#new"
   post "/proposals/new", to: "proposals#new"
 
-    
+  get '/search', to: "welcome#search"
 
   resources :stats, only: [:index]
   resources :images, only: [:destroy]
