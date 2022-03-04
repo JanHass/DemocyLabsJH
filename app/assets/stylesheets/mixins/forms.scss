@@ -14,8 +14,8 @@
     $icon-size-with-padding: $icon-size + $padding-right;
     $polygon-size: $icon-size / 2;
     @include background-till-left-of-screen;
-    @include brand-background($brand-secondary);
-    border: $border-width solid $brand-secondary;
+    @include brand-background($brand);
+    border: $border-width solid $brand;
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
     margin-top: $line-height * 2;
@@ -33,8 +33,8 @@
       padding-right: $icon-size-with-padding;
       background-image: linear-gradient(
         to right,
-        #{$brand-secondary} 0,
-        #{$brand-secondary} calc(100% - #{$icon-size-with-padding} - 1px),
+        #{$brand} 0,
+        #{$brand} calc(100% - #{$icon-size-with-padding} - 1px),
         #{$body-background} calc(100% - #{$icon-size-with-padding}),
         #{$body-background} 100%
       );
@@ -90,7 +90,7 @@
         }
 
         &::before {
-          color: $brand-secondary;
+          color: $brand;
           display: block;
           font-size: $icon-size;
           right: $padding-right;
