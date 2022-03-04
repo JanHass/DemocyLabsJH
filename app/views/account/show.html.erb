@@ -53,7 +53,9 @@
               
                 
                 
-                <p><%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],[t("activerecord.attributes.user.gender_female"),'female'],[t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %></p>
+                <p><%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],
+                [t("activerecord.attributes.user.gender_female"),'female'],
+                [t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %></p>
 
                 <%= f.date_field :date_of_birth %>
                 <%= f.text_field :street %>
