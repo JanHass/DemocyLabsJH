@@ -11,7 +11,9 @@ class ProContra < ApplicationRecord
   belongs_to :poll
   belongs_to :vote
   belongs_to :fellowship
+
   has_many :objections, dependent: :destroy 
+
 
 
 end

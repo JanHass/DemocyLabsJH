@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :polls do
     resources :pro_contras
   end
-  
+
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 

@@ -1,7 +1,7 @@
 <!-- My Content landing page -->
 
 <!-- header bar with icon -->
-<%= render "shared/mycontent_header", i18n_namespace: "My Content", image: "id-card-solid" %>
+<%= render "shared/mycontent_header", i18n_namespace: t("activerecord.attributes.user.public_profile"), image: "id-card-solid" %>
 
 <!-- Public profile data -->
 <main>
@@ -21,13 +21,21 @@
       <% end %>
 
 
+
+      <%= avatar_image(@user, seed: @user.id, size: 100) %>
+      <div class="input-group">
+        <% if @user.avatar.attached? %>
+           <%= image_tag(@user.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
+        <% else %>
+           <%= image_tag 'Default_Profile_Avatar.png', height: 200, width: 200, class: "rounded-circle" %>
+        <% end %>
+
+      </div>
+      
       <h2 class="inline-block">
         <%= @user.name %>
-        <% if current_administrator? %>
-        <small><%= @user.email %></small>
-        <% end %>
       </h2>
-      <%= avatar_image(@user, seed: @user.id, size: 100) %>
+      
 
       <% if (@user.public_profile_show_full_name && @user.first_name.present? && @user.last_name.present?) || (current_administrator? && @user.first_name.present? && @user.last_name.present?) %>
         <p class="sizer">
@@ -35,6 +43,13 @@
           <input class="form-control" type="text" value="<%= @user.first_name%>&nbsp;<%= @user.last_name%>" style="width: 25%;" readonly>
         </p>
       <% end %>  
+
+      <% if (@user.email.present?) %>
+        <p class="sizer">
+          <strong><%= t("attributes.email")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.email %>" style="width: 25%;" readonly>
+        </p>
+      <% end %>
 
       <% if (@user.public_profile_show_phone_number && @user.phone_number.present?) || (current_administrator? && @user.phone_number.present?) %>
         <p class="sizer">
@@ -46,7 +61,13 @@
       <% if (@user.public_profile_show_gender && @user.gender.present?) || (current_administrator?  && @user.gender.present?) %>
         <p class="sizer">
           <strong><%= t("activerecord.attributes.user.gender")+ ":" %></strong>
-          <input class="form-control" type="text" value="<%= @user.gender %>" style="width: 25%;" readonly>
+          <% if @user.gender == "male" %>
+            <input class="form-control" type="text" value="<%= t("activerecord.attributes.user.gender_male") %>" style="width: 25%;" readonly>
+          <% elsif @user.gender == "female" %> 
+            <input class="form-control" type="text" value="<%= t("activerecord.attributes.user.gender_female") %>" style="width: 25%;" readonly>
+          <% elsif @user.gender == "diverse"%> 
+            <input class="form-control" type="text" value="<%= t("activerecord.attributes.user.gender_diverse") %>" style="width: 25%;" readonly>
+          <% end %>
         </p>
       <% end %>
 

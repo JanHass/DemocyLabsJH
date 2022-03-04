@@ -2,7 +2,7 @@
 
 <% if current_editable?(proposal) %>
   <%= link_to t("dashboard.index.edit_proposal_link"),
-              edit_proposal_path(proposal),
+              edit_proposal_path(proposal, :fellowshipid => proposal.fellowship_id, :userid => current_user.id),
               target: "_blank",
               class: "button hollow" %>
 <% end %>

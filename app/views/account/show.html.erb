@@ -53,7 +53,9 @@
               
                 
                 
-                <p><%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],[t("activerecord.attributes.user.gender_female"),'female'],[t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %></p>
+                <p><%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],
+                [t("activerecord.attributes.user.gender_female"),'female'],
+                [t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %></p>
 
                 <%= f.date_field :date_of_birth %>
                 <%= f.text_field :street %>
@@ -104,6 +106,11 @@
              <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_country %>
              </div>
+             <div style="margin-left: 5%;">
+               <%= link_to t("activerecord.attributes.user.show_public_profile"), current_user, class:"button hollow" %>
+             </div>
+
+             
 
           </details></h3>
 
@@ -141,7 +148,10 @@
             </div>
           <% end %>
 
-<!-- Recommendations -->
+
+<!-- Recommendations NICHT AKTIV-->
+          <div style="display: none;">
+
           <% if feature?("user.recommendations") %>
           <h3><details>
             <summary><%= t("account.show.recommendations") %></summary>
@@ -158,6 +168,7 @@
             <% end %>
             </details></h3>
           <% end %>
+          </div>
 
 
 <!-- My Groups -->

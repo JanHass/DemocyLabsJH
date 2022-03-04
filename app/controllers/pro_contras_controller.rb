@@ -93,12 +93,14 @@ class ProContrasController < ApplicationController
   # DELETE /pro_contras/1
   def destroy
     @pro_contra.destroy
+
     redirect_to account_url, notice: 'Pro contra was successfully destroyed.'
   end
   def destroy_objection
     @objection.destroy
     redirect_to account_url, notice: 'Pro contra was successfully destroyed.'
   end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pro_contra
@@ -107,6 +109,8 @@ class ProContrasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pro_contra_params
+
       params.require(:pro_contra).permit(:tag, :body, :sources, :email, :rating, :likes, :dislikes, :reported, :move, :pc, :user_id, :debate_id, :proposal_id, :poll_id, :vote_id, :fellowship_id, :user_first_name, :user_last_name)
+
     end
 end

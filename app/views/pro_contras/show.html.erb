@@ -12,6 +12,7 @@
   <strong>Sources:</strong>
   <%= @pro_contra.sources %>
 </p>
+
 <%if current_user.present? %>
   <%if @pro_contra.user_id == current_user.id %>
       <%= link_to 'Destroy', @pro_contra, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -39,9 +40,6 @@
   <% end %>
 <% end %>
 
-
-
- 
 <h2>Add a comment:</h2>
 <%= form_for([@pro_contra, @pro_contra.objections.build]) do |f| %>
    <p>
