@@ -13,6 +13,7 @@
 <h2 style="float:center"> Pro-Arguments</h2>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 1%>
+    <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
     <p>
       <strong>Tag:</strong>
       <%= pc.tag %>
@@ -25,7 +26,7 @@
       <strong>Sources:</strong>
       <%= pc.sources %>
     </p>
-    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><br>
+    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
   <% end %>
 
 <% end %>
@@ -36,6 +37,7 @@
 <h2 style="float:center"> Contra-Arguments</h2>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 0%>
+    <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
     <p>
       <strong>Tag:</strong>
       <%= pc.tag %>
@@ -48,9 +50,8 @@
       <strong>Sources:</strong>
       <%= pc.sources %>
     </p>
-    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><br>
+    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
   <% end %>
-
 <% end %>
 </div>
 
@@ -66,9 +67,18 @@
   <p>
     <%= f.text_field :tag %>
   </p>
-  <p>
-    <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
-  </p>
+  <%if current_user.present? %>
+    <p>
+      <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
+      <%= f.hidden_field :user_first_name, :value => current_user.first_name, :readonly => true%>
+      <%= f.hidden_field :user_last_name, :value => current_user.last_name, :readonly => true%>
+    </p>
+  <%else%>
+    <p>
+      <%= f.hidden_field :user_id, :value => "1", :readonly => true%>
+      <%= f.hidden_field :user_first_name, :value => "Anonymous", :readonly => true%>
+    </p>
+  <%end%>
   <p>
     <%= f.select(:pc, [['Pro', 1], ['Contra', 0]]) %>
   </p>
