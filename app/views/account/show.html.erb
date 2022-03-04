@@ -9,28 +9,33 @@
 <div class="row account">
   <div class="small-12 column">
     
-<!-- User Image -->
+    <!-- User Image -->
     <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>
 
-      <div class="input-group">
-        <% if @account.avatar.attached? %>
-           <%= image_tag(@account.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
+      <!-- Displaying, Uploading and Deleting User/Default-Avatar -->
+      <div class="avatar">
+        <% if current_user.avatar.attached? %>
+           <div>
+           <%= image_tag(current_user.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
+           </div>
+           <div style= "margin-top: 2%">
+           <%= link_to "Delete Avatar", purgeavatar_account_path(@user), method: :delete, class: "button alert hollow" %>
+           </div>
         <% else %>
-           <%= image_tag 'Default_Profile_Avatar.png', height: 200, width: 200, class: "rounded-circle" %>
-        <% end %>
-
+           <div style="display: block">  
+             <%= image_tag 'Default_Profile_Avatar.png', height: 200, width: 200, class: "rounded-circle" %>
+           </div>
+           <div style="margin-top: 2%">
+             <label class="button-image">
+               <%= f.file_field :avatar, class: "button hollow btn-file" %>
+             </label>
+           </div> 
+         <% end %>
       </div>
 
-      <div>
-        <label class="button-image">
-          <%= f.file_field :avatar, class: "button hollow btn-file" %>
-        </label>
-      </div> 
-
-    
 <!-- Personal Details -->
       <div class="row">
         <div class="small-12 medium-7 column">
@@ -330,7 +335,7 @@
 .btn-file input[type=file] {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10;
     min-width: 100%;
     min-height: 100%;
     font-size: 100px;

@@ -135,7 +135,9 @@
                 <% if (@currentuser_is_fellowship_owner && current_user.id != fellowship_user.user_id) || (@currentuser_is_fellowship_admin && !fellowship_user.is_fellowship_owner && !fellowship_user.is_fellowship_administrator && current_user.id != fellowship_user.user_id ) %>
                   <%= link_to t("activerecord.attributes.fellowship.kick"), kick_fellowship_path(fellowship_user_id: fellowship_user.id), class: "button alert hollow"%>
                 <% else %>
+                <div>
                  <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>
+                 </div>
                <% end %>
               </td>
             <% end %>  
