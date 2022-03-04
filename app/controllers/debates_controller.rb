@@ -26,6 +26,8 @@ class DebatesController < ApplicationController
   def show
     super
     redirect_to debate_path(@debate), status: :moved_permanently if request.path != debate_path(@debate)
+    @debates_pro_contra = ProContra.where(" debate_id=#{@debate.id.to_s}")
+    @debate_pc_comments_count = Objection.count("debates_id=#{@debate.id.to_s}")
   end
 
   def vote

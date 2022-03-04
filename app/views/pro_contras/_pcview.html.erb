@@ -1,0 +1,16 @@
+<h2>TEST</h2>
+
+<h2>Add a comment:</h2>
+<%= form_for([ProContra.new, @pro_contra.objections.build]) do |f| %>
+  <p>
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

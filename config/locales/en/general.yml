@@ -235,14 +235,15 @@ en:
       moderation: Moderation
       valuation: Valuation
       officing: Polling officers
-      help: Help
       my_account_link: My account
       my_activity_link: My content
       open_gov: Open government
       proposals: Proposals
       poll_questions: Voting
       budgets: Participatory budgeting
-      fellowships: "Gruppen"
+      fellowships: "Groups"
+      help: "Help"
+      menu: "Menu"
       notification_item:
         new_notifications:
           one: You have a new notification

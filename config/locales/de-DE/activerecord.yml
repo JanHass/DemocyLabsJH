@@ -253,11 +253,12 @@ de:
         my_account: "Mein Konto"
         voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen abstimmen!"
         comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
+        no_group: "Fehler! Keine Gruppe gewählt. Bitte starten sie eine neue Diskussion nur über den Menüpunkt 'Diskussionen'."
         
         
       debate/translation:
-        title: "Titel der Debatte"
-        description: "Initialer Debattenbeitrag"
+        title: "Titel der Diskussion"
+        description: "Diskussionsbeitrag"
       proposal:
         author: "Autor"
         title: "Titel"
@@ -273,6 +274,7 @@ de:
         modal_new_proposal_button_new: "Vorschlag erstellen"
         voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen teilnehmen!"
         comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
+        no_group: "Fehler! Keine Gruppe gewählt. Bitte starten sie einen neuen Vorschlag nur über den Menüpunkt 'Vorschläge'."
 
 
       proposal/translation:
@@ -313,6 +315,8 @@ de:
 
         my_groups: "Meine Gruppen"
 
+        show_public_profile: "Öffentliches Profil anzeigen"
+
         fellowship_name: "Gruppenname"
         fellowship_descripton: "Beschreibung"
         fellowship_requirements: "Anforderungen"
@@ -338,6 +342,8 @@ de:
         redeemable_code: "Bestätigungscode per Post (optional)"
 
         my_account: "Mein Konto"
+
+        
 
 
       fellowship:  
