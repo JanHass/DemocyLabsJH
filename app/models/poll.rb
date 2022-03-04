@@ -10,6 +10,7 @@ class Poll < ApplicationRecord
   include StatsVersionable
   include Reportable
   include SDG::Relatable
+  has_many :pro_contras
 
   translates :name,        touch: true
   translates :summary,     touch: true

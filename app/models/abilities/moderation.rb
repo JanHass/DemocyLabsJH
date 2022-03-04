@@ -69,6 +69,8 @@ module Abilities
 
       can :moderate, Budget::Investment
       cannot :moderate, Budget::Investment, author_id: user.id
+
+      
     end
   end
 end

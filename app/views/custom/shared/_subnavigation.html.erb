@@ -1,3 +1,4 @@
+<!-- Links for the navigation bar -->
 <nav>
   <ul>
   <%= raw content_block("subnavigation_left") %>
@@ -30,9 +31,9 @@
  
     <% if feature?(:help_page) %>
       <li>
-        <%= layout_menu_link_to t("layouts.header.help"),
-                                help_path,
-                                current_page?(help_path),
+        <%= layout_menu_link_to t("layouts.header.fellowships"),
+                                fellowships_path,
+                                current_page?(fellowships_path),
                                 accesskey: "7" %>
       </li>
     <% end %>

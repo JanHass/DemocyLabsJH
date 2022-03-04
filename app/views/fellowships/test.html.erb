@@ -1,0 +1,226 @@
+<%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.showgroup"), image: "group_icon" %>
+<% if @fellowship.image.attached? %>
+  <img src="<%= (url_for(@fellowship.image)) %>" style="max-width: 25%; max-height: 25%; margin-bottom: 1%;">
+  <p class="sizer">
+    <strong><%= t("activerecord.attributes.fellowship.description") %></strong>
+    <textarea rows="3" class="form-control" style="width: 50%;" readonly><%= @fellowship.description %></textarea>
+  </p>
+  <p class="sizer" style="margin-top: 2%;">
+  <strong><%= t("activerecord.attributes.fellowship.name") %></strong>
+  <input class="form-control" type="text" value="<%= @fellowship.name %>" style="width: 25%;" readonly>
+  </p>
+<% else %>
+
+<p class="sizer" style="margin-top: 2%;">
+  <strong><%= t("activerecord.attributes.fellowship.name") %></strong>
+  <input class="form-control" type="text" value="<%= @fellowship.name %>" style="width: 25%;" readonly>
+</p>
+<p class="sizer">
+    <strong><%= t("activerecord.attributes.fellowship.description") %></strong>
+    <textarea rows="3" class="form-control" style="width: 50%;" readonly><%= @fellowship.description %></textarea>
+</p>
+
+<% end %>
+
+<p class="sizer">
+  <strong><%= t("activerecord.attributes.fellowship.email") %></strong>
+
+  <input class="form-control" type="text" value="<%= @fellowship.email %>" style="width: 25%;" readonly>
+</p>
+
+<p class="sizer">
+  <strong><%= t("activerecord.attributes.fellowship.created_at") %></strong>
+  <input class="form-control" type="text" value="<%= localize(@fellowship.created_at, :format => :short2) %>" style="width: 25%;" readonly>
+</p>
+
+
+  <p class="sizer">
+    <strong><%= t("activerecord.attributes.fellowship.updated_at") %></strong>
+    <input class="form-control" type="text" value="<%= @fellowship.updatet_at %>" style="width: 25%;" readonly>
+  </p>
+
+<h2><details>
+  <summary>Gruppenmitglieder</summary> 
+    <table>
+      <thead>
+        <tr>
+          <th><p>Username</th>
+          <th><p>Vorname</p></th>
+          <th><p>Nachname</p></th>
+          <th><p>Rolle</p></th>
+          <th><p>Rolle ändern</p></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+          
+      <tbody>
+        <% @fellowship.fellowship_users.each do |fellowship_user| %>
+          <tr>
+            <td style='width: 15%';>
+              <p><%= fellowship_user.user.username %></p>
+            </td>
+            <td style='width: 25%';>
+              <p><%= fellowship_user.user.first_name %></p>
+            </td>
+            <td style='width: 25%';>
+              <p><%= fellowship_user.user.last_name %></p>      
+            </td>
+            <td style='width: 15%';>
+              <% if fellowship_user.is_fellowship_administrator? && fellowship_user.is_fellowship_owner? %>
+                <p>Eigentümer</p>
+              <% elsif fellowship_user.is_fellowship_moderator? %>
+                <p>Moderator</p>
+              <% elsif fellowship_user.is_fellowship_administrator? %>
+                <p>Administrator</p>
+              <% else %>
+                <p>Normaler User</p>
+              <% end %>     
+            </td>
+            <td style='width: 15%';>
+              <%= link_to "Als Admin", changetoadmin_fellowship_path(@fellowship, userid: fellowship_user.user_id ), class: "btn btn-primary" %>
+              <%= link_to "Als Moderator", changetomod_fellowship_path(@fellowship), class: "btn btn-primary" %>
+              <%= link_to "Als User", changetouser_fellowship_path(@fellowship), class: "btn btn-primary" %>
+
+              
+            </td>
+            <td style='width: 10%';><p><%= link_to 'Anzeigen', fellowship_user.user %></p></td>
+            <td style='width: 10%';>
+              <button type="button" class="btn btn-primary" id="btnpopup_userrole" data-bs-toggle="modal" data-bs-target="#change_user_role" data-userid="Test">
+                "Ändern"
+              </button>
+              
+              
+
+            </td>
+            <td style='width: 10%';><p>Nutzer Rolle entfernen</p></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </details></h2>
+
+  <!-- Modal  / PopUp User Rolle bearbeiten --> 
+              <div class="modal fade" id="change_user_role" tabindex="-1" aria-labelledby="change_user_role_label" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                 <h5 class="modal-title" id="change_user_role_label"> User Rolle ändern </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <%= form_with url: changeuserrole_fellowship_path(@fellowship), local: true, method: :get do %>
+                  <div class="modal-body">
+                    <p>Text dazu</p>
+                    
+                    <br><br>
+                    <div>
+                      <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
+                      <%= select_tag "userrole", options_for_select([ ["User", 'user'], ["Gruppen-Moderator", 'mod'], ["Gruppen-Administrator", 'admin'] ], "User") %>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+                    <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "btn btn-success" %>  
+                  </div>
+                <% end %>
+              </div>
+              </div>
+              </div>
+
+            </td>
+            <td style='width: 10%';>
+               <% if fellowship_user.is_fellowship_administrator%>
+                 <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>
+               <% else %>
+                 <%= link_to t("activerecord.attributes.fellowship.kick"), kick_fellowship_path(fellowship_user_id: fellowship_user.id), class: "btn btn-warning"%> 
+               <% end %>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </details></h2>  
+
+
+<!-- Buttons -->
+<%= link_to t("activerecord.attributes.fellowship.back"), fellowships_path, class: "btn btn-info" %>
+<% @show_join_button = true %> <!-- Hilfsvariable für Join Button. Wenn User in Gruppe -> False -->
+
+<!-- Check-Schleife  ob User in Fellowship -->
+<% current_user.fellowship_users.each do |fellowship_user| %>
+  <% if fellowship_user.fellowship_id == @fellowship.id %> <!--  wenn User in Gruppe ist-->
+    <% @show_join_button = false %>
+    <% if fellowship_user.is_fellowship_administrator %>
+      <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "btn btn-primary" %>
+      <%= link_to t("activerecord.attributes.fellowship.delete"), @fellowship, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    <% end %>
+   
+  
+    
+    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship), class: "btn btn-warning" %>
+  <% end %> 
+<% end %>  
+<% if @show_join_button == true %>
+  <% if ( @fellowship.join_password_required? ) %>
+      <button type="button" class="btn btn-primary" id="btnpopup" data-bs-toggle="modal" data-bs-target="#join_req_password">
+       <%= t("activerecord.attributes.fellowship.join_group") %>
+      </button>
+
+      <!-- Modal  / PopUp Passowrt eingabe --> 
+      <div class="modal fade" id="join_req_password" tabindex="-1" aria-labelledby="req_password_Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="req_password_Label"><%= t("activerecord.attributes.fellowship.popup_req_password_label") %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= t("activerecord.attributes.fellowship.popup_req_password_text1") %>
+            <br><br>
+          
+            <%= form_with url: join_fellowship_path(@fellowship), local: true, method: :get do %>
+            <div>
+              <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
+              <%= text_field_tag "password", nil %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+            <%= submit_tag t("activerecord.attributes.fellowship.join_group"), class: "btn btn-success" %>  
+          <% end %>
+          </div>
+        </div>
+      </div>
+      </div>
+  
+  <% else %>
+      <%= link_to  t("activerecord.attributes.fellowship.join_group") , join_fellowship_path(@fellowship), class: "btn btn-success" %>
+  <% end %>
+<% end %>
+
+<style>
+   .button
+    {
+      text-decoration:none;
+    }
+    .button.hollow.alert
+{
+    padding-top: 0.85em;
+    padding-right: 1em;
+    padding-bottom: 0.85em;
+    padding-left: 1em;
+}
+</style>
+
+    © 2022 GitHub, Inc.
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_225139) do
+ActiveRecord::Schema.define(version: 2022_03_04_142647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -611,6 +611,7 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
     t.datetime "updated_at", null: false
     t.bigint "fellowship_id"
     t.bigint "user_id"
+    t.boolean "is_fellowship_owner", default: false
     t.index ["fellowship_id"], name: "index_fellowship_users_on_fellowship_id"
     t.index ["user_id"], name: "index_fellowship_users_on_user_id"
   end
@@ -663,6 +664,9 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
     t.boolean "admin_public_show_country", default: false
     t.datetime "updated_at", null: false
     t.integer "zip_code"
+    t.boolean "join_password_required", default: false
+    t.string "join_password"
+    t.text "short_description"
     t.index ["author_id"], name: "index_fellowships_on_author_id"
     t.index ["email"], name: "index_fellowships_on_email"
     t.index ["name"], name: "index_fellowships_on_name"
@@ -1082,6 +1086,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "debates_id"
+    t.string "user_first_name"
+    t.string "user_last_name"
     t.index ["debates_id"], name: "index_objections_on_debates_id"
     t.index ["pro_contra_id"], name: "index_objections_on_pro_contra_id"
     t.index ["user_id"], name: "index_objections_on_user_id"
@@ -1350,6 +1356,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
     t.bigint "fellowship_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_first_name"
+    t.string "user_last_name"
     t.index ["debate_id"], name: "index_pro_contras_on_debate_id"
     t.index ["fellowship_id"], name: "index_pro_contras_on_fellowship_id"
     t.index ["poll_id"], name: "index_pro_contras_on_poll_id"
@@ -1898,6 +1906,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
+  add_foreign_key "fellowship_users", "fellowships"
+  add_foreign_key "fellowship_users", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "follows", "users"
   add_foreign_key "geozones_polls", "geozones"

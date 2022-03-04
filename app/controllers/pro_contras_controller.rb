@@ -25,18 +25,47 @@ class ProContrasController < ApplicationController
   # POST /pro_contras
   def create
     
-        
-      # Get Article comment is attached to
+    if params[:debate_id].present?
+        # Get Article comment is attached to
 
-      @debate = Debate.find(params[:debate_id])
+        @debate = Debate.find(params[:debate_id])
 
-      # Create and save comment
+        # Create and save comment
 
-      @pro_contra = @debate.pro_contras.create(pro_contra_params)
+        @pro_contra = @debate.pro_contras.create(pro_contra_params)
 
-      # Go to the article this comment is associated with
+        # Go to the article this comment is associated with
 
-      redirect_to debate_path(@debate)
+        redirect_to debate_path(@debate)
+    end
+
+    if params[:poll_id].present?
+        # Get Article comment is attached to
+
+        @poll = Poll.find(params[:poll_id])
+
+        # Create and save comment
+
+        @pro_contra = @poll.pro_contras.create(pro_contra_params)
+
+        # Go to the article this comment is associated with
+
+        redirect_to poll_path(@poll)
+    end
+
+    if params[:proposal_id].present?
+        # Get Article comment is attached to
+
+        @proposal = Proposal.find(params[:proposal_id])
+
+        # Create and save comment
+
+        @pro_contra = @proposal.pro_contras.create(pro_contra_params)
+
+        # Go to the article this comment is associated with
+
+        redirect_to proposal_path(@proposal)
+    end
   
 
   
@@ -64,9 +93,12 @@ class ProContrasController < ApplicationController
   # DELETE /pro_contras/1
   def destroy
     @pro_contra.destroy
-    redirect_to pro_contras_url, notice: 'Pro contra was successfully destroyed.'
+    redirect_to account_url, notice: 'Pro contra was successfully destroyed.'
   end
-
+  def destroy_objection
+    @objection.destroy
+    redirect_to account_url, notice: 'Pro contra was successfully destroyed.'
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pro_contra
@@ -75,6 +107,6 @@ class ProContrasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pro_contra_params
-      params.require(:pro_contra).permit(:tag, :body, :sources, :email, :rating, :likes, :dislikes, :reported, :move, :pc, :user_id, :debate_id, :proposal_id, :poll_id, :vote_id, :fellowship_id)
+      params.require(:pro_contra).permit(:tag, :body, :sources, :email, :rating, :likes, :dislikes, :reported, :move, :pc, :user_id, :debate_id, :proposal_id, :poll_id, :vote_id, :fellowship_id, :user_first_name, :user_last_name)
     end
 end

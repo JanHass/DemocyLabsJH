@@ -15,8 +15,13 @@ class ObjectionsController < ApplicationController
         redirect_to pro_contra_path(@pro_contra)
     end
 
+    def destroy
+        @objection.destroy
+        redirect_to pro_contras_url(@pro_contra), notice: 'Objection was successfully destroyed.'
+    end
+
     private
     def objection_params
-        params.require(:objection).permit(:user_id, :body, :debates_id, :sources)
+        params.require(:objection).permit(:user_id, :body, :debates_id, :sources, :user_first_name, :user_last_name)
     end
 end

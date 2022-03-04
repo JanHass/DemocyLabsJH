@@ -3,11 +3,17 @@
   <%= render "shared/canonical", href: debate_url(@debate) %>
 <% end %>
 
+
+<% if @debate.fellowship_id.present? %>
+  <% @fellowship= Fellowship.find(@debate.fellowship_id)%>
+<% end %>  
+
 <details style="position:relative">
 <div style="float:left; width:50%;">
 <h2 style="float:center"> Pro-Arguments</h2>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 1%>
+    <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
     <p>
       <strong>Tag:</strong>
       <%= pc.tag %>
@@ -20,7 +26,7 @@
       <strong>Sources:</strong>
       <%= pc.sources %>
     </p>
-    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><br>
+    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
   <% end %>
 
 <% end %>
@@ -31,6 +37,7 @@
 <h2 style="float:center"> Contra-Arguments</h2>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 0%>
+    <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
     <p>
       <strong>Tag:</strong>
       <%= pc.tag %>
@@ -43,9 +50,8 @@
       <strong>Sources:</strong>
       <%= pc.sources %>
     </p>
-    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><br>
+    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
   <% end %>
-
 <% end %>
 </div>
 
@@ -61,9 +67,18 @@
   <p>
     <%= f.text_field :tag %>
   </p>
-  <p>
-    <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
-  </p>
+  <%if current_user.present? %>
+    <p>
+      <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
+      <%= f.hidden_field :user_first_name, :value => current_user.first_name, :readonly => true%>
+      <%= f.hidden_field :user_last_name, :value => current_user.last_name, :readonly => true%>
+    </p>
+  <%else%>
+    <p>
+      <%= f.hidden_field :user_id, :value => "1", :readonly => true%>
+      <%= f.hidden_field :user_first_name, :value => "Anonymous", :readonly => true%>
+    </p>
+  <%end%>
   <p>
     <%= f.select(:pc, [['Pro', 1], ['Contra', 0]]) %>
   </p>
@@ -79,6 +94,14 @@
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
+        <% if @debate.fellowship_id.present? %>
+          <div><h4>
+            <% if @fellowship.image.attached? %>
+                <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
+            <% end %>       
+            <%= link_to @fellowship.name, @fellowship %>
+          </h4></div> 
+        <% end%>   
 
         <h1><%= @debate.title %></h1>
         <% if @debate.conflictive? %>
@@ -127,12 +150,14 @@
         <div id="<%= dom_id(@debate) %>_votes">
           <%= render "debates/votes", debate: @debate %>
         </div>
+        <div style="display: none;">
         <%= render "shared/social_share",
           share_title: t("debates.show.share"),
           title: @debate.title,
           url: debate_url(@debate),
           description: @debate.title,
           mobile: @debate.title %>
+        </div>  
       </aside>
     </div>
   </div>
