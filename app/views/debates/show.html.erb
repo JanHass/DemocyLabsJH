@@ -85,25 +85,25 @@
 <!-- Pro / Kontra -->
 
 <h3><details style="position:relative; margin-bottom: 2.5%;">
-  <summary>Pro / Kontra</summary>
+  <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
 <div style="float:left; width:50%;">
-<h3 style="float:center; margin-left: 10%;"> Pro-Arguments</h3>
+<h3 style="float:center; margin-left: 10%;"><%= t("activerecord.attributes.proscons.pros") %></h3>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 1%>
     <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
     <p>
-      <strong>Tag:</strong>
+      <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
       <%= pc.tag %>
     </p>
     <p>
-      <strong>Body:</strong>
+      <strong><%= t("activerecord.attributes.proscons.body") %></strong>
       <%= pc.body %>
     </p>
     <p>
-      <strong>Sources:</strong>
+      <strong><%= t("activerecord.attributes.proscons.source") %></strong>
       <%= pc.sources %>
     </p>
-    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
+    <%= link_to t("activerecord.attributes.proscons.show"), "/pro_contras/" + pc.id.to_s , class: "button hollow"%><%="("%><%= pc.objections.all.count %><%=")"%><br>
   <% end %>
 
 <% end %>
@@ -111,39 +111,40 @@
 <br>
 </div>
 <div style="float:right; width:50%;">
-<h3 style="float:center;"> Contra-Arguments</h3>
+<h3 style="float:center;"> <%= t("activerecord.attributes.proscons.cons") %></h3>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 0%>
     <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
     <p>
-      <strong>Tag:</strong>
+      <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
       <%= pc.tag %>
     </p>
     <p>
-      <strong>Body:</strong>
+      <strong><%= t("activerecord.attributes.proscons.body") %></strong>
       <%= pc.body %>
     </p>
     <p>
-      <strong>Sources:</strong>
+      <strong><%= t("activerecord.attributes.proscons.source") %></strong>
       <%= pc.sources %>
     </p>
-    <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
+    <%= link_to  t("activerecord.attributes.proscons.show") , "/pro_contras/" + pc.id.to_s , class: "button hollow"%><%="("%><%= pc.objections.all.count %><%=")"%><br>
   <% end %>
 <% end %>
 </div>
 
 <div style="float:center; margin-left: 5%; margin-right: 5%;">
-<h3>Add Pro-Contra:</h3>
+<h3><%= t("activerecord.attributes.proscons.new") %></h3>
 <%= form_for([@debate, @debate.pro_contras.build]) do |f| %>
   <p>
-    <%= f.text_area :body %>
+    <%= f.text_field :tag , label: t("activerecord.attributes.proscons.tag")%>
   </p>
   <p>
-    <%= f.text_area :sources %>
+    <%= f.text_area :body , label: t("activerecord.attributes.proscons.body") %>
   </p>
   <p>
-    <%= f.text_field :tag %>
+    <%= f.text_area :sources , label: t("activerecord.attributes.proscons.source")%>
   </p>
+  
   <%if current_user.present? %>
     <p>
       <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
@@ -157,10 +158,10 @@
     </p>
   <%end%>
   <p>
-    <%= f.select(:pc, [['Pro', 1], ['Contra', 0]]) %>
+    <%= f.select(:pc, [[t("activerecord.attributes.proscons.pro"), 1], [t("activerecord.attributes.proscons.con"), 0]], label: t("activerecord.attributes.proscons.type")) %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit  t("activerecord.attributes.proscons.create_new") %>
   </p>
 <% end %>
 </div>

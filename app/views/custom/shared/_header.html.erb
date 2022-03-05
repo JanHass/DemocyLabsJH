@@ -83,18 +83,20 @@
   <div class="header-card jumbo highlight">
     <div class="row">
       <div style="width: 50%; height: 60%; display: inline;"class="small-12 medium-6 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
-        <span style="margin-left:2px; font-size:x-large"><%= header.label %></span>
+        <span style="margin-left:2px; font-size:x-large"><%= t("layouts.header.welcome") %></span>
         <h1>Democy Labs</h1>
 
-        <p class="lead" style="margin-left:2px;"><%= header.description %></p>
+        
         <%= form_tag(search_path, :method => "get") do %>
         <div class="input-group" style="width: 22vw;">
-          <%= select_tag "selected_param", options_for_select([ "All","Postal Codes", "Proposals", "Groups" ], "All")%>
+          <%= select_tag "selected_param", options_for_select([ [t("layouts.header.search_all"),"All"],[t("layouts.header.search_plz"),"Postal Codes"], [t("layouts.header.proposals"),"Proposals"], [t("layouts.header.fellowships"),"Groups" ]], "All")%>
 
-          <%= search_field_tag :search, params[:search], placeholder: "Search...", class: "form-control" %>
+          
+
+          <%= search_field_tag :search, params[:search], placeholder: t("layouts.header.search_placeholder"), class: "form-control" %>
 
           <div class="input-group-btn">
-            <%= button_tag "Search", :class => 'button glyphicon glyphicon-search', :name => nil %>
+            <%= button_tag t("layouts.header.search_button_search"), :class => 'button glyphicon glyphicon-search', :name => nil %>
           </div>
         </div>  
       <% end %>
@@ -129,21 +131,21 @@
           <tr>
             <td style='width: 15%;height: 15%;text-align: center; background-color: #f3f3f7;'>
                 <a href="fellowships" style="display: inline; width: 15%; height: 5%;margin-top: 5%;"><%= image_tag(image_path_for("users-solid.png"), :class=>"style_image")%></a>
-                <h4 style="text-align: center; margin-top: 3%;"><a href="fellowships" style="color: black; text-decoration: none;"><%= "Übersetzung Gruppen" %></a></h4>
+                <h4 style="text-align: center; margin-top: 3%;"><a href="fellowships" style="color: black; text-decoration: none;"><%= t("layouts.header.fellowships") %></a></h4>
             </td>
             <td style='width: 15%;height: 15%;text-align: center; background-color: #f3f3f7;'>
                 <a href="debates" style="display: inline; width: 25%; height: 5%;margin-top: 5%;"><%= image_tag(image_path_for("comment-dots-solid.png"), :class=>"style_image1")%></a>
-                <h4 style="text-align: center;"><a href="debates" style="color: black; text-decoration: none;"><%= "Übersetzung Diskussion" %></a></h4>
+                <h4 style="text-align: center;"><a href="debates" style="color: black; text-decoration: none;"><%= t("layouts.header.debates") %></a></h4>
             </td>  
           </tr>
           <tr>
             <td style='width: 15%;height: 15%;text-align: center; background-color: #f3f3f7;';>
                 <a href="proposals"><%= image_tag(image_path_for("lightbulb-solid.png"), :class=>"style_image2")%></a>
-                <h4 style="text-align: center;margin-top: 2%;"><a href="proposals" style="color: black; text-decoration: none;"><%= "Übersetzung Vorschläge" %></a></h4>
+                <h4 style="text-align: center;margin-top: 2%;"><a href="proposals" style="color: black; text-decoration: none;"><%= t("layouts.header.proposals") %></a></h4>
             </td>
             <td style='width: 15%; height: 15%; text-align: center; background-color: #f3f3f7;'>
                 <a href="polls"><%=image_tag(image_path_for("circle-check-solid.png"), :class=>"style_image3")%></a>
-                <h4 style="text-align: center; margin-top: 2.5%; "><a href="polls" style="color: black; text-decoration: none;"><%= "Übersetzung Abstimmung" %></a></h4>
+                <h4 style="text-align: center; margin-top: 2.5%; "><a href="polls" style="color: black; text-decoration: none;"><%= t("layouts.header.poll_questions") %></a></h4>
             </td>
           </tr>
         </tbody>
