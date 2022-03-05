@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_225139) do
+ActiveRecord::Schema.define(version: 2022_03_04_142647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -1089,6 +1089,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "debates_id"
+    t.string "user_first_name"
+    t.string "user_last_name"
     t.index ["debates_id"], name: "index_objections_on_debates_id"
     t.index ["pro_contra_id"], name: "index_objections_on_pro_contra_id"
     t.index ["user_id"], name: "index_objections_on_user_id"
@@ -1357,6 +1359,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_225139) do
     t.bigint "fellowship_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_first_name"
+    t.string "user_last_name"
     t.index ["debate_id"], name: "index_pro_contras_on_debate_id"
     t.index ["fellowship_id"], name: "index_pro_contras_on_fellowship_id"
     t.index ["poll_id"], name: "index_pro_contras_on_poll_id"

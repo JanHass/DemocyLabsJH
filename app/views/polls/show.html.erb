@@ -46,6 +46,89 @@
     </div>
   </div>
 
+  <h3><details style="position:relative; margin-bottom: 2.5%;">
+    <summary>Pro / Kontra</summary>
+    <div style="float:left; width:50%;">
+    <h3 style="float:center; margin-left: 10%;"> Pro-Arguments</h3>
+    <% @polls_pro_contra.each do |pc| %>
+      <% if pc.pc == 1%>
+        <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
+        <p>
+          <strong>Tag:</strong>
+          <%= pc.tag %>
+        </p>
+        <p>
+          <strong>Body:</strong>
+          <%= pc.body %>
+        </p>
+        <p>
+          <strong>Sources:</strong>
+          <%= pc.sources %>
+        </p>
+        <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
+      <% end %>
+    
+    <% end %>
+    
+    <br>
+    </div>
+    <div style="float:right; width:50%;">
+    <h3 style="float:center"> Contra-Arguments</h3>
+    <% @polls_pro_contra.each do |pc| %>
+      <% if pc.pc == 0%>
+        <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
+        <p>
+          <strong>Tag:</strong>
+          <%= pc.tag %>
+        </p>
+        <p>
+          <strong>Body:</strong>
+          <%= pc.body %>
+        </p>
+        <p>
+          <strong>Sources:</strong>
+          <%= pc.sources %>
+        </p>
+        <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
+      <% end %>
+    
+    <% end %>
+    </div>
+    
+    <div style="float:center; margin-left: 5%; margin-right: 5%;">
+    <h3>Add Pro-Contra:</h3>
+    <%= form_for([@poll, @poll.pro_contras.build]) do |f| %>
+      <p>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.text_area :sources %>
+      </p>
+      <p>
+        <%= f.text_field :tag %>
+      </p>
+      <%if current_user.present? %>
+        <p>
+          <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
+          <%= f.hidden_field :user_first_name, :value => current_user.first_name, :readonly => true%>
+          <%= f.hidden_field :user_last_name, :value => current_user.last_name, :readonly => true%>
+        </p>
+      <%else%>
+        <p>
+          <%= f.hidden_field :user_id, :value => "1", :readonly => true%>
+          <%= f.hidden_field :user_first_name, :value => "Anonymous", :readonly => true%>
+        </p>
+      <%end%>
+      <p>
+        <%= f.select(:pc, [['Pro', 1], ['Contra', 0]]) %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+    </div>
+    </details></h3>    
+
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
       <% @poll_questions_answers.each do |answer| %>

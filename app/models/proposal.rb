@@ -20,6 +20,7 @@ class Proposal < ApplicationRecord
   include Milestoneable
   include Randomizable
   include SDG::Relatable
+  has_many :pro_contras
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at

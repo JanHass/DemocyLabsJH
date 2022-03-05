@@ -8,14 +8,16 @@
   <% end %>
 
   <aside>
-    <h2><%= t("debates.new.recommendations_title") %></h2>
+    <h2><details>
+   <summary><%= t("debates.new.recommendations_title") %></summary>
 
     <ul class="recommendations">
-      <li><%= t("debates.new.recommendation_one") %></li>
-      <li><%= t("debates.new.recommendation_two") %></li>
-      <li><%= t("debates.new.recommendation_three") %></li>
-      <li><%= t("debates.new.recommendation_four") %></li>
+      <li style="font-size: large;"><%= t("debates.new.recommendation_one") %></li>
+      <li style="font-size: large;"><%= t("debates.new.recommendation_two") %></li>
+      <li style="font-size: large;"><%= t("debates.new.recommendation_three") %></li>
+      <li style="font-size: large;"><%= t("debates.new.recommendation_four") %></li>
     </ul>
+  </details></h2>
   </aside>
 
   <%= render Debates::FormComponent.new(debate) %>

@@ -136,6 +136,7 @@ button,
   @extend %button;
   @include inverted-selection;
   background: $brand;
+  text-decoration: none;
 
   &.warning,
   &.warning:hover {
@@ -156,6 +157,24 @@ button,
 .button.hollow.error {
   border-color: $alert-border;
   color: $color-alert;
+}
+
+.button.hollow.alert
+{
+padding-top: 0.85em;
+padding-right: 1em;
+padding-bottom: 0.85em;
+padding-left: 1em;
+}   
+
+.button.success
+{
+  color: white;
+}
+
+.label.success
+{
+  color: white;
 }
 
 .postfix.button {
@@ -185,6 +204,50 @@ button,
   &:first-child {
     margin-top: 0;
   }
+}
+
+
+/* Styles for the dropdown fields (details and summary tags) */
+details {
+  width: 100%;
+  margin-bottom: .5rem;
+  box-shadow: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
+  border-radius: 5px;
+  
+}
+
+summary {
+  padding: 1rem;
+  padding-left: 2.2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+summary:before {
+  content: '';
+  border-width: .4rem;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  top: 1.3rem;
+  left: 1rem;
+  transform: rotate(0);
+  transform-origin: .2rem 50%;
+  transition: .25s transform ease;
+}
+
+details[open] > summary:before {
+  transform: rotate(90deg);
+}
+
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+details > ul {
+  padding-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .margin {
@@ -352,13 +415,14 @@ button,
 .back,
 .icon-angle-left {
   clear: both;
-  color: $text-medium;
+  color: white;
   display: inline-block;
   padding-right: $line-height / 2;
+  text-decoration: none;
 }
 
 .back:not([class^="icon-"]) {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .tabs-content {

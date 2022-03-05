@@ -28,7 +28,7 @@
                 <% if @fellowship.image.attached? %>
                   <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
                 <% end %>       
-                <%= link_to @fellowship.name, @fellowship %>
+                <%= link_to @fellowship.name, @fellowship, class: "button hollow" %>
               </h4></div> 
         <% end %>   
 
@@ -79,7 +79,7 @@
 
       <% if show_proposal_votes? %>
         <div id="<%= dom_id(proposal) %>_votes"
-             class="small-12 medium-3 column supports-container">
+             class="small-12 medium-3 column supports-container" style="margin-left: 0.5%;">
           <% if proposal.successful? %>
             <div class="padding">
               <div class="supports text-center">

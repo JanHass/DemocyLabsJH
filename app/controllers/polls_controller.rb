@@ -33,6 +33,8 @@ class PollsController < ApplicationController
 
     @commentable = @poll
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+    @polls_pro_contra = ProContra.where(" poll_id=#{@poll.id.to_s}")
+    
   end
 
   def stats
