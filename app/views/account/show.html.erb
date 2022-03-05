@@ -21,7 +21,7 @@
            <div>
            <%= image_tag(current_user.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
            </div>
-           <div style= "margin-top: 2%">
+           <div style= "margin-top: 1%">
            <%= link_to "Delete Avatar", purgeavatar_account_path(@user), method: :delete, class: "button alert hollow" %>
            </div>
         <% else %>

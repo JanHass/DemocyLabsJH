@@ -1,15 +1,27 @@
 <%= render "shared/myaccount_header", i18n_namespace: "Search Results", image: "search-solid" %>
 
+
     <% @results_postal_codes.each do |result| %>
-        <%= link_to result.zip_code, "/fellowships/" + result.id.to_s %><br>
+    <p><li class="list-group-item" style="width: 45%;"><h3 style="margin-bottom: 0%;"><%= link_to result.zip_code, "/fellowships/" + result.id.to_s %></h3></li></p>
     <% end %>
 
     <% @results_fellowships.each do |result| %>
-        <%= link_to result.name, "/fellowships/" + result.id.to_s %><br>
+    <p><li class="list-group-item" style="width: 45%;"><h3 style="margin-bottom: 0%;"><%= link_to result.name, "/fellowships/" + result.id.to_s %></h3></li></p>
     <% end %>
 
     <% @results_proposals.each do |result| %>
-        <%= link_to result.title, "/proposals/" + result.proposal_id.to_s %><br>
+    <p><li class="list-group-item" style="width: 45%;"><h3 style="margin-bottom: 0%;"><%= link_to result.title, "/proposals/" + result.proposal_id.to_s %></h3></li></p>
     <% end %>
 
 
+<style>
+    a
+    {
+        color: black;
+        text-decoration: none;
+    }
+    p
+    {
+        margin-bottom: 1.5%;
+    }
+</style>
