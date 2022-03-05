@@ -124,7 +124,7 @@
           
           <%= form_with url: new_debate_path do |f|  %>
             <div>
-              <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name %>
+              <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name, label: t("activerecord.attributes.debate.modal_new_debate_titel") %>
               <%= hidden_field_tag "userid", current_user.id %>
               
             </div>
