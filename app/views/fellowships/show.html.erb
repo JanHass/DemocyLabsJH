@@ -202,7 +202,7 @@
             <%= form_with url: join_fellowship_path(@fellowship), local: true, method: :get do %>
             <div>
               <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
-              <%= text_field_tag "password", nil %>
+              <%= password_field_tag "password", nil %>
             </div>
           </div>
           <div class="modal-footer">
