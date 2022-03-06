@@ -3,8 +3,8 @@
 
 <!-- header bar with icon -->
 <%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.fellowship"), image: "users-solid" %>
-
 <% if current_user %>
+
   <!-- new Group button -->
 
   <%= link_to t("activerecord.attributes.fellowship.create_new_fellowship"), new_fellowship_path, class: "button", :style => 'margin-bottom: 2.5%', :style => 'width: 20%' %>

@@ -219,10 +219,12 @@
           <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
         <div style="float:left; width:50%;">
         <h3 style="float:center; margin-left: 10%;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
+
         <% @proposals_pro_contra.each do |pc| %>
           <% if pc.pc == 1%>
             <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
             <p>
+
               <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
               <%= pc.tag %>
             </p>
@@ -243,7 +245,9 @@
         <br>
         </div>
         <div style="float:right; width:50%;">
+
         <h3 style="float:center"> <%= t("activerecord.attributes.proscons.cons") %></h3>
+
         <% @proposals_pro_contra.each do |pc| %>
           <% if pc.pc == 0%>
             <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
@@ -266,8 +270,7 @@
         
         <% end %>
         </div>
-        
-        
+                
           <div style="float:center; margin-left: 5%; margin-right: 5%;">
           <% if (user_signed_in? && @is_fellowship_member && @proposal.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@proposal.fellowship_id.present?)  %>
           <h3><%= t("activerecord.attributes.proscons.new") %></h3>
