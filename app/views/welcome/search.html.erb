@@ -1,4 +1,6 @@
-<h3>Search Results</h3>
+
+<%= render "shared/myaccount_header", i18n_namespace: t("layouts.header.search_result"), image: "search-solid" %>
+
 
     <% @results_postal_codes.each do |result| %>
         <%if result.zip_code.blank?%>

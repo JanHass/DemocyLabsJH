@@ -240,11 +240,15 @@
     </details></h2>
 
     
-
-    <div class="actions" style="margin-top: 2%;">
-      <%= form.submit t("activerecord.attributes.fellowship.save_fellowship") %>
-    </div>
-    
+    <% if @fellowship.id.present?%>
+      <div class="actions" style="margin-top: 2%;">
+        <%= form.submit t("activerecord.attributes.fellowship.save_fellowship") %>
+      </div>
+    <% else%>
+      <div class="actions" style="margin-top: 2%;">
+        <%= form.submit t("activerecord.attributes.fellowship.new_fellowship") %>
+      </div>
+    <%end%>
   </fieldset>
 
 <% end %>
@@ -258,9 +262,9 @@
         }
    .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
     {
-       color: #3adb76;
-       background-color: white;
-       border-color: #3adb76;
+       color: white;
+       background-color: #05d3DD;;
+       border-color: #05d3DD;;
     }
 </style>
 

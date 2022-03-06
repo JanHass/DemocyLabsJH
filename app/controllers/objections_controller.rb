@@ -23,5 +23,6 @@ class ObjectionsController < ApplicationController
     private
     def objection_params
         params.require(:objection).permit(:user_id, :body, :debates_id, :sources, :user_first_name, :user_last_name)
+
     end
 end

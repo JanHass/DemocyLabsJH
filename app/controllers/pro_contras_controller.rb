@@ -93,6 +93,7 @@ class ProContrasController < ApplicationController
   # DELETE /pro_contras/1
   def destroy
     @pro_contra.destroy
+
     if @pro_contra.debate_id.present?
       redirect_to "/debates/"+@pro_contra.debate_id.to_s, notice: 'Pro contra was successfully destroyed.'
     end
@@ -117,6 +118,8 @@ class ProContrasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pro_contra_params
+
       params.require(:pro_contra).permit(:tag, :body, :sources, :email, :rating, :likes, :dislikes, :reported, :move, :pc, :user_id, :debate_id, :proposal_id, :poll_id, :vote_id, :fellowship_id, :user_first_name, :user_last_name)
+
     end
 end

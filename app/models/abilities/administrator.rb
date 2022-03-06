@@ -113,6 +113,7 @@ module Abilities
       can [:create, :read], LocalCensusRecords::Import
 
       can [:read, :create, :update, :destroy, :join, :leave, :changeuserrole, :kick, :tablesort], Fellowship
+      can [:purgeavatar], User
 
 
     end

@@ -37,9 +37,22 @@
   <% else %>
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
+  
+  <button type="button" class="button expanded"  id="btnnewdebate" data-bs-toggle="modal" data-bs-target="#select_fellowship">
+          <%= t("proposals.index.start_proposal") %>
+  </button>
 
-  <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: "button expanded" %>
-  <%= render "shared/search_form", search_path: proposals_path(page: 1), i18n_namespace: "proposals.index.search_form" %>
+  <div style="float: left; width: 81%;">
+    <button type="button" class="button" style="width: 25%" id="btnnewdebate" data-bs-toggle="modal" data-bs-target="#select_fellowship">
+      <%= t("proposals.index.start_proposal") %>
+      </button>      
+  </div>
+  <div style="float: left; width: 19%;">
+    <%= render "shared/search_form", search_path: proposals_path(page: 1), i18n_namespace: "proposals.index.search_form" %>
+  </div>
+  
+</br>
+
   
     <div style="display: none;">
       <% if show_recommended_proposals? %>
@@ -50,7 +63,7 @@
     </div>
   
 
-  <div class="row">
+  <div class="row" style="display: block;">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
       <%= render Shared::BannerComponent.new("proposals") %>
@@ -77,6 +90,7 @@
           </div>
         </div>
       <% end %>
+
 
       <% unless params[:retired].present? || params[:selected].present? %>
         <%= render Shared::AdvancedSearchComponent.new %>
@@ -123,9 +137,7 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <button type="button" class="button expanded" style="margin-bottom: 0%;" id="btnnewdebate" data-bs-toggle="modal" data-bs-target="#select_fellowship">
-          <%= t("proposals.index.start_proposal") %>
-        </button>            
+
         <div style="display: none;">
           <div class="sidebar-divider"></div>
           <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
@@ -147,32 +159,34 @@
 
   </div>
   <!-- Modal  / PopUp Auswahl Fellowship  --> 
-  <div class="modal fade" id="select_fellowship" tabindex="-1" aria-labelledby="select_fellowship_Label" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="select_fellowship_Label"><%= t("activerecord.attributes.proposal.modal_new_proposal_titel") %></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <%= t("activerecord.attributes.proposal.modal_new_proposal_text") %>
-          <br><br>
-          
-          <%= form_with url: new_proposal_path do |f|  %>
-            <div>
-              <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name %>
-              <%= hidden_field_tag "userid", current_user.id %>
-              
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
-          <%= submit_tag t("activerecord.attributes.proposal.modal_new_proposal_button_new"), class: "button hollow success" %>  
-        <% end %>
+  <% if current_user %>
+    <div class="modal fade" id="select_fellowship" tabindex="-1" aria-labelledby="select_fellowship_Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="select_fellowship_Label"><%= t("activerecord.attributes.proposal.modal_new_proposal_titel") %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= t("activerecord.attributes.proposal.modal_new_proposal_text") %>
+            <br><br>
+            
+            <%= form_with url: new_proposal_path do |f|  %>
+              <div>
+                <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name, label: t("activerecord.attributes.proposal.modal_new_proposal_titel") %>
+                <%= hidden_field_tag "userid", current_user.id %>
+                
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+            <%= submit_tag t("activerecord.attributes.proposal.modal_new_proposal_button_new"), class: "button hollow success" %>  
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>  
 <!-- -------------------------------------------------------------- -->
 </main>
 <style>

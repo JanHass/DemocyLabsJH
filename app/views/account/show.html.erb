@@ -9,28 +9,33 @@
 <div class="row account">
   <div class="small-12 column">
     
-<!-- User Image -->
+    <!-- User Image -->
     <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>
 
-      <div class="input-group">
-        <% if @account.avatar.attached? %>
-           <%= image_tag(@account.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
+      <!-- Displaying, Uploading and Deleting User/Default-Avatar -->
+      <div class="avatar">
+        <% if current_user.avatar.attached? %>
+           <div>
+           <%= image_tag(current_user.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
+           </div>
+           <div style= "margin-top: 2%">
+           <%= link_to "Delete Avatar", purgeavatar_account_path(@user), method: :delete, class: "button alert hollow" %>
+           </div>
         <% else %>
-           <%= image_tag 'Default_Profile_Avatar.png', height: 200, width: 200, class: "rounded-circle" %>
-        <% end %>
-
+           <div style="display: block">  
+             <%= image_tag 'Default_Profile_Avatar.png', height: 200, width: 200, class: "rounded-circle" %>
+           </div>
+           <div style="margin-top: 2%">
+             <label class="button-image">
+               <%= f.file_field :avatar, class: "button hollow btn-file" %>
+             </label>
+           </div> 
+         <% end %>
       </div>
 
-      <div>
-        <label class="button-image">
-          <%= f.file_field :avatar, class: "button hollow btn-file" %>
-        </label>
-      </div> 
-
-    
 <!-- Personal Details -->
       <div class="row">
         <div class="small-12 medium-7 column">
@@ -53,7 +58,9 @@
               
                 
                 
-                <p><%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],[t("activerecord.attributes.user.gender_female"),'female'],[t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %></p>
+                <p><%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],
+                [t("activerecord.attributes.user.gender_female"),'female'],
+                [t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %></p>
 
                 <%= f.date_field :date_of_birth %>
                 <%= f.text_field :street %>
@@ -104,6 +111,11 @@
              <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_country %>
              </div>
+             <div style="margin-left: 5%;">
+               <%= link_to t("activerecord.attributes.user.show_public_profile"), current_user, class:"button hollow" %>
+             </div>
+
+             
 
           </details></h3>
 
@@ -141,7 +153,10 @@
             </div>
           <% end %>
 
-<!-- Recommendations -->
+
+<!-- Recommendations NICHT AKTIV-->
+          <div style="display: none;">
+
           <% if feature?("user.recommendations") %>
           <h3><details>
             <summary><%= t("account.show.recommendations") %></summary>
@@ -158,6 +173,7 @@
             <% end %>
             </details></h3>
           <% end %>
+          </div>
 
 
 <!-- My Groups -->
@@ -302,7 +318,7 @@
             </details></h3>
 
           <!-- Save Button -->
-          <%= f.submit t("account.show.save_changes_submit"), class: "button hollow success margin-top" %>
+          <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
 
         </div>  
       </div>
@@ -319,7 +335,7 @@
 .btn-file input[type=file] {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10;
     min-width: 100%;
     min-height: 100%;
     font-size: 100px;
@@ -331,68 +347,8 @@
     cursor: inherit;
     display: block;
 }
-
-  .button.success, .button.success.disabled, .button.success[disabled], .button.success.disabled:hover, .button.success[disabled]:hover, .button.success.disabled:focus, .button.success[disabled]:focus 
-    {
-       color: white;
-    }
-    .button
-    {
-      text-decoration:none;
-    }
-    .button.hollow.alert
-    {
-    padding-top: 0.85em;
-    padding-right: 1em;
-    padding-bottom: 0.85em;
-    padding-left: 1em;
-    }   
     p
     {
         font-size: 66%;
     }
-
-/* Styles for the dropdown fields (details and summary tags) */
-  details {
-  width: 100%;
-  margin-bottom: .5rem;
-  box-shadow: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
-  border-radius: 5px;
-  
-}
-
-summary {
-  padding: 1rem;
-  padding-left: 2.2rem;
-  position: relative;
-  cursor: pointer;
-}
-
-summary:before {
-  content: '';
-  border-width: .4rem;
-  border-style: solid;
-  border-color: transparent transparent transparent #fff;
-  position: absolute;
-  top: 1.3rem;
-  left: 1rem;
-  transform: rotate(0);
-  transform-origin: .2rem 50%;
-  transition: .25s transform ease;
-}
-
-details[open] > summary:before {
-  transform: rotate(90deg);
-}
-
-
-details summary::-webkit-details-marker {
-  display:none;
-}
-
-details > ul {
-  padding-bottom: 1rem;
-  margin-bottom: 0;
-}
-
 </style>

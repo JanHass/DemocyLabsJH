@@ -16,8 +16,9 @@ Rails.application.routes.draw do
     resources :pro_contras
   end
 
+
   post "pro_contras/:id/destroy_objection" => "pro_contras#destroy_objection"
-  
+
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
@@ -50,6 +51,7 @@ Rails.application.routes.draw do
   draw :fellowship_user
   draw :objection
   draw :pro_contra
+
 
   root "welcome#index"
   get "/welcome", to: "welcome#welcome"

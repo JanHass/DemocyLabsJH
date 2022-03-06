@@ -1,6 +1,6 @@
 
 <!-- header bar with icon -->
-<%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.showgroup"), image: "group_icon" %>
+<%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.showgroup"), image: "users-solid" %>
 
 <% if @fellowship.image.attached? %>
   <img src="<%= (url_for(@fellowship.image)) %>" style="max-width: 25%; max-height: 25%; margin-bottom: 1%;">
@@ -47,17 +47,20 @@
  <% @currentuser_is_fellowship_admin = false %>
  <% @currentuser_is_fellowship_mod = false %>
 
-<% @fellowship.fellowship_users.each do |fellowship_user| %>
-  <% if current_user.id == fellowship_user.user_id && @fellowship.id == fellowship_user.fellowship_id %>
-    <% if fellowship_user.is_fellowship_owner %>
-      <% @currentuser_is_fellowship_owner = true %>
-    <% elsif fellowship_user.is_fellowship_administrator %>
-      <% @currentuser_is_fellowship_admin = true %>
-    <% elsif fellowship_user.is_fellowship_moderator %>
-      <% @currentuser_is_fellowship_mod = true %>
-    <% end %>  
+ <% if current_user.present? %>
+
+  <% @fellowship.fellowship_users.each do |fellowship_user| %>
+    <% if current_user.id == fellowship_user.user_id && @fellowship.id == fellowship_user.fellowship_id %>
+      <% if fellowship_user.is_fellowship_owner %>
+        <% @currentuser_is_fellowship_owner = true %>
+      <% elsif fellowship_user.is_fellowship_administrator %>
+        <% @currentuser_is_fellowship_admin = true %>
+      <% elsif fellowship_user.is_fellowship_moderator %>
+        <% @currentuser_is_fellowship_mod = true %>
+      <% end %>  
+    <% end %>
   <% end %>
-<% end %>
+ <%end%> 
  <!-- ------------------------------- -->
 
 
@@ -135,7 +138,9 @@
                 <% if (@currentuser_is_fellowship_owner && current_user.id != fellowship_user.user_id) || (@currentuser_is_fellowship_admin && !fellowship_user.is_fellowship_owner && !fellowship_user.is_fellowship_administrator && current_user.id != fellowship_user.user_id ) %>
                   <%= link_to t("activerecord.attributes.fellowship.kick"), kick_fellowship_path(fellowship_user_id: fellowship_user.id), class: "button alert hollow"%>
                 <% else %>
+                <div>
                  <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>
+                 </div>
                <% end %>
               </td>
             <% end %>  
@@ -151,26 +156,30 @@
 <% @show_join_button = true %> <!-- Hilfsvariable für Join Button. Wenn User in Gruppe -> False -->
 
 <!-- Check-Schleife  ob User in Fellowship -->
-<% current_user.fellowship_users.each do |fellowship_user| %>
-  <% if fellowship_user.fellowship_id == @fellowship.id %> <!--  wenn User in Gruppe ist-->
-    <% @show_join_button = false %>
-    <% if fellowship_user.is_fellowship_administrator || fellowship_user.is_fellowship_owner %>
-      <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "button hollow margin top", :style=>"margin-bottom: 0%" %>
+<% if current_user.present? %>
+  <% current_user.fellowship_users.each do |fellowship_user| %>
+    <% if fellowship_user.fellowship_id == @fellowship.id %> <!--  wenn User in Gruppe ist-->
+      <% @show_join_button = false %>
+      <% if fellowship_user.is_fellowship_administrator || fellowship_user.is_fellowship_owner %>
+        <%= link_to t("activerecord.attributes.fellowship.edit"), edit_fellowship_path(@fellowship), class: "button hollow margin top", :style=>"margin-bottom: 0%" %>
 
-      <% if fellowship_user.is_fellowship_owner %>
-        
-        <button type="button" class="button hollow alert margin top" style="margin-bottom: 0%;" id="btndelete" data-bs-toggle="modal" data-bs-target="#delete_fellowship">
-        <%= t("activerecord.attributes.fellowship.delete") %>
-        </button>
+        <% if fellowship_user.is_fellowship_owner %>
+          
+          <button type="button" class="button hollow alert margin top" style="margin-bottom: 0%;" id="btndelete" data-bs-toggle="modal" data-bs-target="#delete_fellowship">
+          <%= t("activerecord.attributes.fellowship.delete") %>
+          </button>
+        <% end %>
       <% end %>
-    <% end %>
-   
-  
     
-    <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship, :origin => "fellowship"), class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
+    
+      
+      <%= link_to t("activerecord.attributes.fellowship.leave"), leave_fellowship_path(@fellowship, :origin => "fellowship"), class: "button hollow alert margin top", :style=>"margin-bottom: 0%" %>
 
-  <% end %> 
-<% end %>  
+    <% end %> 
+  <% end %>  
+<% else %>
+  <% @show_join_button = false %>  
+<% end %>    
 
 <% if @show_join_button == true %>
   <% if ( @fellowship.join_password_required? ) %>
@@ -193,7 +202,7 @@
             <%= form_with url: join_fellowship_path(@fellowship), local: true, method: :get do %>
             <div>
               <%= label_tag t("activerecord.attributes.fellowship.popup_req_password_text2") %>
-              <%= text_field_tag "password", nil %>
+              <%= password_field_tag "password", nil %>
             </div>
           </div>
           <div class="modal-footer">
@@ -238,17 +247,6 @@
 
 
 <style>
-   .button
-    {
-      text-decoration:none;
-    }
-    .button.hollow.alert
-{
-    padding-top: 0.85em;
-    padding-right: 1em;
-    padding-bottom: 0.85em;
-    padding-left: 1em;
-}
 
 .button.hollow_small
 {
@@ -261,49 +259,6 @@
     vertical-align: middle;
     width: 120pt ;
     height: 20pt ; 
-}
-
-/* Styles for the dropdown fields (details and summary tags) */
-  details {
-width: 100%;
-margin-bottom: .5rem;
-box-shadow: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
-border-radius: 5px;
-
-}
-
-summary {
-padding: 1rem;
-padding-left: 2.2rem;
-position: relative;
-cursor: pointer;
-}
-
-summary:before {
-content: '';
-border-width: .4rem;
-border-style: solid;
-border-color: transparent transparent transparent #fff;
-position: absolute;
-top: 1.3rem;
-left: 1rem;
-transform: rotate(0);
-transform-origin: .2rem 50%;
-transition: .25s transform ease;
-}
-
-details[open] > summary:before {
-transform: rotate(90deg);
-}
-
-
-details summary::-webkit-details-marker {
-display:none;
-}
-
-details > ul {
-padding-bottom: 1rem;
-margin-bottom: 0;
 }
 </style>
 

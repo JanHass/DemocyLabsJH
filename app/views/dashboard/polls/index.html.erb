@@ -20,6 +20,6 @@
     <p><strong><%= t("dashboard.polls.index.count", count: @polls.count) %></strong></p>
     <%= link_to t("dashboard.polls.index.create"),
                 new_proposal_dashboard_poll_path(proposal),
-                class: "button expanded" %>
+                class: "button", :style=>"width: 25%" %>
   </div>
 </div>
