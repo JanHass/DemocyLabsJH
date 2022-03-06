@@ -15,7 +15,7 @@
 
 <%if current_user.present? %>
   <%if @pro_contra.user_id == current_user.id %>
-      <%= link_to 'Destroy', @pro_contra, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= button_to 'Destroy', @pro_contra, method: :delete, data: { confirm: 'Are you sure?' }, class: "button hollow alert" %>
   <% end %>
 <%end%>
 
@@ -38,7 +38,7 @@
   <%if current_user.present? %>
     <%if objection.user_id == current_user.id %>
 
-        <%= link_to t("activerecord.attributes.proscons.delete"), @objection, method: :delete_objection, data: { confirm: 'Are you sure?' },  class: "button hollow alert" %>
+        <%= button_to t("activerecord.attributes.proscons.delete"), {:controller => "pro_contras", :action => "destroy_objection", :objection_id => objection.id, :pro_contra_id => objection.pro_contra_id} , :method=>:post, class: "button hollow alert"  %>
 
     <% end %>
   <% end %>

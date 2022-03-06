@@ -273,6 +273,9 @@
       <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
       <div style="float:left; width:50%;">
         <h3 style="float:center; margin-left: 10%;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
+        <%if @polls_pro_contra.blank?%>
+          <% @polls_pro_contra = []%>
+        <%end%>
         <% @polls_pro_contra.each do |pc| %>
           <% if pc.pc == 1%>
             <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
@@ -299,6 +302,9 @@
       </div>
       <div style="float:right; width:50%;">
         <h3 style="float:center"> <%= t("activerecord.attributes.proscons.cons") %></h3>
+        <%if @polls_pro_contra.blank?%>
+          <% @polls_pro_contra = []%>
+        <%end%>
         <% @polls_pro_contra.each do |pc| %>
           <% if pc.pc == 0%>
             <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
@@ -363,4 +369,3 @@
       <%= render "comments" %>
     </div>
   </div>
-</div>
