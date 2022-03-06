@@ -48,8 +48,8 @@
 
   <h3><details style="position:relative; margin-bottom: 2.5%;">
     <summary>Pro / Contra</summary>
-    <div style="float:left; width:50%;">
-    <h3 style="float:center; margin-left: 10%;"> Pro-Arguments</h3>
+    <div style="float:left; width:45%; margin-left: 5%;">
+    <h3 style="float:center; text-decoration: underline;"> Pro-Arguments</h3>
     <% @polls_pro_contra.each do |pc| %>
       <% if pc.pc == 1%>
         <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
@@ -73,7 +73,7 @@
     <br>
     </div>
     <div style="float:right; width:50%;">
-    <h3 style="float:center"> Contra-Arguments</h3>
+    <h3 style="float:center;text-decoration: underline;"> Contra-Arguments</h3>
     <% @polls_pro_contra.each do |pc| %>
       <% if pc.pc == 0%>
         <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
