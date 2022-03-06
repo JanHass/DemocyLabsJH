@@ -83,6 +83,7 @@
 <% end %>
 
 <!-- Pro / Kontra -->
+<% if current_user %>
 <!-- Abfrage ob Debate eine Fellowship ID besitzt -->
   <% if @debate.fellowship_id.present? %>
     <% @fellowship = Fellowship.find(@debate.fellowship_id) %>
@@ -233,7 +234,7 @@
       
     <!-- ENDE Anforderungen pürfen -->
   <% end %>
-
+<% end %>
 
 
 
