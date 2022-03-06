@@ -1,4 +1,4 @@
-<%= render "shared/myaccount_header", i18n_namespace: "Search Results", image: "search-solid" %>
+<%= render "shared/myaccount_header", i18n_namespace: t("layouts.header.search_result"), image: "search-solid" %>
 
     <% @results_postal_codes.each do |result| %>
         <%= link_to result.zip_code, "/fellowships/" + result.id.to_s %><br>

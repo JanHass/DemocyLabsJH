@@ -253,6 +253,7 @@ de:
       search_button_search: "Suchen"
       search_all: "Alles"
       search_plz: "Postleitzahl"
+      search_result: "Suchergebnisse"
       notification_item:
         new_notifications:
           zero: "Sie haben keine neuen Benachrichtigungen"
