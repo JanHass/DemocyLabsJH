@@ -1,3 +1,9 @@
+<!-- My Content landing page -->
+
+<!-- header bar with icon -->
+<%= render "shared/mycontent_header", i18n_namespace: t("activerecord.attributes.user.public_profile"), image: "id-card-solid" %>
+
+<!-- Public profile data -->
 <main>
   <div class="activity row margin-top">
     <div class="small-12 column">
@@ -14,71 +20,125 @@
         <% end %>
       <% end %>
 
+
+
+      <%= avatar_image(@user, seed: @user.id, size: 100) %>
+      <div class="input-group">
+        <% if @user.avatar.attached? %>
+           <%= image_tag(@user.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
+        <% else %>
+           <%= image_tag 'Default_Profile_Avatar.png', height: 200, width: 200, class: "rounded-circle" %>
+        <% end %>
+
+      </div>
+      
+      <h2 class="inline-block">
+        <%= @user.name %>
+      </h2>
       
 
-      <h2 class="inline-block">
-        <%= avatar_image(@user, seed: @user.id, size: 60) %>
-        <%= @user.name %>
-        <% if current_administrator? %>
-          <small><%= @user.email %></small>
-        <% end %>
-      </h2>
-
       <% if (@user.public_profile_show_full_name && @user.first_name.present? && @user.last_name.present?) || (current_administrator? && @user.first_name.present? && @user.last_name.present?) %>
-        <p><%= t("activerecord.attributes.user.name") + ": " + @user.first_name + " " + @user.last_name %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.name")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.first_name%>&nbsp;<%= @user.last_name%>" style="width: 25%;" readonly>
+        </p>
       <% end %>  
-      <% if (@user.public_profile_show_full_name && @user.first_name.present? && !@user.last_name.present?) || (current_administrator? && @user.first_name.present? && !@user.last_name.present?) %>
-        <p><%= t("activerecord.attributes.user.name") + ": " + @user.first_name %></p>
-      <% end %>
-      <% if (@user.public_profile_show_full_name && !@user.first_name.present? && @user.last_name.present?) || (current_administrator? && !@user.first_name.present? && @user.last_name.present?) %>
-        <p><%= t("activerecord.attributes.user.name") + ": " + @user.last_name %></p>
+
+      <% if (@user.email.present?) %>
+        <p class="sizer">
+          <strong><%= t("attributes.email")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.email %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_phone_number && @user.phone_number.present?) || (current_administrator? && @user.phone_number.present?) %>
-        <p><%= t("activerecord.attributes.user.phone_number") + ": " + @user.phone_number %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.phone_number")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.phone_number %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_gender && @user.gender.present?) || (current_administrator?  && @user.gender.present?) %>
-        <p><%= t("activerecord.attributes.user.gender") + ": " + @user.gender %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.gender")+ ":" %></strong>
+          <% if @user.gender == "male" %>
+            <input class="form-control" type="text" value="<%= t("activerecord.attributes.user.gender_male") %>" style="width: 25%;" readonly>
+          <% elsif @user.gender == "female" %> 
+            <input class="form-control" type="text" value="<%= t("activerecord.attributes.user.gender_female") %>" style="width: 25%;" readonly>
+          <% elsif @user.gender == "diverse"%> 
+            <input class="form-control" type="text" value="<%= t("activerecord.attributes.user.gender_diverse") %>" style="width: 25%;" readonly>
+          <% end %>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_date_of_birth && @user.date_of_birth.present?) || (current_administrator? && @user.date_of_birth.present?)  %>
-        <p><%= t("activerecord.attributes.user.date_of_birth") + ": "%> <%= localize(@user.date_of_birth, :format => :short2) %></p>
-        
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.date_of_birth")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= localize(@user.date_of_birth, :format => :short2) %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_address && @user.street.present? && @user.housenumber.present?) || (current_administrator?  && @user.street.present? && @user.housenumber.present?)  %>
-        <p><%= t("activerecord.attributes.user.street") + ": " + @user.street + " " + @user.housenumber %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.street")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%=@user.street%>&nbsp;<%=@user.housenumber %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
+
       <% if (@user.public_profile_show_address && @user.street.present? && !@user.housenumber.present?) || (current_administrator?  && @user.street.present? && !@user.housenumber.present?)  %>
-        <p><%= t("activerecord.attributes.user.street") + ": " + @user.street %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.street")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.street %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_city && @user.postal_code.present? && @user.city.present?) || (current_administrator? && @user.postal_code.present? && @user.city.present?) %>
-        <p><%= t("activerecord.attributes.user.city") + ": " + @user.postal_code + " " + @user.city %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.city")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.postal_code %>&nbsp;<%=@user.city %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
+
       <% if (@user.public_profile_show_city && @user.postal_code.present? && !@user.city.present?) || (current_administrator? && @user.postal_code.present? && !@user.city.present?) %>
-        <p><%= t("activerecord.attributes.user.city") + ": " + @user.postal_code %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.city")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.postal_code %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
+
       <% if (@user.public_profile_show_city && !@user.postal_code.present? && @user.city.present?) || (current_administrator? && !@user.postal_code.present? && @user.city.present?) %>
-        <p><%= t("activerecord.attributes.user.city") + ": " +@user.city %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.city")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.city %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_state && @user.state.present? ) || (current_administrator? && @user.state.present? )  %>
-        <p><%= t("activerecord.attributes.user.state") + ": " + @user.state %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.state")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.state %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
       <% if (@user.public_profile_show_country && @user.country.present?) || (current_administrator? && @user.country.present?) %>
-        <p><%= t("activerecord.attributes.user.country") + ": " + @user.country %></p>
+        <p class="sizer">
+          <strong><%= t("activerecord.attributes.user.country")+ ":" %></strong>
+          <input class="form-control" type="text" value="<%= @user.country %>" style="width: 25%;" readonly>
+        </p>
       <% end %>
 
-      
+      <hr style="margin-top: 2%;"></hr>
 
+      <!-- Profile Activities -->
       <%= render Users::PublicActivityComponent.new(@user) %>
-
-      
-
-
     </div>
   </div>
 </main>
+
+<style>
+  p
+  {
+    margin-bottom: 0.25rem;
+    font-size: larger;
+  }
+</style>

@@ -170,6 +170,7 @@
     display: inline-block;
     font-size: $small-font-size;
     margin-top: rem-calc(12);
+    text-decoration: none;
 
     &:hover,
     &:active {
@@ -204,7 +205,6 @@
   border-top: 1px solid $border;
 
   @include breakpoint(medium) {
-    border-left: 1px solid $border;
     border-top: 0;
   }
 }
@@ -613,6 +613,7 @@
     margin: 0;
     min-height: rem-calc(180);
     position: relative;
+    margin-left: 2%;
   }
 
   .tags {
@@ -714,6 +715,7 @@
 
     @include breakpoint(medium) {
       text-align: center;
+      border-left: none;
     }
 
     .against {

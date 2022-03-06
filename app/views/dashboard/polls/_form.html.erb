@@ -6,6 +6,16 @@
   </div>
 
   <div class="row expanded">
+    <div class="small-12 medium-6 column">
+      <div style="display: none;">
+        <%= f.number_field :fellowship_id, value:proposal.fellowship_id.to_i  %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row expanded">
     <div class="small-12 medium-3 column">
       <%= f.text_field :starts_at,
                         autocomplete: "off",
@@ -19,6 +29,7 @@
                         value: poll.ends_at.present? ? l(poll.ends_at.to_date) : nil,
                         class: "js-calendar-full" %>
     </div>
+
   </div>
 
   <div class="row expanded">
@@ -26,6 +37,8 @@
       <%= f.text_area :description, rows: 8 %>
     </div>
   </div>
+
+
 
   <div class="js-questions">
     <%= f.fields_for :questions do |question| %>
@@ -43,7 +56,7 @@
   <div class="row expanded">
     <div class="small-12 medium-6 large-4 column">
       <%= f.submit t("dashboard.polls.#{admin_submit_action(poll)}.submit"),
-                   class: "button success expanded" %>
+                   class: "button success", :style=>"width: 25%" %>
     </div>
   </div>
 <% end %>

@@ -1,5 +1,8 @@
-<h1>New Group</h1>
+<!-- Create new group -->
 
+<!-- header bar with icon -->
+<%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.new_fellowship"), image: "users-solid" %>
+
+<!-- group form -->
 <%= render 'form', fellowship: @fellowship %>
-
 

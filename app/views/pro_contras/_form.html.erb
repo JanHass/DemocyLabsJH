@@ -1,0 +1,97 @@
+<%= form_with(model: pro_contra, local: true) do |form| %>
+  <% if pro_contra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pro_contra.errors.count, "error") %> prohibited this pro_contra from being saved:</h2>
+
+      <ul>
+      <% pro_contra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tag %>
+    <%= form.text_field :tag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sources %>
+    <%= form.text_area :sources %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :likes %>
+    <%= form.number_field :likes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dislikes %>
+    <%= form.number_field :dislikes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reported %>
+    <%= form.number_field :reported %>
+  </div>
+
+  <div class="field">
+    <%= form.label :move %>
+    <%= form.number_field :move %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pc %>
+    <%= form.number_field :pc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :debate_id %>
+    <%= form.text_field :debate_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :proposal_id %>
+    <%= form.text_field :proposal_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poll_id %>
+    <%= form.text_field :poll_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vote_id %>
+    <%= form.text_field :vote_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fellowship_id %>
+    <%= form.text_field :fellowship_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

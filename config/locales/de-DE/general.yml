@@ -220,7 +220,7 @@ de:
       consul: CONSUL Anwendung
       consul_url: https://github.com/consul/consul
       contact_us: Für technische Unterstützung geben Sie ein
-      copyright: CONSUL, %{year}
+      copyright: Democy Labs, %{year}
       description: Die Plattform basiert auf %{consul}, einer %{open_source}.
       open_source: Open-Source Software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
@@ -238,13 +238,22 @@ de:
       moderation: Moderation
       valuation: Bewertung
       officing: Wahlhelfer
-      help: Hilfe
+      
       my_account_link: Mein Konto
       my_activity_link: Meine Aktivität
       open_gov: Open Government
       proposals: Vorschläge
       poll_questions: Abstimmung
       budgets: Bürgerhaushalte
+      fellowships: "Gruppen"
+      help: "Hilfe"
+      menu: "Menü"
+      welcome: "Willkommen bei"
+      search_placeholder: "Suchbegriff..."
+      search_button_search: "Suchen"
+      search_all: "Alles"
+      search_plz: "Postleitzahl"
+      search_result: "Suchergebnisse"
       notification_item:
         new_notifications:
           zero: "Sie haben keine neuen Benachrichtigungen"

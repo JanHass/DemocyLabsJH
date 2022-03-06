@@ -11,6 +11,12 @@ class User < ApplicationRecord
 
   include Graphqlable
 
+
+  has_one_attached :avatar
+  has_one_attached :image
+
+  has_many :objection
+  has_many :pro_contra
   has_one :administrator
   has_one :moderator
   has_one :valuator
@@ -24,6 +30,8 @@ class User < ApplicationRecord
   has_many :debates, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :activities
+  has_many :fellowship_users, :dependent => :destroy
+  has_many :fellowships, through: :fellowship_users
   has_many :budget_investments, -> { with_hidden },
     class_name:  "Budget::Investment",
     foreign_key: :author_id,
@@ -81,12 +89,6 @@ class User < ApplicationRecord
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
-  
-  validates :phone_number, format: { with: /\A\d+\z/, message: "Nur Zahlen erlaubt" }
-
-  
-  validates :first_name, presence: true
-  
   
 
   validate :validate_username_length
@@ -242,6 +244,7 @@ class User < ApplicationRecord
 
     official_position_badge? && official_level == 1
   end
+
 
   def block
     hide

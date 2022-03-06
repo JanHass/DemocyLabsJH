@@ -1,43 +1,53 @@
 <% provide :title do %><%= t("debates.index.title") %><% end %>
 <% content_for :header_addon do %>
-  <%= render "shared/search_form",
-             search_path: debates_path(page: 1),
-             i18n_namespace: "debates.index.search_form" %>
+
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: debates_url %>
 <% end %>
 
+
 <main>
   <% if @search_terms || @advanced_search_terms %>
     <div class="search-results-summary">
-      <div class="row">
-        <div class="small-12 column">
-          <% if @search_terms || @advanced_search_terms %>
-            <h2><%= t("shared.search_results") %></h2>
+    <div class="row">
+    <div class="small-12 column">
+    <% if @search_terms || @advanced_search_terms %>
+    <h2><%= t("shared.search_results") %></h2>
             <p>
-              <%= page_entries_info @debates %>
-              <% if !@advanced_search_terms %>
-                <%= sanitize(
-                  t("debates.index.search_results", count: @debates.size, search_term: @search_terms)
-                ) %>
+            <%= page_entries_info @debates %>
+            <% if !@advanced_search_terms %>
+            <%= sanitize(
+              t("debates.index.search_results", count: @debates.size, search_term: @search_terms)
+              ) %>
               <% end %>
             </p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% else %>
-    <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
-  <% end %>
+            <% end %>
+            </div>
+            </div>
+            </div>
+            <% else %>
+            <%= render "shared/section_header", i18n_namespace: "debates.index.section_header", image: "debates" %>
+            <% end %>
+            <div style="float: left; width: 81%;">
+              <% if current_user %>
+                <button type="button" class="button" style="width: 25%" id="btnnewdebate" data-bs-toggle="modal" data-bs-target="#select_fellowship">
+                  <%= t("debates.index.start_debate") %>
+                </button>
+              <% end %>  
+            </div>
 
-  <% if feature?("user.recommendations") && @recommended_debates.present? %>
+            <div style="float: left; width: 19%;">
+              <%= render "shared/search_form", search_path: debates_path(page: 1),i18n_namespace: "debates.index.search_form" %>
+            </div>
+
+            <% if feature?("user.recommendations") && @recommended_debates.present? %>
     <%= render "shared/recommended_index", recommended: @recommended_debates,
                                            disable_recommendations_path: recommendations_disable_debates_path,
                                            namespace: "debates" %>
   <% end %>
 
-  <div class="row">
+  <div class="row" style="display: block;">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
       <%= render Shared::BannerComponent.new("debates") %>
@@ -57,7 +67,8 @@
       <%= render "shared/order_links", i18n_namespace: "debates.index" %>
 
       <div class="show-for-small-only">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
+        
+
       </div>
 
       <% if @debates.any? || current_user.blank? %>
@@ -90,10 +101,52 @@
     <div class="small-12 medium-3 column">
 
       <aside class="margin-bottom">
-        <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
-        <%= render "shared/tag_cloud", taggable: "Debate" %>
+
+        <div style="display: none;">
+          <%= render "shared/tag_cloud", taggable: "Debate" %>
+        </div>  
       </aside>
     </div>
 
   </div>
+
+  
+<% if current_user %>
+  <!-- Modal  / PopUp Auswahl Fellowship  --> 
+    <div class="modal fade" id="select_fellowship" tabindex="-1" aria-labelledby="select_fellowship_Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="select_fellowship_Label"><%= t("activerecord.attributes.debate.modal_new_debate_titel") %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= t("activerecord.attributes.debate.modal_new_debate_text") %>
+            <br><br>
+            
+            <%= form_with url: new_debate_path do |f|  %>
+              <div>
+                <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name, label: t("activerecord.attributes.debate.modal_new_debate_titel") %>
+                <%= hidden_field_tag "userid", current_user.id %>
+                
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+            <%= submit_tag t("activerecord.attributes.debate.modal_new_debate_button_new"), class: "button hollow success" %>  
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- -------------------------------------------------------------- -->
+<% end %>  
+
+
 </main>
+<style>
+  .button.expanded
+  {
+    text-decoration: none;
+  }
+</style>

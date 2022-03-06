@@ -18,6 +18,21 @@
         <div class="<%= css_for_proposal_info_row(proposal) %>">
       <% end %>
         <div class="proposal-content">
+
+        <% if proposal.fellowship_id.present? %>
+          <% @fellowship= Fellowship.find(proposal.fellowship_id)%>
+        <% end %>
+
+        <% if proposal.fellowship_id.present? %>
+              <div><h4>
+                <% if @fellowship.image.attached? %>
+                  <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
+                <% end %>       
+                <%= link_to @fellowship.name, @fellowship, class: "button hollow" %>
+              </h4></div> 
+        <% end %>   
+
+
           <% cache [locale_and_user_status(proposal), "index", proposal, proposal.author] do %>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
@@ -64,7 +79,7 @@
 
       <% if show_proposal_votes? %>
         <div id="<%= dom_id(proposal) %>_votes"
-             class="small-12 medium-3 column supports-container">
+             class="small-12 medium-3 column supports-container" style="margin-left: 0.5%;">
           <% if proposal.successful? %>
             <div class="padding">
               <div class="supports text-center">

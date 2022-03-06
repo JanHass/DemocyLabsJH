@@ -3,9 +3,23 @@
     <div class="panel">
       <div class="row">
 
+
+      <% if debate.fellowship_id.present? %>
+        <% @fellowship= Fellowship.find(debate.fellowship_id)%>
+      <% end %>
+
         <div class="small-12 medium-9 column">
           <div class="debate-content">
+            <% if debate.fellowship_id.present? %>
+              <div><h4>
+                <% if @fellowship.image.attached? %>
+                  <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
+                <% end %>       
+                <%= link_to @fellowship.name, @fellowship, class: "button hollow" %>
+              </h4></div> 
+            <% end %>   
             <h3><%= link_to debate.title, debate %></h3>
+            
             <p class="debate-info">
               <span class="icon-comments"></span>&nbsp;
               <%= link_to t("debates.debate.comments", count: debate.comments_count), debate_path(debate, anchor: "comments") %>
@@ -21,6 +35,7 @@
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="author">
                   <%= debate.author.name %>
+                  
                 </span>
                 <% if debate.author.display_official_position_badge? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>

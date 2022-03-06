@@ -242,9 +242,44 @@ de:
         tag_list: "Inhalte"
         terms_of_service: "Nutzungsbedingungen"
         title: "Titel"
+        modal_new_debate_titel: "Gruppe wählen"
+        modal_new_debate_text: "Bitte wählen Sie die Gruppe, in der Sie eine Diskussion starten möchten:"
+        modal_new_debate_button_new: "Diskussion starten"
+        req_false: "Die erforderlichen Gruppen-Anforderungen wurden nicht erfüllt! Um eine Diskussion zu starten, müssen alle Gruppen-Anforderungen erfüllt sein."
+        group_req: "Gruppenanforderungen"
+        btn_close: "Schließen"
+        btn_req: "Anforderungen anzeigen"
+        group_req_help: "Unter Mein Konto können Sie ihr Konto anpassen, um die Anforderungen erfüllen"
+        my_account: "Mein Konto"
+        voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen abstimmen!"
+        comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
+        no_group: "Fehler! Keine Gruppe gewählt. Bitte starten sie eine neue Diskussion nur über den Menüpunkt 'Diskussionen'."
+
+      proscons:
+        proscons: "Pro / Kontra Argumente"
+        pros: "Pro Argumente"
+        cons: "Kontra Argumente"
+        pro:  "Pro Argument"
+        con: "Kontra Argument"
+        tag: "Titel:"
+        body: "Argument:"
+        source: "Quellen:"
+        show: "Kommentare anzeigen"
+        new: "Pro / Kontra Argument erstellen"
+        type: "Argument Typ"
+        create_new: "Argument erstellen"
+        comments: "Kommentare"
+        new_comment: "Kommentar erstellen"
+        comment: "Kommentar"
+        author: "Autor"
+        delete: "Kommentar löschen"
+        
+
+        
+        
       debate/translation:
-        title: "Titel der Debatte"
-        description: "Initialer Debattenbeitrag"
+        title: "Titel der Diskussion"
+        description: "Diskussionsbeitrag"
       proposal:
         author: "Autor"
         title: "Titel"
@@ -255,6 +290,14 @@ de:
         selected: "Als ausgewählt markieren"
         terms_of_service: "Nutzungsbedingungen"
         video_url: "Externes Video URL"
+        modal_new_proposal_titel: "Gruppe wählen"
+        modal_new_proposal_text: "Bitte wählen Sie die Gruppe, in der Sie einen Vorschlag erstellen möchten:"
+        modal_new_proposal_button_new: "Vorschlag erstellen"
+        voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen teilnehmen!"
+        comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
+        no_group: "Fehler! Keine Gruppe gewählt. Bitte starten sie einen neuen Vorschlag nur über den Menüpunkt 'Vorschläge'."
+
+
       proposal/translation:
         title: "Titel des Vorschlages"
         description: "Vorschlagstext"
@@ -263,7 +306,7 @@ de:
       user:
         login: "E-Mail oder Benutzer:innenname"
         email: "E-Mail"
-        username: "Benutzer:innenname"
+        username: "Anmeldename"
         first_name: "Vorname"
         last_name: "Nachname"
         name: "Name"
@@ -291,6 +334,19 @@ de:
         public_profile_show_city: "Stadt im öffentlichen Profil anzeigen"
         public_profile_show_country: "Land im öffentlichen Profil anzeigen"
 
+        my_groups: "Meine Gruppen"
+
+        show_public_profile: "Öffentliches Profil anzeigen"
+
+        fellowship_name: "Gruppenname"
+        fellowship_descripton: "Beschreibung"
+        fellowship_requirements: "Anforderungen"
+        fellowship_all_requirements: "alle Anforderungen anzeigen"
+        fellowship_show: "Anzeigen"
+        fellowship_leave: "Gruppe Verlassen"
+        fellowship_role: "eigene Rolle"
+        
+
         email_digest: "Benachrichtigungen mit Zusammenfassung über Vorschlag erhalten"
         email_on_comment: "Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
         email_on_comment_reply: "Benachrichtigen Sie mich per E-Mail, wenn jemand auf meine Kommentare antwortet"
@@ -305,6 +361,178 @@ de:
         recommended_debates: "Debatten-Empfehlungen anzeigen"
         recommended_proposals: "Antrags-Empfehlungen anzeigen"
         redeemable_code: "Bestätigungscode per Post (optional)"
+
+        my_account: "Mein Konto"
+
+        
+
+
+      fellowship:  
+
+        mygroups: "Meine Gruppen"
+        allgroups: "Alle Gruppen"
+        showgroup: "Gruppe Anzeigen"
+        creategroup: "Neue Gruppe erstellen"
+        required: "Pflichtfelder"
+        optional: "Optionale Felder"
+        name: "Gruppenname"
+        email: "E-Mail"
+        description: "Gruppenbeschreibung"
+        zip_code: "Postleitzahl"
+        join_password_required: "Gruppe mit Einschreibeschlüssel versehen?"
+        join_password: "Einschreibeschlüssel"
+        user_required_full_name:  "Vor- und Nachname"
+        user_required_phone_number: "Telefonnummer"
+        user_required_gender: "Geschlecht"
+        user_required_date_of_birth: "Geburtsdatum"
+        user_required_adress: "Straße und Hausnummer"
+        user_required_state:  "Bundesland"
+        user_required_city:  "Stadt"
+        user_required_country:  "Land"
+        user_public_show_full_name: "Vor- und Nachname"
+        user_public_show_phone_number: "Telefonnummer"
+        user_public_show_gender: "Geschlecht"
+        user_public_show_date_of_birth: "Geburtstag"
+        user_public_show_address: "Straße und Hausnummer"
+        user_public_show_state: "Bundesland"
+        user_public_show_city: "Stadt"
+        user_public_show_country: "Land"
+        admin_required_full_name: "Vor- und Nachname"
+        admin_required_phone_number: "Telefonnummer"
+        admin_required_gender: "Geschlecht"
+        admin_required_date_of_birth: "Geburtstag"
+        admin_required_address: "Straße und Hausnummer"
+        admin_required_state: "Bundesland"
+        admin_required_city: "Stadt"
+        admin_required_country: "Land"
+        admin_public_show_full_name: "Vor- und Nachname"
+        admin_public_show_phone_number: "Telefonnummer"
+        admin_public_show_gender: "Geschlecht"
+        admin_public_show_date_of_birth: "Geburtstag"
+        admin_public_show_address: "Straße und Hausnummer"
+        admin_public_show_state: "Bundesland"
+        admin_public_show_city: "Stadt"
+        admin_public_show_country: "Land"
+
+        user_required_full_name_long:  "Nutzer:innen benötigen Vor- und Nachname"
+        user_required_phone_number_long: "Nutzer:innen benötigen eine Telefonnummer"
+        user_required_gender_long: "Nutzer:innen benötigen ein Geschlecht"
+        user_required_date_of_birth_long: "Nutzer:innen benötigen ein Geburtsdatum"
+        user_required_adress_long: "Nutzer:innen benötigen eine Straße und Hausnummer"
+        user_required_state_long:  "Nutzer:innen benötigen ein Bundesland"
+        user_required_city_long:  "Nutzer:innnen benötigen eine Stadt"
+        user_required_country_long:  "Nutzer:innen benötigen ein Land"
+        user_public_show_full_name_long: "Nutzer:innen müssen Vor- und Nachname öffentlich teilen"
+        user_public_show_phone_number_long: "Nutzer:innen müssen eine Telefonnummer öffentlich teilen"
+        user_public_show_gender_long: "Nutzer:innen müssen ihr Geschlecht öffentlich teilen"
+        user_public_show_date_of_birth_long: "Nutzer:innen müssen ihr Geburtstag öffentlich teilen"
+        user_public_show_address_long: "Nutzer:innen müssen ihre Straße und Hausnummer öffentlich teilen"
+        user_public_show_state_long: "Nutzer:innen müssen ihr Bundesland öffentlich teilen"
+        user_public_show_city_long: "Nutzer:innen müssen ihre Stadt öffentlich teilen"
+        user_public_show_country_long: "Nutzer:innen müssen ihr Land öffentlich teilen"
+        admin_required_full_name_long: "Administrator:innen benötigen Vor- und Nachname"
+        admin_required_phone_number_long: "Administrator:innen benötigen eine Telefonnummer"
+        admin_required_gender_long: "Administrator:innen benötigen ein Geschlecht"
+        admin_required_date_of_birth_long: "Administrator:innen benötigen ein Geburtstag"
+        admin_required_address_long: "Administrator:innen benötigen eine Straße und Hausnummer"
+        admin_required_state_long: "Administrator:innen benötigen ein Bundesland"
+        admin_required_city_long: "Administrator:innen benötigen eine Stadt"
+        admin_required_country_long: "Administrator:innen benötigen ein Land"
+        admin_public_show_full_name_long: "Administrator:innen müssen ihren Namen öffentlich teilen"
+        admin_public_show_phone_number_long: "Administrator:innen müssen eine Telefonnummer öffentlich teilen"
+        admin_public_show_gender_long: "Administrator:innen müssen ihr Geschlecht öffentlich teilen"
+        admin_public_show_date_of_birth_long: "Administrator:innen müssen ihr Geburtstag öffentlich teilen"
+        admin_public_show_address_long: "Administrator:innen müssen ihre Straße und Hausnummer öffentlich teilen"
+        admin_public_show_state_long: "Administrator:innen müssen ihr Bundesland öffentlich teilen"
+        admin_public_show_city_long: "Administrator:innen müssen ihre Stadt öffentlich teilen"
+        admin_public_show_country_long: "Administrator:innen müssen ihr Land öffentlich teilen"
+        image: "Gruppenbild hinzufügen"
+        user_requirements: "Voraussetzungen für Gruppen-Mitglieder:innen"
+        admin_requierments: "Voraussetzungen für Gruppen-Administrator:innen und Gruppen-Moderator:innen"
+        info_user_required: "Falls ausgewählt, müssen Nutzer:innen die folgenden Daten in Ihren Profil ausgefüllt haben. Es steht den Nutzer:innen frei, 
+                            ob diese im öffentlichen Profil angezeigt werden. Gruppen-Administrator:innen sehen diese Daten in der Mitgliederübersicht. 
+                            Falls diese Daten von den jeweiligen Nutzer:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."
+        info_user_show_public: "Falls ausgewählt, müssen Nutzer:innen die folgenden Daten in Ihren öffentlichen Profil darstellen.
+                                Falls diese Daten von den jeweiligen Nutzer:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."   
+        info_admin_required: "Falls ausgewählt, müssen Administrator:innen und Moderator:innen die folgenden Daten in Ihren Profil ausgefüllt haben. Es steht den Administrator:innen frei, 
+                            ob diese im öffentlichen Profil angezeigt werden. Gruppen-Administrator:innen sehen diese Daten in der Mitgliederübersicht. 
+                            Falls diese Daten von den jeweiligen Administrator:innen / Moderator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."
+        info_admin_show_public: "Falls ausgewählt, müssen Administrator:innen und Moderator:innen die folgenden Daten in Ihren öffentlichen Profil darstellen.
+                                Falls diese Daten von den jeweiligen Administrator:innen / Moderator:innen nicht ausgefüllt sind, können sie nur Gruppenbeiträge lesen."   
+
+        join_group: "Beitreten"  
+        back: "Zurück"
+        edit: "Gruppe Bearbeiten"
+        delete: "Gruppe Löschen"
+        leave: "Gruppe verlassen"
+        popup_req_password_label: "Einschreibeschlüssel benötigt!"
+        created_at: "Gruppe erstellt am"
+        updated_at: "Zuletzt bearbeitet am"
+
+        popup_req_password_close: "Abbrechen"
+        popup_req_password_text1: "Um dieser Gruppe beizutreten wird ein Einschreibeschlüssel benötigt."
+        popup_req_password_text2: "Einschreibeschlüssel:"
+        popup_req_password_wrong: "Einschreibeschlüssel ungültig!"
+
+        join_success: "Erfolgreich der Gruppe beigetreten!"
+        join_error: "Es gab einen Fehler beim beitreten der Gruppe!"
+        join_wrong_password: "Das eingegebene Passwort ist falsch!"
+        create_success: "Die Gruppe wurde erstellt!"
+        update_success: "Die Gruppe wurde aktualisiert!"
+        delete_success: "Die Gruppe wurde gelöscht!"
+
+        fellowship_admin: "Gruppen-Administrator"
+        fellowship_user: "Gruppen-Nutzer"
+        fellowship_moderator: "Gruppen-Moderator"
+
+        fellowship_show: "Gruppe anzeigen"
+        create_new_fellowship: "Neue Gruppe erstellen"
+        created_at: "Erstellt am"
+        fellowship: "Gruppen"
+        group_members: "Gruppenmitglieder"
+        role: "Rolle"
+        change_role: "Rolle ändern zu"
+        owner: "Eigentümer:in"
+        admin: "Administrator:in"
+        moderator: "Moderator:in"
+        user: "Benutzer:in"
+        show_user: "Profil anzeigen"
+        kick: "Benutzer:in Entfernen"
+
+        leave_success: "Gruppe verlassen"
+        error: "Fehler"
+
+        change_role_success: "Gruppen-Rolle erfolgreich angepasst!"
+        change_role_error: "Fehler beim ändern der Gruppen-Rolle!"
+        change_role_not_auth: "Fehlende Berechtigung um diese Aktion auszuführen!"
+        change_role_no_owner_error: "Diese Aktion kann nicht ausgeführt werden, da eine Gruppe mindestens eine(n) Eigentümer:in benötigt."
+
+        delete_error: "Gruppe konnte nicht gelöscht werden!"
+        kick_user_success: "Nutzer:in wurde aus der Gruppe entfernt!"
+        kick_user_error: "Nutzer:in konnte nicht entfernt werden!"
+
+        members: "Mitglieder:"
+
+        new_fellowship: "Gruppe erstellen"
+        edit_fellowship: "Gruppe bearbeiten"
+        save_fellowship: "Änderungen speichern"
+
+        user_req_data: "Mitglieder:innen benötigen folgende Daten:"
+        user_pub_data: "Mitglieder:innen müssen folgende Daten öffentlich teilen:"
+
+        admin_req_data: "Administrator:innen / Moderator:innen benötigen folgende Daten:"
+        admin_pub_data: "Administrator:innen / Moderator:innen müssen folgende Daten öffentlich teilen:"
+
+        short_description: "Kurzbeschreibung"
+
+        delete_fellowship_text_1: "Möchten Sie die Gruppe wirklich löschen?"
+        delete_fellowship_text_2: "Wenn Sie die Gruppe löschen, werden alle dazugehörigen Beiträge mit gelöscht!"
+
+
+
+
+
+
       direct_message:
         title: "Titel"
         body: "Nachricht"
@@ -629,3 +857,5 @@ de:
         restrict_dependent_destroy:
           has_one: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"
           has_many: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"
+
+        

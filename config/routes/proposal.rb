@@ -44,6 +44,8 @@ resources :proposals do
     patch :publish
   end
 
+  resources :pro_contras
+
   collection do
     get :map
     get :suggest

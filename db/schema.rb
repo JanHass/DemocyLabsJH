@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_093433) do
+
+ActiveRecord::Schema.define(version: 2022_03_04_142647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -316,7 +317,6 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.text "summary"
     t.string "name"
     t.string "main_link_text"
-    t.string "main_link_url"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
   end
@@ -328,6 +328,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
+    t.string "main_link_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"
@@ -349,7 +350,6 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "main_link_text"
-    t.string "main_link_url"
     t.index ["budget_id"], name: "index_budget_translations_on_budget_id"
     t.index ["locale"], name: "index_budget_translations_on_locale"
   end
@@ -394,6 +394,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
     t.boolean "published"
+    t.string "main_link_url"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|
@@ -533,6 +534,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.integer "geozone_id"
     t.tsvector "tsv"
     t.datetime "featured_at"
+    t.bigint "fellowship_id"
     t.index ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at"
     t.index ["author_id"], name: "index_debates_on_author_id"
     t.index ["cached_votes_down"], name: "index_debates_on_cached_votes_down"
@@ -540,6 +542,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.index ["cached_votes_total"], name: "index_debates_on_cached_votes_total"
     t.index ["cached_votes_up"], name: "index_debates_on_cached_votes_up"
     t.index ["confidence_score"], name: "index_debates_on_confidence_score"
+    t.index ["fellowship_id"], name: "index_debates_on_fellowship_id"
     t.index ["geozone_id"], name: "index_debates_on_geozone_id"
     t.index ["hidden_at"], name: "index_debates_on_hidden_at"
     t.index ["hot_score"], name: "index_debates_on_hot_score"
@@ -602,14 +605,16 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id"
   end
 
-
   create_table "fellowship_users", force: :cascade do |t|
-    t.integer "fellowship_id"
-    t.integer "user_id"
     t.boolean "is_fellowship_administrator", default: false
     t.boolean "is_fellowship_moderator", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "fellowship_id"
+    t.bigint "user_id"
+    t.boolean "is_fellowship_owner", default: false
+    t.index ["fellowship_id"], name: "index_fellowship_users_on_fellowship_id"
+    t.index ["user_id"], name: "index_fellowship_users_on_user_id"
   end
 
   create_table "fellowships", force: :cascade do |t|
@@ -660,6 +665,9 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.boolean "admin_public_show_country", default: false
     t.datetime "updated_at", null: false
     t.integer "zip_code"
+    t.boolean "join_password_required", default: false
+    t.string "join_password"
+    t.text "short_description"
     t.index ["author_id"], name: "index_fellowships_on_author_id"
     t.index ["email"], name: "index_fellowships_on_email"
     t.index ["name"], name: "index_fellowships_on_name"
@@ -947,9 +955,6 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.index ["linkable_type", "linkable_id"], name: "index_links_on_linkable_type_and_linkable_id"
   end
 
-  create_table "local_admins", force: :cascade do |t|
-  end
-
   create_table "local_census_records", id: :serial, force: :cascade do |t|
     t.string "document_number", null: false
     t.string "document_type", null: false
@@ -1067,6 +1072,26 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.datetime "emailed_at"
     t.datetime "read_at"
     t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "objections", force: :cascade do |t|
+    t.text "body"
+    t.text "sources"
+    t.string "email"
+    t.float "rating"
+    t.integer "likes"
+    t.integer "dislikes"
+    t.integer "reported"
+    t.bigint "user_id"
+    t.bigint "pro_contra_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "debates_id"
+    t.string "user_first_name"
+    t.string "user_last_name"
+    t.index ["debates_id"], name: "index_objections_on_debates_id"
+    t.index ["pro_contra_id"], name: "index_objections_on_pro_contra_id"
+    t.index ["user_id"], name: "index_objections_on_user_id"
   end
 
   create_table "organizations", id: :serial, force: :cascade do |t|
@@ -1297,7 +1322,9 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.string "related_type"
     t.integer "related_id"
     t.tsvector "tsv"
+    t.bigint "fellowship_id"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true
+    t.index ["fellowship_id"], name: "index_polls_on_fellowship_id"
     t.index ["geozone_restricted"], name: "index_polls_on_geozone_restricted"
     t.index ["related_type", "related_id"], name: "index_polls_on_related_type_and_related_id"
     t.index ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at"
@@ -1309,6 +1336,35 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["postal_code"], name: "index_postal_codes_on_postal_code", unique: true
+  end
+
+  create_table "pro_contras", force: :cascade do |t|
+    t.string "tag"
+    t.text "body"
+    t.text "sources"
+    t.string "email"
+    t.float "rating"
+    t.integer "likes"
+    t.integer "dislikes"
+    t.integer "reported"
+    t.integer "move"
+    t.integer "pc"
+    t.bigint "user_id"
+    t.bigint "debate_id"
+    t.bigint "proposal_id"
+    t.bigint "poll_id"
+    t.bigint "vote_id"
+    t.bigint "fellowship_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_first_name"
+    t.string "user_last_name"
+    t.index ["debate_id"], name: "index_pro_contras_on_debate_id"
+    t.index ["fellowship_id"], name: "index_pro_contras_on_fellowship_id"
+    t.index ["poll_id"], name: "index_pro_contras_on_poll_id"
+    t.index ["proposal_id"], name: "index_pro_contras_on_proposal_id"
+    t.index ["user_id"], name: "index_pro_contras_on_user_id"
+    t.index ["vote_id"], name: "index_pro_contras_on_vote_id"
   end
 
   create_table "progress_bar_translations", id: :serial, force: :cascade do |t|
@@ -1379,11 +1435,13 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
     t.integer "community_id"
     t.datetime "published_at"
     t.boolean "selected", default: false
+    t.bigint "fellowship_id"
     t.index ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at"
     t.index ["author_id"], name: "index_proposals_on_author_id"
     t.index ["cached_votes_up"], name: "index_proposals_on_cached_votes_up"
     t.index ["community_id"], name: "index_proposals_on_community_id"
     t.index ["confidence_score"], name: "index_proposals_on_confidence_score"
+    t.index ["fellowship_id"], name: "index_proposals_on_fellowship_id"
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id"
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at"
     t.index ["hot_score"], name: "index_proposals_on_hot_score"
@@ -1849,6 +1907,8 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
+  add_foreign_key "fellowship_users", "fellowships"
+  add_foreign_key "fellowship_users", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "follows", "users"
   add_foreign_key "geozones_polls", "geozones"
@@ -1862,6 +1922,9 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
+  add_foreign_key "objections", "debates", column: "debates_id"
+  add_foreign_key "objections", "pro_contras"
+  add_foreign_key "objections", "users"
   add_foreign_key "organizations", "users"
   add_foreign_key "poll_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_booth_assignments", "polls"
@@ -1879,6 +1942,12 @@ ActiveRecord::Schema.define(version: 2022_01_13_093433) do
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "polls", "budgets"
+  add_foreign_key "pro_contras", "debates"
+  add_foreign_key "pro_contras", "fellowships"
+  add_foreign_key "pro_contras", "polls"
+  add_foreign_key "pro_contras", "proposals"
+  add_foreign_key "pro_contras", "users"
+  add_foreign_key "pro_contras", "votes"
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"

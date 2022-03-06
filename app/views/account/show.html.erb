@@ -1,35 +1,55 @@
+<!-- My account page -->
+
+<!-- header bar with icon -->
+<%= render "shared/myaccount_header", i18n_namespace: t("activerecord.attributes.user.my_account"), image: "user-solid" %>
+
+<!-- top buttons -->
+<%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow ", :style => 'margin-bottom: 0%' %>     
+<%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "button hollow alert", :style => 'margin-bottom: 0%'%>
 <div class="row account">
   <div class="small-12 column">
-    <div class="float-right text-right">
-      <%= link_to t("account.show.change_credentials_link"), edit_user_registration_path, class: "button hollow" %>
-      <br>
-      <%= link_to t("account.show.erase_account_link"), users_registrations_delete_form_path, class: "delete" %>
-    </div>
-
+    
+    <!-- User Image -->
     <%= avatar_image(@account, seed: @account.id, size: 100, class: "margin-bottom") %>
-
-    <h1 class="inline-block"><%= t("account.show.title") %></h1>
-    <h1></h1>
-    <h1></h1>
 
     <%= form_for @account, as: :account, url: account_path do |f| %>
       <%= render "shared/errors", resource: @account %>
 
+      <!-- Displaying, Uploading and Deleting User/Default-Avatar -->
+      <div class="avatar">
+        <% if current_user.avatar.attached? %>
+           <div>
+           <%= image_tag(current_user.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
+           </div>
+           <div style= "margin-top: 1%">
+           <%= link_to "Delete Avatar", purgeavatar_account_path(@user), method: :delete, class: "button alert hollow" %>
+           </div>
+        <% else %>
+           <div style="display: block">  
+             <%= image_tag 'Default_Profile_Avatar.png', height: 200, width: 200, class: "rounded-circle" %>
+           </div>
+           <div style="margin-top: 2%">
+             <label class="button-image">
+               <%= f.file_field :avatar, class: "button hollow btn-file" %>
+             </label>
+           </div> 
+         <% end %>
+      </div>
+
+<!-- Personal Details -->
       <div class="row">
         <div class="small-12 medium-7 column">
 
-          
-          <h2><details open>
+          <h3><details>
              <summary><%= t("account.show.personal") %></summary> 
 
-            <div class="small-12 medium-10">
+            <div class="small-12 medium-10" style="margin-left: 5%;">
               <% if @account.organization? %>
                 <%= f.fields_for :organization do |fo| %>
                   <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
                   <%= fo.text_field :responsible_name, autofocus: true, maxlength: Organization.responsible_name_max_length %>
                 <% end %>
                 <%= f.text_field :phone_number %>
-
               <% else %>
                 <%= f.text_field :username, maxlength: User.username_max_length %>
                 <%= f.text_field :first_name %>
@@ -38,7 +58,9 @@
               
                 
                 
-                <%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],[t("activerecord.attributes.user.gender_female"),'female'],[t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %>
+                <p><%= f.select :gender, [[t("activerecord.attributes.user.gender_male"),'male'],
+                [t("activerecord.attributes.user.gender_female"),'female'],
+                [t("activerecord.attributes.user.gender_diverse"),'diverse']], include_blank: true  %></p>
 
                 <%= f.date_field :date_of_birth %>
                 <%= f.text_field :street %>
@@ -47,171 +69,286 @@
                 <%= f.text_field :postal_code %>
                 <%= f.text_field :city %>
                <%= f.text_field :country %>
-
              
               <% end %>
            </div>
 
-            <div>
+            <div style="margin-left: 5%;">
               <%= f.check_box :public_activity %>
             </div>
 
-            <div>
+            <div style="margin-left: 5%;">
              <%= f.check_box :public_interests %>
             </div>
-          </details></h2>
+          </details></h3>
 
           
-
-          <h2><details>
+<!-- Public Profile -->
+          <h3><details>
              <summary><%= t("activerecord.attributes.user.public_profile") %></summary> 
 
-              <div>
+              <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_full_name %>
               </div>
-              <div>
+              <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_phone_number %>
              </div>
-              <div>
+              <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_gender %>
              </div>
-             <div>
+             <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_date_of_birth %>
               </div>
-             <div>
+             <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_address %>
               </div>
-             <div>
+             <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_state %>
              </div>
-              <div>
+              <div style="margin-left: 5%;">
                <%= f.check_box :public_profile_show_city %>
              </div>
-             <div>
+             <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_country %>
              </div>
+             <div style="margin-left: 5%;">
+               <%= link_to t("activerecord.attributes.user.show_public_profile"), current_user, class:"button hollow" %>
+             </div>
 
-          </details></h2>
+             
 
+          </details></h3>
 
+          
+<!-- Notifications -->
           <% if @account.email.present? %>
-            
-            <h2><details>
+            <h3><details>
               <summary><%= t("account.show.notifications") %></summary>
 
-              <div>
+              <div style="margin-left: 5%;">
                 <%= f.check_box :email_on_comment %>
               </div>
 
-              <div>
+              <div style="margin-left: 5%;">
                <%= f.check_box :email_on_comment_reply %>
               </div>
 
-             <div>
+             <div style="margin-left: 5%;">
                <%= f.check_box :newsletter %>
               </div>
 
-              <div>
+              <div style="margin-left: 5%;">
                 <%= f.check_box :email_digest %>
               </div>
 
-             <div>
+             <div style="margin-left: 5%;">
                 <%= f.check_box :email_on_direct_message %>
              </div>
-            </details></h2>
+            </details></h3>
           <% end %>
 
-
           <% if @account.official_level == 1 %>
-            <div>
+            <div style="margin-left: 5%;">
               <%= f.check_box :official_position_badge %>
             </div>
           <% end %>
 
+
+<!-- Recommendations NICHT AKTIV-->
+          <div style="display: none;">
+
           <% if feature?("user.recommendations") %>
-          <h2><details>
+          <h3><details>
             <summary><%= t("account.show.recommendations") %></summary>
 
             <% if feature?("user.recommendations_on_debates") %>
-              <div>
+              <div style="margin-left: 5%;">
                 <%= f.check_box :recommended_debates %>
               </div>
             <% end %>
-
             <% if feature?("user.recommendations_on_proposals") %>
-              <div>
+              <div style="margin-left: 5%;">
                 <%= f.check_box :recommended_proposals %>
               </div>
             <% end %>
-            </details></h2>
+            </details></h3>
           <% end %>
+          </div>
 
-          <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
-        </div>
 
-        <div class="user-permissions small-12 medium-5 column">
-          <h2><%= t("account.show.user_permission_title") %></h2>
+<!-- My Groups -->
+          <h3><details class="overflow-auto" style="max-height: 800px;">
+            <summary><%= t("activerecord.attributes.user.my_groups") %></summary> 
 
-          <p><%= t("account.show.user_permission_info") %></p>
+            <table style="height: fit-content;">
+              <thead>
+              <tr>
+                <th><p><%= t("activerecord.attributes.user.fellowship_name") %></p></th>
+                <th><p><%= t("activerecord.attributes.user.fellowship_descripton") %></p></th>
+                <th><p ><%= t("activerecord.attributes.user.fellowship_requirements") %></p></th>
+                <th><p><%= t("activerecord.attributes.user.fellowship_role") %></p></th>
 
-          <ul>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_debates") %></li>
-            <li><span class="icon-check"></span>&nbsp;<%= t("account.show.user_permission_proposal") %></li>
-            <li>
-              <% if current_user.level_two_or_three_verified? %>
-                <span class="icon-check"></span>
-              <% else %>
-                <span class="icon-x"></span>
-              <% end %>
-              <%= t("account.show.user_permission_support_proposal") %>
-            </li>
-            <li>
-              <% if current_user.level_three_verified? %>
-                <span class="icon-check"></span>
-              <% else %>
-                <span class="icon-x"></span>
-              <% end %>
-              <%= t("account.show.user_permission_votes") %>
-            </li>
-          </ul>
+                <th></th>
 
-          <p>
-            <span><%= t("account.show.user_permission_verify_info") %></span>
-          </p>
-          <p>
-            <%= t("account.show.user_permission_verify") %>
-          </p>
+                <th colspan="3"></th>
+              </tr>
+              </thead>
+          
+              <tbody>
+                <% current_user.fellowships.each do |fellowship| %>
+                  <tr>
+                    <td style='width: 15%';>
+                      <p style="text-align: center;">
+                        <% if fellowship.image.attached? %>
+                            <img src="<%= (url_for(fellowship.image)) %>" class="card-img-top">
+                        <% end %>
+                        <%= fellowship.name %>
+                      </p>
+                    </td>
+                    <td style='width: 25%';><p><%= fellowship.description %></p></td>
+                    <td style='width: 25%';>
+                      <p><details>
+                      <summary style="font-size:70%;"><%= t("activerecord.attributes.user.fellowship_all_requirements") %></summary>
+                        
+                        
+                        <% if (fellowship.user_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_full_name_long") %></p>
+                         <% elsif (fellowship.user_required_full_name?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_full_name_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_required_phone_number? && current_user.phone_number.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
+                         <% elsif (fellowship.user_required_phone_number?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_required_gender? && current_user.gender.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_gender_long") %></p>
+                          <% elsif (fellowship.user_required_gender?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_gender_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_required_date_of_birth? && current_user.date_of_birth.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_date_of_birth_long") %></p>
+                          <% elsif (fellowship.user_required_date_of_birth?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_required_adress? && current_user.street.present? && current_user.housenumber.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_adress_long") %></p>
+                          <% elsif (fellowship.user_required_adress?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_adress_long") %></p>
+                        <% end %>
+                        
+                        <% if (fellowship.user_required_state? && current_user.state.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_state_long") %></p>
+                          <% elsif (fellowship.user_required_state?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_state_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_required_city? && current_user.city.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_city_long") %></p>
+                          <% elsif (fellowship.user_required_city?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_city_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_required_country? && current_user.country.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_country_long") %></p>
+                          <% elsif (fellowship.user_required_country?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_required_country_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_full_name_long") %></p>
+                          <% elsif (fellowship.user_public_show_full_name?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_full_name_long") %></p>
+                        <% end %>
+                         <% if (fellowship.user_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_gender_long") %></p>
+                          <% elsif (fellowship.user_public_show_gender?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_gender_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_phone_number_long") %></p>
+                          <% elsif (fellowship.user_public_show_phone_number?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_phone_number_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_date_of_birth_long") %></p>
+                          <% elsif (fellowship.user_public_show_date_of_birth?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_date_of_birth_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_state_long") %></p>
+                          <% elsif (fellowship.user_public_show_state?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_state_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_city_long") %></p>
+                          <% elsif (fellowship.user_public_show_city?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_city_long") %></p>
+                        <% end %>
+                        <% if (fellowship.user_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
+                          <p style="color:green; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_country_long") %></p>
+                          <% elsif (fellowship.user_public_show_country?) %>
+                          <p style="color:red; text-align: center;"><%= t("activerecord.attributes.fellowship.user_public_show_country_long") %></p>
+                        <% end %>
 
-          <% unless @account.organization? %>
-            <div>
-              <span class="verify-account">
-                <% if current_user.level_three_verified? %>
-                  <p class="already-verified">
-                    <span class="icon-check"></span>
-                    <%= t("account.show.verified_account") %>
-                  </p>
-                <% elsif current_user.level_two_verified? %>
-                  <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
-                <% else %>
-                  <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
+                      </details></p>             
+                      
+                    </td>
+                    
+                    <td style='width: 15%';>   
+                      <% current_user.fellowship_users.each do |fellowship_user| %>
+                        <% if (fellowship_user.is_fellowship_owner? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.owner") %></p>
+                        <% elsif (fellowship_user.is_fellowship_administrator? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.admin") %></p>
+                        <% elsif (fellowship_user.is_fellowship_moderator? && fellowship_user.fellowship_id == fellowship.id) %>
+                          <p><%= t("activerecord.attributes.fellowship.moderator") %></p>
+                        <% elsif fellowship_user.fellowship_id == fellowship.id  %>
+                          <p><%= t("activerecord.attributes.fellowship.user") %></p>
+                        <% end%>
+                      <% end %>   
+                    </td>
+                    
+                    <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_show"), fellowship, class: "button hollow" %></p></td>
+
+                    <td style='width: 10%';><p><%= link_to t("activerecord.attributes.user.fellowship_leave"), leave_fellowship_path(fellowship, :origin => "account"), class: "button alert hollow" %></p></td>
+
+                 </tr>
                 <% end %>
-              </span>
-            </div>
-          <% end %>
-        </div>
+              </tbody>
+            </table>
+
+            </details></h3>
+
+          <!-- Save Button -->
+          <%= f.submit t("account.show.save_changes_submit"), class: "button margin-top" %>
+
+        </div>  
       </div>
     <% end %>
-
-
-
-    
-
-
-  
-  
-
-  
-
-
   </div>
 </div>
+
+<style>
+.btn-file {
+    position: relative;
+    overflow: hidden;
+	  margin: 10;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 10;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+    p
+    {
+        font-size: 66%;
+    }
+</style>

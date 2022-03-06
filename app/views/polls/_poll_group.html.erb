@@ -19,6 +19,11 @@
         </div>
       <% end %>
     <% end %>
+
+    <% if poll.fellowship_id.present? %>
+        <% @fellowship= Fellowship.find(poll.fellowship_id)%>
+    <% end %>
+
     <div class="row" data-equalizer data-equalize-on="medium">
       <div class="small-12 medium-3 column">
         <div class="image-container" data-equalizer-watch>
@@ -29,6 +34,14 @@
       </div>
       <div class="small-12 medium-6 column" data-equalizer-watch>
         <div class="dates"></div>
+        <% if poll.fellowship_id.present? %>
+              <div><h4>
+                <% if @fellowship.image.attached? %>
+                  <img src="<%= (url_for(@fellowship.image)) %>" width=" 3%" height= "3%" style= "margin-bottom: 1%;">
+                <% end %>       
+                <%= link_to @fellowship.name, @fellowship %>
+              </h4></div> 
+        <% end %>   
         <% if poll.questions.one? %>
           <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
           <%= poll_dates(poll) %>
@@ -56,7 +69,7 @@
       </div>
       <div class="small-12 medium-3 column table" data-equalizer-watch>
         <div class="table-cell align-middle">
-          <%= link_to poll_path(id: poll.slug || poll.id), class: "button hollow expanded" do %>
+          <%= link_to poll_path(id: poll.slug || poll.id), class: "button hollow" do %>
             <% if poll.expired? %>
               <%= t("polls.index.participate_button_expired") %>
             <% else %>

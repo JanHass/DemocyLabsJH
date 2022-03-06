@@ -31,7 +31,15 @@ module Abilities
       can [:read, :help], ::SDG::Goal
       can :read, ::SDG::Phase
 
-      can [:read, :create, :update, :destroy], Fellowship
+      can [:read, :create, :update, :destroy, :join, :leave, :changeuserrole, :kick, :tablesort], Fellowship
+      can [:purgeavatar], User
+
+      can [:read, :create, :update, :destroy, :join, :leave, :changeuserrole, :kick, :tablesort], Fellowship
+      can [:search], Proposal
+      can [:search], Fellowship
+      can [:search], Debate
+      can [:search], Vote
+
     end
   end
 end
