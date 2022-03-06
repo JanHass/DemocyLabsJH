@@ -60,7 +60,7 @@ class Dashboard::PollsController < Dashboard::BaseController
     end
 
     def poll_attributes
-      [:name, :starts_at, :ends_at, :description, :results_enabled,
+      [:name, :starts_at, :ends_at, :description, :results_enabled, :fellowship_id,
        questions_attributes: question_attributes]
     end
 
