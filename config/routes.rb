@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+
+  post "pro_contras/:id/destroy_objection" => "pro_contras#destroy_objection"
+
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 

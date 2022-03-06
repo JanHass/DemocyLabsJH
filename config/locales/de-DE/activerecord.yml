@@ -254,6 +254,27 @@ de:
         voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen abstimmen!"
         comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
         no_group: "Fehler! Keine Gruppe gewählt. Bitte starten sie eine neue Diskussion nur über den Menüpunkt 'Diskussionen'."
+
+      proscons:
+        proscons: "Pro / Kontra Argumente"
+        pros: "Pro Argumente"
+        cons: "Kontra Argumente"
+        pro:  "Pro Argument"
+        con: "Kontra Argument"
+        tag: "Titel:"
+        body: "Argument:"
+        source: "Quellen:"
+        show: "Kommentare anzeigen"
+        new: "Pro / Kontra Argument erstellen"
+        type: "Argument Typ"
+        create_new: "Argument erstellen"
+        comments: "Kommentare"
+        new_comment: "Kommentar erstellen"
+        comment: "Kommentar"
+        author: "Autor"
+        delete: "Kommentar löschen"
+        
+
         
         
       debate/translation:

@@ -17,7 +17,7 @@ class ObjectionsController < ApplicationController
 
     def destroy
         @objection.destroy
-        redirect_to pro_contras_url(@pro_contra), notice: 'Objection was successfully destroyed.'
+        redirect_to account_path(@pro_contra), notice: 'Objection was successfully destroyed.'
     end
 
     private
