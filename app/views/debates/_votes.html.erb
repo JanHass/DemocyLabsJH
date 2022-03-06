@@ -10,156 +10,158 @@
   <% if debate.fellowship_id.present? %>
     <% @fellowship = Fellowship.find(debate.fellowship_id) %>
      <!-- Aktuelle Nutzer Rolle checken -->
-    <% @fellowship.fellowship_users.each do |fellowship_user| %>
-      <% if fellowship_user.fellowship_id == @fellowship.id &&  fellowship_user.user_id == current_user.id %>
-        <% @is_fellowship_member = true %>
-        <% if fellowship_user.is_fellowship_owner %>
-          <% @currentuser_owner = true %>
-        <% elsif fellowship_user.is_fellowship_administrator %>
-          <% currentuser_admin = true %>
-        <% elsif fellowship_user.is_fellowship_moderator %>
-          <% currentuser_mod = true %>
+    <% if current_user %> 
+      <% @fellowship.fellowship_users.each do |fellowship_user| %>
+        <% if fellowship_user.fellowship_id == @fellowship.id &&  fellowship_user.user_id == current_user.id %>
+          <% @is_fellowship_member = true %>
+          <% if fellowship_user.is_fellowship_owner %>
+            <% @currentuser_owner = true %>
+          <% elsif fellowship_user.is_fellowship_administrator %>
+            <% currentuser_admin = true %>
+          <% elsif fellowship_user.is_fellowship_moderator %>
+            <% currentuser_mod = true %>
+          <% end %>
+          <% break %>
         <% end %>
-        <% break %>
       <% end %>
+      <!-- ------------------------------->
+
+      <!-- Aktueller Nutzer Anforderungen prüfen -->
+      <% if @currentuser_admin || @currentuser_mod || @currentuser_owner %>
+        <% if (@fellowship.admin_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+        <% elsif @fellowship.admin_required_full_name? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_required_phone_number? && current_user.phone_number.present?) %>
+        <% elsif @fellowship.admin_required_phone_number? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_required_gender? && current_user.gender.present?) %>
+        <% elsif @fellowship.admin_required_gender? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_required_date_of_birth? && current_user.date_of_birth.present?) %>
+        <% elsif @fellowship.admin_required_date_of_birth? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_required_address? && current_user.street.present? && current_user.housenumber.present?) %>
+        <% elsif @fellowship.admin_required_address? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_required_state? && current_user.state.present?) %>
+        <% elsif @fellowship.admin_required_state? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_required_city? && current_user.city.present?) %>
+        <% elsif @fellowship.admin_required_city? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_required_country? && current_user.country.present?) %>
+        <% elsif (@fellowship.admin_required_country?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+
+        <% if (@fellowship.admin_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+        <% elsif (@fellowship.admin_public_show_full_name?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
+        <% elsif (@fellowship.admin_public_show_gender?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
+        <% elsif (@fellowship.admin_public_show_phone_number?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
+        <% elsif (@fellowship.admin_public_show_date_of_birth?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
+        <% elsif (@fellowship.admin_public_show_state?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
+        <% elsif @fellowship.admin_public_show_city? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.admin_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
+        <% elsif @fellowship.admin_public_show_country? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+
+      <% else %>
+
+        <% if (@fellowship.user_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+        <% elsif @fellowship.user_required_full_name? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_required_phone_number? && current_user.phone_number.present?) %>
+        <% elsif @fellowship.user_required_phone_number? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_required_gender? && current_user.gender.present?) %>
+        <% elsif @fellowship.user_required_gender? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_required_date_of_birth? && current_user.date_of_birth.present?) %>
+        <% elsif @fellowship.user_required_date_of_birth? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_required_adress? && current_user.street.present? && current_user.housenumber.present?) %>
+        <% elsif @fellowship.user_required_adress? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_required_state? && current_user.state.present?) %>
+        <% elsif @fellowship.user_required_state? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_required_city? && current_user.city.present?) %>
+        <% elsif @fellowship.user_required_city? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_required_country? && current_user.country.present?) %>
+        <% elsif (@fellowship.user_required_country?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+
+        <% if (@fellowship.user_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+        <% elsif (@fellowship.user_public_show_full_name?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
+        <% elsif (@fellowship.user_public_show_gender?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
+        <% elsif (@fellowship.user_public_show_phone_number?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
+        <% elsif (@fellowship.user_public_show_date_of_birth?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
+        <% elsif (@fellowship.user_public_show_state?) %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
+        <% elsif @fellowship.user_public_show_city? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+        <% if (@fellowship.user_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
+        <% elsif @fellowship.user_public_show_country? %>
+          <% @currentuser_allowed_action = false %>
+        <% end %>
+      <% end %>
+        
+      <!-- ENDE Anforderungen pürfen -->
     <% end %>
-    <!-- ------------------------------->
-
-    <!-- Aktueller Nutzer Anforderungen prüfen -->
-    <% if @currentuser_admin || @currentuser_mod || @currentuser_owner %>
-      <% if (@fellowship.admin_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
-      <% elsif @fellowship.admin_required_full_name? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_required_phone_number? && current_user.phone_number.present?) %>
-      <% elsif @fellowship.admin_required_phone_number? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_required_gender? && current_user.gender.present?) %>
-      <% elsif @fellowship.admin_required_gender? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_required_date_of_birth? && current_user.date_of_birth.present?) %>
-      <% elsif @fellowship.admin_required_date_of_birth? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_required_address? && current_user.street.present? && current_user.housenumber.present?) %>
-      <% elsif @fellowship.admin_required_address? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_required_state? && current_user.state.present?) %>
-      <% elsif @fellowship.admin_required_state? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_required_city? && current_user.city.present?) %>
-      <% elsif @fellowship.admin_required_city? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_required_country? && current_user.country.present?) %>
-      <% elsif (@fellowship.admin_required_country?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-
-      <% if (@fellowship.admin_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
-      <% elsif (@fellowship.admin_public_show_full_name?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
-      <% elsif (@fellowship.admin_public_show_gender?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
-      <% elsif (@fellowship.admin_public_show_phone_number?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
-      <% elsif (@fellowship.admin_public_show_date_of_birth?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
-      <% elsif (@fellowship.admin_public_show_state?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
-      <% elsif @fellowship.admin_public_show_city? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.admin_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
-      <% elsif @fellowship.admin_public_show_country? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-
-    <% else %>
-
-      <% if (@fellowship.user_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
-      <% elsif @fellowship.user_required_full_name? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_required_phone_number? && current_user.phone_number.present?) %>
-      <% elsif @fellowship.user_required_phone_number? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_required_gender? && current_user.gender.present?) %>
-      <% elsif @fellowship.user_required_gender? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_required_date_of_birth? && current_user.date_of_birth.present?) %>
-      <% elsif @fellowship.user_required_date_of_birth? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_required_adress? && current_user.street.present? && current_user.housenumber.present?) %>
-      <% elsif @fellowship.user_required_adress? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_required_state? && current_user.state.present?) %>
-      <% elsif @fellowship.user_required_state? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_required_city? && current_user.city.present?) %>
-      <% elsif @fellowship.user_required_city? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_required_country? && current_user.country.present?) %>
-      <% elsif (@fellowship.user_required_country?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-
-      <% if (@fellowship.user_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
-      <% elsif (@fellowship.user_public_show_full_name?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
-      <% elsif (@fellowship.user_public_show_gender?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
-      <% elsif (@fellowship.user_public_show_phone_number?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
-      <% elsif (@fellowship.user_public_show_date_of_birth?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
-      <% elsif (@fellowship.user_public_show_state?) %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
-      <% elsif @fellowship.user_public_show_city? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-      <% if (@fellowship.user_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
-      <% elsif @fellowship.user_public_show_country? %>
-        <% @currentuser_allowed_action = false %>
-      <% end %>
-    <% end %>
-      
-    <!-- ENDE Anforderungen pürfen -->
-  <% end %>
+  <% end %>  
 
   <!-- Abfrage Gruppen-Anforderungen erfüllt? -->
   
-
+    
     <% if (user_signed_in? && @is_fellowship_member && debate.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !debate.fellowship_id.present?)  %>
       <%= link_to vote_debate_path(debate, value: "yes"),
           class: "like #{voted_classes[:in_favor]}", title: t("votes.agree"), method: "post", remote: true do %>
