@@ -93,12 +93,22 @@ class ProContrasController < ApplicationController
   # DELETE /pro_contras/1
   def destroy
     @pro_contra.destroy
-    redirect_to account_url, notice: 'Pro contra was successfully destroyed.'
+    if @pro_contra.debate_id.present?
+      redirect_to "/debates/"+@pro_contra.debate_id.to_s, notice: 'Pro contra was successfully destroyed.'
+    end
+    if @pro_contra.proposal.present?
+      redirect_to "/proposals/"+@pro_contra.proposal_id.to_s, notice: 'Pro contra was successfully destroyed.'
+    end
+    if @pro_contra.poll.present?
+      redirect_to "/polls/"+@pro_contra.poll_id.to_s, notice: 'Pro contra was successfully destroyed.'
+    end
+
   end
   def destroy_objection
-    @objection.destroy
-    redirect_to account_url, notice: 'Pro contra was successfully destroyed.'
+    Objection.find(params[:objection_id]).destroy
+    redirect_to "/pro_contras/"+params[:pro_contra_id].to_s, notice: 'Comment was successfully destroyed.'
   end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pro_contra

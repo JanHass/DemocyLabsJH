@@ -19,6 +19,9 @@
 <details style="position:relative">
 <div style="float:left; width:50%;">
 <h2 style="float:center"> Pro-Arguments</h2>
+<%if @proposals_pro_contra.blank?%>
+  <% @proposals_pro_contra = []%>
+<%end%>
 <% @proposals_pro_contra.each do |pc| %>
   <% if pc.pc == 1%>
     <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>

@@ -35,6 +35,9 @@
 </div>
 <div style="float:right; width:50%;">
 <h2 style="float:center"> Contra-Arguments</h2>
+<%if @debates_pro_contra.blank?%>
+  <% @debates_pro_contra = []%>
+<%end%>
 <% @debates_pro_contra.each do |pc| %>
   <% if pc.pc == 0%>
     <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
