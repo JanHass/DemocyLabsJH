@@ -3,7 +3,6 @@
   <ul>
   <%= raw content_block("subnavigation_left") %>
   
-  <% if current_user %>
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
@@ -36,12 +35,6 @@
                                 current_page?(fellowships_path),
                                 accesskey: "7" %>
       </li>
-    <% end %>
-
-    <% end %>
-
-    <% if !current_user %>
-        <li style="margin: 2.8%;"> </li>
     <% end %>
     
     <%= raw content_block("subnavigation_right") %>

@@ -240,8 +240,8 @@
 
 <h3><details style="position:relative; margin-bottom: 2.5%;">
   <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
-    <div style="float:left; width:50%;">
-      <h3 style="float:center; margin-left: 10%;"><%= t("activerecord.attributes.proscons.pros") %></h3>
+    <div style="float:left; width:45%; margin-left: 5%;">
+      <h3 style="float:center; text-decoration: underline;"><%= t("activerecord.attributes.proscons.pros") %></h3>
       <%if @debates_pro_contra.blank?%>
        <% @debates_pro_contra = []%>
       <%end%>
@@ -264,7 +264,6 @@
           <%= link_to t("activerecord.attributes.proscons.show"), "/pro_contras/" + pc.id.to_s , class: "button hollow"%><%="("%><%= pc.objections.all.count %><%=")"%><br>
         <% end %>  
       <% end %>
-
   <% end %>
 
   <br>

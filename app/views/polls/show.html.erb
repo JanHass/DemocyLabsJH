@@ -197,7 +197,6 @@
       </div>
     </div>
   </div>
-
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
       <% @poll_questions_answers.each do |answer| %>
@@ -271,8 +270,8 @@
     <!-- Pro / Kontra -->
     <h3><details style="position:relative; margin-bottom: 2.5%;">
       <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
-      <div style="float:left; width:50%;">
-        <h3 style="float:center; margin-left: 10%;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
+      <div style="float:left; width:45%; margin-left: 5%;">
+        <h3 style="float:center; text-decoration:underline;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
         <%if @polls_pro_contra.blank?%>
           <% @polls_pro_contra = []%>
         <%end%>

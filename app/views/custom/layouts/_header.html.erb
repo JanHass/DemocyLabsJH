@@ -111,16 +111,9 @@
   
 <!-- Navigation bar -->
   <div id="navigation_bar" class="subnavigation">
-    <% if current_user%> 
     <div class="hide-for-small-only" style="text-align: center; margin-bottom: 2%;">
       <%= render "shared/subnavigation" %>
     </div>
-    <% end %>
-    <% if !current_user%> 
-    <div class="hide-for-small-only" style="height: 80%;">
-      <%= render "shared/subnavigation" %>
-    </div>
-    <% end %>
     <%= yield :header_addon %>
   </div>
   

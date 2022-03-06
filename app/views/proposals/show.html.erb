@@ -217,8 +217,8 @@
     <!-- PRO CONS -->
         <h3><details style="position:relative; margin-bottom: 2.5%;">
           <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
-        <div style="float:left; width:50%;">
-        <h3 style="float:center; margin-left: 10%;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
+        <div style="float:left; width:45%; margin-left: 5%;">
+        <h3 style="float:center;text-decoration: underline;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
         <%if @proposals_pro_contra.blank?%>
           <% @proposals_pro_contra = []%>
         <%end%>
@@ -247,8 +247,7 @@
         <br>
         </div>
         <div style="float:right; width:50%;">
-
-        <h3 style="float:center"> <%= t("activerecord.attributes.proscons.cons") %></h3>
+        <h3 style="float:center; text-decoration: underline;"> <%= t("activerecord.attributes.proscons.cons") %></h3>
         <%if @proposals_pro_contra.blank?%>
           <% @proposals_pro_contra = []%>
         <%end%>
