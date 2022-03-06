@@ -86,16 +86,16 @@
         <% @fellowship.fellowship_users.each do |fellowship_user| %>
 
           <tr>
-            <td style='width: 15%';>
+            <td style='width: 20%';>
               <p><%= fellowship_user.user.username %></p>
             </td>
-            <td style='width: 25%';>
+            <td style='width: 20%';>
               <p><%= fellowship_user.user.first_name %></p>
             </td>
-            <td style='width: 25%';>
+            <td style='width: 20%';>
               <p><%= fellowship_user.user.last_name %></p>      
             </td>
-            <td style='width: 15%';>
+            <td style='width: 20%';>
 
               <% if fellowship_user.is_fellowship_owner? %>
                 <p><%= t("activerecord.attributes.fellowship.owner") %></p>
@@ -111,7 +111,7 @@
             </td>
 
             <% if @currentuser_is_fellowship_admin || @currentuser_is_fellowship_mod || @currentuser_is_fellowship_owner %>
-              <td style='width: 15%';>
+              <td style='width: 20%';>
                 <% if @currentuser_is_fellowship_owner || (@currentuser_is_fellowship_admin && !fellowship_user.is_fellowship_owner && !fellowship_user.is_fellowship_administrator && current_user.id != fellowship_user.user_id) %>
                   <% if @currentuser_is_fellowship_owner && !fellowship_user.is_fellowship_owner %>
                    <%= link_to t("activerecord.attributes.fellowship.owner"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "owner" ), class: "button hollow_small" %>
@@ -126,7 +126,9 @@
                    <%= link_to t("activerecord.attributes.fellowship.user"), changeuserrole_fellowship_path(@fellowship, :userid => fellowship_user.user_id, :newrole => "user" ), class: "button hollow_small" %>
                  <% end %>
                 <% else %>
-                  <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>   
+                 <div style="margin-left: 35%">
+                 <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>   
+                 </div>
                 <% end %>  
               </td>
             <% end %>
@@ -134,11 +136,11 @@
             <td style='width: 20%';><%= link_to t("activerecord.attributes.fellowship.show_user"), fellowship_user.user, class:"button hollow" %></td>
             
             <% if @currentuser_is_fellowship_admin || @currentuser_is_fellowship_mod || @currentuser_is_fellowship_owner %>
-              <td style='width: 10%';>
+              <td style='width: 20%';>
                 <% if (@currentuser_is_fellowship_owner && current_user.id != fellowship_user.user_id) || (@currentuser_is_fellowship_admin && !fellowship_user.is_fellowship_owner && !fellowship_user.is_fellowship_administrator && current_user.id != fellowship_user.user_id ) %>
                   <%= link_to t("activerecord.attributes.fellowship.kick"), kick_fellowship_path(fellowship_user_id: fellowship_user.id), class: "button alert hollow"%>
                 <% else %>
-                <div>
+                <div style="margin-left: 35%">
                  <%= image_tag("NicePng_error-png_2124338.png", size: 35) %>
                  </div>
                <% end %>

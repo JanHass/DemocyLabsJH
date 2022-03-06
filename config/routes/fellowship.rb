@@ -5,12 +5,9 @@ resources :fellowships do
         get :changeuserrole
         get :tablesort
         
-
         post "fellowships" => "fellowships#join"
         post "fellowships" => "fellowships#changeuserrole"
         get :kick
-
-
     end
       
 end

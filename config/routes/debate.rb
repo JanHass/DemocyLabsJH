@@ -7,6 +7,8 @@ resources :debates do
     put :unmark_featured
   end
 
+  resources :pro_contras
+
   collection do
     get :map
     get :suggest
