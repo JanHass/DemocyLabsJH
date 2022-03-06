@@ -248,6 +248,12 @@ de:
       fellowships: "Gruppen"
       help: "Hilfe"
       menu: "Menü"
+      welcome: "Willkommen bei"
+      search_placeholder: "Suchbegriff..."
+      search_button_search: "Suchen"
+      search_all: "Alles"
+      search_plz: "Postleitzahl"
+      search_result: "Suchergebnisse"
       notification_item:
         new_notifications:
           zero: "Sie haben keine neuen Benachrichtigungen"

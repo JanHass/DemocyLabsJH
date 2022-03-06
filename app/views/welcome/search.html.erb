@@ -1,8 +1,16 @@
-<%= render "shared/myaccount_header", i18n_namespace: "Search Results", image: "search-solid" %>
+
+<%= render "shared/myaccount_header", i18n_namespace: t("layouts.header.search_result"), image: "search-solid" %>
+
 
 
     <% @results_postal_codes.each do |result| %>
-    <p><li class="list-group-item" style="width: 45%;"><h3 style="margin-bottom: 0%;"><%= link_to result.zip_code, "/fellowships/" + result.id.to_s %></h3></li></p>
+
+        <%if result.zip_code.blank?%>
+            <p><li class="list-group-item" style="width: 45%;"><h3 style="margin-bottom: 0%;"><%= link_to result.name, "/fellowships/" + result.id.to_s %></h3></li></p>
+        <%else%>
+            <p><li class="list-group-item" style="width: 45%;"><h3 style="margin-bottom: 0%;"><%= link_to result.zip_code, "/fellowships/" + result.id.to_s %></h3></li></p>
+        <%end%>
+
     <% end %>
 
     <% @results_fellowships.each do |result| %>

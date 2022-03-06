@@ -1,55 +1,61 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Tag:</strong>
+  <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
   <%= @pro_contra.tag %>
 </p>
 <p>
-  <strong>Argument:</strong>
+  <strong><%= t("activerecord.attributes.proscons.body") %></strong>
   <%= @pro_contra.body %>
 </p>
 <p>
-  <strong>Sources:</strong>
+  <strong><%= t("activerecord.attributes.proscons.source") %></strong>
   <%= @pro_contra.sources %>
 </p>
 
 <%if current_user.present? %>
   <%if @pro_contra.user_id == current_user.id %>
-      <%= link_to 'Delete', @pro_contra, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert hollow" %>
+      <%= button_to 'Destroy', @pro_contra, method: :delete, data: { confirm: 'Are you sure?' }, class: "button hollow alert" %>
   <% end %>
 <%end%>
 
-<h2>Comments</h2>
+<h2><%= t("activerecord.attributes.proscons.comments") %></h2>
 <% @pro_contra.objections.each do |objection| %>
   <p>
-    <strong>Commenter:</strong>
+
+    <strong><%= t("activerecord.attributes.proscons.author") %></strong>
+
     <%= objection.user_first_name %><%= " " %> <%= objection.user_last_name %>
   </p>
   <p>
-    <strong>Objection:</strong>
+    <strong><%= t("activerecord.attributes.proscons.comment") %></strong>
     <%= objection.body %>
   </p>
   <p>
-    <strong>Sources:</strong>
+    <strong><%= t("activerecord.attributes.proscons.source") %></strong>
     <%= objection.sources %>
   </p>
   <%if current_user.present? %>
     <%if objection.user_id == current_user.id %>
-        <%= link_to "Destroy", @objection, method: :delete_objection, data: { confirm: 'Are you sure?' },  class: "button hollow alert" %>
+
+        <%= button_to t("activerecord.attributes.proscons.delete"), {:controller => "pro_contras", :action => "destroy_objection", :objection_id => objection.id, :pro_contra_id => objection.pro_contra_id} , :method=>:post, class: "button hollow alert"  %>
+
     <% end %>
   <% end %>
 <% end %>
 
-<h2>Add a comment:</h2>
+
+<h2><%= t("activerecord.attributes.proscons.new_comment") %></h2>
+
 <%= form_for([@pro_contra, @pro_contra.objections.build]) do |f| %>
    <p>
-    <%= f.hidden_field :debates_id, :value => @pro_contra.debate_id, :readonly => true%>
+    <%= f.hidden_field :debates_id, :value => @pro_contra.debate_id, :readonly => true %>
   </p>
   <p>
-    <%= f.text_area :body %>
+    <%= f.text_area :body , label: t("activerecord.attributes.proscons.comment")%>
   </p>
   <p>
-    <%= f.text_area :sources %>
+    <%= f.text_area :sources, label: t("activerecord.attributes.proscons.source") %>
   </p>
   <%if current_user.present? %>
     <p>
@@ -64,7 +70,9 @@
     </p>
   <%end%>
   <p>
-    <%= f.submit %>
+
+    <%= f.submit t("activerecord.attributes.proscons.new_comment")%>
+
   </p>
 <% end %>
 

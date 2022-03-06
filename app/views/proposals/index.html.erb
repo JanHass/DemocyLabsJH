@@ -155,32 +155,34 @@
 
   </div>
   <!-- Modal  / PopUp Auswahl Fellowship  --> 
-  <div class="modal fade" id="select_fellowship" tabindex="-1" aria-labelledby="select_fellowship_Label" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="select_fellowship_Label"><%= t("activerecord.attributes.proposal.modal_new_proposal_titel") %></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <%= t("activerecord.attributes.proposal.modal_new_proposal_text") %>
-          <br><br>
-          
-          <%= form_with url: new_proposal_path do |f|  %>
-            <div>
-              <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name, label: t("activerecord.attributes.proposal.modal_new_proposal_titel") %>
-              <%= hidden_field_tag "userid", current_user.id %>
-              
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
-          <%= submit_tag t("activerecord.attributes.proposal.modal_new_proposal_button_new"), class: "button hollow success" %>  
-        <% end %>
+  <% if current_user %>
+    <div class="modal fade" id="select_fellowship" tabindex="-1" aria-labelledby="select_fellowship_Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="select_fellowship_Label"><%= t("activerecord.attributes.proposal.modal_new_proposal_titel") %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= t("activerecord.attributes.proposal.modal_new_proposal_text") %>
+            <br><br>
+            
+            <%= form_with url: new_proposal_path do |f|  %>
+              <div>
+                <%= f.collection_select :fellowshipid, Fellowship.order(:name), :id, :name, label: t("activerecord.attributes.proposal.modal_new_proposal_titel") %>
+                <%= hidden_field_tag "userid", current_user.id %>
+                
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.fellowship.popup_req_password_close") %></button>
+            <%= submit_tag t("activerecord.attributes.proposal.modal_new_proposal_button_new"), class: "button hollow success" %>  
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>  
 <!-- -------------------------------------------------------------- -->
 </main>
 <style>

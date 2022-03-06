@@ -257,8 +257,26 @@ en:
         my_account: "My account"
         voting_only_member: "Only group members who meet all group requirements are allowed to vote!"
         comment_only_member: "Only group members who meet all group requirements can see and comment on comments!"
+        no_group: "Error! No group selected. Please start a new discussion using the 'Discussions' menu item only. "
 
-
+      proscons:
+        proscons: "Pro/Con arguments "
+        pros: "Pro arguments"
+        cons: "Con arguments"
+        pro:  "Pro argument"
+        con: "Con argument"
+        tag: "Titel:"
+        body: "Argument:"
+        source: "Source:"
+        show: "View Comments"
+        new: "Create a pro/con argument"
+        type: "Argument type"
+        create_new: "Create argument"
+        comments: "Comments"
+        new_comment: "Create comment"
+        comment: "Comment"
+        author: "Author"
+        delete: "Delete comment "
 
       debate/translation:
         title: "Debate title"

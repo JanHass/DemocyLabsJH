@@ -244,6 +244,12 @@ en:
       fellowships: "Groups"
       help: "Help"
       menu: "Menu"
+      welcome: "Welcome to"
+      search_placeholder: "Search..."
+      search_button_search: "Search"
+      search_all: "All"
+      search_plz: "Postal Code"
+      search_result: "Search results"
       notification_item:
         new_notifications:
           one: You have a new notification
