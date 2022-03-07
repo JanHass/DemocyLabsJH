@@ -1,13 +1,9 @@
 class FellowshipsController < ApplicationController
-  include FeatureFlags 
   
-
   load_and_authorize_resource
   
-
   before_action :set_fellowship, only: [:show, :edit, :update, :destroy]
 
-  @show_join_button = true
 
   # GET /fellowships
   def index
@@ -96,7 +92,6 @@ class FellowshipsController < ApplicationController
           format.html { redirect_to(@fellowship, :alert => t("activerecord.attributes.fellowship.join_wrong_password")) }
         end
       end 
-      
 
     #If NO Password to join is required
     else  
@@ -111,11 +106,6 @@ class FellowshipsController < ApplicationController
     end
   end
   
-  
-  helper_method :join
-
-  
-
   def changeuserrole
     @fellowship = Fellowship.find(params[:id])
     @userid = params[:userid]
@@ -191,15 +181,13 @@ class FellowshipsController < ApplicationController
     end  
   end
   
-
+  #Methode um Gruppe zu verlassen
   def leave
     @fellowship = Fellowship.find(params[:id]) 
     @origin = params[:origin]
     @current_fellowship_user
     @return_message = t("activerecord.attributes.fellowship.change_role_no_owner_error").to_s
     @return_type = "alert"
-
-    
 
     #Fellowship_User finden
     @fellowship.fellowship_users.each do |fellowship_user|
@@ -233,10 +221,7 @@ class FellowshipsController < ApplicationController
       end 
     end
     
-
-
     #Returns with Message
-    
     if @origin == "account" && @return_type == "alert"
       respond_to do |format|
         format.html { redirect_to(account_url, :alert => @return_message ) }  
@@ -262,9 +247,9 @@ class FellowshipsController < ApplicationController
       end
       return
     end  
-
   end
 
+  #Methode um Mitglied aud der Gruppe zu entfernen
   def kick 
     @fellowship = Fellowship.find(params[:id])
     m = params[:fellowship_user_id]

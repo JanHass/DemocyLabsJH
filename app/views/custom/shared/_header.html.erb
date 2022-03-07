@@ -83,6 +83,7 @@
   <div class="header-card jumbo highlight">
     <div class="row">
       <div style="width: 50%; height: 60%; display: inline;"class="small-12 medium-6 column <%= "medium-9 small-centered text-center" unless header.image.present? %>">
+
         <span style="margin-left:2px; font-size:x-large"><%= t("layouts.header.welcome") %></span>
         <h1>Democy Labs</h1>
 
@@ -90,13 +91,13 @@
         <%= form_tag(search_path, :method => "get") do %>
         <div class="input-group" style="width: 22vw;">
           <%= select_tag "selected_param", options_for_select([ [t("layouts.header.search_all"),"All"],[t("layouts.header.search_plz"),"Postal Codes"], [t("layouts.header.proposals"),"Proposals"], [t("layouts.header.fellowships"),"Groups" ]], "All")%>
-
-          
+         
 
           <%= search_field_tag :search, params[:search], placeholder: t("layouts.header.search_placeholder"), class: "form-control" %>
 
           <div class="input-group-btn">
             <%= button_tag t("layouts.header.search_button_search"), :class => 'button glyphicon glyphicon-search', :name => nil %>
+
           </div>
         </div>  
       <% end %>

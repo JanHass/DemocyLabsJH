@@ -69,7 +69,7 @@
       </div>
       <div class="small-12 medium-3 column table" data-equalizer-watch>
         <div class="table-cell align-middle">
-          <%= link_to poll_path(id: poll.slug || poll.id), class: "button hollow expanded" do %>
+          <%= link_to poll_path(id: poll.slug || poll.id), class: "button hollow" do %>
             <% if poll.expired? %>
               <%= t("polls.index.participate_button_expired") %>
             <% else %>

@@ -197,9 +197,6 @@
       </div>
     </div>
   </div>
-
-  
-
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
       <% @poll_questions_answers.each do |answer| %>
@@ -273,8 +270,11 @@
     <!-- Pro / Kontra -->
     <h3><details style="position:relative; margin-bottom: 2.5%;">
       <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
-      <div style="float:left; width:50%;">
-        <h3 style="float:center; margin-left: 10%;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
+      <div style="float:left; width:45%; margin-left: 5%;">
+        <h3 style="float:center; text-decoration:underline;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
+        <%if @polls_pro_contra.blank?%>
+          <% @polls_pro_contra = []%>
+        <%end%>
         <% @polls_pro_contra.each do |pc| %>
           <% if pc.pc == 1%>
             <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
@@ -291,7 +291,7 @@
               <%= pc.sources %>
             </p>
             <% if (user_signed_in? && @is_fellowship_member && @poll.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@poll.fellowship_id.present?)  %>
-              <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
+            <a href="/pro_contras/<%=pc.id.to_s%>" class="button hollow"><%=t("activerecord.attributes.proscons.show")%> (<%= pc.objections.all.count %>)</a><br>
             <% end %>  
           <% end %>
       
@@ -300,7 +300,10 @@
         <br>
       </div>
       <div style="float:right; width:50%;">
-        <h3 style="float:center"> <%= t("activerecord.attributes.proscons.cons") %></h3>
+        <h3 style="float:center; text-decoration:underline;"> <%= t("activerecord.attributes.proscons.cons") %></h3>
+        <%if @polls_pro_contra.blank?%>
+          <% @polls_pro_contra = []%>
+        <%end%>
         <% @polls_pro_contra.each do |pc| %>
           <% if pc.pc == 0%>
             <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
@@ -317,16 +320,17 @@
               <%= pc.sources %>
             </p>
             <% if (user_signed_in? && @is_fellowship_member && @poll.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@poll.fellowship_id.present?)  %>
-              <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
+            <a href="/pro_contras/<%=pc.id.to_s%>" class="button hollow"><%=t("activerecord.attributes.proscons.show")%> (<%= pc.objections.all.count %>)</a><br>
             <% end %>  
           <% end %>
       
         <% end %>
       </div>
       
+      <% if (user_signed_in? && @is_fellowship_member && @poll.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@poll.fellowship_id.present?)  %>
+      <h3><details style="position:relative; margin-bottom: 2.5%;">
+      <summary><%= t("activerecord.attributes.proscons.new") %></summary>
       <div style="float:center; margin-left: 5%; margin-right: 5%;">
-        <% if (user_signed_in? && @is_fellowship_member && @poll.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@poll.fellowship_id.present?)  %>
-          <h3><%= t("activerecord.attributes.proscons.new") %></h3>
           <%= form_for([@poll, @poll.pro_contras.build]) do |f| %>
             <p>
               <%= f.text_field :tag , label: t("activerecord.attributes.proscons.tag") %>
@@ -357,12 +361,13 @@
               <%= f.submit t("activerecord.attributes.proscons.create_new")%>
             </p>
           <% end %>
+        </div>
         <%end%> 
-      </div>
+      <div style="clear: both;"></div>
+    </details></h3> 
     </details></h3>    
 
     <div class="tabs-panel is-active" id="tab-comments">
       <%= render "comments" %>
     </div>
   </div>
-</div>

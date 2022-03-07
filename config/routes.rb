@@ -1,20 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :pro_contras do
-    resources :objections
-  end
 
-  resources :debates do
-    resources :pro_contras
-  end
-
-  resources :proposals do
-    resources :pro_contras
-  end
-
-  resources :polls do
-    resources :pro_contras
-  end
+  post "pro_contras/:id/destroy_objection" => "pro_contras#destroy_objection"
 
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?

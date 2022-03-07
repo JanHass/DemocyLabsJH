@@ -17,9 +17,9 @@
         <td><%= pro_contra.tag %></td>
         <td><%= pro_contra.body %></td>
 
-        <td><%= link_to 'Show', pro_contra %></td>
-        <td><%= link_to 'Edit', edit_pro_contra_path(pro_contra) %></td>
-        <td><%= link_to 'Destroy', pro_contra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', pro_contra, class: "button hollow" %></td>
+        <td><%= link_to 'Edit', edit_pro_contra_path(pro_contra), class: "button hollow" %></td>
+        <td><%= link_to 'Destroy', pro_contra, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert hollow" %></td>
       </tr>
     <% end %>
   </tbody>

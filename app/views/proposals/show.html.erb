@@ -215,99 +215,11 @@
     <% end %>
   <% end %>  
     <!-- PRO CONS -->
-        <h3><details style="position:relative; margin-bottom: 2.5%;">
-          <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
-        <div style="float:left; width:50%;">
-        <h3 style="float:center; margin-left: 10%;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
-        <% @proposals_pro_contra.each do |pc| %>
-          <% if pc.pc == 1%>
-            <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
-            <p>
-              <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
-              <%= pc.tag %>
-            </p>
-            <p>
-              <strong><%= t("activerecord.attributes.proscons.body") %></strong>
-              <%= pc.body %>
-            </p>
-            <p>
-              <strong><%= t("activerecord.attributes.proscons.source") %></strong>
-              <%= pc.sources %>
-            </p>
-            <% if (user_signed_in? && @is_fellowship_member && @proposal.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@proposal.fellowship_id.present?)  %>
-              <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
-            <% end %>  
-          <% end %>
-        <% end %>
-        
-        <br>
-        </div>
-        <div style="float:right; width:50%;">
-        <h3 style="float:center"> <%= t("activerecord.attributes.proscons.cons") %></h3>
-        <% @proposals_pro_contra.each do |pc| %>
-          <% if pc.pc == 0%>
-            <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
-            <p>
-              <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
-              <%= pc.tag %>
-            </p>
-            <p>
-              <strong><%= t("activerecord.attributes.proscons.body") %></strong>
-              <%= pc.body %>
-            </p>
-            <p>
-              <strong><%= t("activerecord.attributes.proscons.source") %></strong>
-              <%= pc.sources %>
-            </p>
-            <% if (user_signed_in? && @is_fellowship_member && @proposal.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@proposal.fellowship_id.present?)  %>
-              <%= link_to "object", "/pro_contras/" + pc.id.to_s %><%="("%><%= pc.objections.all.count %><%=")"%><br>
-            <% end %>  
-          <% end %>
-        
-        <% end %>
-        </div>
-        
-        
-          <div style="float:center; margin-left: 5%; margin-right: 5%;">
-          <% if (user_signed_in? && @is_fellowship_member && @proposal.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@proposal.fellowship_id.present?)  %>
-          <h3><%= t("activerecord.attributes.proscons.new") %></h3>
-          <%= form_for([@proposal, @proposal.pro_contras.build]) do |f| %>
-            <p>
-              <%= f.text_field :tag , label: t("activerecord.attributes.proscons.tag")%>
-            </p>
-            <p>
-              <%= f.text_area :body , label: t("activerecord.attributes.proscons.body")%>
-            </p>
-            <p>
-              <%= f.text_area :sources , label: t("activerecord.attributes.proscons.source") %>
-            </p>
-            
-            <%if current_user.present? %>
-              <p>
-                <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
-                <%= f.hidden_field :user_first_name, :value => current_user.first_name, :readonly => true%>
-                <%= f.hidden_field :user_last_name, :value => current_user.last_name, :readonly => true%>
-              </p>
-            <%else%>
-              <p>
-                <%= f.hidden_field :user_id, :value => "1", :readonly => true%>
-                <%= f.hidden_field :user_first_name, :value => "Anonymous", :readonly => true%>
-              </p>
-            <%end%>
-            <p>
-              <%= f.select(:pc, [[t("activerecord.attributes.proscons.pro"), 1], [t("activerecord.attributes.proscons.con"), 0]], label: t("activerecord.attributes.proscons.type")) %>
-            </p>
-            <p>
-              <%= f.submit t("activerecord.attributes.proscons.create_new")%>
-            </p>
-          <% end %>  
-        <% end %>
-        </div>
-        </details></h3>
-        <div class="js-moderator-proposal-actions margin">
-          <%= render "proposals/actions", proposal: @proposal %>
-        </div>
-      </div>
+    <div class="js-moderator-proposal-actions margin">
+      <%= render "proposals/actions", proposal: @proposal %>
+    </div>
+  </div>
+  
 
       <% unless preview %>
         <aside class="small-12 medium-3 column">
@@ -355,6 +267,104 @@
       </div>
     </div>
   </div>
+  <h3><details style="position:relative; margin-bottom: 2.5%;">
+    <summary><%= t("activerecord.attributes.proscons.proscons") %></summary>
+  <div style="float:left; width:45%; margin-left: 5%;">
+  <h3 style="float:center;text-decoration: underline;"> <%= t("activerecord.attributes.proscons.pros") %></h3>
+  <%if @proposals_pro_contra.blank?%>
+    <% @proposals_pro_contra = []%>
+  <%end%>
+  <% @proposals_pro_contra.each do |pc| %>
+    <% if pc.pc == 1%>
+      <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
+      <p>
+
+        <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
+        <%= pc.tag %>
+      </p>
+      <p>
+        <strong><%= t("activerecord.attributes.proscons.body") %></strong>
+        <%= pc.body %>
+      </p>
+      <p>
+        <strong><%= t("activerecord.attributes.proscons.source") %></strong>
+        <%= pc.sources %>
+      </p>
+      <% if (user_signed_in? && @is_fellowship_member && @proposal.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@proposal.fellowship_id.present?)  %>
+      <a href="/pro_contras/<%=pc.id.to_s%>" class="button hollow"><%=t("activerecord.attributes.proscons.show")%> (<%= pc.objections.all.count %>)</a><br>
+      <% end %>  
+    <% end %>
+  <% end %>
+  
+  <br>
+  </div>
+  <div style="float:right; width:50%;">
+  <h3 style="float:center; text-decoration: underline;"> <%= t("activerecord.attributes.proscons.cons") %></h3>
+  <%if @proposals_pro_contra.blank?%>
+    <% @proposals_pro_contra = []%>
+  <%end%>
+  <% @proposals_pro_contra.each do |pc| %>
+    <% if pc.pc == 0%>
+      <%= pc.user_first_name %><%= " " %> <%= pc.user_last_name %>
+      <p>
+        <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
+        <%= pc.tag %>
+      </p>
+      <p>
+        <strong><%= t("activerecord.attributes.proscons.body") %></strong>
+        <%= pc.body %>
+      </p>
+      <p>
+        <strong><%= t("activerecord.attributes.proscons.source") %></strong>
+        <%= pc.sources %>
+      </p>
+      <% if (user_signed_in? && @is_fellowship_member && @proposal.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@proposal.fellowship_id.present?)  %>
+      <a href="/pro_contras/<%=pc.id.to_s%>" class="button hollow"><%=t("activerecord.attributes.proscons.show")%> (<%= pc.objections.all.count %>)</a><br>
+      <% end %>  
+    <% end %>
+  
+  <% end %>
+  </div>
+          
+  <% if (user_signed_in? && @is_fellowship_member && @proposal.fellowship_id.present? && @currentuser_allowed_action) || (user_signed_in? && !@proposal.fellowship_id.present?)  %>
+  <h3><details style="position:relative; margin-bottom: 2.5%;">
+  <summary><%= t("activerecord.attributes.proscons.new") %></summary>
+  <div style="float:center; margin-left: 5%; margin-right: 5%;">
+    <%= form_for([@proposal, @proposal.pro_contras.build]) do |f| %>
+      <p>
+        <%= f.text_field :tag , label: t("activerecord.attributes.proscons.tag")%>
+      </p>
+      <p>
+        <%= f.text_area :body , label: t("activerecord.attributes.proscons.body")%>
+      </p>
+      <p>
+        <%= f.text_area :sources , label: t("activerecord.attributes.proscons.source") %>
+      </p>
+      
+      <%if current_user.present? %>
+        <p>
+          <%= f.hidden_field :user_id, :value => current_user.id, :readonly => true%>
+          <%= f.hidden_field :user_first_name, :value => current_user.first_name, :readonly => true%>
+          <%= f.hidden_field :user_last_name, :value => current_user.last_name, :readonly => true%>
+        </p>
+      <%else%>
+        <p>
+          <%= f.hidden_field :user_id, :value => "1", :readonly => true%>
+          <%= f.hidden_field :user_first_name, :value => "Anonymous", :readonly => true%>
+        </p>
+      <%end%>
+      <p>
+        <%= f.select(:pc, [[t("activerecord.attributes.proscons.pro"), 1], [t("activerecord.attributes.proscons.con"), 0]], label: t("activerecord.attributes.proscons.type")) %>
+      </p>
+      <p>
+        <%= f.submit t("activerecord.attributes.proscons.create_new")%>
+      </p>
+    <% end %>
+  </div>
+  <% end %>
+  <div style="clear: both;"></div>
+</details></h3> 
+</details></h3>
 
   <div class="tabs-content" data-tabs-content="proposals_tabs">
     <div class="tabs-panel is-active" id="tab-comments">
