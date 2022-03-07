@@ -3,6 +3,15 @@
   <ul>
   <%= raw content_block("subnavigation_left") %>
   
+  <% if feature?(:help_page) %>
+  <li>
+    <%= layout_menu_link_to t("layouts.header.fellowships"),
+                            fellowships_path,
+                            current_page?(fellowships_path),
+                            accesskey: "7" %>
+  </li>
+<% end %>
+
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
@@ -25,15 +34,6 @@
                                   polls_path,
                                   controller_name == "polls" || (controller_name == "questions" && controller.class.parent == Polls),
                                   accesskey: "3" %>
-      </li>
-    <% end %>
- 
-    <% if feature?(:help_page) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.fellowships"),
-                                fellowships_path,
-                                current_page?(fellowships_path),
-                                accesskey: "7" %>
       </li>
     <% end %>
     
