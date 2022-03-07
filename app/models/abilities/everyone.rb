@@ -6,10 +6,10 @@ module Abilities
       can [:read, :map], Debate
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment
-      can :read, Poll
+      can [:read, :answer], Poll
       can :results, Poll, id: Poll.expired.results_enabled.not_budget.ids
       can :stats, Poll, id: Poll.expired.stats_enabled.not_budget.ids
-      can :read, Poll::Question
+      can [:read, :vote], Poll::Question
       can :read, User
       can [:read, :welcome], Budget
       can [:read], Budget

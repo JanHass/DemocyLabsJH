@@ -66,7 +66,7 @@
 
 <h2><details>
   <summary><%= t("activerecord.attributes.fellowship.group_members") %></summary> 
-    <table style="overflow-y:auto;display: block; max-height: 500px">
+    <table>
       <thead>
         <tr>
           <th><p><%= t("activerecord.attributes.user.username") %></p></th>
@@ -82,7 +82,7 @@
         </tr>
       </thead>
           
-      <tbody style="margin-left: 50%;">
+      <tbody>
         <% @fellowship.fellowship_users.each do |fellowship_user| %>
 
           <tr>

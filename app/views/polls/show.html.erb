@@ -200,7 +200,7 @@
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
       <% @poll_questions_answers.each do |answer| %>
-        <div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>">
+        <div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>" style="width: 50%; height: 66%">
           <h3><%= answer.title %></h3>
 
           <% if answer.images.any? %>
@@ -371,3 +371,10 @@
       <%= render "comments" %>
     </div>
   </div>
+
+  <style>
+    .poll-more-info-answers .answer-description.short
+    {
+        height:fit-content;
+    }
+  </style>

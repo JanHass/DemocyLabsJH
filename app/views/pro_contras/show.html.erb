@@ -15,7 +15,7 @@
 
 <%if current_user.present? %>
   <%if @pro_contra.user_id == current_user.id %>
-      <%= button_to 'Destroy', @pro_contra, method: :delete, data: { confirm: 'Are you sure?' }, class: "button hollow alert" %>
+      <%= button_to 'Löschen', @pro_contra, method: :delete, data: { confirm: 'Bist du sicher?' }, class: "button hollow alert" %>
   <% end %>
 <%end%>
 
