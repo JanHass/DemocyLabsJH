@@ -22,7 +22,9 @@
            <%= image_tag(current_user.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
            </div>
            <div style= "margin-top: 1%">
+
            <%= link_to t("activerecord.attributes.user.avatar_delete"), purgeavatar_account_path(@user), method: :delete, class: "button alert hollow" %>
+
            </div>
         <% else %>
            <div style="display: block">  
