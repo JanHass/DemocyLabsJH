@@ -22,7 +22,9 @@
            <%= image_tag(current_user.avatar.variant(resize: "200x200!"), class: "rounded-circle") %>
            </div>
            <div style= "margin-top: 1%">
-           <%= link_to "Delete Avatar", purgeavatar_account_path(@user), method: :delete, class: "button alert hollow" %>
+
+           <%= link_to t("activerecord.attributes.user.avatar_delete"), purgeavatar_account_path(@user), method: :delete, class: "button alert hollow" %>
+
            </div>
         <% else %>
            <div style="display: block">  
@@ -43,7 +45,7 @@
           <h3><details>
              <summary><%= t("account.show.personal") %></summary> 
 
-            <div class="small-12 medium-10" style="margin-left: 5%;">
+            <div class="small-12 medium-10" style="margin-left: 5%; margin-bottom: 5%;">
               <% if @account.organization? %>
                 <%= f.fields_for :organization do |fo| %>
                   <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length %>
@@ -69,17 +71,12 @@
                 <%= f.text_field :postal_code %>
                 <%= f.text_field :city %>
                <%= f.text_field :country %>
+               <br> 
              
               <% end %>
            </div>
 
-            <div style="margin-left: 5%;">
-              <%= f.check_box :public_activity %>
-            </div>
-
-            <div style="margin-left: 5%;">
-             <%= f.check_box :public_interests %>
-            </div>
+            
           </details></h3>
 
           
@@ -111,6 +108,15 @@
              <div style="margin-left: 5%;">
                 <%= f.check_box :public_profile_show_country %>
              </div>
+
+             <div style="margin-left: 5%;">
+              <%= f.check_box :public_activity %>
+            </div>
+
+            <div style="display: none;">
+             <%= f.check_box :public_interests %>
+            </div>
+
              <div style="margin-left: 5%;">
                <%= link_to t("activerecord.attributes.user.show_public_profile"), current_user, class:"button hollow" %>
              </div>
@@ -205,7 +211,7 @@
                         <%= fellowship.name %>
                       </p>
                     </td>
-                    <td style='width: 25%';><p><%= fellowship.description %></p></td>
+                    <td style='width: 25%';><p><%= fellowship.short_description %></p></td>
                     <td style='width: 25%';>
                       <p><details>
                       <summary style="font-size:70%;"><%= t("activerecord.attributes.user.fellowship_all_requirements") %></summary>

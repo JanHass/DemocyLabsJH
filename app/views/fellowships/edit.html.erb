@@ -3,7 +3,31 @@
 <!-- header bar with icon -->
 <%= render "shared/fellowships_header", i18n_namespace: t("activerecord.attributes.fellowship.edit_fellowship"), image: "users-solid" %>
 
+<!-- Aktueller User berechtigt? -->
+ <% @currentuser_is_fellowship_owner = false %> 
+ <% @currentuser_is_fellowship_admin = false %>
+ 
+
+ <% if current_user.present? %>
+
+    <% @fellowship.fellowship_users.each do |fellowship_user| %>
+        <% if current_user.id == fellowship_user.user_id && @fellowship.id == fellowship_user.fellowship_id %>
+            <% if fellowship_user.is_fellowship_owner %>
+                <% @currentuser_is_fellowship_owner = true %>
+            <% elsif fellowship_user.is_fellowship_administrator %>
+                <% @currentuser_is_fellowship_admin = true %>
+            <% end %>
+        <% end %>
+    <%end%> 
+ <% end %>   
+
+ <!-- ------------------------------- -->
+
 <!-- Group form -->
-<%= render 'form', fellowship: @fellowship %>
+<% if @currentuser_is_fellowship_owner ||  @currentuser_is_fellowship_admin %>
+    <%= render 'form', fellowship: @fellowship %>
+<% else %>
+    <h2><%= t("activerecord.attributes.fellowship.edit_not_auth") %> </h2>
+<%end%>    
 
 

@@ -254,6 +254,7 @@ de:
         voting_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, dürfen abstimmen!"
         comment_only_member: "Nur Gruppenmitglieder:innen, die alle Gruppe-Anforderungen erfüllen, sehen Kommentare und dürfen kommentieren!"
         no_group: "Fehler! Keine Gruppe gewählt. Bitte starten sie eine neue Diskussion nur über den Menüpunkt 'Diskussionen'."
+        no_member: "Sie sind kein Gruppenmitglied! Nur Gruppenmitglieder können eine Diskussion starten."
 
       proscons:
         proscons: "Pro / Kontra Argumente"
@@ -304,7 +305,9 @@ de:
         summary: "Zusammenfassung Vorschlag"
         retired_explanation: "Erläuterung"
       user:
-        login: "E-Mail oder Benutzer:innenname"
+        avatar: "Profilbild hinzufügen"
+        avatar_delete: "Profilbild entfernen"
+        login: "E-Mail oder Anmeldename"
         email: "E-Mail"
         username: "Anmeldename"
         first_name: "Vorname"
@@ -338,7 +341,7 @@ de:
 
         show_public_profile: "Öffentliches Profil anzeigen"
 
-        fellowship_name: "Gruppenname"
+        fellowship_name: "Gruppe"
         fellowship_descripton: "Beschreibung"
         fellowship_requirements: "Anforderungen"
         fellowship_all_requirements: "alle Anforderungen anzeigen"
@@ -468,6 +471,7 @@ de:
         popup_req_password_label: "Einschreibeschlüssel benötigt!"
         created_at: "Gruppe erstellt am"
         updated_at: "Zuletzt bearbeitet am"
+        edit_not_auth: "Sie sind nicht für diese Aktion berechtigt!"
 
         popup_req_password_close: "Abbrechen"
         popup_req_password_text1: "Um dieser Gruppe beizutreten wird ein Einschreibeschlüssel benötigt."

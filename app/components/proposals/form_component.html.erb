@@ -166,7 +166,7 @@
 
 
     <fieldset class="required-fields">
-      <legend><%= t("shared.required") %></legend>
+      
 
       <%= render "shared/globalize_locales", resource: proposal %>
 
@@ -177,7 +177,7 @@
         </div>
 
         <!--- WENN Anforderungen NICHT erfüllt-->
-        <% if @currentuser_allowed_action == false %>
+        <% if @currentuser_allowed_action == false || @currentuser_is_member == false %>
           <div>
             <h2 style="color:red;"><%= t("activerecord.attributes.debate.req_false") %></h2>
             <button type="button" class="button success hollow margin top" style="margin-bottom: 0%;" id="btnreq" data-bs-toggle="modal" data-bs-target="#fellowship_req">
