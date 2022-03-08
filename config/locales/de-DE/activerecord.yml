@@ -372,6 +372,7 @@ de:
 
       fellowship:  
 
+        req_field: "FEHLER! Es wurden nicht alle Pflichtfelder ausgefüllt!"
         mygroups: "Meine Gruppen"
         allgroups: "Alle Gruppen"
         showgroup: "Gruppe Anzeigen"

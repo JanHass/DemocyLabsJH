@@ -373,6 +373,8 @@ en:
         my_account: "My Account"
 
       fellowship: 
+
+        req_field: "ERROR! Not all required fields have been filled!"
         mygroups: "My Groups"
         allgroups: "All Groups"
         showgroup: "Show Group" 
