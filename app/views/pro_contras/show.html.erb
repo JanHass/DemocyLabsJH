@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong><%= t("activerecord.attributes.proscons.tag") %></strong>
   <%= @pro_contra.tag %>
@@ -18,10 +17,12 @@
       <%= button_to 'Löschen', @pro_contra, method: :delete, data: { confirm: 'Bist du sicher?' }, class: "button hollow alert" %>
   <% end %>
 <%end%>
+<hr style="border-width: 5px;"></hr>
 
 <h2><%= t("activerecord.attributes.proscons.comments") %></h2>
 <% @pro_contra.objections.each do |objection| %>
-  <p>
+<li class="list-group-item" style="width: 50%;">
+  <p style="margin-top: 2.5%;">
 
     <strong><%= t("activerecord.attributes.proscons.author") %></strong>
 
@@ -42,6 +43,8 @@
 
     <% end %>
   <% end %>
+</li>
+<br>
 <% end %>
 
 
