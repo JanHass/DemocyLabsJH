@@ -2,7 +2,7 @@
 <%= form_with(model: fellowship, local: true) do |form| %>
   <% if fellowship.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(fellowship.errors.count, "error") %> prohibited this fellowship from being saved:</h2>
+      <h2><%= t("activerecord.attributes.fellowship.req_field") %></h2>
 
       <ul>
       <% fellowship.errors.full_messages.each do |message| %>

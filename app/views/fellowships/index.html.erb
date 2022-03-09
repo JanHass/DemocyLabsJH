@@ -96,13 +96,13 @@
             <i class="fas fa-lock fa-1x" style="float: right; margin-left: 50%; position: absolute; bottom: 18%; font-size: x-large;"></i> <!-- icon if password is needed to join the group -->
           <% end %>
         <div style="float: right; margin-left: 57%; position: absolute; bottom: 15%; color: #3adb76;"><i class="fas fa-check-square fa-2x"></i></div> <!-- icon for joined groups -->
-        <% end %>
-      <% else %>
+        <% else %>
         <% if fellowship.join_password_required %>
         <i class="fas fa-lock fa-1x" style="float: right; margin-left: 59%; position: absolute; bottom: 18%; font-size: x-large;"></i> <!-- icon if password is needed to join the group -->
         <% end %>
-      <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 16%;"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p> <!-- creation date -->
-      <% end %>
+        <p class="card-text" style="float: left;  margin-left: 3.5%; position: absolute; bottom: 16%;"><small class="text-muted"><%= t("activerecord.attributes.fellowship.created_at") %> <%= localize(fellowship.created_at, :format => :short2) %></small></p> <!-- creation date -->
+        <% end %>
+        <% end %>
 
     </div>
     <%= link_to t("activerecord.attributes.fellowship.fellowship_show"), fellowship, class: "btn btn-info" %> <!-- show group button -->

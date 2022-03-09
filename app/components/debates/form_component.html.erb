@@ -3,9 +3,10 @@
 
   <% if params[:userid].present? %>
     <% current_user = User.find(params[:userid]) %>
-  <% else %>  
-    
   <% end %>  
+   
+    
+   
 
   <% if params[:fellowshipid].present? && current_user.present? %>
 
@@ -183,258 +184,259 @@
           <%= @fellowship.name %></h2>
         </div>
         <!--- WENN Anforderungen NICHT erfüllt-->
-        <% if @currentuser_allowed_action == false %>
-          <div>
-            <h2 style="color:red;"><%= t("activerecord.attributes.debate.req_false") %></h2>
-            <button type="button" class="button success hollow margin top" style="margin-bottom: 0%;" id="btnreq" data-bs-toggle="modal" data-bs-target="#fellowship_req">
-              <%= t("activerecord.attributes.debate.btn_req") %>
-            </button>
-          </div>
+        <% if @currentuser_is_member == false%>
+          <h2><%= t("activerecord.attributes.debate.no_member") %></h2>
+        <% else %>  
+          <% if @currentuser_allowed_action == false %>
+            <div>
+              <h2 style="color:red;"><%= t("activerecord.attributes.debate.req_false") %></h2>
+              <button type="button" class="button success hollow margin top" style="margin-bottom: 0%;" id="btnreq" data-bs-toggle="modal" data-bs-target="#fellowship_req">
+                <%= t("activerecord.attributes.debate.btn_req") %>
+              </button>
+            </div>
 
-          <!-- Modal  / PopUp Anforderungen  --> 
-          <div class="modal fade" id="fellowship_req" tabindex="-1" aria-labelledby="fellowship_req_Label" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                 <h5 class="modal-title" id="fellowship_req"><%= t("activerecord.attributes.debate.group_req") %></h5>
-                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Modal  / PopUp Anforderungen  --> 
+            <div class="modal fade" id="fellowship_req" tabindex="-1" aria-labelledby="fellowship_req_Label" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="fellowship_req"><%= t("activerecord.attributes.debate.group_req") %></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+            
+                  <% if @currentuser_admin || @currentuser_mod || @currentuser_owner %>
+                    <% if (@fellowship.admin_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_full_name_long") %></p>
+                    <% elsif (@fellowship.admin_required_full_name?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_full_name_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_required_phone_number? && current_user.phone_number.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_phone_number_long") %></p>
+                    <% elsif (@fellowship.admin_required_phone_number?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_phone_number_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_required_gender? && current_user.gender.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_gender_long") %></p>
+                    <% elsif (@fellowship.admin_required_gender?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_gender_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_required_date_of_birth? && current_user.date_of_birth.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_date_of_birth_long") %></p>
+                    <% elsif (@fellowship.admin_required_date_of_birth?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_phone_number_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_required_address? && current_user.street.present? && current_user.housenumber.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_adress_long") %></p>
+                    <% elsif (@fellowship.admin_required_address?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_adress_long") %></p>
+                    <% end %>
+                          
+                    <% if (@fellowship.admin_required_state? && current_user.state.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_state_long") %></p>
+                    <% elsif (@fellowship.admin_required_state?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_state_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_required_city? && current_user.city.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_city_long") %></p>
+                    <% elsif (@fellowship.admin_required_city?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_city_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_required_country? && current_user.country.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_country_long") %></p>
+                    <% elsif (@fellowship.admin_required_country?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_country_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_full_name_long") %></p>
+                    <% elsif (@fellowship.admin_public_show_full_name?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_full_name_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_gender_long") %></p>
+                    <% elsif (@fellowship.admin_public_show_gender?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_gender_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_phone_number_long") %></p>
+                    <% elsif (@fellowship.admin_public_show_phone_number?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_phone_number_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_date_of_birth_long") %></p>
+                    <% elsif (@fellowship.admin_public_show_date_of_birth?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_date_of_birth_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_state_long") %></p>
+                    <% elsif (@fellowship.admin_public_show_state?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_state_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_city_long") %></p>
+                    <% elsif (@fellowship.admin_public_show_city?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_city_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.admin_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_country_long") %></p>
+                    <% elsif (@fellowship.admin_public_show_country?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_country_long") %></p>
+                    <% end %>
+            
+
+                  <% else %>
+                    <% if (@fellowship.user_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_full_name_long") %></p>
+                    <% elsif (@fellowship.user_required_full_name?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_full_name_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_required_phone_number? && current_user.phone_number.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
+                    <% elsif (@fellowship.user_required_phone_number?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_required_gender? && current_user.gender.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_gender_long") %></p>
+                    <% elsif (@fellowship.user_required_gender?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_gender_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_required_date_of_birth? && current_user.date_of_birth.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_date_of_birth_long") %></p>
+                    <% elsif (@fellowship.user_required_date_of_birth?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_required_adress? && current_user.street.present? && current_user.housenumber.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_adress_long") %></p>
+                    <% elsif (@fellowship.user_required_adress?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_adress_long") %></p>
+                    <% end %>
+                          
+                    <% if (@fellowship.user_required_state? && current_user.state.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_state_long") %></p>
+                    <% elsif (@fellowship.user_required_state?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_state_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_required_city? && current_user.city.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_city_long") %></p>
+                    <% elsif (@fellowship.user_required_city?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_city_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_required_country? && current_user.country.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_country_long") %></p>
+                    <% elsif (@fellowship.user_required_country?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_country_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
+                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_full_name_long") %></p>
+                    <% elsif (@fellowship.user_public_show_full_name?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_full_name_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_gender_long") %></p>
+                    <% elsif (@fellowship.user_public_show_gender?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_gender_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_phone_number_long") %></p>
+                    <% elsif (@fellowship.user_public_show_phone_number?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_phone_number_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_date_of_birth_long") %></p>
+                    <% elsif (@fellowship.user_public_show_date_of_birth?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_date_of_birth_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_state_long") %></p>
+                    <% elsif (@fellowship.user_public_show_state?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_state_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_city_long") %></p>
+                    <% elsif (@fellowship.user_public_show_city?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_city_long") %></p>
+                    <% end %>
+                    <% if (@fellowship.user_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
+                      <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_country_long") %></p>
+                    <% elsif (@fellowship.user_public_show_country?) %>
+                      <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_country_long") %></p>
+                    <% end %>
+                  <% end %>
+                  <br><br>
+                  <%= t("activerecord.attributes.debate.group_req_help") %>
                 </div>
-                <div class="modal-body">
-          
-                <% if @currentuser_admin || @currentuser_mod || @currentuser_owner %>
-                  <% if (@fellowship.admin_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
-                   <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_full_name_long") %></p>
-                  <% elsif (@fellowship.admin_required_full_name?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_full_name_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_required_phone_number? && current_user.phone_number.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_phone_number_long") %></p>
-                  <% elsif (@fellowship.admin_required_phone_number?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_phone_number_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_required_gender? && current_user.gender.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_gender_long") %></p>
-                  <% elsif (@fellowship.admin_required_gender?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_gender_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_required_date_of_birth? && current_user.date_of_birth.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_date_of_birth_long") %></p>
-                  <% elsif (@fellowship.admin_required_date_of_birth?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_phone_number_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_required_address? && current_user.street.present? && current_user.housenumber.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_adress_long") %></p>
-                  <% elsif (@fellowship.admin_required_address?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_adress_long") %></p>
-                  <% end %>
-                        
-                  <% if (@fellowship.admin_required_state? && current_user.state.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_state_long") %></p>
-                  <% elsif (@fellowship.admin_required_state?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_state_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_required_city? && current_user.city.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_city_long") %></p>
-                  <% elsif (@fellowship.admin_required_city?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_city_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_required_country? && current_user.country.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_country_long") %></p>
-                  <% elsif (@fellowship.admin_required_country?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_required_country_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
-                   <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_full_name_long") %></p>
-                  <% elsif (@fellowship.admin_public_show_full_name?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_full_name_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_gender_long") %></p>
-                  <% elsif (@fellowship.admin_public_show_gender?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_gender_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_phone_number_long") %></p>
-                  <% elsif (@fellowship.admin_public_show_phone_number?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_phone_number_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_date_of_birth_long") %></p>
-                  <% elsif (@fellowship.admin_public_show_date_of_birth?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_date_of_birth_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_state_long") %></p>
-                  <% elsif (@fellowship.admin_public_show_state?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_state_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_city_long") %></p>
-                  <% elsif (@fellowship.admin_public_show_city?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_city_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.admin_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_country_long") %></p>
-                  <% elsif (@fellowship.admin_public_show_country?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.admin_public_show_country_long") %></p>
-                  <% end %>
-          
-
-                <% else %>
-                  <% if (@fellowship.user_required_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
-                   <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_full_name_long") %></p>
-                  <% elsif (@fellowship.user_required_full_name?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_full_name_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_required_phone_number? && current_user.phone_number.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
-                  <% elsif (@fellowship.user_required_phone_number?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_required_gender? && current_user.gender.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_gender_long") %></p>
-                  <% elsif (@fellowship.user_required_gender?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_gender_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_required_date_of_birth? && current_user.date_of_birth.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_date_of_birth_long") %></p>
-                  <% elsif (@fellowship.user_required_date_of_birth?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_phone_number_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_required_adress? && current_user.street.present? && current_user.housenumber.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_adress_long") %></p>
-                  <% elsif (@fellowship.user_required_adress?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_adress_long") %></p>
-                  <% end %>
-                        
-                  <% if (@fellowship.user_required_state? && current_user.state.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_state_long") %></p>
-                  <% elsif (@fellowship.user_required_state?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_state_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_required_city? && current_user.city.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_city_long") %></p>
-                  <% elsif (@fellowship.user_required_city?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_city_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_required_country? && current_user.country.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_country_long") %></p>
-                  <% elsif (@fellowship.user_required_country?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_required_country_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_public_show_full_name? && current_user.public_profile_show_full_name? && current_user.first_name.present? && current_user.last_name.present?) %>
-                   <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_full_name_long") %></p>
-                  <% elsif (@fellowship.user_public_show_full_name?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_full_name_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_public_show_gender? && current_user.public_profile_show_gender? && current_user.gender.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_gender_long") %></p>
-                  <% elsif (@fellowship.user_public_show_gender?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_gender_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_public_show_phone_number? && current_user.public_profile_show_phone_number? && current_user.phone_number.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_phone_number_long") %></p>
-                  <% elsif (@fellowship.user_public_show_phone_number?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_phone_number_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_public_show_date_of_birth? && current_user.public_profile_show_date_of_birth? && current_user.date_of_birth.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_date_of_birth_long") %></p>
-                  <% elsif (@fellowship.user_public_show_date_of_birth?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_date_of_birth_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_public_show_state? && current_user.public_profile_show_state? && current_user.state.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_state_long") %></p>
-                  <% elsif (@fellowship.user_public_show_state?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_state_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_public_show_city? && current_user.public_profile_show_city? && current_user.city.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_city_long") %></p>
-                  <% elsif (@fellowship.user_public_show_city?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_city_long") %></p>
-                  <% end %>
-                  <% if (@fellowship.user_public_show_country? && current_user.public_profile_show_country? && current_user.country.present?) %>
-                    <p style="color:green; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_country_long") %></p>
-                  <% elsif (@fellowship.user_public_show_country?) %>
-                    <p style="color:red; text-align: left;"><%= t("activerecord.attributes.fellowship.user_public_show_country_long") %></p>
-                  <% end %>
-                <% end %>
-                <br><br>
-                <%= t("activerecord.attributes.debate.group_req_help") %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.debate.btn_close") %></button>
-                <%= link_to t("activerecord.attributes.debate.my_account"), account_path, class: "button hollow margin top" %>
-              </div>
+                <div class="modal-footer">
+                  <button type="button" class="button hollow alert" data-bs-dismiss="modal"><%= t("activerecord.attributes.debate.btn_close") %></button>
+                  <%= link_to t("activerecord.attributes.debate.my_account"), account_path, class: "button hollow margin top" %>
+                </div>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- -------------------------------------------------------------- -->
-          <!--- ENDE wenn Anforderungen NICHT erfüllt-->
+            <!-- -------------------------------------------------------------- -->
+            <!--- ENDE wenn Anforderungen NICHT erfüllt-->
       
-        <% else %>
+          <% else %>
 
-          <!-- Wenn Anforderungen erfüllt -->
-        
-      
-          <div>
-            <%= translations_form.text_field :title,
-                maxlength: Debate.title_max_length,
-                data: suggest_data(debate) %>
-          </div>
-      
-          <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
-
-          <div>
-            <%= translations_form.text_area :description,
-               maxlength: Debate.description_max_length,
-               class: "html-area" %>
-          </div>
-          
-
+            <!-- Wenn Anforderungen erfüllt -->
           
         
-    </fieldset>
+            <div>
+              <%= translations_form.text_field :title,
+                  maxlength: Debate.title_max_length,
+                  data: suggest_data(debate) %>
+            </div>
+        
+            <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
-    <%= f.invisible_captcha :subtitle %>
+            <div>
+              <%= translations_form.text_area :description,
+                maxlength: Debate.description_max_length,
+                class: "html-area" %>
+            </div>
 
-    <fieldset>
-      <div style="display: none;">
-      <legend><%= t("shared.optional") %></legend>
+            </fieldset>
 
-      <div>
-        <%= f.text_field :tag_list, value: debate.tag_list.to_s,
-                        hint: t("debates.form.tags_instructions"),
-                        placeholder: t("debates.form.tags_placeholder"),
-                        data: { js_url: suggest_tags_path },
-                        class: "tag-autocomplete" %>
-      </div>
-      </div>
+            <%= f.invisible_captcha :subtitle %>
 
-      <div style="display: none;">
-        <%= f.number_field :fellowship_id, value: @fellowship.id.to_i %>
-      </div>
-      <div style="display: none;">
-      <%= render SDG::RelatedListSelectorComponent.new(f) %>
-      </div>
-    </fieldset>
+            <fieldset>
+              <div style="display: none;">
+              <legend><%= t("shared.optional") %></legend>
 
-    <div class="actions">
-      <% if debate.new_record? %>
-        <div>
-          <%= f.check_box :terms_of_service,
-           title: t("form.accept_terms_title"),
-           label: t("form.accept_terms",
-                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
-                  ) %>
-          </div>
-      <% end %>
+              <div>
+                <%= f.text_field :tag_list, value: debate.tag_list.to_s,
+                                hint: t("debates.form.tags_instructions"),
+                                placeholder: t("debates.form.tags_placeholder"),
+                                data: { js_url: suggest_tags_path },
+                                class: "tag-autocomplete" %>
+              </div>
+              </div>
 
-      <%= f.submit(class: "button", value: t("debates.#{action_name}.form.submit_button")) %>
-    </div>
+              <div style="display: none;">
+                <%= f.number_field :fellowship_id, value: @fellowship.id.to_i %>
+              </div>
+              <div style="display: none;">
+              <%= render SDG::RelatedListSelectorComponent.new(f) %>
+              </div>
+            </fieldset>
 
-    <% end %>  
-    <% end %>  
+            <div class="actions">
+              <% if debate.new_record? %>
+                <div>
+                  <%= f.check_box :terms_of_service,
+                  title: t("form.accept_terms_title"),
+                  label: t("form.accept_terms",
+                          policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                          conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                          ) %>
+                  </div>
+              <% end %>
+
+              <%= f.submit(class: "button", value: t("debates.#{action_name}.form.submit_button")) %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>    
+     
 
   <% else %>
     <h2><%= t("activerecord.attributes.debate.no_group") %></h2>
@@ -442,5 +444,8 @@
  
 
 <% end %>
+
+
+
 
 

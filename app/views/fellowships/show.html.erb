@@ -64,15 +64,15 @@
  <!-- ------------------------------- -->
 
 
-<h2><details class="overflow-auto" style="max-height: 800px;">
+<h2><details>
   <summary><%= t("activerecord.attributes.fellowship.group_members") %></summary> 
     <table>
       <thead>
         <tr>
-          <th><p><%= link_to t("activerecord.attributes.user.username"), tablesort_fellowship_path(:sort => "username") %></p></th>
-          <th><p><%= link_to t("activerecord.attributes.user.first_name"), tablesort_fellowship_path(:sort => 'first_name') %></p></th>
-          <th><p><%= link_to t("activerecord.attributes.user.last_name"), tablesort_fellowship_path(:sort => 'last_name') %></p></th>
-          <th><p><%= link_to t("activerecord.attributes.fellowship.role"), tablesort_fellowship_path(:sort => 'role') %></p></th>
+          <th><p><%= t("activerecord.attributes.user.username") %></p></th>
+          <th><p><%= t("activerecord.attributes.user.first_name") %></p></th>
+          <th><p><%= t("activerecord.attributes.user.last_name") %></p></th>
+          <th><p><%= t("activerecord.attributes.fellowship.role") %></p></th>
           <% if @currentuser_is_fellowship_admin || @currentuser_is_fellowship_mod || @currentuser_is_fellowship_owner %>
             <th><p><%= t("activerecord.attributes.fellowship.change_role") %></p></th>
             <th colspan="3"></th>
@@ -261,6 +261,14 @@
     vertical-align: middle;
     width: 120pt ;
     height: 20pt ; 
+}
+
+table tr td
+{
+    padding-top: 0.5rem;
+    padding-right: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-left: 0.625rem;
 }
 </style>
 

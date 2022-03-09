@@ -257,7 +257,8 @@ en:
         my_account: "My account"
         voting_only_member: "Only group members who meet all group requirements are allowed to vote!"
         comment_only_member: "Only group members who meet all group requirements can see and comment on comments!"
-        no_group: "Error! No group selected. Please start a new discussion using the 'Discussions' menu item only. "
+        no_group: "Error! No group selected. Please start a new debate using the 'Debate' menu item only. "
+        no_member: "You are not a group member! Only group members can start a debate. "
 
       proscons:
         proscons: "Pro/Con arguments "
@@ -303,6 +304,8 @@ en:
         summary: "Proposal summary"
         retired_explanation: "Explanation"
       user:
+        avatar: "Add profile picture"
+        avatar_delete: "Remove profile picture "
         login: "Email or username"
         email: "Email"
         username: "Username"
@@ -370,6 +373,8 @@ en:
         my_account: "My Account"
 
       fellowship: 
+
+        req_field: "ERROR! Not all required fields have been filled!"
         mygroups: "My Groups"
         allgroups: "All Groups"
         showgroup: "Show Group" 
@@ -469,6 +474,7 @@ en:
         popup_req_password_label: "Password required!"
         created_at: "Created at"
         updated_at: "Last update at"
+        edit_not_auth: "You are not authorized for this action!"
 
         popup_req_password_close: "Close"
         popup_req_password_text1: "A password is required to join this group. "
